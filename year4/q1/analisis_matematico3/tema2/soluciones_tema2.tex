@@ -1,0 +1,280 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,mathtools,geometry,microtype}
+\geometry{margin=2.45cm}
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\arctg}{arctg}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\R}{\mathbb{R}}
+\title{Soluciones Tema 2: Integrales dobles}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\section{Solucion Ejercicio 1}
+Dividimos $[0,1]^2$ en $n^2$ cuadrados de lado $1/n$. Como $x^2y^2$ es creciente en ambas variables, sus sumas inferior y superior son
+\[L_n=\frac1{n^6}\left(\sum_{i=0}^{n-1}i^2\right)^2,\qquad U_n=\frac1{n^6}\left(\sum_{i=1}^{n}i^2\right)^2.\]
+Usando $\sum_{i=1}^n i^2=n(n+1)(2n+1)/6$, se obtiene
+\[\lim_{n\to\infty}L_n=\lim_{n\to\infty}U_n=\boxed{\frac19}.\]
+
+\section{Solucion Ejercicio 2}
+\[\iint_R xy\dd A=\int_1^2 x\dd x\int_3^4 y\dd y=(\frac{4-1}{2})(\frac{16-9}{2})=\boxed{\frac{21}{4}}.\]
+
+\section{Solucion Ejercicio 3}
+\[\int_0^2\int_0^3(x^2+4y)\dd y\dd x=\int_0^2(3x^2+18)\dd x=[x^3+18x]_0^2=\boxed{44}.\]
+
+\section{Solucion Ejercicio 4}
+\[\iint_R\sen x\cos y\dd A=\left[ -\cos x\right]_{-\pi/2}^0\left[\sen y\right]_0^{\pi/2}=\boxed{-1}.\]
+
+\section{Solucion Ejercicio 5}
+\[\int_{-\pi}^{\pi}\int_0^1 x\sen(xy)\dd y\dd x=\int_{-\pi}^{\pi}(1-\cos x)\dd x=\boxed{2\pi}.\]
+
+\section{Solucion Ejercicio 6}
+La integral es impropia por el comportamiento de $x^y$ en $(0,0)$, pero es acotada en el cuadrado para $x>0$. Por Fubini,
+\[\int_0^1\int_0^1 x^y\dd x\dd y=\int_0^1\frac1{y+1}\dd y=\boxed{\ln 2}.\]
+
+\section{Solucion Ejercicio 7}
+El triángulo es $0\le x\le1$, $0\le y\le x$. Así,
+\[\iint_R\sqrt{1+x^2}\dd y\dd x=\int_0^1 x\sqrt{1+x^2}\dd x=\left[\frac{(1+x^2)^{3/2}}3\right]_0^1=\boxed{\frac{2\sqrt2-1}{3}}.\]
+
+\section{Solucion Ejercicio 8}
+La región $0\le x\le1$, $2x\le y\le2$ también se describe por $0\le y\le2$, $0\le x\le y/2$. Por tanto,
+\[\int_0^1\int_{2x}^2 e^{-y^2}\dd y\dd x=\int_0^2\int_0^{y/2}e^{-y^2}\dd x\dd y=\frac12\int_0^2ye^{-y^2}\dd y=\boxed{\frac{1-e^{-4}}4}.\]
+
+\section{Solucion Ejercicio 9}
+En la región entre $y=x^2$ y $y=x$ se tiene $0\le y\le1$ y $y\le x\le\sqrt y$. Luego
+\[\iint_R x\sen y\dd x\dd y=\int_0^1\frac{y-y^2}{2}\sen y\dd y.\]
+Integrando por partes,
+\[\int_0^1y\sen y\dd y=\sen1-\cos1,\quad \int_0^1y^2\sen y\dd y=-\cos1+2\sen1+2\cos1-2.\]
+De aquí se deduce $\boxed{1-\cos1-\tfrac12\sen1}$.
+
+\section{Solucion Ejercicio 10}
+El recinto determinado por $y=x$, $y=0$, $y=1$ y $x=-1$ es $-1\le x\le y\le1$ con $0\le y\le1$. Entonces
+\[\int_0^1\int_{-1}^{y}(xy-y^3)\dd x\dd y=\int_0^1\left[\frac y2(y^2-1)-y^3(y+1)\right]\dd y=\boxed{-\frac{23}{40}}.\]
+
+\section{Solucion Ejercicio 11}
+Para la componente que contiene $(1,1/2)$, $0\le y\le1$ y $\sqrt y\le x\le2-y$. Por tanto,
+\[I=\int_0^1\frac1{y-4}\left[\frac{x^2}{2}\right]_{\sqrt y}^{2-y}\dd y=\frac12\int_0^1\frac{y^2-5y+4}{y-4}\dd y.\]
+Como $y^2-5y+4=(y-4)(y-1)$, resulta
+\[I=\frac12\int_0^1(y-1)\dd y=\boxed{-\frac14}.\]
+
+\section{Solucion Ejercicio 12}
+Las restricciones dan $0\le x\le1$ y $x^2\le y\le1$. Se cumple $y\ge x^2$, pero $y-x$ cambia de signo en $y=x$. Así,
+\[I=\int_0^1\left(\int_{x^2}^{x}(x-y)\dd y+\int_x^1(y-x)\dd y\right)\dd x.\]
+La expresión integrada es $\frac{x^2}{2}-x^3+\frac{x^4}{2}+\frac{(1-x)^2}{2}$; por ello
+\[I=\boxed{\frac{11}{60}}.\]
+
+\section{Solucion Ejercicio 13}
+\textbf{a)} $0\le x\le1$, $x^3\le y\le\sqrt{x}$. Para $0\le y\le1$, $y^2\le x\le y^{1/3}$:
+\[\boxed{\int_0^1\int_{y^2}^{y^{1/3}}f(x,y)\dd x\dd y}.\]
+\textbf{b)} Semicírculo superior de radio $1$:
+\[\boxed{\int_0^1\int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}f(x,y)\dd x\dd y}.\]
+% \textbf{c)} $0\le y\le a$, $a-\sqrt{a^2-y^2}\le x\le a+\sqrt{a^2-y^2}$, recortado por $0\le x\le a$. En este recinto corresponde $0\le x\le a-\sqrt{a^2-y^2}$? No: la condición $y^2\le 2ax-x^2$ exige $x\ge a-\sqrt{a^2-y^2}$. En consecuencia,
+\[\boxed{\int_0^a\int_{a-\sqrt{a^2-y^2}}^a f(x,y)\dd x\dd y}.\]
+\textbf{d)} $0\le x\le2$, $1\le y\le e^x$: de $1\le y\le e^2$ se sigue $\ln y\le x\le2$:
+\[\boxed{\int_1^{e^2}\int_{\ln y}^{2}f(x,y)\dd x\dd y}.\]
+
+\section{Solucion Ejercicio 14}
+Suponemos $a>0$. En polares $x=r\cos\theta$, $y=r\sen\theta$, $\dd A=r\dd r\dd\theta$.
+
+\textbf{a)} Cuarto de disco $0\le r\le a$, $0\le\theta\le\pi/2$:
+\[\int_0^{\pi/2}\int_0^a\sqrt{a^2-r^2}\,r\dd r\dd\theta=\frac\pi2\frac{a^3}{3}=\boxed{\frac{\pi a^3}{6}}.\]
+\textbf{b)} En el mismo cuarto de disco,
+\[\int_0^{\pi/2}\int_0^a r^3\dd r\dd\theta=\boxed{\frac{\pi a^4}{8}}.\]
+\textbf{c)} Cuadrado unidad en primer cuadrante. Tomamos $0\le r\le1/\cos\theta$ para $0\le\theta\le\pi/4$ y $0\le r\le1/\sen\theta$ para $\pi/4\le\theta\le\pi/2$. Integrando radialmente,
+\[I=\frac12\int_0^{\pi/4}(1-e^{-\sec^2\theta})\dd\theta+\frac12\int_{\pi/4}^{\pi/2}(1-e^{-\csc^2\theta})\dd\theta.\]
+\textbf{d)} El disco $(x-a)^2+y^2\le a^2$ sobre el eje $X$ es $0\le\theta\le\pi$, $0\le r\le2a\cos\theta$ cuando $\cos\theta\ge0$; por estar además $y\ge0$, es $0\le\theta\le\pi/2$:
+\[\int_0^{\pi/2}\int_0^{2a\cos\theta}r\dd r\dd\theta=2a^2\int_0^{\pi/2}\cos^2\theta\dd\theta=\boxed{\frac{\pi a^2}{2}}.\]
+
+\section{Solucion Ejercicio 15}
+En la corona $\pi/2\le r\le\pi$ y $0\le\theta\le2\pi$, el integrando es $\sen r/r$. Por tanto,
+\[I=\int_0^{2\pi}\int_{\pi/2}^{\pi}\sen r\dd r\dd\theta=2\pi[-\cos r]_{\pi/2}^{\pi}=\boxed{2\pi}.\]
+
+\section{Solucion Ejercicio 16}
+En el primer cuadrante, la semirregión $(x-1)^2+y^2\le1$, $x\ge1$ se describe por $0\le\theta\le\pi/4$, $\sec\theta\le r\le2\cos\theta$; otra descripción más sencilla usa $x=1+\rho\cos\phi$, $y=\rho\sen\phi$, $0\le\rho\le1$, $0\le\phi\le\pi/2$, pero el denominador queda menos sencillo. En polares con origen inicial,
+\[I=\int_0^{\pi/4}\int_{\sec\theta}^{2\cos\theta}1\dd r\dd\theta=\int_0^{\pi/4}(2\cos\theta-\sec\theta)\dd\theta.\]
+Aplicamos $\int\sec\theta\dd\theta=\ln|\sec\theta+\tg\theta|$:
+\[\boxed{I=\sqrt2-\ln(1+\sqrt2)}.\]
+
+\section{Solucion Ejercicio 17}
+Es la mitad derecha del disco $(x-2)^2+y^2\le1$. Escribimos
+\[\frac{(x-1)^2+y^2}{x-1}=(x-1)+\frac{y^2}{x-1}.\]
+Tras sustituir $t=x-2$, el primer término integra $\pi/2+2/3$. Para el segundo,
+\[\int_2^3\int_{-\sqrt{1-(x-2)^2}}^{\sqrt{1-(x-2)^2}}\frac{y^2}{x-1}\dd y\dd x
+=\frac23\int_0^1\frac{(1-t^2)^{3/2}}{1+t}\dd t.\]
+Como $(1-t^2)^{3/2}/(1+t)=(1-t)\sqrt{1-t^2}$, su integral es
+\[\int_0^1(1-t)\sqrt{1-t^2}\dd t=\frac\pi4-\frac13.\]
+Sumando ambos términos,
+\[\boxed{I=\frac{2\pi}{3}+\frac49}.\]
+
+\section{Solucion Ejercicio 18}
+Sea $u=x+y$, $v=x-y$. Entonces $x=(u+v)/2$, $y=(u-v)/2$, $|J|=1/2$. El paralelogramo pasa a ser $1\le u\le4$, $-1\le v\le1$:
+\[I=\frac12\int_1^4u^2\dd u\int_{-1}^{1}e^v\dd v=\boxed{\frac{21}{2}(e-e^{-1})}.\]
+
+\section{Solucion Ejercicio 19}
+En el primer cuadrante el recinto está limitado por $4\le x^2+y^2\le9$ y $1\le x^2-y^2\le4$. Hacemos $u=x^2+y^2$, $v=x^2-y^2$; su jacobiano satisface $|\partial(u,v)/\partial(x,y)|=8xy$ en el interior. Por tanto,
+\[\iint_R xy\dd x\dd y=\frac18\int_4^9\int_1^4\dd v\dd u=\boxed{\frac{15}{8}}.\]
+
+\section{Solucion Ejercicio 20}
+El cambio $u=xy$, $v=y/x$ convierte el recinto en $1\le u\le2$, $1/2\le v\le2$. Como $x=\sqrt{u/v}$, $y=\sqrt{uv}$, $|J|=1/(2v)$ y $y^3/x=uv^2$,
+\[I=\frac12\int_1^2u\dd u\int_{1/2}^2v\dd v=\boxed{\frac{45}{32}}.\]
+
+\section{Solucion Ejercicio 21}
+Ponemos $u=xy$, $v=x^2-y^2$; al ser $y\ge0$ y $x\ge y$, ambas variables son no negativas y el recinto se transforma en $[0,1]^2$. Además,
+\[\left|\frac{\partial(u,v)}{\partial(x,y)}\right|=2(x^2+y^2),\quad x^3y+xy^3=u(x^2+y^2).\]
+Así, interpretando el borde $u=0$ por límite,
+\[I=\frac12\int_0^1\int_0^1\frac{u}{u+1}v^{u-1}\dd v\dd u=\frac12\int_0^1\frac1{u+1}\dd u=\boxed{\frac{\ln2}{2}}.\]
+
+\section{Solucion Ejercicio 22}
+Las intersecciones son: parábola con el eje $X$ en $x=0,4$, recta con el eje $X$ en $x=2$, y parábola con recta en $x=1,6$. La región que incluye $(3,1)$ queda por encima del eje $X$, a la derecha de la recta y por debajo de la parábola, con $2\le x\le4$; para $1\le x\le2$, queda entre la recta y la parábola. Por tanto,
+\[A=\int_1^2\bigl[(4x-x^2)-(-3x+6)\bigr]\dd x+\int_2^4(4x-x^2)\dd x=\boxed{\frac{15}{2}}.\]
+
+\section{Solucion Ejercicio 23}
+En polares $(x^2+y^2)^2=a^2(x^2-y^2)$ implica $r^2=a^2\cos(2\theta)$, donde $\cos(2\theta)\ge0$. Una hoja ocupa $-\pi/4\le\theta\le\pi/4$; como hay dos hojas,
+\[A=2\cdot\frac12\int_{-\pi/4}^{\pi/4}a^2\cos(2\theta)\dd\theta=\boxed{a^2}.\]
+
+\section{Solucion Ejercicio 24}
+Cada pétalo de $r=\cos(4\theta)$ se recorre para $-\pi/8\le\theta\le\pi/8$ con $r\ge0$. Los cuatro pétalos de esta subcurva y los otros cuatro correspondientes a $r<0$ coinciden por desplazamiento angular $\pi$, porque $\cos(4(\theta+\pi))=\cos(4\theta)$. En realidad $r=\cos(4\theta)$ describe \emph{ocho} pétalos, no cuatro. Su área es
+\[A=8\cdot\frac12\int_{-\pi/8}^{\pi/8}\cos^2(4\theta)\dd\theta=\boxed{\frac\pi4}.\]
+
+\section{Solucion Ejercicio 25}
+La circunferencia $(x-3)^2+y^2=9$ se expresa $r=6\cos\theta$ para $-\pi/2\le\theta\le\pi/2$. Entonces
+\[A=\frac12\int_{-\pi/2}^{\pi/2}(6\cos\theta)^2\dd\theta=\boxed{9\pi}.\]
+
+\section{Solucion Ejercicio 26}
+La cardioide tiene radio $1+\cos\theta$. Para permanecer fuera del círculo $r=1$, necesitamos $\cos\theta\ge0$, es decir, $-\pi/2\le\theta\le\pi/2$. Por tanto,
+\[A=\frac12\int_{-\pi/2}^{\pi/2}\bigl[(1+\cos\theta)^2-1\bigr]\dd\theta=\boxed{2+\frac\pi4}.\]
+
+\section{Solucion Ejercicio 27}
+La curva $(x^2+y^2)^3=xy^3$ equivale a $r^2=\cos\theta\,\sen^3\theta$ para $0\le\theta\le\pi/2$.
+\textbf{a)}
+\[A=\frac12\int_0^{\pi/2}\cos\theta\,\sen^3\theta\dd\theta=\boxed{\frac18}.\]
+\textbf{b)} Como $\sqrt[4]{xy}=r^{1/2}(\cos\theta\sen\theta)^{1/4}$,
+\[I=\int_0^{\pi/2}\int_0^{\sqrt{\cos\theta\sen^3\theta}}r^{3/2}(\cos\theta\sen\theta)^{1/4}\dd r\dd\theta\]
+\[=\frac25\int_0^{\pi/2}\cos^{3/2}\theta\,\sen^4\theta\dd\theta=\boxed{\frac15 B\left(\frac52,\frac54\right)}.\]
+Aquí $B$ es la función beta: $B(p,q)=\int_0^1t^{p-1}(1-t)^{q-1}\dd t$. En concreto, $\int_0^{\pi/2}\sen^m\theta\cos^n\theta\dd\theta=\tfrac12B((m+1)/2,(n+1)/2)$, por lo que la expresión beta indicada es $B(5/2,5/4)/5$.
+
+\section{Solucion Ejercicio 28}
+Para $z=2-x-y$, $z_x=z_y=-1$. La región proyectada es el disco unidad:
+\[S=\iint_{x^2+y^2\le1}\sqrt{1+(-1)^2+(-1)^2}\dd A=\boxed{\pi\sqrt3}.\]
+
+\section{Solucion Ejercicio 29}
+Para $z=1+x^2+y^2$, $z_x=2x$, $z_y=2y$. Usando polares,
+\[S=2\pi\int_0^1r\sqrt{1+4r^2}\dd r=\frac\pi6[(1+4r^2)^{3/2}]_0^1=\boxed{\frac\pi6(5\sqrt5-1)}.\]
+
+\section{Solucion Ejercicio 30}
+Para la cicloide $x(t)=t-\sen t$, $y(t)=1-\cos t$, $t\in[0,2\pi]$, $x'(t)=1-\cos t\ge0$. Su área respecto del eje $X$ es
+\[A=\int_0^{2\pi}y(t)x'(t)\dd t=\int_0^{2\pi}(1-\cos t)^2\dd t=\boxed{3\pi}.\]
+
+\section{Solucion Ejercicio 31}
+La curva corta el eje $X$ en $t=0,2$ y $y(t)=2t-t^2\ge0$ entre ellos. Como $x'(t)=2t\ge0$,
+\[A=\int_0^2(2t-t^2)2t\dd t=\left[\frac{4t^3}{3}-\frac{t^4}2\right]_0^2=\boxed{\frac83}.\]
+
+\section{Solucion Ejercicio 32}
+La semiesfera superior es $z=\sqrt{R^2-x^2-y^2}$. Su elemento de área es
+\[\sqrt{1+z_x^2+z_y^2}\dd A=\frac{R}{\sqrt{R^2-r^2}}\,r\dd r\dd\theta.\]
+Luego $S_{\text{hemisferio}}=2\pi R\int_0^R\frac{r}{\sqrt{R^2-r^2}}\dd r=2\pi R^2$. Duplicando,
+\[\boxed{S=4\pi R^2}.\]
+
+\section{Solucion Ejercicio 33}
+El recinto bajo $z=e^{-x^2}$ está dado por $0\le x\le1$, $0\le y\le x$. Luego
+\[V=\int_0^1\int_0^x e^{-x^2}\dd y\dd x=\int_0^1xe^{-x^2}\dd x=\boxed{\frac{1-e^{-1}}2}.\]
+
+\section{Solucion Ejercicio 34}
+Las superficies son $z_1=2x^2+y^2$ y $z_2=4-y^2$. Su intersección proyecta el disco $x^2+y^2\le2$. La altura es $z_2-z_1=4-2(x^2+y^2)$ y
+\[V=2\pi\int_0^{\sqrt2}(4-2r^2)r\dd r=\boxed{4\pi}.\]
+
+\section{Solucion Ejercicio 35}
+El cilindro $(x-1)^2+y^2\le1$ determina el disco $D$; en todo él, $x^2+y^2\le4$, por lo que $4-x^2-y^2\ge0$. Tras trasladar $u=x-1$, $v=y$,
+\[V=\iint_{u^2+v^2\le1}\bigl(4-(u+1)^2-v^2\bigr)\dd u\dd v.\]
+El término lineal se anula por simetría y $\iint_D(u^2+v^2)\dd A=\pi/2$. Entonces
+\[V=3\pi-\frac\pi2=\boxed{\frac{5\pi}{2}}.\]
+
+\section{Solucion Ejercicio 36}
+El sólido tiene altura $|xy|/4$ sobre el disco $x^2+y^2\le4x$. En polares $-\pi/2\le\theta\le\pi/2$ y $0\le r\le4\cos\theta$. Luego
+\[V=\frac14\int_{-\pi/2}^{\pi/2}\int_0^{4\cos\theta}r^3\cos\theta|\sen\theta|\dd r\dd\theta\]
+\[=16\int_{-\pi/2}^{\pi/2}\cos^5\theta|\sen\theta|\dd\theta=32\int_0^{\pi/2}\cos^5\theta\sen\theta\dd\theta=\boxed{\frac{16}{3}}.\]
+
+\section{Solucion Ejercicio 37}
+La temperatura es $T(x,y)=k\sqrt{x^2+y^2}$. Como $T(1,0)=100$, $k=100$. El disco tiene área $25\pi$; de ahí
+\[T_{\text{media}}=\frac1{25\pi}\int_0^{2\pi}\int_0^5 100r^2\dd r\dd\theta=\boxed{\frac{1000}{3}\,{}^\circ\mathrm C}.\]
+
+\section{Solucion Ejercicio 38}
+El recinto está dado por $0\le x\le\pi/4$, $\sen x\le y\le\cos x$, con densidad $\mu=y$. La masa es
+\[m=\int_0^{\pi/4}\int_{\sen x}^{\cos x}y\dd y\dd x=\frac12\int_0^{\pi/4}\cos(2x)\dd x=\frac14.\]
+Los momentos respecto de los ejes son
+\[M_y=\frac12\int_0^{\pi/4}x\cos(2x)\dd x=\frac\pi{16}-\frac18,\]
+\[M_x=\frac13\int_0^{\pi/4}(\cos^3x-\sen^3x)\dd x=\frac{5\sqrt2}{18}-\frac29.\]
+Así,
+\[\boxed{(\bar x,\bar y)=\left(\frac\pi4-\frac12,\frac{10\sqrt2-8}{9}\right)}.\]
+
+\section{Solucion Ejercicio 39}
+El semidisco elíptico superior cumple $-2\le x\le2$, $0\le y\le4\sqrt{1-x^2/4}$, con $\mu=|x|y$. Por simetría respecto al eje $Y$, $\bar x=0$. La masa y el momento sobre el eje $X$ son
+\[m=2\int_0^2\int_0^{4\sqrt{1-x^2/4}}xy\dd y\dd x=16,\]
+\[M_x=2\int_0^2\int_0^{4\sqrt{1-x^2/4}}xy^2\dd y\dd x=\frac{512}{15}.\]
+Luego
+\[\boxed{(\bar x,\bar y)=\left(0,\frac{32}{15}\right)}.\]
+
+\section{Solucion Ejercicio 40}
+El semidisco derecho se describe por $0\le r\le3$, $-\pi/2\le\theta\le\pi/2$; la densidad es $\mu=r^2$. Por simetría $\bar y=0$. Su masa y momento en relación con el eje $Y$ son
+\[m=\int_{-\pi/2}^{\pi/2}\int_0^3r^3\dd r\dd\theta=\frac{81\pi}{4},\]
+\[M_y=\int_{-\pi/2}^{\pi/2}\int_0^3r^4\cos\theta\dd r\dd\theta=\frac{486}{5}.\]
+Por tanto,
+\[\boxed{(\bar x,\bar y)=\left(\frac{24}{5\pi},0\right)}.\]
+
+\section{Solucion Ejercicio 41}
+La integral es impropia en la circunferencia $r=1$. En coordenadas polares,
+\[I=\lim_{b\to1^-}\int_0^{2\pi}\int_0^b\frac{r}{\sqrt{1-r^2}}\dd r\dd\theta=2\pi\lim_{b\to1^-}\left(1-\sqrt{1-b^2}\right)=\boxed{2\pi}.\]
+
+\section{Solucion Ejercicio 42}
+El recinto $x\ge0$, $y\ge x^2$, $y\ge1$ no está acotado. En polares, $x=r\cos\theta$, $y=r\sen\theta$. Las condiciones se convierten en
+\[\frac\pi4\le\theta\le\frac\pi2,\qquad \frac1{\sen\theta}\le r\le\frac{\sen\theta}{\cos^2\theta}.\]
+El integrando con el jacobiano es $\cos\theta\sen^2\theta/r^2$. Así,
+\[I=\int_{\pi/4}^{\pi/2}\cos\theta\sen^2\theta\left(\sen\theta-\frac{\cos^2\theta}{\sen\theta}\right)\dd\theta\]
+\[=\int_{\pi/4}^{\pi/2}(\cos\theta\sen^3\theta-\cos^3\theta\sen\theta)\dd\theta=\boxed{\frac18}.\]
+
+\section{Solucion Ejercicio 43}
+En $0\le y\le x\le1$, el denominador se anula sobre la frontera $y=x$. Como $1/(x-y)\ge0$, podemos examinar una integral iterada:
+\[I=\int_0^1\left(\lim_{\varepsilon\to0^+}\int_0^{x-\varepsilon}\frac{1}{x-y}\dd y\right)\dd x.\]
+Para $x>0$,
+\[\int_0^{x-\varepsilon}\frac{1}{x-y}\dd y=\ln x-\ln\varepsilon\xrightarrow[\varepsilon\to0^+]{}+\infty.\]
+Así, $\boxed{\text{la integral es divergente }(+\infty)}$.
+
+\section{Solucion Ejercicio 44}
+La superficie es $z=-\ln\sqrt{x^2+y^2}=-\ln r$. Para que $z\ge0$ se necesita $0<r\le1$. El volumen es la integral impropia
+\[V=\lim_{\varepsilon\to0^+}\int_0^{2\pi}\int_\varepsilon^1(-\ln r)r\dd r\dd\theta.\]
+Por integración por partes,
+\[\int-r\ln r\dd r=-\frac{r^2}{2}\ln r+\frac{r^2}{4}.\]
+Dado que $r^2\ln r\to0$ cuando $r\to0^+$, se obtiene
+\[\boxed{V=\frac\pi2}.\]
+
+\section{Solucion Ejercicio 45}
+Sea $I=\int_0^\infty e^{-x^2}\dd x$. Por positividad de la función, Tonelli permite escribir
+\[I^2=\int_0^\infty\int_0^\infty e^{-(x^2+y^2)}\dd x\dd y.\]
+Pasando a polares sobre el primer cuadrante,
+\[I^2=\int_0^{\pi/2}\int_0^\infty e^{-r^2}r\dd r\dd\theta=\frac\pi2\cdot\frac12=\frac\pi4.\]
+Como $I>0$,
+\[\boxed{\int_0^\infty e^{-x^2}\dd x=\frac{\sqrt\pi}{2}}.\]
+
+\section{Solucion Ejercicio 46}
+Definimos la integral doble no negativa
+\[J=\int_0^1\int_0^1\frac{1}{1-x^2y^2}\dd x\dd y.\]
+Para $0\le xy<1$, la serie geométrica permite escribir
+\[\frac1{1-x^2y^2}=\sum_{n=0}^\infty x^{2n}y^{2n}.\]
+Por el teorema de convergencia monótona, intercambiamos suma e integral:
+\[J=\sum_{n=0}^\infty\left(\int_0^1x^{2n}\dd x\right)^2=\sum_{n=0}^\infty\frac1{(2n+1)^2}.\]
+Para calcular $J$, efectuamos el cambio de variables
+\[x=\frac{\sen u}{\cos v},\qquad y=\frac{\sen v}{\cos u}.\]
+El cuadrado $[0,1]^2$ se transforma en el triángulo $T=\{(u,v):u\ge0,\ v\ge0,\ u+v\le\pi/2\}$. Calculando las derivadas, se verifica
+\[\left|\frac{\partial(x,y)}{\partial(u,v)}\right|=1-x^2y^2.\]
+Por ello, el jacobiano cancela el denominador:
+\[J=\iint_T1\dd u\dd v=\frac12\left(\frac\pi2\right)^2=\frac{\pi^2}{8}.\]
+Ahora separamos los términos pares e impares de $S=\sum_{n=1}^\infty1/n^2$:
+\[S=\sum_{n=0}^\infty\frac1{(2n+1)^2}+\sum_{n=1}^\infty\frac1{(2n)^2}=J+\frac14 S.\]
+De esta igualdad se sigue $\frac34S=\pi^2/8$ y, por tanto,
+\[\boxed{\displaystyle\sum_{n=1}^\infty\frac1{n^2}=\frac{\pi^2}{6}}.\]
+\end{document}

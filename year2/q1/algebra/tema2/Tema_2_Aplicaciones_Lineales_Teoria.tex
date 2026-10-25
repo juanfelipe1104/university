@@ -1,0 +1,810 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\rg}{\operatorname{rg}}
+\newcommand{\Span}{\operatorname{L}}
+\newcommand{\Mat}{\operatorname{M}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\an}{\operatorname{an}}
+
+\begin{document}
+
+\begin{center}
+	{\LARGE\bfseries Álgebra Lineal}\\[0.4em]
+	{\Large Tema 2: Aplicaciones Lineales}
+\end{center}
+
+\tableofcontents
+\newpage
+
+\section{Definición y propiedades}
+
+Sean $V$ y $W$ espacios vectoriales sobre el mismo cuerpo $\K$.
+
+Una aplicación:
+
+\[
+f:V\longrightarrow W
+\]
+
+es lineal, o un homomorfismo, si:
+
+\[
+f(u+v)=f(u)+f(v)
+\]
+
+y:
+
+\[
+f(\alpha u)=\alpha f(u)
+\]
+
+para todo $u,v\in V$ y $\alpha\in\K$.
+
+Equivalentemente:
+
+\[
+\boxed{
+f(\alpha u+\beta v)
+=
+\alpha f(u)+\beta f(v)
+}
+\]
+
+para todo $\alpha,\beta\in\K$ y $u,v\in V$.
+
+\subsection{Propiedades}
+
+Toda aplicación lineal verifica:
+
+\[
+f(0)=0
+\]
+
+\[
+f(-u)=-f(u)
+\]
+
+Si $S\leq V$, entonces:
+
+\[
+f(S)\leq W
+\]
+
+Si:
+
+\[
+S=\Span\{u_1,\ldots,u_n\}
+\]
+
+entonces:
+
+\[
+f(S)
+=
+\Span\{f(u_1),\ldots,f(u_n)\}
+\]
+
+Si $T\leq W$, entonces:
+
+\[
+f^{-1}(T)\leq V
+\]
+
+Las aplicaciones lineales conservan la dependencia lineal:
+
+\[
+\{u_1,\ldots,u_n\}
+\text{ l.d.}
+\Longrightarrow
+\{f(u_1),\ldots,f(u_n)\}
+\text{ l.d.}
+\]
+
+En cambio, no conservan necesariamente la independencia lineal.
+
+\section{Núcleo e imagen}
+
+\subsection{Núcleo}
+
+El núcleo de una aplicación lineal:
+
+\[
+f:V\longrightarrow W
+\]
+
+es:
+
+\[
+\boxed{
+\Ker f
+=
+\{x\in V:f(x)=0_W\}
+=
+f^{-1}(0_W)
+}
+\]
+
+El núcleo es un subespacio vectorial de $V$.
+
+Además:
+
+\[
+\boxed{
+f\text{ es inyectiva}
+\iff
+\Ker f=\{0\}
+}
+\]
+
+\subsection{Imagen}
+
+La imagen de $f$ es:
+
+\[
+\boxed{
+\Ima f
+=
+\{y\in W:
+\exists x\in V,\ f(x)=y
+\}
+}
+\]
+
+La imagen es un subespacio vectorial de $W$.
+
+Si $B=\{v_1,\ldots,v_n\}$ es una base de $V$:
+
+\[
+\Ima f
+=
+\Span\{f(v_1),\ldots,f(v_n)\}
+\]
+
+\subsection{Rango}
+
+El rango de una aplicación lineal es:
+
+\[
+\boxed{
+\rg f=\dim(\Ima f)
+}
+\]
+
+Si $V$ es de dimensión finita:
+
+\[
+\boxed{
+\dim(\Ker f)+\dim(\Ima f)=\dim V
+}
+\]
+
+Esta igualdad permite relacionar directamente núcleo, imagen e inyectividad.
+
+\section{Clasificación de aplicaciones lineales}
+
+Una aplicación lineal $f:V\to W$ puede clasificarse como:
+
+\begin{itemize}
+	\item \textbf{Endomorfismo}: si $V=W$.
+	\item \textbf{Monomorfismo}: si es inyectiva.
+	\item \textbf{Epimorfismo}: si es suprayectiva.
+	\item \textbf{Isomorfismo}: si es biyectiva.
+	\item \textbf{Automorfismo}: si es un endomorfismo biyectivo.
+\end{itemize}
+
+Se cumple:
+
+\[
+f\text{ inyectiva}
+\iff
+\Ker f=\{0\}
+\]
+
+\[
+f\text{ suprayectiva}
+\iff
+\Ima f=W
+\]
+
+Si $V$ tiene dimensión finita:
+
+\[
+f\text{ inyectiva}
+\iff
+\dim V=\dim(\Ima f)
+\]
+
+Si $V$ y $W$ tienen la misma dimensión finita:
+
+\[
+f\text{ inyectiva}
+\iff
+f\text{ suprayectiva}
+\iff
+f\text{ biyectiva}
+\]
+
+\subsection{Isomorfismos}
+
+Dos espacios vectoriales de dimensión finita son isomorfos si y sólo si tienen la misma dimensión.
+
+Si:
+
+\[
+f:V\longrightarrow W
+\]
+
+es un isomorfismo, entonces:
+
+\[
+f^{-1}:W\longrightarrow V
+\]
+
+también es un isomorfismo.
+
+\section{Espacio vectorial de aplicaciones lineales}
+
+El conjunto de todas las aplicaciones lineales de $U$ en $V$ se denota:
+
+\[
+L(U,V)
+\]
+
+La suma se define mediante:
+
+\[
+(f+g)(u)=f(u)+g(u)
+\]
+
+y el producto por escalares:
+
+\[
+(\alpha f)(u)=\alpha f(u)
+\]
+
+Con estas operaciones:
+
+\[
+\boxed{
+L(U,V)
+\text{ es un espacio vectorial}
+}
+\]
+
+Si:
+
+\[
+\dim U=n,
+\qquad
+\dim V=m
+\]
+
+entonces:
+
+\[
+\boxed{
+\dim L(U,V)=mn
+}
+\]
+
+\subsection{Composición}
+
+Si:
+
+\[
+f:U\longrightarrow V,
+\qquad
+h:V\longrightarrow W
+\]
+
+la composición:
+
+\[
+h\circ f:U\longrightarrow W
+\]
+
+viene dada por:
+
+\[
+(h\circ f)(u)=h(f(u))
+\]
+
+y también es lineal.
+
+\section{Aplicaciones lineales y matrices}
+
+Sean:
+
+\[
+B=\{e_1,\ldots,e_n\}
+\]
+
+una base de $V$ y:
+
+\[
+B'=\{u_1,\ldots,u_m\}
+\]
+
+una base de $W$.
+
+Si:
+
+\[
+f(e_j)
+=
+a_{1j}u_1+\cdots+a_{mj}u_m
+\]
+
+la matriz asociada a $f$ en las bases $B$ y $B'$ es:
+
+\[
+\boxed{
+M_{B,B'}(f)
+=
+\begin{pmatrix}
+|&&|\\
+[f(e_1)]_{B'}&\cdots&[f(e_n)]_{B'}\\
+|&&|
+\end{pmatrix}
+}
+\]
+
+Tiene dimensión:
+
+\[
+m\times n
+\]
+
+y transforma coordenadas según:
+
+\[
+\boxed{
+[f(x)]_{B'}
+=
+M_{B,B'}(f)[x]_B
+}
+\]
+
+La columna $j$ contiene las coordenadas de $f(e_j)$ en la base $B'$.
+
+Además:
+
+\[
+\boxed{
+\rg M_{B,B'}(f)=\dim(\Ima f)
+}
+\]
+
+Por tanto:
+
+\[
+f\text{ inyectiva}
+\iff
+\rg M_{B,B'}(f)=n
+\]
+
+\[
+f\text{ suprayectiva}
+\iff
+\rg M_{B,B'}(f)=m
+\]
+
+y:
+
+\[
+f\text{ isomorfismo}
+\iff
+M_{B,B'}(f)
+\text{ es cuadrada y regular}
+\]
+
+\subsection{Operaciones con matrices asociadas}
+
+\[
+M_{B,B'}(f+g)
+=
+M_{B,B'}(f)+M_{B,B'}(g)
+\]
+
+\[
+M_{B,B'}(\alpha f)
+=
+\alpha M_{B,B'}(f)
+\]
+
+Si:
+
+\[
+f:U\to V,
+\qquad
+h:V\to W
+\]
+
+entonces:
+
+\[
+\boxed{
+M_{B,B''}(h\circ f)
+=
+M_{B',B''}(h)
+M_{B,B'}(f)
+}
+\]
+
+\section{Cambio de base}
+
+Sean $A,A'$ bases de $U$ y $B,B'$ bases de $V$.
+
+La matriz de una misma aplicación lineal en las nuevas bases viene dada por:
+
+\[
+\boxed{
+M_{A',B'}(f)
+=
+M_{B,B'}
+M_{A,B}(f)
+M_{A',A}
+}
+\]
+
+donde:
+
+\[
+M_{A',A}
+\]
+
+transforma coordenadas de $A'$ a $A$, y:
+
+\[
+M_{B,B'}
+\]
+
+transforma coordenadas de $B$ a $B'$.
+
+\subsection{Endomorfismos}
+
+Si $f:V\to V$ es un endomorfismo y $B,B'$ son dos bases de $V$:
+
+\[
+M_{B'}(f)
+=
+M_{B,B'}M_B(f)M_{B',B}
+\]
+
+Como:
+
+\[
+M_{B,B'}=M_{B',B}^{-1}
+\]
+
+si llamamos:
+
+\[
+P=M_{B',B}
+\]
+
+entonces:
+
+\[
+\boxed{
+M_{B'}(f)
+=
+P^{-1}M_B(f)P
+}
+\]
+
+Las matrices de un mismo endomorfismo en bases distintas son matrices semejantes.
+
+\section{Matrices equivalentes, congruentes y semejantes}
+
+\subsection{Matrices equivalentes}
+
+Dos matrices $A,B\in M_{m\times n}(\K)$ son equivalentes si existen matrices regulares $P$ y $Q$ tales que:
+
+\[
+B=Q^{-1}AP
+\]
+
+Representan una misma aplicación lineal en bases diferentes y tienen el mismo rango:
+
+\[
+\boxed{
+\rg A=\rg B
+}
+\]
+
+\subsection{Matrices congruentes}
+
+Dos matrices cuadradas $A$ y $B$ son congruentes si existe una matriz regular $P$ tal que:
+
+\[
+\boxed{
+A=P^tBP
+}
+\]
+
+Las matrices congruentes tienen el mismo rango.
+
+\subsection{Matrices semejantes}
+
+Dos matrices cuadradas $A$ y $B$ son semejantes si existe una matriz regular $P$ tal que:
+
+\[
+\boxed{
+B=P^{-1}AP
+}
+\]
+
+Representan un mismo endomorfismo en bases distintas.
+
+\section{Descomposición canónica}
+
+Sea:
+
+\[
+f:U\longrightarrow V
+\]
+
+una aplicación lineal.
+
+El primer teorema de isomorfía establece:
+
+\[
+\boxed{
+U/\Ker f
+\cong
+\Ima f
+}
+\]
+
+mediante:
+
+\[
+\widetilde f:
+U/\Ker f
+\longrightarrow
+\Ima f
+\]
+
+\[
+\widetilde f(u+\Ker f)=f(u)
+\]
+
+La aplicación $f$ puede descomponerse como:
+
+\[
+U
+\xrightarrow{\pi}
+U/\Ker f
+\xrightarrow{\widetilde f}
+\Ima f
+\xrightarrow{i}
+V
+\]
+
+donde:
+
+\[
+\pi(u)=u+\Ker f
+\]
+
+es la proyección canónica,
+
+\[
+\widetilde f
+\]
+
+es un isomorfismo, e:
+
+\[
+i:\Ima f\hookrightarrow V
+\]
+
+es la inclusión.
+
+Por tanto:
+
+\[
+\boxed{
+f=i\circ\widetilde f\circ\pi
+}
+\]
+
+Toda aplicación lineal puede expresarse como composición de un epimorfismo, un isomorfismo y un monomorfismo.
+
+\section{Espacio dual y formas lineales}
+
+Una forma lineal sobre $V$ es una aplicación lineal:
+
+\[
+f:V\longrightarrow\K
+\]
+
+El espacio dual de $V$ es:
+
+\[
+\boxed{
+V^*=L(V,\K)
+}
+\]
+
+Si:
+
+\[
+B=\{v_1,\ldots,v_n\}
+\]
+
+es una base de $V$, la matriz de una forma lineal $f$ es una matriz fila:
+
+\[
+\boxed{
+M_B(f)
+=
+\begin{pmatrix}
+f(v_1)&\cdots&f(v_n)
+\end{pmatrix}
+}
+\]
+
+Si $\dim V=n$:
+
+\[
+\boxed{
+\dim V^*=n
+}
+\]
+
+\section{Base dual}
+
+Sea:
+
+\[
+B=\{v_1,\ldots,v_n\}
+\]
+
+una base de $V$.
+
+Su base dual:
+
+\[
+B^*=
+\{\varphi_1,\ldots,\varphi_n\}
+\]
+
+se caracteriza por:
+
+\[
+\boxed{
+\varphi_i(v_j)=\delta_{ij}
+}
+\]
+
+donde:
+
+\[
+\delta_{ij}
+=
+\begin{cases}
+1, & i=j\\
+0, & i\neq j
+\end{cases}
+\]
+
+Además, si:
+
+\[
+[x]_B=(x_1,\ldots,x_n)
+\]
+
+entonces:
+
+\[
+\boxed{
+x_i=\varphi_i(x)
+}
+\]
+
+Si los vectores de $B$ escritos por columnas forman la matriz $A$, las formas lineales de la base dual vienen dadas por las filas de:
+
+\[
+\boxed{
+A^{-1}
+}
+\]
+
+\section{Anulador de un subespacio}
+
+Sea $S\leq V$.
+
+El anulador de $S$ es:
+
+\[
+\boxed{
+\an(S)
+=
+\{
+f\in V^*:
+f(v)=0
+\quad
+\forall v\in S
+\}
+}
+\]
+
+También se denomina subespacio ortogonal a $S$.
+
+Se cumple:
+
+\[
+\an(S)\leq V^*
+\]
+
+y:
+
+\[
+\an(S)=\an(\Span(S))
+\]
+
+por lo que basta imponer que una forma lineal anule a un sistema generador de $S$.
+
+\section{Aplicación lineal traspuesta}
+
+Sea:
+
+\[
+f:V\longrightarrow V'
+\]
+
+una aplicación lineal.
+
+Se define su traspuesta:
+
+\[
+f^t:(V')^*\longrightarrow V^*
+\]
+
+mediante:
+
+\[
+\boxed{
+f^t(\varphi)
+=
+\varphi\circ f
+}
+\]
+
+Si la matriz de $f$ en unas bases es:
+
+\[
+A=M_{B,B'}(f)
+\]
+
+entonces la matriz de la aplicación traspuesta en las bases duales correspondientes es:
+
+\[
+\boxed{
+M_{(B')^*,B^*}(f^t)
+=
+A^t
+}
+\]
+
+\end{document}

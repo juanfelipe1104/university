@@ -1,0 +1,829 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\rg}{\operatorname{rg}}
+\newcommand{\Span}{\operatorname{L}}
+\newcommand{\Mat}{\operatorname{M}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\an}{\operatorname{an}}
+
+\begin{document}
+
+\begin{center}
+	{\LARGE\bfseries Álgebra Lineal}\\[0.4em]
+	{\Large Tema 2: Aplicaciones Lineales --- Ejercicios}
+\end{center}
+
+\section{Ejercicio 1}
+Estudiar si es lineal:
+
+\[
+f:\R^3\longrightarrow\R^4
+\]
+
+\[
+f(x_1,x_2,x_3)
+=
+(x_3,x_1+x_2,0,-x_3)
+\]
+
+\section{Ejercicio 2}
+Estudiar si es lineal:
+
+\[
+f:\R^3\longrightarrow\R^2
+\]
+
+\[
+f(x,y,z)=(x+a,y)
+\]
+
+\section{Ejercicio 3}
+Estudiar si es lineal:
+
+\[
+f:\R^3\longrightarrow M_{2\times2}(\R)
+\]
+
+\[
+f(x,y,z)
+=
+\begin{pmatrix}
+ax&by\\
+cz&x+y+z
+\end{pmatrix},
+\qquad
+a,b,c\in\R
+\]
+
+\section{Ejercicio 4}
+Dado el endomorfismo de $\R^3$:
+
+\[
+f(x_1,x_2,x_3)
+=
+(x_1+x_2+x_3,\;x_1+x_2-x_3,\;x_3)
+\]
+
+obtener:
+
+\begin{enumerate}[label=\alph*)]
+	\item $\Ker f$.
+	\item $\Ima f$.
+	\item $f(V)$, siendo:
+	\[
+	V=
+	\{(x_1,x_2,x_3)\in\R^3:x_1+x_2+x_3=0\}
+	\]
+\end{enumerate}
+
+\section{Ejercicio 5}
+Dada:
+
+\[
+f:\R^3\longrightarrow\R^2
+\]
+
+definida por:
+
+\[
+f(x_1,x_2,x_3)
+=
+(x_1+2x_2+3x_3,\;2x_1+4x_2+6x_3)
+\]
+
+obtener:
+
+\begin{enumerate}[label=\alph*)]
+	\item $\Ker f$.
+	\item $\Ima f$.
+	\item Comprobar sus dimensiones.
+\end{enumerate}
+
+\section{Ejercicio 6}
+Determinar $\Ker f$ e $\Ima f$ del endomorfismo:
+
+\[
+f:\R^3\longrightarrow\R^3
+\]
+
+\[
+f(x_1,x_2,x_3)
+=
+(x_3,x_1+x_2,-x_3)
+\]
+
+y calcular:
+
+\[
+f^{-1}(0,0,0),
+\qquad
+f^{-1}(1,2,3),
+\qquad
+f^{-1}(1,0,-1)
+\]
+
+\section{Ejercicio 7}
+Dada la aplicación lineal:
+
+\[
+f:\mathcal{P}_2(x)\longrightarrow\mathcal{P}_2(x)
+\]
+
+tal que:
+
+\[
+f(1+x^2)=3+2x^2
+\]
+
+\[
+f(x)=1+x+2x^2
+\]
+
+\[
+f(3+x)=-1
+\]
+
+determinar la imagen del polinomio:
+
+\[
+1-x+5x^2
+\]
+
+\section{Ejercicio 8}
+Sean:
+
+\[
+B=\{u_1,u_2\}
+\]
+
+y:
+
+\[
+B'=\{v_1,v_2,v_3\}
+\]
+
+bases de $U$ y $V$, respectivamente. Si $g:U\to V$ es lineal y:
+
+\[
+g(3u_1-2u_2)=3v_1+6v_2-3v_3
+\]
+
+\[
+g(4u_1-3u_2)=v_1+5v_2-v_3
+\]
+
+obtener:
+
+\[
+M_{B,B'}(g)
+\]
+
+y clasificar el homomorfismo.
+
+\section{Ejercicio 9}
+Sea:
+
+\[
+f:\R^3\longrightarrow\R^2
+\]
+
+\[
+f(x_1,x_2,x_3)
+=
+(x_1+3x_2+5x_3,\;2x_1+2x_2+7x_3)
+\]
+
+Calcular la matriz asociada a $f$ en las bases:
+
+\[
+A'=
+\{(1,1,1),(1,1,0),(0,1,1)\}
+\]
+
+\[
+B'=
+\{(1,1),(4,3)\}
+\]
+
+\section{Ejercicio 10}
+Sean:
+
+\[
+A'=\{u_1,u_2,u_3\}
+\]
+
+una base de $U$ y:
+
+\[
+B'=\{v_1,v_2\}
+\]
+
+una base de $V$. Sea $f:U\to V$ definida por:
+
+\[
+f(u_1+3u_2+2u_3)=v_1+3v_2
+\]
+
+\[
+f(u_2+u_3)=-v_1+v_2
+\]
+
+\[
+f(u_1+u_3)=4v_1+2v_2
+\]
+
+Calcular:
+
+\[
+M_{A',B'}(f)
+\]
+
+\section{Ejercicio 11}
+Sea $C$ la base canónica de $\R^3$ y:
+
+\[
+C'=
+\{(1,1,0),(1,0,1),(0,-1,2)\}
+\]
+
+Si $f$ es un endomorfismo cuya matriz respecto de la base canónica es:
+
+\[
+M_C(f)=
+\begin{pmatrix}
+1&0&0\\
+1&0&-1\\
+-2&2&3
+\end{pmatrix}
+\]
+
+calcular la matriz de $f$ en la base $C'$.
+
+\section{Ejercicio 12}
+Sea:
+
+\[
+f:\R^3\longrightarrow\R^3
+\]
+
+lineal. Consideramos:
+
+\[
+S=
+\{(x,y,z)\in\R^3:x+y+z=0\}
+\]
+
+y se sabe que:
+
+\[
+f(v)=v
+\qquad
+\forall v\in S
+\]
+
+y:
+
+\[
+\Ker f=
+\{w\in\R^3:w^tv=0\quad\forall v\in S\}
+\]
+
+Se pide:
+
+\begin{enumerate}[label=\alph*)]
+	\item Determinar $M_{B,B_c}(f)$, donde:
+	\[
+	B=\{(1,0,-1),(0,1,-1),(1,1,1)\}
+	\]
+	\item Dar la expresión analítica de $f(x,y,z)$ en bases canónicas.
+	\item Calcular $f^{-1}(W)$, siendo:
+	\[
+	W=\{(x,y,z)\in\R^3:y=z=0\}
+	\]
+	\item Razonar las dimensiones de $\Ker f$ e $\Ima f$ y clasificar $f$.
+\end{enumerate}
+
+\section{Ejercicio 13}
+Sea:
+
+\[
+f:\R^3\longrightarrow\R^2
+\]
+
+con:
+
+\[
+M_{B_c,B_c}(f)
+=
+\begin{pmatrix}
+3&0&-2\\
+-1&4&5
+\end{pmatrix}
+\]
+
+Calcular la matriz asociada a $f$ en las bases:
+
+\[
+B=
+\{(1,3,0),(1,0,2),(0,4,-2)\}
+\]
+
+\[
+B'=
+\{(2,1),(4,3)\}
+\]
+
+\section{Ejercicio 14}
+Sea $S_2$ el espacio de matrices simétricas de orden $2$ y:
+
+\[
+B_1=
+\left\{
+\begin{pmatrix}1&0\\0&0\end{pmatrix},
+\begin{pmatrix}0&1\\1&0\end{pmatrix},
+\begin{pmatrix}0&0\\0&1\end{pmatrix}
+\right\}
+\]
+
+su base canónica. Sea $B_2$ la base canónica de $\R^3$.
+
+Sean:
+
+\[
+f:S_2\longrightarrow\R^3,
+\qquad
+g:\R^3\longrightarrow S_2
+\]
+
+aplicaciones lineales tales que:
+
+\[
+\Ker f=
+\{(x,y,z)_{B_1}:x-y+2z=0\}
+\]
+
+y:
+
+\[
+(g\circ f)
+\begin{pmatrix}
+1&1\\
+1&1
+\end{pmatrix}
+=
+\begin{pmatrix}
+-1&0\\
+0&2
+\end{pmatrix}
+\]
+
+Sea:
+
+\[
+h=g\circ f
+\]
+
+Se pide:
+
+\begin{enumerate}[label=\alph*)]
+	\item Calcular la matriz de $h$ en la base $B_1$.
+	\item Obtener una base de $h(W)$, donde:
+	\[
+	W=
+	\left\{
+	\begin{pmatrix}
+	x&y\\
+	y&z
+	\end{pmatrix}:
+	\begin{array}{rcl}
+	x-2y+3z&=&0\\
+	3x-7y+7z&=&0\\
+	5x-11y+13z&=&0
+	\end{array}
+	\right\}
+	\]
+	\item Si:
+	\[
+	B'=
+	\left\{
+	\begin{pmatrix}1&0\\0&2\end{pmatrix},
+	\begin{pmatrix}0&1\\1&-1\end{pmatrix},
+	\begin{pmatrix}-3&1\\1&1\end{pmatrix}
+	\right\}
+	\]
+	es otra base de $S_2$, obtener la matriz de $h$ en $B'$.
+	\item Razonar si:
+	\[
+	x+2y+3z=0,
+	\qquad
+	y-4z=0
+	\]
+	pueden ser ecuaciones implícitas en $B_1$ del subespacio $\Ima g$.
+\end{enumerate}
+
+\section{Ejercicio 15}
+Dada la base:
+
+\[
+B=
+\{(1,1,1),(1,1,0),(1,0,0)\}
+\]
+
+de $\R^3$, obtener la base dual.
+
+\section{Ejercicio 16}
+Sea:
+
+\[
+B=
+\{v_1=(1,2),v_2=(3,1)\}
+\]
+
+una base de $\R^2$ y:
+
+\[
+B^*=\{v_1^*,v_2^*\}
+\]
+
+su base dual. Sea la forma lineal:
+
+\[
+f=3v_1^*+4v_2^*
+\]
+
+Determinar $f(x_1,x_2)$ para un vector cualquiera de $\R^2$.
+
+\section{Ejercicio 17}
+Sea:
+
+\[
+f_\beta:\mathcal{P}_2(x)\longrightarrow M_{2\times2}(\R)
+\]
+
+definida por:
+
+\[
+f_\beta(p)
+=
+\begin{pmatrix}
+\beta p(1)&p'(1)\\
+p''(1)&p'''(1)
+\end{pmatrix}
+\]
+
+Se consideran las bases:
+
+\[
+B_1=\{1,x,x^2\}
+\]
+
+y la base canónica $B_2$ de $M_{2\times2}(\R)$.
+
+Se pide:
+
+\begin{enumerate}[label=\alph*)]
+	\item Obtener $M_{B_1,B_2}(f_\beta)$.
+	\item Calcular $\dim(\Ima f_\beta)$ y $\dim(\Ker f_\beta)$ según $\beta$.
+	\item Para el caso no inyectivo, obtener ecuaciones paramétricas de $\Ker f_\beta$ en $B_1$ y ecuaciones implícitas de $\Ima f_\beta$ en $B_2$.
+	\item Para $\beta=1$, hallar una base de:
+	\[
+	f_1^{-1}(S_{2\times2})
+	\]
+	siendo $S_{2\times2}$ el espacio de matrices simétricas.
+	\item Para $\beta=1$, considerando:
+	\[
+	B_1'=\{1,x-1,1+x^2\}
+	\]
+	y:
+	\[
+	B_2'=
+	\left\{
+	\begin{pmatrix}1&0\\0&0\end{pmatrix},
+	\begin{pmatrix}0&-1\\0&0\end{pmatrix},
+	\begin{pmatrix}0&0\\-1&0\end{pmatrix},
+	\begin{pmatrix}1&1\\-1&2\end{pmatrix}
+	\right\}
+	\]
+	obtener $M_{B_1',B_2'}(f_1)$.
+\end{enumerate}
+
+\section{Ejercicio 18}
+En $\mathcal{P}_2(x)$ se define:
+
+\[
+f:\mathcal{P}_2(x)\longrightarrow\mathcal{P}_2(x)
+\]
+
+tal que:
+
+\begin{enumerate}[label=\arabic*)]
+	\item Los polinomios con término independiente nulo se transforman en sí mismos.
+	\item
+	\[
+	\Ker f=
+	\{a+bx+cx^2:a=b=c\}
+	\]
+\end{enumerate}
+
+Se pide:
+
+\begin{enumerate}[label=\alph*)]
+	\item Calcular la matriz asociada a $f$ en la base canónica.
+	\item Si:
+	\[
+	S=
+	\{
+	\alpha-2\beta+\gamma
+	+
+	(\alpha-2\beta-\gamma)x
+	+
+	(\alpha-2\beta)x^2
+	\}
+	\]
+	obtener una base de $f(S)$.
+	\item Clasificar el homomorfismo.
+	\item Utilizando la matriz de $f$ en:
+	\[
+	B=\{1+x+x^2,1+x,1\}
+	\]
+	determinar las coordenadas canónicas de:
+	\[
+	f(1-3x+5x^2)
+	\]
+\end{enumerate}
+
+\section{Ejercicio 19}
+Sea:
+
+\[
+B=
+\{(1,1,0),(0,1,1),(1,0,1)\}
+\]
+
+una base de $\R^3$. Encontrar su base dual.
+
+\section{Ejercicio 20}
+Sea $f$ un endomorfismo de $\R^4$ definido por:
+
+\[
+\Ker f=
+\left\{
+(x,y,z,t):
+\begin{array}{rcl}
+2x+y-z-2t&=&0\\
+z+2t&=&0
+\end{array}
+\right\}
+\]
+
+y:
+
+\[
+f(0,0,0,1)=(2,0,0,0)
+\]
+
+\[
+f(1,0,0,0)=(2,0,2,0)
+\]
+
+Se pide:
+
+\begin{enumerate}[label=\alph*)]
+	\item Calcular la matriz de $f$ respecto de la base canónica.
+	\item Hallar una base de $f(V)$, donde:
+	\[
+	V=
+	\{(x,y,z,t):x+y+z+t=0\}
+	\]
+	\item Calcular la matriz de $f$ respecto de:
+	\[
+	B=
+	\{(1,1,0,0),(1,-1,0,0),(0,0,1,1),(0,0,1,-1)\}
+	\]
+\end{enumerate}
+
+\section{Ejercicio 21}
+Sean $A,B,C$ espacios vectoriales con bases:
+
+\[
+B_A=\{e_1,e_2,e_3\},
+\qquad
+B_B=\{u_1,u_2\},
+\qquad
+B_C=\{c_1,c_2,c_3\}
+\]
+
+y:
+
+\[
+f:A\to B
+\]
+
+definida por:
+
+\[
+f(e_1)=u_1-u_2,
+\qquad
+f(e_2)=u_2,
+\qquad
+f(e_3)=2u_2
+\]
+
+y:
+
+\[
+g:B\to C
+\]
+
+definida por:
+
+\[
+g(u_1)=c_1-c_2+2c_3,
+\qquad
+g(u_2)=c_1-c_2
+\]
+
+Sea:
+
+\[
+h=g\circ f
+\]
+
+Calcular:
+
+\begin{enumerate}[label=\alph*)]
+	\item La matriz de $h$.
+	\item $h^{-1}(1,1,1)$.
+	\item $\Ker h$.
+	\item $h(V\cap W)$, siendo:
+	\[
+	V=
+	\{(2\alpha+\beta,\alpha-\beta,-\alpha):\alpha,\beta\in\R\}
+	\]
+	y:
+	\[
+	W=
+	\{(x,y,z):x-y+2z=0\}
+	\]
+\end{enumerate}
+
+\section{Ejercicio 22}
+Sean:
+
+\[
+E=\{ax+b:a,b\in\R\}
+\]
+
+\[
+F=S_2(\R)
+\]
+
+\[
+G=\R^3
+\]
+
+y los homomorfismos:
+
+\[
+f:E\to F,
+\qquad
+f(ax+b)
+=
+\begin{pmatrix}
+a&b\\
+b&a
+\end{pmatrix}
+\]
+
+\[
+g:F\to G,
+\qquad
+g
+\begin{pmatrix}
+a&d\\
+d&c
+\end{pmatrix}
+=
+(a,c,a+c)
+\]
+
+Con las bases canónicas:
+
+\[
+B=\{x,1\},
+\qquad
+B',
+\qquad
+B''
+\]
+
+de $E$, $F$ y $G$, respectivamente, calcular:
+
+\begin{enumerate}[label=\alph*)]
+	\item Las matrices de $f$, $g$ y $g\circ f$.
+	\item $(g\circ f)(V)$, siendo:
+	\[
+	V=\{ax+a:a\in\R\}
+	\]
+	\item $\Ker g$ e $\Ima g$ y clasificar $g$.
+	\item Si en $F$ se considera:
+	\[
+	B^*=
+	\left\{
+	\begin{pmatrix}1&0\\0&1\end{pmatrix},
+	\begin{pmatrix}0&1\\1&0\end{pmatrix},
+	\begin{pmatrix}1&0\\0&-1\end{pmatrix}
+	\right\}
+	\]
+	hallar de nuevo las matrices de $f$, $g$ y $g\circ f$.
+\end{enumerate}
+
+\section{Ejercicio 23}
+Sean $S_2(\R)$ y $\mathcal{P}_2(x)$ y se define:
+
+\[
+f:\mathcal{P}_2(x)\longrightarrow S_2(\R)
+\]
+
+mediante:
+
+\[
+f[p(x)]
+=
+\begin{pmatrix}
+p'(0)&p'(1)\\
+p'(1)&p'(-1)
+\end{pmatrix}
+\]
+
+Se pide:
+
+\begin{enumerate}[label=\alph*)]
+	\item Probar que $f$ es lineal y obtener su matriz en las bases canónicas.
+	\item Calcular las ecuaciones implícitas y una base de $\Ker f$ en:
+	\[
+	B=\{x^2,(x-1)^2,(x+1)^2\}
+	\]
+\end{enumerate}
+
+Sea además:
+
+\[
+g:S_2(\R)\longrightarrow\mathcal{P}_1(x)
+\]
+
+definida por:
+
+\[
+g
+\begin{pmatrix}
+a&b\\
+b&d
+\end{pmatrix}
+=
+(a+d)+(a-d)x
+\]
+
+y sea:
+
+\[
+h=g\circ f
+\]
+
+Calcular:
+
+\begin{enumerate}[label=\alph*),start=3]
+	\item Una base de $h^{-1}(T)$, siendo:
+	\[
+	T=\{k+kx:k\neq0\}
+	\]
+	\item La matriz $M_{B,B'}(h)$, siendo:
+	\[
+	B'=\{(1,-2),(0,1)\}
+	\]
+	\item A partir de dicha matriz, calcular:
+	\[
+	h(3-2x+6x^2)
+	\]
+	y dar sus coordenadas en la base canónica.
+\end{enumerate}
+
+\end{document}

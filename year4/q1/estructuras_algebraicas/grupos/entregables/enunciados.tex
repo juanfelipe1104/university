@@ -1,0 +1,78 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,geometry,enumitem}
+\geometry{margin=2.5cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\F}{\mathbb F}
+\newcommand{\C}{\mathbb C}
+\newcommand{\ej}[1]{\par\medskip\textbf{Ejercicio #1.}\enspace}
+\begin{document}
+\begin{center}
+{\Large Estructuras algebraicas}\\
+{\large Tema 1. Grupos}\\[1em]
+Georgy Nuzhdin Gelfand\\[1em]
+\textbf{Hoja de ejercicios (enunciados).}
+\end{center}
+\section{Operaciones, axiomas y órdenes}
+\ej{1} En el intervalo $G=(-1,1)$ se define la operación
+\[x*y=\frac{x+y}{1+xy}.\]
+¿Es $(G,*)$ un grupo?
+\ej{2} Inventa un grupo infinito en el que cada elemento tenga orden finito (por ejemplo, 2).
+\ej{3}
+\begin{enumerate}[label=(\alph*)]
+\item Demuestra que un grupo $G$ es abeliano si y sólo si $(ab)^2=a^2b^2$ para todos $a,b\in G$.
+\item Demuestra que $G$ es abeliano si y sólo si $f(x)=x^{-1}$ es un automorfismo de $G$.
+\end{enumerate}
+\ej{4} Demuestra que si un grupo tiene orden par, alguno de sus elementos, además del neutro, es su propio inverso.
+\ej{5} Sea $G$ un grupo finito y $x\in G$.
+\begin{enumerate}[label=(\alph*)]
+\item Demuestra que las potencias de $x$ forman un subgrupo $\langle x\rangle\leq G$.
+\item Sea $a\in G$. Demuestra que el conjunto $\langle x\rangle a=\{a,xa,x^2a,x^3a,\ldots\}$ tiene el mismo cardinal que $\langle x\rangle$, y que dos conjuntos de esta forma, $\langle x\rangle a$ y $\langle x\rangle b$, o son iguales o son disjuntos.
+\item ¿Cuándo es $\langle x\rangle a$ un subgrupo de $G$? Deduce de (b) que $|\langle x\rangle|$ divide a $|G|$.
+\end{enumerate}
+\ej{6} Describe el grupo de isometrías de un rectángulo no cuadrado.
+\section{Diagramas de multiplicación y grafos de Cayley}
+Para $\Z_n$ dibujamos $n$ puntos en el plano, etiquetados con los elementos $0,1,\ldots,n-1$. Fijamos $a\in\Z_n$ y dibujamos, para cada $x\in\Z_n$, una flecha $x\to a\cdot x$. Lo llamaremos diagrama de multiplicación por $a$. Un bucle (o ciclo) del diagrama es un conjunto de vértices $x,ax,a^2x,\ldots$ que se cierra sobre sí mismo.
+\ej{7}
+\begin{enumerate}[label=(\alph*)]
+\item Dibuja el diagrama de multiplicación por 3 en $\Z_7$, y los de multiplicación por 4 y por 5 en $\Z_6$.
+\item ¿Para qué valores de $a$ llega a cada vértice exactamente una flecha? ¿Para qué $n$ ocurre esto para todo $a\neq0$?
+\item Supón que a cada vértice llega exactamente una flecha. Calcula la longitud del bucle que contiene a $x$ y deduce que todos los bucles tienen el mismo número de vértices si y sólo si $a=1$. Si borramos el vértice 0, ¿para qué $n$ tienen todos los bucles el mismo tamaño, sea quien sea $a$?
+\item ¿Para qué $n$ existe $a\neq0$ cuyo diagrama tiene un único bucle?
+\item ¿Para qué $n$ existe $a$ tal que todos los vértices distintos de 0 formen un único bucle?
+\end{enumerate}
+\ej{8} Los diagramas del ejercicio anterior son el caso abeliano de una construcción general. Dado un grupo $G$ y un conjunto de generadores $S$, el grafo de Cayley $\operatorname{Cay}(G,S)$ tiene un vértice por cada elemento de $G$ y una arista etiquetada $s$ de $g$ a $gs$, para cada $g\in G$ y $s\in S$.
+\begin{enumerate}[label=(\alph*)]
+\item Dibuja $\operatorname{Cay}(S_3,S)$ para $S=\{(12),(123)\}$ y para $S=\{(12),(23)\}$.
+\item Dibuja $\operatorname{Cay}(D_4,\{r,s\})$, con $r$ el giro de $90^\circ$ y $s$ una simetría.
+\item ¿Qué se lee en el dibujo del orden de los generadores y de las relaciones entre ellos? ¿Por qué el grafo no depende de qué simetría $s$ concreta elijamos?
+\end{enumerate}
+\section{Homomorfismos y automorfismos}
+\ej{9}
+\begin{enumerate}[label=(\alph*)]
+\item ¿Cuántos homomorfismos hay de $\Z_{20}$ en $\Z_{20}$? ¿Cuántos monomorfismos?
+\item Demuestra que $\operatorname{Aut}(\Z_{20})\cong\Z_{20}^{*}$ y determina la estructura de ese grupo (¿es cíclico?) y unos generadores.
+\item Deduce en general que $\operatorname{Aut}(\Z_n)\cong\Z_n^*$ y que $\Z_n$ tiene $\varphi(n)$ generadores.
+\end{enumerate}
+\ej{10} Sea $D_4=\langle r,s\mid r^4=s^2=e,\ srs=r^{-1}\rangle$. Calcula $\operatorname{Aut}(D_4)$: su orden, su estructura, y compáralo con $\operatorname{Inn}(D_4)=D_4/Z(D_4)$.
+\ej{11} Demuestra que $\operatorname{GL}_2(\F_2)\cong S_3$.
+\ej{12} ¿Qué subgrupo de $\C^*$ tiene 8 elementos? ¿Cuáles son sus generadores?
+\ej{13} ¿A qué grupo es isomorfo $\Z_9^*$?
+\section{Permutaciones y aplicaciones}
+\ej{14} Demuestra que en el juego del 15 no se pueden intercambiar la 14 y la 15 sin alterar las demás fichas.
+\[\begin{array}{cccc}1&2&3&4\\5&6&7&8\\9&10&11&12\\13&14&15&\phantom{0}\end{array}\]
+\ej{15} Jon codificó cada letra del alfabeto español (27 letras) con otra. Para complicar la lectura del mensaje, volvió a aplicar la misma codificación varias veces. Para su sorpresa, ¡obtuvo el texto original!
+\begin{enumerate}[label=(\alph*)]
+\item ¿Podían haber sido 2 veces?
+\item ¿Podían haber sido 3, 4 o 5 veces?
+\item ¿Cuántas veces hay que aplicar una codificación arbitraria para obtener el texto original con toda seguridad? (un punto adicional por la mejor respuesta)
+\end{enumerate}
+\ej{16} ¿Existe alguna combinación de rotaciones del cubo de Rubik que, aplicada cierto número de veces, pueda generar todas las posiciones?
+\ej{17} Hemos aplicado y apuntado una serie de giros al cubo de Rubik. ¿Es verdad que, después de aplicar esta operación varias veces, volveremos a la posición inicial?
+\ej{18} Encuentra todos los subgrupos normales de $S_4$.
+\ej{19} Sea $G$ el subgrupo de $S_4$ generado por $(1234)$. Busca el normalizador $N(G)$, indica sus generadores y di a qué grupo es isomorfo.
+\end{document}

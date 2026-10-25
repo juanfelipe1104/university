@@ -1,0 +1,1685 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+
+\newcommand{\R}{\mathbb{R}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Geometría Lineal}\\[0.4em]
+{\Large Tema 1: Fundamentos de geometría plana}\\[0.4em]
+{\large Soluciones}
+\end{center}
+
+\section{Ejercicio 1}
+\subsection{Solución}
+
+Los lados del triángulo son:
+
+\[
+15,\qquad 20,\qquad 25.
+\]
+
+Como:
+
+\[
+15^2+20^2
+=
+225+400
+=
+625
+=
+25^2,
+\]
+
+el triángulo es rectángulo.
+
+Por tanto:
+
+\[
+A
+=
+\frac12\cdot15\cdot20.
+\]
+
+Así:
+
+\[
+\boxed{A=150}
+\]
+
+\section{Ejercicio 2}
+\subsection{Solución}
+
+El cuadrado tiene lado:
+
+\[
+l=\sqrt{100}=10.
+\]
+
+Sea \(x\) el cateto de cada triángulo rectángulo isósceles eliminado.
+
+Los lados inclinados del octógono miden:
+
+\[
+x\sqrt2.
+\]
+
+Los lados horizontales y verticales miden:
+
+\[
+10-2x.
+\]
+
+Como el octógono es regular:
+
+\[
+x\sqrt2=10-2x.
+\]
+
+Por tanto:
+
+\[
+x
+=
+\frac{10}{2+\sqrt2}.
+\]
+
+El lado del octógono es:
+
+\[
+s=x\sqrt2
+=
+10(\sqrt2-1).
+\]
+
+Así, su perímetro es:
+
+\[
+\boxed{
+P
+=
+80(\sqrt2-1)
+}
+\]
+
+\section{Ejercicio 3}
+\subsection{Solución}
+
+La circunferencia tiene radio:
+
+\[
+R=2.
+\]
+
+Por tanto:
+
+\[
+A_C=4\pi.
+\]
+
+El hexágono regular tiene lado:
+
+\[
+l=1.
+\]
+
+Su área es:
+
+\[
+A_H
+=
+6\frac{\sqrt3}{4}
+=
+\frac{3\sqrt3}{2}.
+\]
+
+La región morada es el área de la circunferencia menos la del hexágono:
+
+\[
+\boxed{
+A
+=
+4\pi-\frac{3\sqrt3}{2}
+}
+\]
+
+\section{Ejercicio 4}
+\subsection{Solución}
+
+Sea:
+
+\[
+AB=CD=x.
+\]
+
+Como:
+
+\[
+BC=12,
+\qquad
+BE=CE=10,
+\]
+
+la altura desde \(E\) al punto medio de \(BC\) es:
+
+\[
+h
+=
+\sqrt{10^2-6^2}
+=
+8.
+\]
+
+Además:
+
+\[
+AD=2x+12.
+\]
+
+Por simetría:
+
+\[
+AE=ED
+=
+\sqrt{(x+6)^2+8^2}.
+\]
+
+El perímetro de \(\triangle BEC\) es:
+
+\[
+10+10+12=32.
+\]
+
+Por tanto:
+
+\[
+2\sqrt{(x+6)^2+64}
++
+2x+12
+=
+64.
+\]
+
+Dividiendo entre \(2\):
+
+\[
+\sqrt{(x+6)^2+64}
++
+x+6
+=
+32.
+\]
+
+Sea:
+
+\[
+t=x+6.
+\]
+
+Entonces:
+
+\[
+\sqrt{t^2+64}=32-t.
+\]
+
+Elevando al cuadrado:
+
+\[
+t^2+64
+=
+1024-64t+t^2.
+\]
+
+Así:
+
+\[
+t=15.
+\]
+
+Por tanto:
+
+\[
+\boxed{AB=9}
+\]
+
+\section{Ejercicio 5}
+\subsection{Solución}
+
+El lado del cuadrado exterior es:
+
+\[
+AB=\sqrt{50}.
+\]
+
+Por tanto, su diagonal mide:
+
+\[
+DB
+=
+\sqrt{50}\sqrt2
+=
+10.
+\]
+
+El centro del cuadrado divide la diagonal en dos segmentos de longitud:
+
+\[
+5.
+\]
+
+Como:
+
+\[
+BE=1,
+\]
+
+la distancia desde \(E\) al centro es:
+
+\[
+5-1=4.
+\]
+
+El cuadrado \(EFGH\) tiene por diagonal:
+
+\[
+EG=8.
+\]
+
+El área de un cuadrado de diagonal \(d\) es:
+
+\[
+A=\frac{d^2}{2}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A_{EFGH}
+=
+\frac{8^2}{2}
+=
+32
+}
+\]
+
+\section{Ejercicio 6}
+\subsection{Solución}
+
+Sea \(h\) la altura y sean \(x,y\) las proyecciones horizontales de los lados de longitudes \(5\) y \(12\).
+
+Como las bases miden \(52\) y \(39\):
+
+\[
+x+y=13.
+\]
+
+Además:
+
+\[
+x^2+h^2=25,
+\]
+
+\[
+y^2+h^2=144.
+\]
+
+Restando:
+
+\[
+y^2-x^2=119.
+\]
+
+Así:
+
+\[
+(y-x)(y+x)=119.
+\]
+
+Como:
+
+\[
+x+y=13,
+\]
+
+se obtiene:
+
+\[
+y-x=\frac{119}{13}.
+\]
+
+Por tanto:
+
+\[
+x=\frac{25}{13},
+\qquad
+y=\frac{144}{13}.
+\]
+
+Entonces:
+
+\[
+h
+=
+\sqrt{
+25-\left(\frac{25}{13}\right)^2
+}
+=
+\frac{60}{13}.
+\]
+
+El área del trapecio es:
+
+\[
+A
+=
+\frac{52+39}{2}
+\frac{60}{13}.
+\]
+
+Por tanto:
+
+\[
+\boxed{A=210}
+\]
+
+\section{Ejercicio 7}
+\subsection{Solución}
+
+El ángulo central de un octógono regular es:
+
+\[
+\frac{360^\circ}{8}=45^\circ.
+\]
+
+Si el lado mide \(2\), su radio circunscrito es:
+
+\[
+R
+=
+\frac{2}{2\sen(22.5^\circ)}.
+\]
+
+Tomando los vértices \(A,D,G\) sobre la circunferencia, los ángulos centrales correspondientes son:
+
+\[
+\angle AOD=135^\circ,
+\]
+
+\[
+\angle DOG=135^\circ,
+\]
+
+\[
+\angle GOA=90^\circ.
+\]
+
+Aplicando la fórmula del área mediante coordenadas, o equivalentemente sumando áreas de triángulos con vértice en el centro, se obtiene:
+
+\[
+A_{\triangle ADG}
+=
+\frac{R^2}{2}
+\left(
+\sen135^\circ
++
+\sen135^\circ
++
+\sen90^\circ
+\right).
+\]
+
+Como:
+
+\[
+R^2=4+2\sqrt2,
+\]
+
+resulta:
+
+\[
+\boxed{
+A_{\triangle ADG}
+=
+4+3\sqrt2
+}
+\]
+
+\section{Ejercicio 8}
+\subsection{Solución}
+
+Sean:
+
+\[
+OX=a,
+\qquad
+OY=b.
+\]
+
+Como \(M\) y \(N\) son puntos medios:
+
+\[
+OM=\frac a2,
+\qquad
+ON=\frac b2.
+\]
+
+Por Pitágoras:
+
+\[
+XN^2
+=
+a^2+\frac{b^2}{4}
+=
+19^2,
+\]
+
+\[
+YM^2
+=
+b^2+\frac{a^2}{4}
+=
+22^2.
+\]
+
+Multiplicando por \(4\):
+
+\[
+4a^2+b^2=1444,
+\]
+
+\[
+a^2+4b^2=1936.
+\]
+
+Resolviendo:
+
+\[
+a^2=256,
+\qquad
+b^2=420.
+\]
+
+Por tanto:
+
+\[
+XY^2
+=
+a^2+b^2
+=
+676.
+\]
+
+Así:
+
+\[
+\boxed{XY=26}
+\]
+
+\section{Ejercicio 9}
+\subsection{Solución}
+
+El semicírculo pequeño tiene diámetro \(1\), por lo que su radio es:
+
+\[
+r=\frac12.
+\]
+
+Su área es:
+
+\[
+A_1
+=
+\frac12\pi\left(\frac12\right)^2
+=
+\frac{\pi}{8}.
+\]
+
+El semicírculo grande tiene radio:
+
+\[
+R=1.
+\]
+
+La cuerda común mide \(1\), luego el ángulo central correspondiente es:
+
+\[
+60^\circ=\frac{\pi}{3}.
+\]
+
+El segmento circular situado sobre la cuerda tiene área:
+
+\[
+A_2
+=
+\frac{\pi}{6}
+-
+\frac{\sqrt3}{4}.
+\]
+
+Por tanto, la región morada mide:
+
+\[
+A
+=
+A_1-A_2.
+\]
+
+Así:
+
+\[
+\boxed{
+A
+=
+\frac{\sqrt3}{4}
+-
+\frac{\pi}{24}
+}
+\]
+
+\section{Ejercicio 10}
+\subsection{Solución}
+
+Tomamos:
+
+\[
+A=(0,0),
+\qquad
+B=(4,0),
+\]
+
+\[
+E=(0,8),
+\qquad
+C=(4,6).
+\]
+
+Las rectas \(AC\) y \(BE\) son:
+
+\[
+AC:
+\quad
+y=\frac32x,
+\]
+
+\[
+BE:
+\quad
+y=-2x+8.
+\]
+
+Su intersección es:
+
+\[
+D=
+\left(
+\frac{16}{7},
+\frac{24}{7}
+\right).
+\]
+
+El área de \(\triangle ADE\) es:
+
+\[
+A_{ADE}
+=
+\frac12\cdot8\cdot\frac{16}{7}
+=
+\frac{64}{7}.
+\]
+
+El área de \(\triangle BDC\) es:
+
+\[
+A_{BDC}
+=
+\frac12\cdot6
+\left(
+4-\frac{16}{7}
+\right)
+=
+\frac{36}{7}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A_{ADE}-A_{BDC}=4
+}
+\]
+
+\section{Ejercicio 11}
+\subsection{Solución}
+
+El semicírculo grande tiene radio \(2\), luego:
+
+\[
+A_G
+=
+\frac12\pi(2)^2
+=
+2\pi.
+\]
+
+Cada semicírculo pequeño tiene radio \(1\), por lo que su área es:
+
+\[
+\frac{\pi}{2}.
+\]
+
+Los centros consecutivos están separados una unidad.
+
+La intersección de dos circunferencias unitarias cuyos centros distan \(1\) tiene área:
+
+\[
+2\frac{\pi}{3}
+-
+\frac{\sqrt3}{2}.
+\]
+
+La mitad superior de dicha intersección mide:
+
+\[
+\frac{\pi}{3}
+-
+\frac{\sqrt3}{4}.
+\]
+
+Hay dos solapamientos de este tipo, por lo que el área ocupada por los tres semicírculos pequeños es:
+
+\[
+A_P
+=
+3\frac{\pi}{2}
+-
+2\left(
+\frac{\pi}{3}
+-
+\frac{\sqrt3}{4}
+\right).
+\]
+
+Así:
+
+\[
+A_P
+=
+\frac{5\pi}{6}
++
+\frac{\sqrt3}{2}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A
+=
+2\pi-A_P
+=
+\frac{7\pi}{6}
+-
+\frac{\sqrt3}{2}
+}
+\]
+
+\section{Ejercicio 12}
+\subsection{Solución}
+
+Tomamos:
+
+\[
+AB=BC=CD=DE=EF=1.
+\]
+
+Entonces:
+
+\[
+AD=3,
+\qquad
+AF=5.
+\]
+
+Como:
+
+\[
+HC\parallel AG,
+\]
+
+los triángulos:
+
+\[
+\triangle DCH
+\quad\text{y}\quad
+\triangle DAG
+\]
+
+son semejantes.
+
+Por tanto:
+
+\[
+\frac{HC}{AG}
+=
+\frac{DC}{DA}
+=
+\frac13.
+\]
+
+Además:
+
+\[
+JE\parallel AG,
+\]
+
+por lo que:
+
+\[
+\triangle FEJ
+\sim
+\triangle FAG.
+\]
+
+Así:
+
+\[
+\frac{JE}{AG}
+=
+\frac{FE}{FA}
+=
+\frac15.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\frac{HC}{JE}
+=
+\frac{1/3}{1/5}
+=
+\frac53
+}
+\]
+
+\section{Ejercicio 13}
+\subsection{Solución}
+
+Tomamos:
+
+\[
+D=(0,0),
+\qquad
+A=(8,0),
+\]
+
+\[
+C=(0,9),
+\qquad
+B=(8,9).
+\]
+
+Como:
+
+\[
+BH=6,
+\]
+
+se tiene:
+
+\[
+H=(2,9).
+\]
+
+Como:
+
+\[
+DE=4,
+\]
+
+se tiene:
+
+\[
+E=(4,0).
+\]
+
+La recta \(AH\) es:
+
+\[
+y=-\frac32(x-8),
+\]
+
+y la recta \(EC\):
+
+\[
+y=-\frac94(x-4).
+\]
+
+Resolviendo ambas ecuaciones:
+
+\[
+G=(-4,18).
+\]
+
+Como:
+
+\[
+GF\perp AF,
+\]
+
+la recta \(GF\) es vertical y \(F=(-4,0)\).
+
+Por tanto:
+
+\[
+\boxed{GF=18}
+\]
+
+\section{Ejercicio 14}
+\subsection{Solución}
+
+Tomamos:
+
+\[
+D=(0,0),
+\qquad
+C=(5,0),
+\]
+
+\[
+A=(0,3),
+\qquad
+B=(5,3).
+\]
+
+Como:
+
+\[
+DF=1,
+\]
+
+\[
+F=(1,0).
+\]
+
+Como:
+
+\[
+GC=2,
+\]
+
+\[
+G=(3,0).
+\]
+
+Las rectas \(AF\) y \(BG\) se cortan en:
+
+\[
+E=
+\left(
+\frac53,-2
+\right).
+\]
+
+El segmento \(AB\) tiene longitud \(5\) y la distancia de \(E\) a la recta \(AB\) es:
+
+\[
+5.
+\]
+
+Por tanto:
+
+\[
+A_{\triangle AEB}
+=
+\frac12\cdot5\cdot5.
+\]
+
+Así:
+
+\[
+\boxed{
+A_{\triangle AEB}
+=
+\frac{25}{2}
+}
+\]
+
+\section{Ejercicio 15}
+\subsection{Solución}
+
+Tomamos un cuadrado de lado \(1\):
+
+\[
+D=(0,0),
+\qquad
+C=(1,0),
+\]
+
+\[
+A=(0,1),
+\qquad
+B=(1,1).
+\]
+
+Sean:
+
+\[
+E=(0,t),
+\qquad
+F=(t,0).
+\]
+
+Como \(\triangle BEF\) es equilátero:
+
+\[
+BE=BF=EF.
+\]
+
+De:
+
+\[
+BE^2=EF^2,
+\]
+
+se obtiene:
+
+\[
+1+(1-t)^2=2t^2.
+\]
+
+Por tanto:
+
+\[
+t=\sqrt3-1.
+\]
+
+El área de \(\triangle DEF\) es:
+
+\[
+A_{DEF}
+=
+\frac{t^2}{2}.
+\]
+
+El área de \(\triangle ABE\) es:
+
+\[
+A_{ABE}
+=
+\frac{1-t}{2}.
+\]
+
+Así:
+
+\[
+\frac{A_{DEF}}{A_{ABE}}
+=
+\frac{t^2}{1-t}.
+\]
+
+Sustituyendo:
+
+\[
+t=\sqrt3-1,
+\]
+
+se obtiene:
+
+\[
+\boxed{
+\frac{A_{DEF}}{A_{ABE}}=2
+}
+\]
+
+\section{Ejercicio 16}
+\subsection{Solución}
+
+Sea \(\alpha\) el ángulo agudo que forman las dos rectas.
+
+En el círculo de radio \(1\), la región sombreada corresponde a los dos sectores agudos, por lo que su área es:
+
+\[
+A_1=\alpha.
+\]
+
+En la corona comprendida entre radios \(1\) y \(2\), la región sombreada corresponde a los sectores obtusos:
+
+\[
+A_2
+=
+3(\pi-\alpha).
+\]
+
+En la corona comprendida entre radios \(2\) y \(3\), la región sombreada corresponde de nuevo a los sectores agudos:
+
+\[
+A_3
+=
+5\alpha.
+\]
+
+Así:
+
+\[
+A_S
+=
+\alpha+3(\pi-\alpha)+5\alpha
+=
+3\pi+3\alpha.
+\]
+
+El área total es:
+
+\[
+9\pi.
+\]
+
+Por tanto, el área no sombreada es:
+
+\[
+A_N
+=
+6\pi-3\alpha.
+\]
+
+Como:
+
+\[
+A_S
+=
+\frac8{13}A_N,
+\]
+
+se tiene:
+
+\[
+3\pi+3\alpha
+=
+\frac8{13}
+(6\pi-3\alpha).
+\]
+
+Resolviendo:
+
+\[
+\alpha=\frac{\pi}{7}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\alpha
+=
+\frac{\pi}{7}
+=
+\frac{180^\circ}{7}
+}
+\]
+
+\section{Ejercicio 17}
+\subsection{Solución}
+
+Sea \(O\) el centro de la circunferencia \(D\).
+
+La circunferencia \(A\) tiene radio \(1\) y pasa por \(O\), por lo que la distancia entre su centro y \(O\) es:
+
+\[
+1.
+\]
+
+Como además \(A\) es tangente interiormente a \(D\):
+
+\[
+R_D-1=1.
+\]
+
+Así:
+
+\[
+R_D=2.
+\]
+
+Sea \(r\) el radio común de \(B\) y \(C\).
+
+Por simetría, tomamos sus centros como:
+
+\[
+(x,r),
+\qquad
+(x,-r).
+\]
+
+Como son tangentes interiormente a \(D\):
+
+\[
+x^2+r^2=(2-r)^2.
+\]
+
+Por tanto:
+
+\[
+x^2=4-4r.
+\]
+
+Como son tangentes exteriormente a \(A\), cuyo centro podemos tomar en \((1,0)\):
+
+\[
+(x-1)^2+r^2=(1+r)^2.
+\]
+
+Simplificando:
+
+\[
+x=2-3r.
+\]
+
+Sustituyendo:
+
+\[
+(2-3r)^2=4-4r.
+\]
+
+Así:
+
+\[
+9r^2-8r=0.
+\]
+
+Como \(r>0\):
+
+\[
+\boxed{
+r=\frac89
+}
+\]
+
+\section{Ejercicio 18}
+\subsection{Solución}
+
+Tomamos el triángulo rectángulo:
+
+\[
+C=(0,0),
+\qquad
+A=(12,0),
+\qquad
+E=(0,16).
+\]
+
+Como:
+
+\[
+AB=3,
+\]
+
+se tiene:
+
+\[
+B=(9,0).
+\]
+
+Como:
+
+\[
+CD=4,
+\]
+
+\[
+D=(0,4).
+\]
+
+Además:
+
+\[
+EA=20,
+\qquad
+EF=5.
+\]
+
+Por tanto, \(F\) divide \(EA\) en razón:
+
+\[
+\frac{EF}{EA}=\frac14.
+\]
+
+Así:
+
+\[
+F=(3,12).
+\]
+
+El área de \(\triangle ACE\) es:
+
+\[
+A_{ACE}
+=
+\frac12\cdot12\cdot16
+=
+96.
+\]
+
+El área de \(\triangle DBF\) es:
+
+\[
+A_{DBF}=42.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\frac{A_{DBF}}{A_{ACE}}
+=
+\frac{42}{96}
+=
+\frac7{16}
+}
+\]
+
+\section{Ejercicio 19}
+\subsection{Solución}
+
+Tomamos la circunferencia pequeña de radio \(1\) centrada en el origen.
+
+Sus puntos de tangencia son:
+
+\[
+A=(-1,0),
+\qquad
+B=(1,0).
+\]
+
+Las dos circunferencias grandes tienen radio \(2\), y sus centros son:
+
+\[
+(1,0),
+\qquad
+(-1,0).
+\]
+
+La distancia entre sus centros es:
+
+\[
+d=2.
+\]
+
+El área común a dos circunferencias de radio \(R=2\) cuyos centros distan \(2\) es:
+
+\[
+A_I
+=
+2R^2
+\arccos\left(
+\frac{d}{2R}
+\right)
+-
+\frac d2
+\sqrt{4R^2-d^2}.
+\]
+
+Por tanto:
+
+\[
+A_I
+=
+8\arccos\left(\frac12\right)
+-
+\sqrt{12}.
+\]
+
+Así:
+
+\[
+A_I
+=
+\frac{8\pi}{3}
+-
+2\sqrt3.
+\]
+
+La circunferencia pequeña está contenida en ambas y tiene área:
+
+\[
+\pi.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A
+=
+\frac{5\pi}{3}
+-
+2\sqrt3
+}
+\]
+
+\section{Ejercicio 20}
+\subsection{Solución}
+
+Sean las medianas \(AD\), \(BE\) y \(CF\), que se cortan en el baricentro \(G\).
+
+Como \(D\) es el punto medio de \(BC\):
+
+\[
+BD=DC.
+\]
+
+Los triángulos:
+
+\[
+\triangle BGD
+\quad\text{y}\quad
+\triangle CGD
+\]
+
+tienen la misma altura respecto de la recta \(BC\) y bases iguales.
+
+Por tanto:
+
+\[
+A_{BGD}=A_{CGD}.
+\]
+
+De forma análoga:
+
+\[
+A_{CGE}=A_{AGE}
+\]
+
+y:
+
+\[
+A_{AGF}=A_{BGF}.
+\]
+
+Además, cada mediana divide al triángulo original en dos regiones de igual área.
+
+Combinando estas igualdades se obtiene que los seis triángulos tienen la misma área:
+
+\[
+\boxed{
+A_{AGF}
+=
+A_{BGF}
+=
+A_{BGD}
+=
+A_{CGD}
+=
+A_{CGE}
+=
+A_{AGE}
+=
+\frac16A_{ABC}
+}
+\]
+
+\section{Ejercicio 21}
+\subsection{Solución}
+
+Sea \(ABCD\) un cuadrilátero inscrito en una circunferencia.
+
+El ángulo:
+
+\[
+\angle A
+\]
+
+subtiende el arco \(BCD\), por lo que:
+
+\[
+\angle A
+=
+\frac12
+m(\widehat{BCD}).
+\]
+
+El ángulo opuesto:
+
+\[
+\angle C
+\]
+
+subtiende el arco \(DAB\), luego:
+
+\[
+\angle C
+=
+\frac12
+m(\widehat{DAB}).
+\]
+
+Los dos arcos completan la circunferencia:
+
+\[
+m(\widehat{BCD})
++
+m(\widehat{DAB})
+=
+360^\circ.
+\]
+
+Por tanto:
+
+\[
+\angle A+\angle C
+=
+\frac12\cdot360^\circ.
+\]
+
+Así:
+
+\[
+\boxed{
+\angle A+\angle C=180^\circ
+}
+\]
+
+Análogamente:
+
+\[
+\boxed{
+\angle B+\angle D=180^\circ
+}
+\]
+
+\section{Ejercicio 22}
+\subsection{Solución}
+
+Sea \(P\) el punto de intersección de las cuerdas \(AC\) y \(DB\).
+
+Según la figura:
+
+\[
+\angle CPB=40^\circ.
+\]
+
+Por el teorema de las cuerdas que se cortan en el interior:
+
+\[
+40^\circ
+=
+\frac12
+\left(
+m(\widehat{CB})
++
+m(\widehat{AD})
+\right).
+\]
+
+Por tanto:
+
+\[
+m(\widehat{CB})
++
+m(\widehat{AD})
+=
+80^\circ.
+\]
+
+Como \(AB\) es un diámetro, el arco superior \(ADBCA\) mide:
+
+\[
+180^\circ.
+\]
+
+Así:
+
+\[
+m(\widehat{DC})
+=
+180^\circ-80^\circ
+=
+100^\circ.
+\]
+
+Los ángulos \(\alpha\) y \(\beta\) son ángulos inscritos que subtienen el arco \(DC\).
+
+Por tanto:
+
+\[
+\alpha=\beta=50^\circ.
+\]
+
+Así:
+
+\[
+\boxed{
+\alpha+\beta=100^\circ
+}
+\]
+
+\section{Ejercicio 23}
+\subsection{Solución}
+
+En la figura:
+
+\[
+AC
+\]
+
+y:
+
+\[
+BD
+\]
+
+son diámetros.
+
+El ángulo:
+
+\[
+\angle ACD=60^\circ
+\]
+
+subtiende el arco \(AD\).
+
+Por tanto:
+
+\[
+m(\widehat{AD})=120^\circ.
+\]
+
+Como \(AC\) es un diámetro:
+
+\[
+m(\widehat{ADC})=180^\circ.
+\]
+
+Así:
+
+\[
+m(\widehat{DC})
+=
+180^\circ-120^\circ
+=
+60^\circ.
+\]
+
+El ángulo \(\alpha=\angle DBC\) subtiende el arco \(DC\), luego:
+
+\[
+\boxed{
+\alpha
+=
+\frac12\cdot60^\circ
+=
+30^\circ
+}
+\]
+
+\section{Ejercicio 24}
+\subsection{Solución}
+
+En la figura:
+
+\[
+AB
+\]
+
+es un diámetro y:
+
+\[
+\angle AOC=140^\circ.
+\]
+
+Por tanto:
+
+\[
+m(\widehat{AC})=140^\circ.
+\]
+
+Como el semicírculo \(ACB\) mide:
+
+\[
+180^\circ,
+\]
+
+se tiene:
+
+\[
+m(\widehat{CB})
+=
+180^\circ-140^\circ
+=
+40^\circ.
+\]
+
+El ángulo:
+
+\[
+\alpha=\angle CDB
+\]
+
+es un ángulo inscrito que subtiende el arco \(CB\).
+
+Por tanto:
+
+\[
+\boxed{
+\alpha
+=
+\frac12\cdot40^\circ
+=
+20^\circ
+}
+\]
+
+\end{document}

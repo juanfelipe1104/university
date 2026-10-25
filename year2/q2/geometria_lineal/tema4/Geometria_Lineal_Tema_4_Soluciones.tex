@@ -1,0 +1,2797 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\sen}{\operatorname{sen}}
+\newcommand{\rg}{\operatorname{rg}}
+\newcommand{\tr}{\operatorname{tr}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Geometría Lineal}\\[0.4em]
+{\Large Tema 4: Movimientos afines}\\[0.4em]
+{\large Soluciones}
+\end{center}
+
+\section{Ejercicio 1}
+\subsection{Solución}
+
+La recta es:
+
+\[
+r=(1,2,3)+\mathcal L\{(1,1,1)\}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\begin{cases}
+x=1+\lambda,\\
+y=2+\lambda,\\
+z=3+\lambda.
+\end{cases}
+}
+\]
+
+Eliminando el parámetro:
+
+\[
+\boxed{
+x-1=y-2=z-3
+}
+\]
+
+\section{Ejercicio 2}
+\subsection{Solución}
+
+Tomamos:
+
+\[
+P_1=(1,1,1,0),
+\quad
+P_2=(0,1,2,3),
+\quad
+P_3=(0,0,1,-1).
+\]
+
+Los vectores directores son:
+
+\[
+P_1P_2=(-1,0,1,3),
+\]
+
+\[
+P_1P_3=(-1,-1,0,-1).
+\]
+
+Dos vectores normales al plano son:
+
+\[
+n_1=(1,-1,1,0),
+\qquad
+n_2=(3,-4,0,1).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\begin{cases}
+x-y+z-1=0,\\
+3x-4y+t+1=0.
+\end{cases}
+}
+\]
+
+\section{Ejercicio 3}
+\subsection{Solución}
+
+Por la relación de Chasles:
+
+\[
+P_1P_2+P_2P_3=P_1P_3.
+\]
+
+Continuando:
+
+\[
+P_1P_2+P_2P_3+\cdots+P_{n-1}P_n
+=
+P_1P_n.
+\]
+
+Además:
+
+\[
+P_nP_1=-P_1P_n.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+P_1P_2+P_2P_3+\cdots+P_{n-1}P_n+P_nP_1=0
+}
+\]
+
+\section{Ejercicio 4}
+\subsection{Solución}
+
+Sean:
+
+\[
+r=P+\mathcal L\{u\},
+\qquad
+s=Q+\mathcal L\{v\}.
+\]
+
+Si:
+
+\[
+\mathcal L\{u\}=\mathcal L\{v\},
+\]
+
+las rectas son paralelas.
+
+Si no son paralelas, \(u\) y \(v\) son linealmente independientes y:
+
+\[
+\mathcal L\{u,v\}=\R^2.
+\]
+
+Por tanto:
+
+\[
+PQ\in\mathcal L\{u,v\},
+\]
+
+y existe una única solución de:
+
+\[
+P+\lambda u=Q+\mu v.
+\]
+
+Así:
+
+\[
+\boxed{
+\text{En }\mathbb A^2\text{ dos rectas o son paralelas o se cortan en un punto.}
+}
+\]
+
+\section{Ejercicio 5}
+\subsection{Solución}
+
+Sea:
+
+\[
+r=P+\mathcal L\{u\}
+\]
+
+y:
+
+\[
+\pi=Q+S,
+\qquad
+\dim S=2.
+\]
+
+Si:
+
+\[
+u\in S,
+\]
+
+la recta es paralela al plano.
+
+Si:
+
+\[
+u\notin S,
+\]
+
+entonces:
+
+\[
+S+\mathcal L\{u\}=\R^3.
+\]
+
+Por tanto, existe una única solución de:
+
+\[
+P+\lambda u\in\pi.
+\]
+
+Así:
+
+\[
+\boxed{
+\text{En }\mathbb A^3\text{ una recta y un plano o son paralelos o se cortan en un punto.}
+}
+\]
+
+\section{Ejercicio 6}
+\subsection{Solución}
+
+Se tiene:
+
+\[
+P=(3,4),
+\qquad
+O^*=(1,3).
+\]
+
+Por tanto:
+
+\[
+O^*P=(2,1).
+\]
+
+Buscamos:
+
+\[
+(2,1)
+=
+x^*(1,2)
++
+y^*(-2,1).
+\]
+
+Así:
+
+\[
+\begin{cases}
+x^*-2y^*=2,\\
+2x^*+y^*=1.
+\end{cases}
+\]
+
+Resolviendo:
+
+\[
+x^*=\frac45,
+\qquad
+y^*=-\frac35.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+P=
+\left(
+\frac45,-\frac35
+\right)_{R^*}
+}
+\]
+
+\section{Ejercicio 7}
+\subsection{Solución}
+
+Un conjunto de cuatro puntos de \(\mathbb A^3\) es un sistema de referencia afín si:
+
+\[
+P_0P_1,\quad P_0P_2,\quad P_0P_3
+\]
+
+son linealmente independientes.
+
+Para el apartado a):
+
+\[
+\det
+\begin{pmatrix}
+0&1&1\\
+-1&-1&0\\
+0&-1&0
+\end{pmatrix}
+=1\neq0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{a) Sí es un sistema de referencia afín.}
+}
+\]
+
+Para el apartado b), todos los vectores tienen tercera coordenada nula, por lo que:
+
+\[
+\det=0.
+\]
+
+Así:
+
+\[
+\boxed{
+\text{b) No es un sistema de referencia afín.}
+}
+\]
+
+Para el apartado c):
+
+\[
+\det
+\begin{pmatrix}
+1&1&-1\\
+0&1&-1\\
+2&0&0
+\end{pmatrix}
+=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{c) No es un sistema de referencia afín.}
+}
+\]
+
+\section{Ejercicio 8}
+\subsection{Solución}
+
+Las nuevas bases verifican:
+
+\[
+v'=v-2w,
+\qquad
+w'=v+w.
+\]
+
+Por tanto:
+
+\[
+\begin{pmatrix}
+x\\
+y
+\end{pmatrix}_{R}
+=
+\begin{pmatrix}
+1&1\\
+-2&1
+\end{pmatrix}
+\begin{pmatrix}
+x'\\
+y'
+\end{pmatrix}_{R^*}.
+\]
+
+La matriz inversa es:
+
+\[
+\frac13
+\begin{pmatrix}
+1&-1\\
+2&1
+\end{pmatrix}.
+\]
+
+Así:
+
+\[
+\boxed{
+\begin{pmatrix}
+x'\\
+y'
+\end{pmatrix}_{R^*}
+=
+\frac13
+\begin{pmatrix}
+1&-1\\
+2&1
+\end{pmatrix}
+\begin{pmatrix}
+x\\
+y
+\end{pmatrix}_{R}
+}
+\]
+
+\section{Ejercicio 9}
+\subsection{Solución}
+
+El nuevo sistema es:
+
+\[
+R^*
+=
+\{O^*;-e_1+e_3,-e_2+e_3,e_1+e_2+e_3\},
+\]
+
+con:
+
+\[
+O^*=(1,1,0).
+\]
+
+Si:
+
+\[
+X=(x^*,y^*,z^*)_{R^*},
+\]
+
+entonces, en el sistema \(R\):
+
+\[
+\begin{cases}
+x=1-x^*+z^*,\\
+y=1-y^*+z^*,\\
+z=x^*+y^*+z^*.
+\end{cases}
+\]
+
+Sustituyendo en:
+
+\[
+x+y+z=2,
+\]
+
+se obtiene:
+
+\[
+2+3z^*=2.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+z^*=0
+}
+\]
+
+\section{Ejercicio 10}
+\subsection{Solución}
+
+Sea \(f\) una aplicación afín y \(\bar f\) su aplicación vectorial asociada.
+
+Si \(f\) es inyectiva y:
+
+\[
+\bar f(v)=0,
+\]
+
+tomamos puntos \(P,Q\) tales que:
+
+\[
+PQ=v.
+\]
+
+Entonces:
+
+\[
+f(P)f(Q)=0,
+\]
+
+por lo que:
+
+\[
+f(P)=f(Q).
+\]
+
+Como \(f\) es inyectiva:
+
+\[
+P=Q
+\]
+
+y:
+
+\[
+v=0.
+\]
+
+Así, \(\bar f\) es inyectiva.
+
+Recíprocamente, si \(\bar f\) es inyectiva y:
+
+\[
+f(P)=f(Q),
+\]
+
+entonces:
+
+\[
+\bar f(PQ)=f(P)f(Q)=0.
+\]
+
+Por tanto:
+
+\[
+PQ=0
+\]
+
+y:
+
+\[
+P=Q.
+\]
+
+Así:
+
+\[
+\boxed{
+f\text{ es inyectiva}\iff\bar f\text{ es inyectiva}
+}
+\]
+
+\section{Ejercicio 11}
+\subsection{Solución}
+
+Si \(f\) es suprayectiva, dados \(u\in V'\), tomamos puntos \(P',Q'\) tales que:
+
+\[
+P'Q'=u.
+\]
+
+Existen \(P,Q\) con:
+
+\[
+f(P)=P',
+\qquad
+f(Q)=Q'.
+\]
+
+Por tanto:
+
+\[
+\bar f(PQ)
+=
+f(P)f(Q)
+=
+u.
+\]
+
+Así, \(\bar f\) es suprayectiva.
+
+Recíprocamente, si \(\bar f\) es suprayectiva, fijamos \(P\in A\).
+
+Para cualquier \(Q'\in A'\), existe \(v\in V\) tal que:
+
+\[
+\bar f(v)=f(P)Q'.
+\]
+
+Existe un único punto:
+
+\[
+Q=P+v.
+\]
+
+Entonces:
+
+\[
+f(Q)
+=
+f(P)+\bar f(v)
+=
+Q'.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ es suprayectiva}\iff\bar f\text{ es suprayectiva}
+}
+\]
+
+\section{Ejercicio 12}
+\subsection{Solución}
+
+La parte lineal de la transformación es:
+
+\[
+A=
+\begin{pmatrix}
+1&3&4\\
+2&1&3\\
+-1&2&1
+\end{pmatrix}.
+\]
+
+Su determinante es:
+
+\[
+\det A=0.
+\]
+
+Por tanto, la aplicación lineal asociada no es biyectiva.
+
+Así:
+
+\[
+\boxed{
+\text{La transformación afín no es biyectiva.}
+}
+\]
+
+\section{Ejercicio 13}
+\subsection{Solución}
+
+Sea una traslación:
+
+\[
+f(P)=P+v,
+\qquad
+v\neq0.
+\]
+
+Si \(P\) fuese fijo:
+
+\[
+P+v=P.
+\]
+
+Entonces:
+
+\[
+v=0,
+\]
+
+lo que contradice la hipótesis.
+
+Por tanto:
+
+\[
+\boxed{
+\text{Una traslación distinta de la identidad no tiene puntos fijos.}
+}
+\]
+
+\section{Ejercicio 14}
+\subsection{Solución}
+
+Sean \(P\) y \(Q\) dos puntos fijos:
+
+\[
+f(P)=P,
+\qquad
+f(Q)=Q.
+\]
+
+Todo punto de la recta \(PQ\) puede escribirse como:
+
+\[
+X=P+\lambda PQ.
+\]
+
+Como \(f\) es afín:
+
+\[
+f(X)
+=
+f(P)+\lambda\bar f(PQ).
+\]
+
+Además:
+
+\[
+\bar f(PQ)
+=
+f(P)f(Q)
+=
+PQ.
+\]
+
+Por tanto:
+
+\[
+f(X)
+=
+P+\lambda PQ
+=
+X.
+\]
+
+Así:
+
+\[
+\boxed{
+\text{Toda la recta }PQ\text{ queda fija por }f.
+}
+\]
+
+\section{Ejercicio 15}
+\subsection{Solución}
+
+Sean \(P,Q,R\) tres puntos fijos no alineados.
+
+Los vectores:
+
+\[
+PQ,\qquad PR
+\]
+
+son linealmente independientes y forman una base de \(\R^2\).
+
+Como:
+
+\[
+\bar f(PQ)=PQ,
+\qquad
+\bar f(PR)=PR,
+\]
+
+la aplicación vectorial asociada es la identidad.
+
+Además:
+
+\[
+f(P)=P.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f=\operatorname{Id}_{\mathbb A^2}
+}
+\]
+
+\section{Ejercicio 16}
+\subsection{Solución}
+
+La transformación es:
+
+\[
+(x',y')=(4x-3y,x).
+\]
+
+Los puntos fijos satisfacen:
+
+\[
+\begin{cases}
+4x-3y=x,\\
+x=y.
+\end{cases}
+\]
+
+Ambas ecuaciones equivalen a:
+
+\[
+x=y.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\{P\text{ fijo}\}
+=
+\{(x,y):x=y\}
+}
+\]
+
+Además:
+
+\[
+PP'
+=
+(x'-x,y'-y).
+\]
+
+Así:
+
+\[
+PP'
+=
+(3x-3y,x-y)
+=
+(x-y)(3,1).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+PP'\parallel(3,1)
+}
+\]
+
+\section{Ejercicio 17}
+\subsection{Solución}
+
+La transformación es:
+
+\[
+X'
+=
+\begin{pmatrix}
+3\\
+1
+\end{pmatrix}
++
+\begin{pmatrix}
+-\frac35&-\frac45\\
+-\frac45&\frac35
+\end{pmatrix}
+X.
+\]
+
+La parte lineal es una simetría respecto de una recta.
+
+No existen puntos fijos, por lo que se trata de una simetría deslizante.
+
+El origen se transforma en:
+
+\[
+O'=(3,1).
+\]
+
+El punto medio es:
+
+\[
+P=
+\left(
+\frac32,\frac12
+\right).
+\]
+
+Su imagen es:
+
+\[
+P'=
+\left(
+\frac{17}{10},
+\frac1{10}
+\right).
+\]
+
+Así:
+
+\[
+PP'
+=
+\left(
+\frac15,-\frac25
+\right).
+\]
+
+La recta invariante pasa por \(P\) y tiene dirección \((1,-2)\):
+
+\[
+\boxed{
+4x+2y-7=0
+}
+\]
+
+El vector de desplazamiento es:
+
+\[
+\boxed{
+v=
+\left(
+\frac15,-\frac25
+\right)
+}
+\]
+
+\section{Ejercicio 18}
+\subsection{Solución}
+
+Una homotecia de centro \(C\) y razón \(2\) cumple:
+
+\[
+A'=C+2(A-C).
+\]
+
+Por tanto:
+
+\[
+C=2A-A'.
+\]
+
+Sustituyendo:
+
+\[
+C
+=
+2(1,1,2)-(2,-2,6).
+\]
+
+Así:
+
+\[
+\boxed{
+C=(0,4,-2)
+}
+\]
+
+\section{Ejercicio 19}
+\subsection{Solución}
+
+La primera homotecia es:
+
+\[
+H_{O,3}(X)=3X.
+\]
+
+Como:
+
+\[
+A=(0,2),
+\]
+
+su imagen es:
+
+\[
+A'=(0,6).
+\]
+
+La segunda homotecia es:
+
+\[
+H_{A',2}(X)
+=
+A'+2(X-A')
+=
+2X-A'.
+\]
+
+Por tanto:
+
+\[
+H_{A',2}\circ H_{O,3}(X)
+=
+6X-A'.
+\]
+
+Así:
+
+\[
+f(X)
+=
+6X+(0,-6).
+\]
+
+Una homotecia de razón \(6\) cumple:
+
+\[
+f(X)=6X+(1-6)C.
+\]
+
+Por tanto:
+
+\[
+-5C=(0,-6).
+\]
+
+Así:
+
+\[
+\boxed{
+\text{La composición es la homotecia de razón }6
+\text{ y centro }
+C=
+\left(
+0,\frac65
+\right).
+}
+\]
+
+\section{Ejercicio 20}
+\subsection{Solución}
+
+La transformación tiene la forma:
+
+\[
+X'=B+AX.
+\]
+
+Como:
+
+\[
+O=(0,0)
+\longmapsto
+O'=(15,-1),
+\]
+
+se tiene:
+
+\[
+B=
+\begin{pmatrix}
+15\\
+-1
+\end{pmatrix}.
+\]
+
+Además:
+
+\[
+A
+\begin{pmatrix}
+1\\
+2
+\end{pmatrix}
+=
+\begin{pmatrix}
+-22\\
+-4
+\end{pmatrix},
+\]
+
+\[
+A
+\begin{pmatrix}
+2\\
+1
+\end{pmatrix}
+=
+\begin{pmatrix}
+-20\\
+10
+\end{pmatrix}.
+\]
+
+Resolviendo:
+
+\[
+A=
+\begin{pmatrix}
+-6&-8\\
+8&-6
+\end{pmatrix}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\begin{pmatrix}
+x'\\
+y'
+\end{pmatrix}
+=
+\begin{pmatrix}
+15\\
+-1
+\end{pmatrix}
++
+\begin{pmatrix}
+-6&-8\\
+8&-6
+\end{pmatrix}
+\begin{pmatrix}
+x\\
+y
+\end{pmatrix}
+}
+\]
+
+Se verifica:
+
+\[
+AA^t=100I.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{Sí es una semejanza, de razón }10.
+}
+\]
+
+\section{Ejercicio 21}
+\subsection{Solución}
+
+La homotecia de centro:
+
+\[
+C=(0,0,1)
+\]
+
+y razón \(2\) es:
+
+\[
+H(x,y,z)
+=
+(2x,2y,2z-1).
+\]
+
+Aplicando después:
+
+\[
+f(x,y,z)
+=
+(2x+y-1,3z-2,4x+y),
+\]
+
+se obtiene:
+
+\[
+(f\circ H)(x,y,z)
+=
+(4x+2y-1,6z-5,8x+2y).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\begin{pmatrix}
+x'\\
+y'\\
+z'
+\end{pmatrix}
+=
+\begin{pmatrix}
+-1\\
+-5\\
+0
+\end{pmatrix}
++
+\begin{pmatrix}
+4&2&0\\
+0&0&6\\
+8&2&0
+\end{pmatrix}
+\begin{pmatrix}
+x\\
+y\\
+z
+\end{pmatrix}
+}
+\]
+
+La matriz lineal no verifica:
+
+\[
+AA^t=k^2I.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{La transformación resultante no es una semejanza.}
+}
+\]
+
+\section{Ejercicio 22}
+\subsection{Solución}
+
+La transformación es:
+
+\[
+\begin{pmatrix}
+x'\\
+y'
+\end{pmatrix}
+=
+\begin{pmatrix}
+1\\
+-1
+\end{pmatrix}
++
+I
+\begin{pmatrix}
+x+1\\
+y+4
+\end{pmatrix}.
+\]
+
+Así:
+
+\[
+(x',y')=(x+2,y+3).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{Es una traslación de vector }(2,3).
+}
+\]
+
+\section{Ejercicio 23}
+\subsection{Solución}
+
+La transformación es:
+
+\[
+X'
+=
+\begin{pmatrix}
+2\\
+2
+\end{pmatrix}
++
+\begin{pmatrix}
+0&-1\\
+-1&0
+\end{pmatrix}
+X.
+\]
+
+La matriz lineal es una simetría.
+
+Los puntos fijos satisfacen:
+
+\[
+\begin{cases}
+x=2-y,\\
+y=2-x.
+\end{cases}
+\]
+
+Por tanto:
+
+\[
+x+y=2.
+\]
+
+Así:
+
+\[
+\boxed{
+\text{Es la simetría respecto de la recta }x+y=2.
+}
+\]
+
+\section{Ejercicio 24}
+\subsection{Solución}
+
+La recta es:
+
+\[
+x-y-1=0.
+\]
+
+Un vector normal es:
+
+\[
+n=(1,-1).
+\]
+
+La reflexión viene dada por:
+
+\[
+X'
+=
+X
+-
+2\frac{x-y-1}{2}(1,-1).
+\]
+
+Así:
+
+\[
+x'=y+1,
+\qquad
+y'=x-1.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\begin{pmatrix}
+x'\\
+y'
+\end{pmatrix}
+=
+\begin{pmatrix}
+1\\
+-1
+\end{pmatrix}
++
+\begin{pmatrix}
+0&1\\
+1&0
+\end{pmatrix}
+\begin{pmatrix}
+x\\
+y
+\end{pmatrix}
+}
+\]
+
+\section{Ejercicio 25}
+\subsection{Solución}
+
+La transformación es:
+
+\[
+\begin{pmatrix}
+x'\\
+y'
+\end{pmatrix}
+=
+\begin{pmatrix}
+1\\
+0
+\end{pmatrix}
++
+\begin{pmatrix}
+0&1\\
+1&0
+\end{pmatrix}
+\begin{pmatrix}
+x\\
+y+1
+\end{pmatrix}.
+\]
+
+Por tanto:
+
+\[
+(x',y')=(y+2,x).
+\]
+
+No tiene puntos fijos.
+
+La parte lineal es una simetría, por lo que se trata de una simetría deslizante.
+
+El origen se transforma en:
+
+\[
+O'=(2,0).
+\]
+
+Su punto medio es:
+
+\[
+P=(1,0).
+\]
+
+La imagen de \(P\) es:
+
+\[
+P'=(2,1).
+\]
+
+Así:
+
+\[
+PP'=(1,1).
+\]
+
+Por tanto, el eje es:
+
+\[
+\boxed{
+y=x-1
+}
+\]
+
+y el desplazamiento:
+
+\[
+\boxed{
+v=(1,1).
+}
+\]
+
+\section{Ejercicio 26}
+\subsection{Solución}
+
+La recta de simetría es:
+
+\[
+y=2x-1,
+\]
+
+equivalentemente:
+
+\[
+2x-y-1=0.
+\]
+
+La matriz de la reflexión es:
+
+\[
+R=
+\frac15
+\begin{pmatrix}
+-3&4\\
+4&3
+\end{pmatrix}.
+\]
+
+La parte independiente de la reflexión es:
+
+\[
+b_R=
+\begin{pmatrix}
+\frac45\\[1mm]
+-\frac25
+\end{pmatrix}.
+\]
+
+Añadiendo el desplazamiento:
+
+\[
+v=(-1,-2),
+\]
+
+se obtiene:
+
+\[
+b=
+\begin{pmatrix}
+-\frac15\\[1mm]
+-\frac{12}{5}
+\end{pmatrix}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\begin{pmatrix}
+x'\\
+y'
+\end{pmatrix}
+=
+\begin{pmatrix}
+-\frac15\\[1mm]
+-\frac{12}{5}
+\end{pmatrix}
++
+\frac15
+\begin{pmatrix}
+-3&4\\
+4&3
+\end{pmatrix}
+\begin{pmatrix}
+x\\
+y
+\end{pmatrix}
+}
+\]
+
+\section{Ejercicio 27}
+\subsection{Solución}
+
+La transformación es:
+
+\[
+X'
+=
+\begin{pmatrix}
+\frac15\\[1mm]
+\frac25
+\end{pmatrix}
++
+\begin{pmatrix}
+-\frac35&-\frac45\\[1mm]
+\frac45&-\frac35
+\end{pmatrix}
+\left(
+X-
+\begin{pmatrix}
+\frac15\\[1mm]
+\frac25
+\end{pmatrix}
+\right).
+\]
+
+Tiene un único punto fijo:
+
+\[
+\boxed{
+C=
+\left(
+\frac15,\frac25
+\right)
+}
+\]
+
+La matriz tiene determinante \(1\), luego es un giro.
+
+Además:
+
+\[
+\cos\theta=-\frac35,
+\qquad
+\sen\theta=\frac45.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\theta
+=
+\arccos\left(-\frac35\right)
+}
+\]
+
+en sentido positivo.
+
+\section{Ejercicio 28}
+\subsection{Solución}
+
+El giro tiene centro:
+
+\[
+C=(1,-1)
+\]
+
+y ángulo:
+
+\[
+\theta=45^\circ.
+\]
+
+Su matriz lineal es:
+
+\[
+R=
+\frac1{\sqrt2}
+\begin{pmatrix}
+1&-1\\
+1&1
+\end{pmatrix}.
+\]
+
+Por tanto:
+
+\[
+X'=C+R(X-C).
+\]
+
+Así:
+
+\[
+\boxed{
+\begin{pmatrix}
+x'\\
+y'
+\end{pmatrix}
+=
+\begin{pmatrix}
+1\\
+-1
+\end{pmatrix}
++
+\frac1{\sqrt2}
+\begin{pmatrix}
+1&-1\\
+1&1
+\end{pmatrix}
+\left[
+\begin{pmatrix}
+x\\
+y
+\end{pmatrix}
+-
+\begin{pmatrix}
+1\\
+-1
+\end{pmatrix}
+\right]
+}
+\]
+
+\section{Ejercicio 29}
+\subsection{Solución}
+
+Consideramos:
+
+\[
+G_1\circ G_2.
+\]
+
+Los ángulos son:
+
+\[
+\theta_1=\frac{\pi}{3},
+\qquad
+\theta_2=\frac{\pi}{6}.
+\]
+
+Por tanto, el ángulo de la composición es:
+
+\[
+\theta
+=
+\frac{\pi}{2}.
+\]
+
+La matriz lineal es:
+
+\[
+R=
+\begin{pmatrix}
+0&-1\\
+1&0
+\end{pmatrix}.
+\]
+
+La parte independiente resulta:
+
+\[
+b=
+\begin{pmatrix}
+-\frac12+\frac{3\sqrt3}{2}\\[1mm]
+\frac12-\frac{\sqrt3}{2}
+\end{pmatrix}.
+\]
+
+El centro satisface:
+
+\[
+(I-R)C=b.
+\]
+
+Resolviendo:
+
+\[
+\boxed{
+C=
+\left(
+-\frac12+\sqrt3,
+\frac{\sqrt3}{2}
+\right)
+}
+\]
+
+Por tanto:
+
+\[
+\boxed{
+G_1\circ G_2
+\text{ es un giro de ángulo }
+\frac{\pi}{2}
+\text{ y centro }
+\left(
+-\frac12+\sqrt3,
+\frac{\sqrt3}{2}
+\right).
+}
+\]
+
+\section{Ejercicio 30}
+\subsection{Solución}
+
+La parte lineal es:
+
+\[
+A=
+\begin{pmatrix}
+1&b\\
+a-1&a^2
+\end{pmatrix}.
+\]
+
+Para que sea un movimiento rígido:
+
+\[
+A^tA=I.
+\]
+
+La primera columna debe tener norma \(1\):
+
+\[
+1+(a-1)^2=1.
+\]
+
+Por tanto:
+
+\[
+a=1.
+\]
+
+La ortogonalidad entre las columnas da:
+
+\[
+b=0.
+\]
+
+Así:
+
+\[
+\boxed{
+a=1,
+\qquad
+b=0,
+\qquad
+c\in\R.
+}
+\]
+
+La transformación queda:
+
+\[
+(x',y')=(x+c,y).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\begin{cases}
+c=0 & \text{identidad},\\
+c\neq0 & \text{traslación de vector }(c,0).
+\end{cases}
+}
+\]
+
+\section{Ejercicio 31}
+\subsection{Solución}
+
+La ecuación matricial equivale a:
+
+\[
+\begin{pmatrix}
+x'\\
+y'\\
+z'
+\end{pmatrix}
+=
+\begin{pmatrix}
+1\\
+2\\
+3
+\end{pmatrix}
++
+I
+\begin{pmatrix}
+x\\
+y\\
+z
+\end{pmatrix}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{Es una traslación de vector }(1,2,3).
+}
+\]
+
+\section{Ejercicio 32}
+\subsection{Solución}
+
+La transformación es:
+
+\[
+X'=B+AX
+\]
+
+con:
+
+\[
+B=
+\begin{pmatrix}
+-\frac{10}{3}\\[1mm]
+-\frac{20}{3}\\[1mm]
+-\frac{10}{3}
+\end{pmatrix}
+\]
+
+y:
+
+\[
+A=
+\frac13
+\begin{pmatrix}
+2&-2&-1\\
+-2&-1&-2\\
+-1&-2&2
+\end{pmatrix}.
+\]
+
+Se verifica:
+
+\[
+A^tA=I,
+\qquad
+\det A=-1.
+\]
+
+Los autovalores son:
+
+\[
+1,\quad1,\quad-1.
+\]
+
+El subespacio asociado a \(-1\) es:
+
+\[
+V_{-1}
+=
+\mathcal L\{(1,2,1)\}.
+\]
+
+Los puntos fijos satisfacen:
+
+\[
+(A-I)X=-B.
+\]
+
+Se obtiene:
+
+\[
+x+2y+z+10=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{Es la simetría especular respecto del plano }
+x+2y+z+10=0.
+}
+\]
+
+\section{Ejercicio 33}
+\subsection{Solución}
+
+El plano es:
+
+\[
+x-2y=7.
+\]
+
+Tomamos:
+
+\[
+n=(1,-2,0).
+\]
+
+La simetría es:
+
+\[
+X'
+=
+X
+-
+2\frac{x-2y-7}{5}(1,-2,0).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\begin{pmatrix}
+x'\\
+y'\\
+z'
+\end{pmatrix}
+=
+\begin{pmatrix}
+\frac{14}{5}\\[1mm]
+-\frac{28}{5}\\[1mm]
+0
+\end{pmatrix}
++
+\frac15
+\begin{pmatrix}
+3&4&0\\
+4&-3&0\\
+0&0&5
+\end{pmatrix}
+\begin{pmatrix}
+x\\
+y\\
+z
+\end{pmatrix}
+}
+\]
+
+\section{Ejercicio 34}
+\subsection{Solución}
+
+La transformación es:
+
+\[
+X'=B+AX,
+\]
+
+con:
+
+\[
+B=
+\begin{pmatrix}
+-6\\
+1\\
+-7
+\end{pmatrix},
+\qquad
+A=
+\begin{pmatrix}
+0&0&-1\\
+0&1&0\\
+-1&0&0
+\end{pmatrix}.
+\]
+
+Se verifica:
+
+\[
+A^tA=I,
+\qquad
+\det A=-1.
+\]
+
+Además:
+
+\[
+V_{-1}
+=
+\mathcal L\{(1,0,1)\}.
+\]
+
+No existen puntos fijos, por lo que es una simetría deslizante respecto de un plano.
+
+Descomponemos:
+
+\[
+B=B_\parallel+B_\perp,
+\]
+
+obteniendo:
+
+\[
+B_\parallel
+=
+\left(
+\frac12,1,-\frac12
+\right),
+\]
+
+\[
+B_\perp
+=
+\left(
+-\frac{13}{2},0,-\frac{13}{2}
+\right).
+\]
+
+El plano de simetría es:
+
+\[
+\boxed{
+x+z=-\frac{13}{2}
+}
+\]
+
+y el vector de desplazamiento:
+
+\[
+\boxed{
+v=
+\left(
+\frac12,1,-\frac12
+\right).
+}
+\]
+
+\section{Ejercicio 35}
+\subsection{Solución}
+
+El plano es:
+
+\[
+x+y+1=0.
+\]
+
+La simetría respecto de dicho plano es:
+
+\[
+\begin{pmatrix}
+x_r\\
+y_r\\
+z_r
+\end{pmatrix}
+=
+\begin{pmatrix}
+-1\\
+-1\\
+0
+\end{pmatrix}
++
+\begin{pmatrix}
+0&-1&0\\
+-1&0&0\\
+0&0&1
+\end{pmatrix}
+\begin{pmatrix}
+x\\
+y\\
+z
+\end{pmatrix}.
+\]
+
+Añadiendo el desplazamiento:
+
+\[
+v=(0,0,2),
+\]
+
+se obtiene:
+
+\[
+\boxed{
+\begin{pmatrix}
+x'\\
+y'\\
+z'
+\end{pmatrix}
+=
+\begin{pmatrix}
+-1\\
+-1\\
+2
+\end{pmatrix}
++
+\begin{pmatrix}
+0&-1&0\\
+-1&0&0\\
+0&0&1
+\end{pmatrix}
+\begin{pmatrix}
+x\\
+y\\
+z
+\end{pmatrix}
+}
+\]
+
+\section{Ejercicio 36}
+\subsection{Solución}
+
+La transformación tiene la forma:
+
+\[
+X'
+=
+C+A(X-C),
+\]
+
+con:
+
+\[
+C=(0,0,1)
+\]
+
+y:
+
+\[
+A=
+\frac13
+\begin{pmatrix}
+1&1+\sqrt3&1-\sqrt3\\
+1-\sqrt3&1&1+\sqrt3\\
+1+\sqrt3&1-\sqrt3&1
+\end{pmatrix}.
+\]
+
+Se verifica:
+
+\[
+A^tA=I,
+\qquad
+\det A=1.
+\]
+
+Además:
+
+\[
+A(1,1,1)=(1,1,1).
+\]
+
+Por tanto, el eje es:
+
+\[
+\boxed{
+r:
+X=(0,0,1)+\lambda(1,1,1)
+}
+\]
+
+La traza es:
+
+\[
+\tr A=1.
+\]
+
+Para un giro en \(\R^3\):
+
+\[
+\tr A=1+2\cos\theta.
+\]
+
+Así:
+
+\[
+\cos\theta=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\theta=\frac{\pi}{2}
+}
+\]
+
+y la transformación es un giro de \(90^\circ\) alrededor de \(r\).
+
+\section{Ejercicio 37}
+\subsection{Solución}
+
+El eje es:
+
+\[
+r:
+(1,0,0)+\lambda(-1,-1,1).
+\]
+
+Tomamos como dirección orientada:
+
+\[
+u=
+\frac1{\sqrt3}(-1,-1,1).
+\]
+
+Para:
+
+\[
+\theta=240^\circ,
+\]
+
+la fórmula de Rodrigues proporciona:
+
+\[
+R=
+\begin{pmatrix}
+0&1&0\\
+0&0&-1\\
+-1&0&0
+\end{pmatrix}.
+\]
+
+Con:
+
+\[
+C=(1,0,0),
+\]
+
+el giro es:
+
+\[
+X'=C+R(X-C).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\begin{pmatrix}
+x'\\
+y'\\
+z'
+\end{pmatrix}
+=
+\begin{pmatrix}
+1\\
+0\\
+1
+\end{pmatrix}
++
+\begin{pmatrix}
+0&1&0\\
+0&0&-1\\
+-1&0&0
+\end{pmatrix}
+\begin{pmatrix}
+x\\
+y\\
+z
+\end{pmatrix}
+}
+\]
+
+\section{Ejercicio 38}
+\subsection{Solución}
+
+La transformación es:
+
+\[
+X'=B+AX,
+\]
+
+con:
+
+\[
+B=(1,1,0)
+\]
+
+y:
+
+\[
+A=
+\begin{pmatrix}
+0&1&0\\
+0&0&-1\\
+-1&0&0
+\end{pmatrix}.
+\]
+
+Se verifica:
+
+\[
+A^tA=I,
+\qquad
+\det A=1.
+\]
+
+Además:
+
+\[
+V_1
+=
+\mathcal L\{(-1,-1,1)\}.
+\]
+
+No existen puntos fijos, por lo que es un movimiento helicoidal.
+
+Como:
+
+\[
+\tr A=0,
+\]
+
+se tiene:
+
+\[
+1+2\cos\theta=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\theta=120^\circ
+}
+\]
+
+La componente de \(B\) paralela al eje es:
+
+\[
+\boxed{
+v=
+\left(
+\frac23,\frac23,-\frac23
+\right).
+}
+\]
+
+Un punto del eje es:
+
+\[
+C=
+\left(
+\frac23,\frac13,0
+\right).
+\]
+
+Así:
+
+\[
+\boxed{
+r:
+X=
+\left(
+\frac23,\frac13,0
+\right)
++
+\lambda(-1,-1,1)
+}
+\]
+
+\section{Ejercicio 39}
+\subsection{Solución}
+
+El eje pasa por:
+
+\[
+C=(1,1,1)
+\]
+
+y tiene dirección:
+
+\[
+v=(0,1,1).
+\]
+
+El giro es de:
+
+\[
+\theta=\frac{\pi}{2}
+\]
+
+en sentido \(-v\).
+
+Tomamos:
+
+\[
+u=
+\frac1{\sqrt2}(0,-1,-1).
+\]
+
+Por Rodrigues:
+
+\[
+R=
+\begin{pmatrix}
+0&\frac{\sqrt2}{2}&-\frac{\sqrt2}{2}\\[1mm]
+-\frac{\sqrt2}{2}&\frac12&\frac12\\[1mm]
+\frac{\sqrt2}{2}&\frac12&\frac12
+\end{pmatrix}.
+\]
+
+El movimiento helicoidal es:
+
+\[
+X'=C+R(X-C)+v.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+X'
+=
+\begin{pmatrix}
+1\\[1mm]
+1+\frac{\sqrt2}{2}\\[1mm]
+1-\frac{\sqrt2}{2}
+\end{pmatrix}
++
+\begin{pmatrix}
+0&\frac{\sqrt2}{2}&-\frac{\sqrt2}{2}\\[1mm]
+-\frac{\sqrt2}{2}&\frac12&\frac12\\[1mm]
+\frac{\sqrt2}{2}&\frac12&\frac12
+\end{pmatrix}
+X
+}
+\]
+
+\section{Ejercicio 40}
+\subsection{Solución}
+
+La transformación es:
+
+\[
+X'=B+AX,
+\]
+
+con:
+
+\[
+B=
+\begin{pmatrix}
+\frac13\\[1mm]
+\frac43\\[1mm]
+-\frac23
+\end{pmatrix}
+\]
+
+y:
+
+\[
+A=
+\frac13
+\begin{pmatrix}
+-2&-2&-1\\
+-2&1&2\\
+1&-2&2
+\end{pmatrix}.
+\]
+
+Se verifica:
+
+\[
+A^tA=I,
+\qquad
+\det A=-1.
+\]
+
+Tiene un único punto fijo:
+
+\[
+\boxed{
+C=
+\left(
+\frac12,0,-\frac32
+\right).
+}
+\]
+
+Además:
+
+\[
+V_{-1}
+=
+\mathcal L\{(2,1,0)\}.
+\]
+
+Por tanto, es una simetría rotatoria.
+
+Su traza es:
+
+\[
+\tr A=\frac13.
+\]
+
+Así:
+
+\[
+-1+2\cos\theta=\frac13,
+\]
+
+por lo que:
+
+\[
+\boxed{
+\theta
+=
+\arccos\left(\frac23\right)
+}
+\]
+
+El eje es:
+
+\[
+\boxed{
+r:
+X=
+\left(
+\frac12,0,-\frac32
+\right)
++
+\lambda(2,1,0)
+}
+\]
+
+y el plano de simetría:
+
+\[
+\boxed{
+2x+y-1=0.
+}
+\]
+
+\section{Ejercicio 41}
+\subsection{Solución}
+
+La simetría respecto del plano:
+
+\[
+x=1
+\]
+
+es:
+
+\[
+\boxed{
+\begin{pmatrix}
+x'\\
+y'\\
+z'
+\end{pmatrix}
+=
+\begin{pmatrix}
+2\\
+0\\
+0
+\end{pmatrix}
++
+\begin{pmatrix}
+-1&0&0\\
+0&1&0\\
+0&0&1
+\end{pmatrix}
+\begin{pmatrix}
+x\\
+y\\
+z
+\end{pmatrix}
+}
+\]
+
+La recta perpendicular al plano que pasa por:
+
+\[
+(0,0,1)
+\]
+
+es:
+
+\[
+r:
+(0,0,1)+\lambda(1,0,0).
+\]
+
+El giro de \(90^\circ\) alrededor de dicha recta es:
+
+\[
+\boxed{
+\begin{pmatrix}
+x'\\
+y'\\
+z'
+\end{pmatrix}
+=
+\begin{pmatrix}
+0\\
+1\\
+1
+\end{pmatrix}
++
+\begin{pmatrix}
+1&0&0\\
+0&0&-1\\
+0&1&0
+\end{pmatrix}
+\begin{pmatrix}
+x\\
+y\\
+z
+\end{pmatrix}
+}
+\]
+
+\section{Ejercicio 42}
+\subsection{Solución}
+
+La parte lineal es:
+
+\[
+A=
+\begin{pmatrix}
+1&0&0\\
+0&\alpha&\frac{\sqrt3}{2}\\
+0&\frac{\sqrt3}{2}&\frac12
+\end{pmatrix}.
+\]
+
+Para que sea ortogonal:
+
+\[
+A^tA=I.
+\]
+
+De la ortogonalidad de las columnas segunda y tercera:
+
+\[
+\frac{\sqrt3}{2}\alpha
++
+\frac{\sqrt3}{4}
+=
+0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\alpha=-\frac12
+}
+\]
+
+Para este valor:
+
+\[
+\det A=-1,
+\qquad
+\tr A=1.
+\]
+
+La transformación no tiene puntos fijos, por lo que es una simetría deslizante respecto de un plano.
+
+El subespacio:
+
+\[
+V_{-1}
+=
+\mathcal L\{(0,-\sqrt3,1)\}.
+\]
+
+El plano de simetría es:
+
+\[
+\boxed{
+-\sqrt3\,y+z=-\frac{\sqrt3}{2}
+}
+\]
+
+y el vector de desplazamiento:
+
+\[
+\boxed{
+v=
+\left(
+2,\frac14,\frac{\sqrt3}{4}
+\right).
+}
+\]
+
+\section{Ejercicio 43}
+\subsection{Solución}
+
+Los planos son:
+
+\[
+\pi_1:
+3y-4z+6=0,
+\]
+
+\[
+\pi_2:
+3y-4z-4=0.
+\]
+
+Son paralelos y tienen vector normal:
+
+\[
+n=(0,3,-4).
+\]
+
+La composición de las simetrías respecto de dos planos paralelos es una traslación perpendicular a ambos.
+
+Tomando la composición en el orden:
+
+\[
+S_{\pi_2}\circ S_{\pi_1},
+\]
+
+el vector de traslación es:
+
+\[
+v
+=
+\frac{2(4-(-6))}{25}(0,3,-4).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+v=
+\left(
+0,\frac{12}{5},-\frac{16}{5}
+\right)
+}
+\]
+
+Así:
+
+\[
+\boxed{
+X'
+=
+X+
+\left(
+0,\frac{12}{5},-\frac{16}{5}
+\right)
+}
+\]
+
+y la transformación resultante es una traslación.
+
+\section{Ejercicio 44}
+\subsection{Solución}
+
+El plano es:
+
+\[
+3x-4z+5=0.
+\]
+
+Su vector normal es:
+
+\[
+n=(3,0,-4).
+\]
+
+La matriz lineal de la simetría es:
+
+\[
+R=
+\frac1{25}
+\begin{pmatrix}
+7&0&24\\
+0&25&0\\
+24&0&-7
+\end{pmatrix}.
+\]
+
+La parte independiente es:
+
+\[
+b_S
+=
+\left(
+-\frac65,0,\frac85
+\right).
+\]
+
+La traslación tiene vector:
+
+\[
+v=(15,0,-20).
+\]
+
+Tomando:
+
+\[
+T_v\circ S,
+\]
+
+se obtiene:
+
+\[
+b=b_S+v
+=
+\left(
+\frac{69}{5},0,-\frac{92}{5}
+\right).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+X'
+=
+\begin{pmatrix}
+\frac{69}{5}\\[1mm]
+0\\[1mm]
+-\frac{92}{5}
+\end{pmatrix}
++
+\frac1{25}
+\begin{pmatrix}
+7&0&24\\
+0&25&0\\
+24&0&-7
+\end{pmatrix}
+X
+}
+\]
+
+Como el desplazamiento es perpendicular al plano, la composición sigue siendo una simetría especular.
+
+Su plano de puntos fijos es:
+
+\[
+\boxed{
+3x-4z-\frac{115}{2}=0
+}
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{La transformación resultante es una simetría respecto de un plano.}
+}
+\]
+
+\end{document}

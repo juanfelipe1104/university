@@ -1,0 +1,2064 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\sen}{\operatorname{sen}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Geometría Lineal}\\[0.4em]
+{\Large Tema 2: Geometría analítica del plano y del espacio}\\[0.4em]
+{\large Soluciones}
+\end{center}
+
+\section{Ejercicio 1}
+\subsection{Solución}
+
+La recta pasa por:
+
+\[
+A=(1,2,1)
+\]
+
+y tiene vector director:
+
+\[
+v=(4,5,-1).
+\]
+
+Su ecuación vectorial es:
+
+\[
+\boxed{
+(x,y,z)
+=
+(1,2,1)
++
+\lambda(4,5,-1)
+}
+\]
+
+Las ecuaciones paramétricas son:
+
+\[
+\boxed{
+\begin{cases}
+x=1+4\lambda,\\
+y=2+5\lambda,\\
+z=1-\lambda.
+\end{cases}
+}
+\]
+
+La ecuación continua es:
+
+\[
+\boxed{
+\frac{x-1}{4}
+=
+\frac{y-2}{5}
+=
+\frac{z-1}{-1}
+}
+\]
+
+\section{Ejercicio 2}
+\subsection{Solución}
+
+Sean:
+
+\[
+A=(1,0,1),
+\qquad
+B=(0,1,1).
+\]
+
+Un vector director es:
+
+\[
+\overrightarrow{AB}
+=
+(-1,1,0).
+\]
+
+Por tanto, la ecuación vectorial es:
+
+\[
+\boxed{
+(x,y,z)
+=
+(1,0,1)
++
+\lambda(-1,1,0)
+}
+\]
+
+Las ecuaciones paramétricas son:
+
+\[
+\boxed{
+\begin{cases}
+x=1-\lambda,\\
+y=\lambda,\\
+z=1.
+\end{cases}
+}
+\]
+
+La ecuación continua puede escribirse como:
+
+\[
+\boxed{
+\frac{x-1}{-1}
+=
+\frac{y}{1},
+\qquad
+z=1
+}
+\]
+
+Como todos los puntos de la recta verifican:
+
+\[
+z=1,
+\]
+
+la recta es paralela al plano:
+
+\[
+z=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+r\cap\{z=0\}
+=
+\varnothing
+}
+\]
+
+\section{Ejercicio 3}
+\subsection{Solución}
+
+El plano pasa por:
+
+\[
+A=(1,1,1)
+\]
+
+y contiene los vectores:
+
+\[
+v=(1,-1,1),
+\qquad
+w=(2,3,-1).
+\]
+
+Las ecuaciones paramétricas son:
+
+\[
+\boxed{
+\begin{cases}
+x=1+\lambda+2\mu,\\
+y=1-\lambda+3\mu,\\
+z=1+\lambda-\mu.
+\end{cases}
+}
+\]
+
+Un vector normal es:
+
+\[
+n=v\times w
+=
+(-2,3,5).
+\]
+
+Por tanto:
+
+\[
+-2(x-1)+3(y-1)+5(z-1)=0.
+\]
+
+Así:
+
+\[
+\boxed{
+-2x+3y+5z-6=0
+}
+\]
+
+\section{Ejercicio 4}
+\subsection{Solución}
+
+Sean:
+
+\[
+A=(-1,2,3),
+\qquad
+B=(3,1,4).
+\]
+
+Entonces:
+
+\[
+\overrightarrow{AB}
+=
+(4,-1,1).
+\]
+
+El plano contiene además:
+
+\[
+v=(0,0,1).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\begin{cases}
+x=-1+4\lambda,\\
+y=2-\lambda,\\
+z=3+\lambda+\mu.
+\end{cases}
+}
+\]
+
+Un vector normal es:
+
+\[
+n
+=
+\overrightarrow{AB}\times v
+=
+(-1,-4,0).
+\]
+
+Podemos tomar:
+
+\[
+n=(1,4,0).
+\]
+
+Por tanto:
+
+\[
+(x+1)+4(y-2)=0.
+\]
+
+Así:
+
+\[
+\boxed{
+x+4y-7=0
+}
+\]
+
+\section{Ejercicio 5}
+\subsection{Solución}
+
+Sean:
+
+\[
+A=(1,0,1),
+\quad
+B=(0,0,2),
+\quad
+C=(3,2,1).
+\]
+
+Se tiene:
+
+\[
+\overrightarrow{AB}=(-1,0,1),
+\]
+
+\[
+\overrightarrow{AC}=(2,2,0).
+\]
+
+Un vector normal al plano \(ABC\) es:
+
+\[
+\overrightarrow{AB}\times\overrightarrow{AC}
+=
+(-2,2,-2).
+\]
+
+Por tanto, el plano es:
+
+\[
+\boxed{
+x-y+z-2=0
+}
+\]
+
+Intersecamos con:
+
+\[
+z=3.
+\]
+
+Entonces:
+
+\[
+x-y+1=0.
+\]
+
+Tomando:
+
+\[
+y=\lambda,
+\]
+
+se obtiene:
+
+\[
+x=\lambda-1.
+\]
+
+Por tanto, la recta de intersección es:
+
+\[
+\boxed{
+(x,y,z)
+=
+(-1,0,3)
++
+\lambda(1,1,0)
+}
+\]
+
+\section{Ejercicio 6}
+\subsection{Solución}
+
+Las ecuaciones paramétricas son:
+
+\[
+\begin{cases}
+x=1+\lambda+\mu,\\
+y=2-\lambda+\mu,\\
+z=4\lambda-3\mu.
+\end{cases}
+\]
+
+Los vectores directores son:
+
+\[
+v=(1,-1,4),
+\qquad
+w=(1,1,-3).
+\]
+
+Un vector normal es:
+
+\[
+v\times w
+=
+(-1,7,2).
+\]
+
+El plano pasa por:
+
+\[
+P=(1,2,0).
+\]
+
+Así:
+
+\[
+-(x-1)+7(y-2)+2z=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+-x+7y+2z-13=0
+}
+\]
+
+\section{Ejercicio 7}
+\subsection{Solución}
+
+La recta es:
+
+\[
+\frac{x-1}{2}
+=
+\frac{y+3}{1}
+=
+\frac{z}{-1}.
+\]
+
+Por tanto, pasa por:
+
+\[
+P=(1,-3,0)
+\]
+
+y tiene vector director:
+
+\[
+v=(2,1,-1).
+\]
+
+Además, el plano debe pasar por:
+
+\[
+A=(2,0,1).
+\]
+
+Entonces:
+
+\[
+\overrightarrow{PA}
+=
+(1,3,1).
+\]
+
+Un vector normal es:
+
+\[
+n
+=
+v\times\overrightarrow{PA}
+=
+(4,-3,5).
+\]
+
+Así:
+
+\[
+4(x-2)-3y+5(z-1)=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+4x-3y+5z-13=0
+}
+\]
+
+\section{Ejercicio 8}
+\subsection{Solución}
+
+La recta está dada como intersección de:
+
+\[
+2x+3y-z=1
+\]
+
+y:
+
+\[
+x-y+3z=2.
+\]
+
+Los vectores normales son:
+
+\[
+n_1=(2,3,-1),
+\qquad
+n_2=(1,-1,3).
+\]
+
+Por tanto, un vector director de la recta es:
+
+\[
+v
+=
+n_1\times n_2
+=
+(8,-7,-5).
+\]
+
+El plano buscado es perpendicular a la recta, por lo que \(v\) es un vector normal al plano.
+
+Como pasa por:
+
+\[
+A=(1,3,2),
+\]
+
+se tiene:
+
+\[
+8(x-1)-7(y-3)-5(z-2)=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+8x-7y-5z+23=0
+}
+\]
+
+\section{Ejercicio 9}
+\subsection{Solución}
+
+Tomamos:
+
+\[
+A=(0,5,3),
+\quad
+B=(0,6,4),
+\quad
+C=(2,4,2),
+\quad
+D=(2,3,1).
+\]
+
+Se tiene:
+
+\[
+\overrightarrow{AB}=(0,1,1),
+\]
+
+\[
+\overrightarrow{AC}=(2,-1,-1),
+\]
+
+\[
+\overrightarrow{AD}=(2,-2,-2).
+\]
+
+Calculamos:
+
+\[
+\det
+\begin{pmatrix}
+0&2&2\\
+1&-1&-2\\
+1&-1&-2
+\end{pmatrix}
+=
+0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A,B,C,D
+\text{ son coplanarios}
+}
+\]
+
+\section{Ejercicio 10}
+\subsection{Solución}
+
+La recta \(r\) es:
+
+\[
+(x,y,z)
+=
+(2,5,1)
++
+\lambda(-1,1,3).
+\]
+
+Sustituyendo en los planos que definen \(s\):
+
+\[
+x+y-2z-1=0,
+\]
+
+\[
+3x+3y-4z-9=0,
+\]
+
+se obtiene:
+
+\[
+\lambda=\frac23.
+\]
+
+Por tanto, ambas rectas se cortan en:
+
+\[
+\boxed{
+P=
+\left(
+\frac43,
+\frac{17}{3},
+3
+\right)
+}
+\]
+
+Un vector director de \(s\) es:
+
+\[
+v_s
+=
+(1,1,-2)\times(3,3,-4)
+=
+(2,-2,0).
+\]
+
+Podemos tomar:
+
+\[
+v_s=(1,-1,0).
+\]
+
+El vector director de \(r\) es:
+
+\[
+v_r=(-1,1,3).
+\]
+
+Entonces:
+
+\[
+\cos\theta
+=
+\frac{|v_r\cdot v_s|}
+{\|v_r\|\|v_s\|}
+=
+\frac{2}{\sqrt{22}}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\theta
+=
+\arccos\left(
+\frac{2}{\sqrt{22}}
+\right)
+}
+\]
+
+\section{Ejercicio 11}
+\subsection{Solución}
+
+Los vectores normales son:
+
+\[
+n_1=(5,-14,2),
+\]
+
+\[
+n_2=(10,-11,2).
+\]
+
+Así:
+
+\[
+n_1\cdot n_2
+=
+208.
+\]
+
+Además:
+
+\[
+\|n_1\|
+=
+\|n_2\|
+=
+15.
+\]
+
+Por tanto:
+
+\[
+\cos\theta
+=
+\frac{208}{225}.
+\]
+
+Así:
+
+\[
+\boxed{
+\theta
+=
+\arccos\left(
+\frac{208}{225}
+\right)
+}
+\]
+
+\section{Ejercicio 12}
+\subsection{Solución}
+
+La recta pasa por:
+
+\[
+P_r=(2,3,4)
+\]
+
+y tiene vector director:
+
+\[
+v=(4,4,2).
+\]
+
+El punto dado es:
+
+\[
+P=(1,2,3).
+\]
+
+La distancia es:
+
+\[
+d(P,r)
+=
+\frac{
+\|\overrightarrow{P_rP}\times v\|
+}{
+\|v\|
+}.
+\]
+
+Se tiene:
+
+\[
+\overrightarrow{P_rP}
+=
+(-1,-1,-1).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+d(P,r)
+=
+\frac{\sqrt2}{3}
+}
+\]
+
+\section{Ejercicio 13}
+\subsection{Solución}
+
+La recta es:
+
+\[
+\begin{cases}
+x=2+3\lambda,\\
+y=-1+\lambda,\\
+z=1-2\lambda.
+\end{cases}
+\]
+
+Eliminando \(\lambda\):
+
+\[
+x-3y-5=0,
+\]
+
+\[
+z+2y+1=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+r:
+\begin{cases}
+x-3y-5=0,\\
+z+2y+1=0.
+\end{cases}
+}
+\]
+
+Para calcular la distancia al punto:
+
+\[
+P=(1,3,-2),
+\]
+
+tomamos:
+
+\[
+P_r=(2,-1,1),
+\qquad
+v=(3,1,-2).
+\]
+
+Entonces:
+
+\[
+d(P,r)
+=
+\frac{
+\|\overrightarrow{P_rP}\times v\|
+}{
+\|v\|
+}.
+\]
+
+Se obtiene:
+
+\[
+\boxed{
+d(P,r)
+=
+\frac{3\sqrt{10}}{2}
+}
+\]
+
+\section{Ejercicio 14}
+\subsection{Solución}
+
+Sea:
+
+\[
+P=(3,1,-2)
+\]
+
+y:
+
+\[
+\pi:
+2x+y-z+1=0.
+\]
+
+\textbf{Primera forma: fórmula directa.}
+
+\[
+d(P,\pi)
+=
+\frac{
+|2\cdot3+1-(-2)+1|
+}{
+\sqrt{2^2+1^2+(-1)^2}
+}.
+\]
+
+Así:
+
+\[
+d(P,\pi)
+=
+\frac{10}{\sqrt6}.
+\]
+
+\textbf{Segunda forma: proyección sobre el vector normal.}
+
+Un vector normal es:
+
+\[
+n=(2,1,-1).
+\]
+
+Tomando un punto \(Q\in\pi\), la distancia es:
+
+\[
+d(P,\pi)
+=
+\left|
+\operatorname{proy}_{n}
+\overrightarrow{QP}
+\right|.
+\]
+
+El resultado es de nuevo:
+
+\[
+\frac{10}{\sqrt6}.
+\]
+
+\textbf{Tercera forma: recta perpendicular.}
+
+La recta perpendicular a \(\pi\) que pasa por \(P\) es:
+
+\[
+(x,y,z)
+=
+(3,1,-2)
++
+\lambda(2,1,-1).
+\]
+
+Su intersección con \(\pi\) se produce en:
+
+\[
+\lambda=-\frac53.
+\]
+
+La distancia entre ambos puntos es:
+
+\[
+\left|
+-\frac53
+\right|
+\sqrt6.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+d(P,\pi)
+=
+\frac{5\sqrt6}{3}
+}
+\]
+
+\section{Ejercicio 15}
+\subsection{Solución}
+
+El plano es:
+
+\[
+(x,y,z)
+=
+(0,0,-4)
++
+\lambda(2,2,-1)
++
+\mu(-3,2,0).
+\]
+
+Un vector normal es:
+
+\[
+n
+=
+(2,2,-1)\times(-3,2,0)
+=
+(2,3,10).
+\]
+
+Por tanto, su ecuación general es:
+
+\[
+2x+3y+10(z+4)=0.
+\]
+
+Así:
+
+\[
+\boxed{
+2x+3y+10z+40=0
+}
+\]
+
+Para:
+
+\[
+P=(5,5,3),
+\]
+
+la distancia es:
+
+\[
+d(P,\pi)
+=
+\frac{
+|10+15+30+40|
+}{
+\sqrt{4+9+100}
+}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+d(P,\pi)
+=
+\frac{95}{\sqrt{113}}
+}
+\]
+
+\section{Ejercicio 16}
+\subsection{Solución}
+
+Los planos son:
+
+\[
+\pi_1:
+2x-y-2z+5=0
+\]
+
+y:
+
+\[
+\pi_2:
+4x-2y-4z+15=0.
+\]
+
+Dividiendo la segunda ecuación entre \(2\):
+
+\[
+\pi_2:
+2x-y-2z+\frac{15}{2}=0.
+\]
+
+Por tanto:
+
+\[
+d(\pi_1,\pi_2)
+=
+\frac{
+\left|
+\frac{15}{2}-5
+\right|
+}{
+\sqrt{2^2+(-1)^2+(-2)^2}
+}.
+\]
+
+Así:
+
+\[
+\boxed{
+d(\pi_1,\pi_2)
+=
+\frac56
+}
+\]
+
+\section{Ejercicio 17}
+\subsection{Solución}
+
+Sea:
+
+\[
+P=(1,0,0)
+\]
+
+y el plano:
+
+\[
+x+2y+3z-15=0.
+\]
+
+Un vector normal es:
+
+\[
+n=(1,2,3).
+\]
+
+El pie de la perpendicular es:
+
+\[
+H
+=
+P
+-
+\frac{
+1+2\cdot0+3\cdot0-15
+}{
+1^2+2^2+3^2
+}
+n.
+\]
+
+Así:
+
+\[
+H=(2,2,3).
+\]
+
+El punto simétrico es:
+
+\[
+P'
+=
+2H-P.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+P'=(3,4,6)
+}
+\]
+
+\section{Ejercicio 18}
+\subsection{Solución}
+
+La recta \(r\) es:
+
+\[
+(x,y,z)
+=
+(1,-3,0)
++
+\lambda(2,-1,1).
+\]
+
+La recta \(s\) es:
+
+\[
+(x,y,z)
+=
+(0,1,3)
++
+\mu(1,-1,2).
+\]
+
+Tomamos:
+
+\[
+v_r=(2,-1,1),
+\qquad
+v_s=(1,-1,2).
+\]
+
+Entonces:
+
+\[
+v_r\times v_s
+=
+(-1,-3,-1).
+\]
+
+Además:
+
+\[
+\overrightarrow{P_rP_s}
+=
+(-1,4,3).
+\]
+
+La distancia entre dos rectas reversas es:
+
+\[
+d(r,s)
+=
+\frac{
+\left|
+\overrightarrow{P_rP_s}
+\cdot
+(v_r\times v_s)
+\right|
+}{
+\|v_r\times v_s\|
+}.
+\]
+
+Así:
+
+\[
+\boxed{
+d(r,s)
+=
+\frac{14}{\sqrt{11}}
+}
+\]
+
+\section{Ejercicio 19}
+\subsection{Solución}
+
+La recta \(r\) pasa por:
+
+\[
+A=(1,2,-1)
+\]
+
+y tiene vector director:
+
+\[
+v_r
+=
+B-A
+=
+(1,-1,1).
+\]
+
+La recta \(s\) pasa por:
+
+\[
+C=(4,1,0)
+\]
+
+y tiene vector director:
+
+\[
+v_s
+=
+D-C
+=
+(-4,0,-2).
+\]
+
+Sean:
+
+\[
+R=A+\lambda v_r,
+\]
+
+\[
+S=C+\mu v_s.
+\]
+
+Para que \(R\) y \(S\) sean los puntos más cercanos:
+
+\[
+(R-S)\cdot v_r=0,
+\]
+
+\[
+(R-S)\cdot v_s=0.
+\]
+
+Resolviendo:
+
+\[
+\lambda=\frac23,
+\qquad
+\mu=\frac12.
+\]
+
+Por tanto:
+
+\[
+R=
+\left(
+\frac53,
+\frac43,
+-\frac13
+\right),
+\]
+
+\[
+S=(2,1,-1).
+\]
+
+Un vector director de la recta que los une es:
+
+\[
+S-R
+=
+\frac13(1,-1,-2).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+(x,y,z)
+=
+\left(
+\frac53,
+\frac43,
+-\frac13
+\right)
++
+t(1,-1,-2)
+}
+\]
+
+\section{Ejercicio 20}
+\subsection{Solución}
+
+La simetría respecto de la recta:
+
+\[
+x=y=z
+\]
+
+es un giro de \(180^\circ\) alrededor del vector:
+
+\[
+u=(1,1,1).
+\]
+
+La matriz asociada es:
+
+\[
+R
+=
+\frac23
+\begin{pmatrix}
+1&1&1\\
+1&1&1\\
+1&1&1
+\end{pmatrix}
+-
+I.
+\]
+
+El plano original es:
+
+\[
+x+2y-3z=1.
+\]
+
+Su vector normal es:
+
+\[
+n=(1,2,-3).
+\]
+
+Transformándolo:
+
+\[
+Rn=(-1,-2,3).
+\]
+
+Por tanto, el plano simétrico es:
+
+\[
+-x-2y+3z=1.
+\]
+
+Así:
+
+\[
+\boxed{
+x+2y-3z=-1
+}
+\]
+
+\section{Ejercicio 21}
+\subsection{Solución}
+
+La recta está dada por:
+
+\[
+\begin{cases}
+x+3y-z=3,\\
+2x-y+z=2.
+\end{cases}
+\]
+
+Los vectores normales son:
+
+\[
+n_1=(1,3,-1),
+\qquad
+n_2=(2,-1,1).
+\]
+
+Por tanto, un vector director es:
+
+\[
+v
+=
+n_1\times n_2
+=
+(2,-3,-7).
+\]
+
+El punto:
+
+\[
+P=(1,1,1)
+\]
+
+pertenece a la recta y también al eje:
+
+\[
+x=y=z.
+\]
+
+Por tanto, permanece fijo por la simetría.
+
+La simetría del vector director respecto del eje \(x=y=z\) es:
+
+\[
+v'
+=
+(-22,-7,5)
+\]
+
+salvo un factor escalar.
+
+Por tanto, la recta simétrica es:
+
+\[
+\boxed{
+(x,y,z)
+=
+(1,1,1)
++
+\lambda(-22,-7,5)
+}
+\]
+
+\section{Ejercicio 22}
+\subsection{Solución}
+
+El haz es:
+
+\[
+(2\lambda+1)x
++
+(-3\lambda+2)y
++
+(7\lambda-1)
+=
+0.
+\]
+
+Agrupamos los términos con \(\lambda\):
+
+\[
+\lambda(2x-3y+7)
++
+(x+2y-1)
+=
+0.
+\]
+
+Para que un punto pertenezca a todas las rectas deben cumplirse:
+
+\[
+2x-3y+7=0,
+\]
+
+\[
+x+2y-1=0.
+\]
+
+Resolviendo:
+
+\[
+x=-\frac{11}{7},
+\qquad
+y=\frac97.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+P=
+\left(
+-\frac{11}{7},
+\frac97
+\right)
+}
+\]
+
+es el punto fijo del haz.
+
+\section{Ejercicio 23}
+\subsection{Solución}
+
+Las rectas son:
+
+\[
+r:
+mx+(2m-1)y+3=0,
+\]
+
+\[
+s:
+(4m-7)x-(m+2)y-8=0.
+\]
+
+Dos rectas son perpendiculares si sus vectores normales son ortogonales tras intercambiar la condición equivalente:
+
+\[
+m(4m-7)
++
+(2m-1)(-m-2)
+=
+0.
+\]
+
+Simplificando:
+
+\[
+2(m^2-5m+1)=0.
+\]
+
+Por tanto:
+
+\[
+m^2-5m+1=0.
+\]
+
+Así:
+
+\[
+\boxed{
+m
+=
+\frac{5\pm\sqrt{21}}{2}
+}
+\]
+
+\section{Ejercicio 24}
+\subsection{Solución}
+
+La recta eje de simetría es:
+
+\[
+s:
+x-y-6=0.
+\]
+
+La simetría de un punto \((x,y)\) respecto de \(s\) es:
+
+\[
+(x',y')
+=
+(y+6,x-6).
+\]
+
+La recta original es:
+
+\[
+r:
+2x+4y-7=0.
+\]
+
+Como la simetría es involutiva, sustituimos:
+
+\[
+x=y'+6,
+\qquad
+y=x'-6.
+\]
+
+Entonces:
+
+\[
+2(y'+6)
++
+4(x'-6)
+-
+7
+=
+0.
+\]
+
+Simplificando:
+
+\[
+4x'+2y'-19=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+4x+2y-19=0
+}
+\]
+
+\section{Ejercicio 25}
+\subsection{Solución}
+
+La ecuación es:
+
+\[
+y^2-7xy+4x^2=0.
+\]
+
+Representa dos rectas que pasan por el origen:
+
+\[
+y=m_1x,
+\qquad
+y=m_2x,
+\]
+
+donde:
+
+\[
+m_{1,2}
+=
+\frac{7\pm\sqrt{33}}{2}.
+\]
+
+Las bisectrices forman el mismo ángulo con ambas rectas.
+
+Si:
+
+\[
+y=mx,
+\]
+
+la condición de igualdad de ángulos conduce a:
+
+\[
+7m^2-6m-7=0.
+\]
+
+Por tanto:
+
+\[
+m
+=
+\frac{3\pm\sqrt{58}}{7}.
+\]
+
+Así, las bisectrices son:
+
+\[
+\boxed{
+y
+=
+\frac{3+\sqrt{58}}{7}x
+}
+\]
+
+y:
+
+\[
+\boxed{
+y
+=
+\frac{3-\sqrt{58}}{7}x
+}
+\]
+
+Equivalentemente, ambas vienen dadas por:
+
+\[
+\boxed{
+7y^2-6xy-7x^2=0
+}
+\]
+
+\section{Ejercicio 26}
+\subsection{Solución}
+
+Sean:
+
+\[
+A=(1,4),
+\quad
+B=(-2,3),
+\quad
+C=(5,2).
+\]
+
+La mediatriz de \(AB\) y la mediatriz de \(AC\) se cortan en el circuncentro.
+
+Resolviendo sus ecuaciones se obtiene:
+
+\[
+\boxed{
+O=(1,-1)
+}
+\]
+
+Comprobamos:
+
+\[
+OA^2
+=
+(1-1)^2+(-1-4)^2
+=
+25,
+\]
+
+\[
+OB^2
+=
+(1+2)^2+(-1-3)^2
+=
+25,
+\]
+
+\[
+OC^2
+=
+(1-5)^2+(-1-2)^2
+=
+25.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+O=(1,-1)
+}
+\]
+
+\section{Ejercicio 27}
+\subsection{Solución}
+
+Sean:
+
+\[
+A=(0,0),
+\quad
+B=(14,0),
+\quad
+C=(5,12).
+\]
+
+Como \(AB\) es horizontal, la altura desde \(C\) es:
+
+\[
+x=5.
+\]
+
+La pendiente de \(BC\) es:
+
+\[
+m_{BC}
+=
+\frac{12}{5-14}
+=
+-\frac43.
+\]
+
+Por tanto, la altura desde \(A\) tiene pendiente:
+
+\[
+\frac34.
+\]
+
+Su ecuación es:
+
+\[
+y=\frac34x.
+\]
+
+Intersecando con:
+
+\[
+x=5,
+\]
+
+se obtiene:
+
+\[
+y=\frac{15}{4}.
+\]
+
+Así:
+
+\[
+\boxed{
+H=
+\left(
+5,
+\frac{15}{4}
+\right)
+}
+\]
+
+\section{Ejercicio 28}
+\subsection{Solución}
+
+El baricentro es la media aritmética de los vértices:
+
+\[
+G
+=
+\left(
+\frac{x_A+x_B+x_C}{3},
+\frac{y_A+y_B+y_C}{3}
+\right).
+\]
+
+Por tanto:
+
+\[
+G
+=
+\left(
+\frac{3+5+8}{3},
+\frac{4+12+15}{3}
+\right).
+\]
+
+Así:
+
+\[
+\boxed{
+G
+=
+\left(
+\frac{16}{3},
+\frac{31}{3}
+\right)
+}
+\]
+
+\section{Ejercicio 29}
+\subsection{Solución}
+
+La diagonal conocida es:
+
+\[
+d:
+x+2y-5=0.
+\]
+
+El vértice dado es:
+
+\[
+A=(2,-1).
+\]
+
+Como \(A\notin d\), la recta \(d\) es la diagonal que une los otros dos vértices.
+
+El centro del cuadrado es la proyección ortogonal de \(A\) sobre \(d\).
+
+Se obtiene:
+
+\[
+O=(3,1).
+\]
+
+El vértice opuesto a \(A\) es su simétrico respecto de \(O\):
+
+\[
+C=2O-A.
+\]
+
+Así:
+
+\[
+\boxed{
+C=(4,3)
+}
+\]
+
+La distancia:
+
+\[
+AO=\sqrt5.
+\]
+
+Un vector director de \(d\) es:
+
+\[
+(2,-1),
+\]
+
+cuya norma también es:
+
+\[
+\sqrt5.
+\]
+
+Por tanto, los otros vértices son:
+
+\[
+B=O+(2,-1)=(5,0),
+\]
+
+\[
+D=O-(2,-1)=(1,2).
+\]
+
+Así:
+
+\[
+\boxed{
+B=(5,0),
+\qquad
+C=(4,3),
+\qquad
+D=(1,2)
+}
+\]
+
+La diagonal \(AC\) mide:
+
+\[
+2\sqrt5.
+\]
+
+El área del cuadrado es:
+
+\[
+A
+=
+\frac{(2\sqrt5)^2}{2}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A=10
+}
+\]
+
+\section{Ejercicio 30}
+\subsection{Solución}
+
+Sean:
+
+\[
+A=(0,0,0),
+\quad
+B=(1,0,0),
+\quad
+C=(0,1,1).
+\]
+
+Los vectores de la base son:
+
+\[
+\overrightarrow{AB}=(1,0,0),
+\]
+
+\[
+\overrightarrow{AC}=(0,1,1).
+\]
+
+Un vector normal al plano \(ABC\) es:
+
+\[
+n
+=
+\overrightarrow{AB}\times\overrightarrow{AC}
+=
+(0,-1,1).
+\]
+
+Por tanto, el plano de la base es:
+
+\[
+\boxed{
+z-y=0
+}
+\]
+
+El plano paralelo que pasa por:
+
+\[
+P=(0,10,9)
+\]
+
+es:
+
+\[
+\boxed{
+z-y+1=0
+}
+\]
+
+El vértice:
+
+\[
+D=(x,y,z)
+\]
+
+equidista de \(A\), \(B\) y \(C\).
+
+De:
+
+\[
+DA=DB
+\]
+
+se obtiene:
+
+\[
+x=\frac12.
+\]
+
+De:
+
+\[
+DA=DC
+\]
+
+se obtiene:
+
+\[
+y+z=1.
+\]
+
+Además:
+
+\[
+z-y+1=0.
+\]
+
+Resolviendo:
+
+\[
+\boxed{
+D=
+\left(
+\frac12,
+1,
+0
+\right)
+}
+\]
+
+El área de la base es:
+
+\[
+A_{ABC}
+=
+\frac12
+\|
+\overrightarrow{AB}\times\overrightarrow{AC}
+\|
+=
+\frac{\sqrt2}{2}.
+\]
+
+La altura es la distancia entre los planos paralelos:
+
+\[
+h
+=
+\frac1{\sqrt2}.
+\]
+
+Por tanto:
+
+\[
+V
+=
+\frac13A_{ABC}h.
+\]
+
+Así:
+
+\[
+\boxed{
+V=\frac16
+}
+\]
+
+El simétrico de \(D\) respecto del plano:
+
+\[
+z-y=0
+\]
+
+se obtiene intercambiando las coordenadas \(y\) y \(z\).
+
+Por tanto:
+
+\[
+\boxed{
+D'
+=
+\left(
+\frac12,
+0,
+1
+\right)
+}
+\]
+
+\end{document}

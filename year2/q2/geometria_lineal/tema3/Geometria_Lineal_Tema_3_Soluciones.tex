@@ -1,0 +1,1958 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\sen}{\operatorname{sen}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Span}{\operatorname{L}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Geometría Lineal}\\[0.4em]
+{\Large Tema 3: Isometrías vectoriales}\\[0.4em]
+{\large Soluciones}
+\end{center}
+
+\section{Ejercicio 1}
+\subsection{Solución}
+
+Sean:
+
+\[
+u=(1,2,1),
+\qquad
+v=(0,-1,1).
+\]
+
+Un vector ortogonal a ambos es:
+
+\[
+u\times v
+=
+\begin{vmatrix}
+i&j&k\\
+1&2&1\\
+0&-1&1
+\end{vmatrix}
+=
+(3,-1,-1).
+\]
+
+Su norma es:
+
+\[
+\|(3,-1,-1)\|
+=
+\sqrt{11}.
+\]
+
+Por tanto, un vector unitario buscado es:
+
+\[
+\boxed{
+\frac1{\sqrt{11}}(3,-1,-1)
+}
+\]
+
+\section{Ejercicio 2}
+\subsection{Solución}
+
+Para:
+
+\[
+S_1=\Span\{(1,2,3)\},
+\]
+
+un vector:
+
+\[
+(x,y,z)\in S_1^\perp
+\]
+
+debe verificar:
+
+\[
+x+2y+3z=0.
+\]
+
+Tomando:
+
+\[
+y=1,\ z=0
+\]
+
+y:
+
+\[
+y=0,\ z=1,
+\]
+
+se obtiene:
+
+\[
+\boxed{
+S_1^\perp
+=
+\Span\{(-2,1,0),(-3,0,1)\}
+}
+\]
+
+Para:
+
+\[
+S_2
+=
+\Span\{(0,0,1),(1,1,1)\},
+\]
+
+debe cumplirse:
+
+\[
+z=0,
+\]
+
+\[
+x+y+z=0.
+\]
+
+Así:
+
+\[
+x+y=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+S_2^\perp
+=
+\Span\{(1,-1,0)\}
+}
+\]
+
+\section{Ejercicio 3}
+\subsection{Solución}
+
+El subespacio es:
+
+\[
+S=
+\{(x,y,z)\in\R^3:
+2x+y+2z=0\}.
+\]
+
+Un vector normal es:
+
+\[
+n=(2,1,2).
+\]
+
+Por tanto:
+
+\[
+S^\perp
+=
+\Span\{(2,1,2)\}.
+\]
+
+Como:
+
+\[
+\|n\|=3,
+\]
+
+una base ortonormal es:
+
+\[
+\boxed{
+\left\{
+\frac13(2,1,2)
+\right\}
+}
+\]
+
+\section{Ejercicio 4}
+\subsection{Solución}
+
+Tomamos:
+
+\[
+v_1=(1,2,1),
+\qquad
+v_2=(1,1,3).
+\]
+
+El primer vector es:
+
+\[
+w_1=v_1.
+\]
+
+El segundo es:
+
+\[
+w_2
+=
+v_2
+-
+\frac{v_2\cdot w_1}{w_1\cdot w_1}w_1.
+\]
+
+Como:
+
+\[
+v_2\cdot w_1=6,
+\qquad
+w_1\cdot w_1=6,
+\]
+
+se obtiene:
+
+\[
+w_2
+=
+(1,1,3)-(1,2,1)
+=
+(0,-1,2).
+\]
+
+Normalizando:
+
+\[
+u_1
+=
+\frac1{\sqrt6}(1,2,1),
+\]
+
+\[
+u_2
+=
+\frac1{\sqrt5}(0,-1,2).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\left\{
+\frac1{\sqrt6}(1,2,1),
+\frac1{\sqrt5}(0,-1,2)
+\right\}
+}
+\]
+
+\section{Ejercicio 5}
+\subsection{Solución}
+
+Toda isometría conserva la norma.
+
+En \(\R^3\):
+
+\[
+\|(1,1,0)\|
+=
+\sqrt2,
+\]
+
+\[
+\|(1,1,1)\|
+=
+\sqrt3.
+\]
+
+Como las normas son distintas:
+
+\[
+\boxed{
+\text{No existe tal isometría en }\R^3.
+}
+\]
+
+En \(\R^2\):
+
+\[
+\left\|
+\left(
+\frac1{\sqrt2},
+\frac1{\sqrt2}
+\right)
+\right\|
+=
+1
+=
+\|(1,0)\|.
+\]
+
+Sin embargo:
+
+\[
+(1,0)\cdot(0,1)=0
+\]
+
+mientras que:
+
+\[
+\left(
+\frac1{\sqrt2},
+\frac1{\sqrt2}
+\right)
+\cdot
+(1,0)
+=
+\frac1{\sqrt2}\neq0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{Tampoco existe tal isometría en }\R^2.
+}
+\]
+
+\section{Ejercicio 6}
+\subsection{Solución}
+
+Tomamos la base:
+
+\[
+B=
+\{(1,1),(1,2)\}.
+\]
+
+Las imágenes son:
+
+\[
+f(1,1)=(-1,1),
+\]
+
+\[
+f(1,2)=(-1,2).
+\]
+
+La matriz de cambio a la base canónica es:
+
+\[
+P=
+\begin{pmatrix}
+1&1\\
+1&2
+\end{pmatrix}.
+\]
+
+La matriz de \(f\) en la base canónica es:
+
+\[
+A
+=
+\begin{pmatrix}
+-1&-1\\
+1&2
+\end{pmatrix}
+P^{-1}
+=
+\begin{pmatrix}
+-1&0\\
+0&1
+\end{pmatrix}.
+\]
+
+Entonces:
+
+\[
+A^tA
+=
+I.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ es una isometría}
+}
+\]
+
+Geométricamente:
+
+\[
+\boxed{
+f(x,y)=(-x,y)
+}
+\]
+
+es la simetría respecto del eje \(Y\).
+
+\section{Ejercicio 7}
+\subsection{Solución}
+
+La base:
+
+\[
+B'=\{v_1,v_2\}
+\]
+
+viene dada por:
+
+\[
+v_1=e_1,
+\qquad
+v_2=e_2-e_1.
+\]
+
+Las imágenes son:
+
+\[
+f(v_1)=v_1+v_2=e_2,
+\]
+
+\[
+f(v_2)=-2v_1-v_2=-e_1-e_2.
+\]
+
+Como:
+
+\[
+e_2=v_1+v_2,
+\]
+
+se tiene:
+
+\[
+f(e_1)=e_2.
+\]
+
+Además:
+
+\[
+e_2=v_1+v_2
+\]
+
+y, por linealidad:
+
+\[
+f(e_2)
+=
+f(v_1)+f(v_2)
+=
+-e_1.
+\]
+
+Por tanto, en la base ortonormal \(B\):
+
+\[
+M_B(f)
+=
+\begin{pmatrix}
+0&-1\\
+1&0
+\end{pmatrix}.
+\]
+
+Como:
+
+\[
+M_B(f)^tM_B(f)=I,
+\]
+
+se concluye:
+
+\[
+\boxed{
+f\text{ es una isometría}
+}
+\]
+
+y corresponde a un giro de:
+
+\[
+\boxed{
+90^\circ
+}
+\]
+
+en sentido antihorario.
+
+\section{Ejercicio 8}
+\subsection{Solución}
+
+La matriz es:
+
+\[
+A=
+\begin{pmatrix}
+-\frac35&-\frac45\\[1mm]
+-\frac45&\frac35
+\end{pmatrix}.
+\]
+
+Se verifica:
+
+\[
+A^tA=I
+\]
+
+y:
+
+\[
+\det A=-1.
+\]
+
+Por tanto, es una simetría respecto de una recta.
+
+Buscamos los vectores fijos:
+
+\[
+(A-I)X=0.
+\]
+
+Se obtiene:
+
+\[
+2x+y=0.
+\]
+
+Por tanto:
+
+\[
+V_1
+=
+\Span\{(1,-2)\}.
+\]
+
+Así:
+
+\[
+\boxed{
+\text{Es la simetría ortogonal respecto de la recta }y=-2x.
+}
+\]
+
+\section{Ejercicio 9}
+\subsection{Solución}
+
+La recta:
+
+\[
+3x-2y=0
+\]
+
+tiene como vector director:
+
+\[
+v=(2,3).
+\]
+
+Normalizamos:
+
+\[
+u=
+\frac1{\sqrt{13}}(2,3).
+\]
+
+La matriz de la simetría respecto de la recta generada por \(u\) es:
+
+\[
+A
+=
+2uu^t-I.
+\]
+
+Por tanto:
+
+\[
+A
+=
+\frac1{13}
+\begin{pmatrix}
+8&12\\
+12&18
+\end{pmatrix}
+-
+\begin{pmatrix}
+1&0\\
+0&1
+\end{pmatrix}.
+\]
+
+Así:
+
+\[
+\boxed{
+A=
+\frac1{13}
+\begin{pmatrix}
+-5&12\\
+12&5
+\end{pmatrix}
+}
+\]
+
+\section{Ejercicio 10}
+\subsection{Solución}
+
+La matriz es:
+
+\[
+A=
+\begin{pmatrix}
+\frac13&-\frac{2\sqrt2}{3}\\[1mm]
+\frac{2\sqrt2}{3}&\frac13
+\end{pmatrix}.
+\]
+
+Se verifica:
+
+\[
+\det A=1.
+\]
+
+Además tiene la forma:
+
+\[
+A=
+\begin{pmatrix}
+\cos\theta&-\sen\theta\\
+\sen\theta&\cos\theta
+\end{pmatrix}.
+\]
+
+Por tanto:
+
+\[
+\cos\theta=\frac13,
+\]
+
+\[
+\sen\theta=\frac{2\sqrt2}{3}.
+\]
+
+Así:
+
+\[
+\boxed{
+\theta
+=
+\arccos\left(\frac13\right)
+}
+\]
+
+y:
+
+\[
+\boxed{
+\text{La transformación es un giro antihorario de ángulo }
+\arccos\left(\frac13\right).
+}
+\]
+
+\section{Ejercicio 11}
+\subsection{Solución}
+
+Un giro de \(60^\circ\) en sentido horario equivale a:
+
+\[
+\theta=-60^\circ.
+\]
+
+La matriz es:
+
+\[
+A=
+\begin{pmatrix}
+\cos\theta&-\sen\theta\\
+\sen\theta&\cos\theta
+\end{pmatrix}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A=
+\begin{pmatrix}
+\frac12&\frac{\sqrt3}{2}\\[1mm]
+-\frac{\sqrt3}{2}&\frac12
+\end{pmatrix}
+}
+\]
+
+\section{Ejercicio 12}
+\subsection{Solución}
+
+La matriz asociada es:
+
+\[
+A=
+\begin{pmatrix}
+\frac35&\frac45\\[1mm]
+\frac45&-\frac35
+\end{pmatrix}.
+\]
+
+Se verifica:
+
+\[
+A^tA=I.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ es una transformación ortogonal}
+}
+\]
+
+Además:
+
+\[
+\det A=-1,
+\]
+
+por lo que es una simetría respecto de una recta.
+
+Los vectores fijos satisfacen:
+
+\[
+(A-I)X=0.
+\]
+
+Se obtiene:
+
+\[
+x=2y.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+V_1=\Span\{(2,1)\}
+}
+\]
+
+y:
+
+\[
+\boxed{
+f\text{ es la simetría ortogonal respecto de la recta }x=2y.
+}
+\]
+
+\section{Ejercicio 13}
+\subsection{Solución}
+
+La matriz es:
+
+\[
+A=
+\begin{pmatrix}
+a&\frac35\\[1mm]
+c&b
+\end{pmatrix}.
+\]
+
+Para que sea ortogonal, sus columnas deben ser ortonormales:
+
+\[
+a^2+c^2=1,
+\]
+
+\[
+\frac9{25}+b^2=1,
+\]
+
+\[
+\frac35a+bc=0.
+\]
+
+De la segunda ecuación:
+
+\[
+b=\pm\frac45.
+\]
+
+Si:
+
+\[
+b=\frac45,
+\]
+
+se obtiene:
+
+\[
+(a,c)
+=
+\left(
+\frac45,-\frac35
+\right)
+\]
+
+o:
+
+\[
+(a,c)
+=
+\left(
+-\frac45,\frac35
+\right).
+\]
+
+Si:
+
+\[
+b=-\frac45,
+\]
+
+se obtiene:
+
+\[
+(a,c)
+=
+\left(
+\frac45,\frac35
+\right)
+\]
+
+o:
+
+\[
+(a,c)
+=
+\left(
+-\frac45,-\frac35
+\right).
+\]
+
+Por tanto, las cuatro posibilidades son:
+
+\[
+\boxed{
+\begin{aligned}
+&(a,b,c)=
+\left(
+\frac45,\frac45,-\frac35
+\right),\\
+&(a,b,c)=
+\left(
+-\frac45,\frac45,\frac35
+\right),\\
+&(a,b,c)=
+\left(
+\frac45,-\frac45,\frac35
+\right),\\
+&(a,b,c)=
+\left(
+-\frac45,-\frac45,-\frac35
+\right).
+\end{aligned}
+}
+\]
+
+Las matrices con determinante \(1\) son giros y las matrices con determinante \(-1\) son simetrías respecto de una recta.
+
+\section{Ejercicio 14}
+\subsection{Solución}
+
+Sean:
+
+\[
+R_\alpha,
+\qquad
+R_\beta
+\]
+
+dos rotaciones.
+
+Entonces:
+
+\[
+R_\alpha R_\beta
+=
+R_{\alpha+\beta}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{La composición de dos rotaciones es otra rotación de ángulo }\alpha+\beta.
+}
+\]
+
+Sean ahora dos simetrías respecto de rectas que forman un ángulo \(\alpha\).
+
+La composición es un giro de ángulo:
+
+\[
+2\alpha.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{La composición de dos simetrías es una rotación.}
+}
+\]
+
+Por último:
+
+\[
+\det(R)=1,
+\qquad
+\det(S)=-1.
+\]
+
+Así:
+
+\[
+\det(RS)=-1.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{La composición de una rotación y una simetría es una simetría.}
+}
+\]
+
+\section{Ejercicio 15}
+\subsection{Solución}
+
+La matriz es:
+
+\[
+A=
+\begin{pmatrix}
+-\frac35&\frac45&0\\[1mm]
+\frac45&\frac35&0\\
+0&0&1
+\end{pmatrix}.
+\]
+
+Se verifica:
+
+\[
+A^tA=I.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A\text{ define una isometría vectorial}
+}
+\]
+
+Además:
+
+\[
+\det A=-1.
+\]
+
+Los autovalores son:
+
+\[
+1,\quad1,\quad-1.
+\]
+
+El subespacio fijo viene dado por:
+
+\[
+V_1
+=
+\Span\{(1,2,0),(0,0,1)\}.
+\]
+
+Este plano tiene vector normal:
+
+\[
+(2,-1,0).
+\]
+
+Por tanto, su ecuación es:
+
+\[
+2x-y=0.
+\]
+
+Así:
+
+\[
+\boxed{
+\text{Es la simetría ortogonal respecto del plano }2x-y=0.
+}
+\]
+
+\section{Ejercicio 16}
+\subsection{Solución}
+
+El plano es:
+
+\[
+x+y-z=0.
+\]
+
+Un vector normal es:
+
+\[
+n=(1,1,-1).
+\]
+
+La matriz de la simetría respecto del plano es:
+
+\[
+A
+=
+I
+-
+2\frac{nn^t}{n^tn}.
+\]
+
+Como:
+
+\[
+n^tn=3,
+\]
+
+se obtiene:
+
+\[
+\boxed{
+A
+=
+\frac13
+\begin{pmatrix}
+1&-2&2\\
+-2&1&2\\
+2&2&1
+\end{pmatrix}
+}
+\]
+
+Toda rotación en \(\R^3\) tiene determinante \(1\).
+
+Por tanto, la composición de dos giros tiene determinante:
+
+\[
+1.
+\]
+
+Sin embargo:
+
+\[
+\det A=-1.
+\]
+
+Así:
+
+\[
+\boxed{
+\text{No es posible obtener esta simetría como composición de dos giros.}
+}
+\]
+
+\section{Ejercicio 17}
+\subsection{Solución}
+
+La matriz es:
+
+\[
+A=
+\begin{pmatrix}
+0&1&0\\
+1&0&0\\
+0&0&-1
+\end{pmatrix}.
+\]
+
+Se verifica:
+
+\[
+A^tA=I,
+\qquad
+\det A=1.
+\]
+
+Los autovalores son:
+
+\[
+1,-1,-1.
+\]
+
+El subespacio de vectores fijos es:
+
+\[
+V_1
+=
+\Span\{(1,1,0)\}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{Es un giro de }180^\circ
+\text{ alrededor de la recta }
+\Span\{(1,1,0)\}.
+}
+\]
+
+\section{Ejercicio 18}
+\subsection{Solución}
+
+Sea:
+
+\[
+u=
+\frac1{\sqrt3}(1,1,1).
+\]
+
+La simetría respecto de la recta generada por \(u\) deja fija la componente paralela a \(u\) y cambia de signo la componente perpendicular.
+
+Por tanto:
+
+\[
+A
+=
+2uu^t-I.
+\]
+
+Así:
+
+\[
+\boxed{
+A
+=
+\frac13
+\begin{pmatrix}
+-1&2&2\\
+2&-1&2\\
+2&2&-1
+\end{pmatrix}
+}
+\]
+
+\section{Ejercicio 19}
+\subsection{Solución}
+
+La matriz es:
+
+\[
+A=
+\begin{pmatrix}
+0&0&1\\
+1&0&0\\
+0&1&0
+\end{pmatrix}.
+\]
+
+Se verifica:
+
+\[
+A^tA=I,
+\qquad
+\det A=1.
+\]
+
+Además:
+
+\[
+A(1,1,1)=(1,1,1).
+\]
+
+Por tanto:
+
+\[
+V_1
+=
+\Span\{(1,1,1)\}.
+\]
+
+Como:
+
+\[
+\tr A=0,
+\]
+
+para un giro en \(\R^3\):
+
+\[
+1+2\cos\theta=0.
+\]
+
+Así:
+
+\[
+\cos\theta=-\frac12.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\theta=120^\circ
+}
+\]
+
+y:
+
+\[
+\boxed{
+\text{Es un giro de }120^\circ
+\text{ alrededor de la recta }
+\Span\{(1,1,1)\}.
+}
+\]
+
+\section{Ejercicio 20}
+\subsection{Solución}
+
+El eje tiene vector unitario:
+
+\[
+u=
+\frac1{\sqrt3}(1,1,1).
+\]
+
+Aplicamos la fórmula de Rodrigues para:
+
+\[
+\theta=60^\circ.
+\]
+
+La matriz obtenida es:
+
+\[
+\boxed{
+A=
+\frac13
+\begin{pmatrix}
+2&-1&2\\
+2&2&-1\\
+-1&2&2
+\end{pmatrix}
+}
+\]
+
+Se verifica:
+
+\[
+A(1,1,1)=(1,1,1).
+\]
+
+\section{Ejercicio 21}
+\subsection{Solución}
+
+La matriz es:
+
+\[
+A=
+\begin{pmatrix}
+-\frac12&-\frac{\sqrt2}{2}&\frac12\\[1mm]
+\frac{\sqrt2}{2}&0&\frac{\sqrt2}{2}\\[1mm]
+\frac12&-\frac{\sqrt2}{2}&-\frac12
+\end{pmatrix}.
+\]
+
+Se verifica:
+
+\[
+A^tA=I,
+\qquad
+\det A=-1.
+\]
+
+Además:
+
+\[
+\tr A=-1.
+\]
+
+Para una isometría impropia de tipo giro más simetría:
+
+\[
+\tr A
+=
+-1+2\cos\theta.
+\]
+
+Por tanto:
+
+\[
+-1=-1+2\cos\theta
+\]
+
+y:
+
+\[
+\boxed{
+\theta=\frac{\pi}{2}
+}
+\]
+
+El subespacio asociado al autovalor \(-1\) es:
+
+\[
+V_{-1}
+=
+\Span\{(-1,0,1)\}.
+\]
+
+Por tanto, el eje es:
+
+\[
+\boxed{
+r=\Span\{(-1,0,1)\}
+}
+\]
+
+y el plano de simetría es:
+
+\[
+V_{-1}^\perp.
+\]
+
+Su ecuación es:
+
+\[
+-x+z=0.
+\]
+
+Así:
+
+\[
+\boxed{
+\text{Es la composición de un giro de }90^\circ
+\text{ alrededor de }r
+\text{ y una simetría respecto del plano }z=x.
+}
+\]
+
+\section{Ejercicio 22}
+\subsection{Solución}
+
+La simetría respecto del plano:
+
+\[
+z=0
+\]
+
+tiene matriz:
+
+\[
+S=
+\begin{pmatrix}
+1&0&0\\
+0&1&0\\
+0&0&-1
+\end{pmatrix}.
+\]
+
+El giro de \(120^\circ\) alrededor del eje \(OZ\) tiene matriz:
+
+\[
+R=
+\begin{pmatrix}
+-\frac12&-\frac{\sqrt3}{2}&0\\[1mm]
+\frac{\sqrt3}{2}&-\frac12&0\\
+0&0&1
+\end{pmatrix}.
+\]
+
+Como ambas transformaciones conmutan:
+
+\[
+A=RS=SR.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A=
+\begin{pmatrix}
+-\frac12&-\frac{\sqrt3}{2}&0\\[1mm]
+\frac{\sqrt3}{2}&-\frac12&0\\
+0&0&-1
+\end{pmatrix}
+}
+\]
+
+\section{Ejercicio 23}
+\subsection{Solución}
+
+Se sabe que:
+
+\[
+f(1,0,0)=(-1,0,0).
+\]
+
+Por tanto:
+
+\[
+(1,0,0)\in V_{-1}.
+\]
+
+Además:
+
+\[
+\det A=-1
+\]
+
+y:
+
+\[
+\tr A=1.
+\]
+
+Una isometría de \(\R^3\) con determinante \(-1\), traza \(1\) y un autovalor \(-1\) es una simetría respecto de un plano.
+
+Como:
+
+\[
+V_{-1}
+=
+\Span\{(1,0,0)\},
+\]
+
+el plano fijo es:
+
+\[
+V_{-1}^\perp
+=
+\{(x,y,z):x=0\}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{Es la simetría ortogonal respecto del plano }x=0.
+}
+\]
+
+\section{Ejercicio 24}
+\subsection{Solución}
+
+La aplicación es:
+
+\[
+f(x,y,z)
+=
+\frac13
+(-x+2y+2z,\,
+2x-y+2z,\,
+2x+2y-z).
+\]
+
+Su matriz es:
+
+\[
+A=
+\frac13
+\begin{pmatrix}
+-1&2&2\\
+2&-1&2\\
+2&2&-1
+\end{pmatrix}.
+\]
+
+Se verifica:
+
+\[
+A^tA=I.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ es una isometría}
+}
+\]
+
+Además:
+
+\[
+\det A=1.
+\]
+
+Los autovalores son:
+
+\[
+1,-1,-1.
+\]
+
+El subespacio fijo es:
+
+\[
+V_1
+=
+\Span\{(1,1,1)\}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ es la simetría respecto de la recta }
+\Span\{(1,1,1)\}
+}
+\]
+
+o, equivalentemente:
+
+\[
+\boxed{
+f\text{ es un giro de }180^\circ
+\text{ alrededor de dicha recta.}
+}
+\]
+
+\section{Ejercicio 25}
+\subsection{Solución}
+
+Queremos:
+
+\[
+e_1\longmapsto e_2,
+\qquad
+e_2\longmapsto e_3,
+\qquad
+e_3\longmapsto e_1.
+\]
+
+La matriz correspondiente es:
+
+\[
+A=
+\begin{pmatrix}
+0&0&1\\
+1&0&0\\
+0&1&0
+\end{pmatrix}.
+\]
+
+Se verifica:
+
+\[
+A(1,1,1)=(1,1,1).
+\]
+
+Por tanto, el eje es:
+
+\[
+\boxed{
+r=\Span\{(1,1,1)\}
+}
+\]
+
+Además:
+
+\[
+\tr A=0.
+\]
+
+Así:
+
+\[
+1+2\cos\theta=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\theta=120^\circ
+}
+\]
+
+\section{Ejercicio 26}
+\subsection{Solución}
+
+La base es:
+
+\[
+B=
+\{(1,1,0),(0,1,0),(0,0,1)\}.
+\]
+
+La matriz de cambio de \(B\) a la base canónica es:
+
+\[
+P=
+\begin{pmatrix}
+1&0&0\\
+1&1&0\\
+0&0&1
+\end{pmatrix}.
+\]
+
+La matriz de \(f\) en \(B\) es:
+
+\[
+A_B=
+\begin{pmatrix}
+\frac35&0&-\frac45\\[1mm]
+-\frac85&-1&\frac45\\[1mm]
+\frac45&0&\frac35
+\end{pmatrix}.
+\]
+
+En la base canónica:
+
+\[
+A_c
+=
+PA_BP^{-1}
+=
+\begin{pmatrix}
+\frac35&0&-\frac45\\[1mm]
+0&-1&0\\[1mm]
+\frac45&0&\frac35
+\end{pmatrix}.
+\]
+
+Se verifica:
+
+\[
+A_c^tA_c=I.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ es una transformación ortogonal}
+}
+\]
+
+Además:
+
+\[
+\det A_c=-1.
+\]
+
+El autovalor \(-1\) tiene subespacio:
+
+\[
+V_{-1}
+=
+\Span\{(0,1,0)\}.
+\]
+
+Así, el eje es el eje \(OY\) y el plano perpendicular es:
+
+\[
+y=0.
+\]
+
+La traza es:
+
+\[
+\tr A_c
+=
+\frac15.
+\]
+
+Para una isometría de tipo \(5\):
+
+\[
+\tr A_c
+=
+-1+2\cos\theta.
+\]
+
+Por tanto:
+
+\[
+\cos\theta=\frac35.
+\]
+
+Así:
+
+\[
+\boxed{
+\theta
+=
+\arccos\left(\frac35\right)
+}
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{Es la composición de un giro alrededor del eje }OY
+\text{ de ángulo }\arccos\left(\frac35\right)
+\text{ y una simetría respecto del plano }y=0.
+}
+\]
+
+\section{Ejercicio 27}
+\subsection{Solución}
+
+El plano es:
+
+\[
+S=
+\{(x,y,z)\in\R^3:x-y=0\}.
+\]
+
+Una base ortonormal de \(S\) es:
+
+\[
+u_1=
+\frac1{\sqrt2}(1,1,0),
+\qquad
+u_2=(0,0,1).
+\]
+
+Un vector unitario de \(S^\perp\) es:
+
+\[
+n=
+\frac1{\sqrt2}(1,-1,0).
+\]
+
+Sobre \(S\), un giro de ángulo:
+
+\[
+\pi
+\]
+
+actúa como:
+
+\[
+u_1\mapsto-u_1,
+\qquad
+u_2\mapsto-u_2.
+\]
+
+Sobre \(S^\perp\) existen dos posibilidades:
+
+\[
+n\mapsto n
+\]
+
+o:
+
+\[
+n\mapsto-n.
+\]
+
+En el primer caso se obtiene:
+
+\[
+\boxed{
+A_1=
+\begin{pmatrix}
+0&-1&0\\
+-1&0&0\\
+0&0&-1
+\end{pmatrix}
+}
+\]
+
+que es un giro de \(180^\circ\) alrededor de la recta:
+
+\[
+S^\perp
+=
+\Span\{(1,-1,0)\}.
+\]
+
+En el segundo caso:
+
+\[
+\boxed{
+A_2=-I
+=
+\begin{pmatrix}
+-1&0&0\\
+0&-1&0\\
+0&0&-1
+\end{pmatrix}
+}
+\]
+
+que es la simetría respecto del origen.
+
+Por tanto:
+
+\[
+\boxed{
+A_1
+\text{ y }
+A_2
+\text{ son todas las posibilidades.}
+}
+\]
+
+\section{Ejercicio 28}
+\subsection{Solución}
+
+La matriz es:
+
+\[
+A=
+\begin{pmatrix}
+a&a&b\\
+a&a&-b\\
+-b&b&0
+\end{pmatrix}.
+\]
+
+Para que sea ortogonal, sus columnas deben ser ortonormales.
+
+De la tercera columna:
+
+\[
+2b^2=1.
+\]
+
+Por tanto:
+
+\[
+b=\pm\frac1{\sqrt2}.
+\]
+
+Además:
+
+\[
+( a,a,-b)\cdot(a,a,b)
+=
+2a^2-b^2
+=
+0.
+\]
+
+Así:
+
+\[
+2a^2=\frac12.
+\]
+
+Por tanto:
+
+\[
+a=\pm\frac12.
+\]
+
+Luego:
+
+\[
+\boxed{
+a=\pm\frac12,
+\qquad
+b=\pm\frac1{\sqrt2}
+}
+\]
+
+con signos independientes.
+
+Si:
+
+\[
+a=\frac12,
+\]
+
+se tiene:
+
+\[
+\det A=1,
+\qquad
+\tr A=1.
+\]
+
+Por tanto:
+
+\[
+1+2\cos\theta=1
+\]
+
+y:
+
+\[
+\boxed{
+\theta=\frac{\pi}{2}
+}
+\]
+
+El eje es:
+
+\[
+\boxed{
+V_1=\Span\{(1,1,0)\}.
+}
+\]
+
+Así, para ambos signos de \(b\), es un giro de \(90^\circ\), cambiando el sentido según el signo de \(b\).
+
+Si:
+
+\[
+a=-\frac12,
+\]
+
+entonces:
+
+\[
+\det A=-1,
+\qquad
+\tr A=-1.
+\]
+
+Así:
+
+\[
+-1+2\cos\theta=-1
+\]
+
+y:
+
+\[
+\boxed{
+\theta=\frac{\pi}{2}.
+}
+\]
+
+Además:
+
+\[
+V_{-1}
+=
+\Span\{(1,1,0)\}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{Es una composición de un giro de }90^\circ
+\text{ alrededor de }
+\Span\{(1,1,0)\}
+\text{ y una simetría respecto del plano }x+y=0.
+}
+\]
+
+El signo de \(b\) determina el sentido del giro.
+
+\end{document}

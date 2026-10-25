@@ -1,0 +1,282 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools,amsthm}
+\usepackage{geometry,lmodern,microtype,array,booktabs,xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}\setlength{\parskip}{.5em}
+\title{Estructuras algebraicas - Definiciones}
+\author{Juan Felipe Rodriguez Cordoba}
+\date{}
+\newcommand{\N}{\mathbb{N}}\newcommand{\Z}{\mathbb{Z}}\newcommand{\Q}{\mathbb{Q}}\newcommand{\R}{\mathbb{R}}\newcommand{\C}{\mathbb{C}}
+\newcommand{\ord}{\operatorname{ord}}\newcommand{\gen}[1]{\langle #1\rangle}
+\newcommand{\Ker}{\operatorname{Ker}}\newcommand{\Imf}{\operatorname{Im}}\newcommand{\Aut}{\operatorname{Aut}}\newcommand{\mcd}{\operatorname{mcd}}\newcommand{\mcm}{\operatorname{mcm}}
+\newtcolorbox{definicion}[1][]{colback=gray!6,colframe=gray!55,boxrule=.6pt,arc=2mm,left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,breakable,#1}
+\newtcolorbox{resultado}[1][]{colback=gray!4,colframe=black!45,boxrule=.6pt,arc=2mm,left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,breakable,#1}
+\newtcolorbox{ejemplo}[1][]{colback=gray!2,colframe=gray!45,boxrule=.5pt,arc=2mm,breakable,#1}
+\newtcolorbox{demostracion}[1][]{colback=white,colframe=gray!35,boxrule=.5pt,arc=1mm,breakable,#1}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{Operaciones y estructuras algebraicas}
+
+\subsection{Operación binaria}
+\begin{definicion}
+Una operación binaria en $X$ es una función $*:X\times X\to X$. La operación debe ser \emph{cerrada}: $a*b\in X$ $\forall$ $a,b\in X$.
+\end{definicion}
+\textbf{Ejemplo.} La suma en $\Z$ es binaria; la resta en $\N$ no es cerrada, pues $2-5\notin\N$.
+
+
+\subsection{Asociatividad y conmutatividad}
+\begin{definicion}
+La operación es \textbf{asociativa} si $(a*b)*c=a*(b*c)$, y \textbf{conmutativa} si $a*b=b*a$ $\forall$ $a,b,c$.
+\end{definicion}
+\textbf{Ejemplo.} La suma de enteros tiene ambas propiedades; la composición de permutaciones es asociativa, pero no necesariamente conmutativa.
+
+
+\subsection{Elemento neutro e inverso}
+\begin{definicion}
+Un \textbf{neutro} $e$ satisface $ae=ea=a$. Un \textbf{inverso} de $a$ respecto de $e$ es un elemento $a^{-1}$ con $aa^{-1}=a^{-1}a=e$.
+\end{definicion}
+\textbf{Ejemplo.} En $(\Z,+)$ el neutro es $0$ y el inverso de $7$ es $-7$.
+
+
+\subsection{Semigrupo}
+\begin{definicion}
+Un \textbf{semigrupo} es un conjunto con operación binaria asociativa.
+\end{definicion}
+\textbf{Ejemplo.} $(\N_{>0},+)$ es semigrupo, aunque no contiene el neutro aditivo.
+
+
+\subsection{Monoide}
+\begin{definicion}
+Un \textbf{monoide} es un semigrupo con neutro.
+\end{definicion}
+\textbf{Ejemplo.} Las cadenas con concatenación constituyen un monoide; su neutro es la cadena vacía.
+
+
+\subsection{Grupo y grupo abeliano}
+\begin{definicion}
+Un \textbf{grupo} $(G,*)$ es un monoide en el que todo elemento tiene inverso. Es \textbf{abeliano} si además $ab=ba$ $\forall$ $a,b\in G$.
+\end{definicion}
+\textbf{Ejemplo.} $(\Z,+)$ es abeliano; $S_3$ con composición no es abeliano.
+
+
+\subsection{Orden de un grupo}
+\begin{definicion}
+El \textbf{orden} de $G$ es su cardinalidad $|G|$, que puede ser finita o infinita.
+\end{definicion}
+\textbf{Ejemplo.} $|\Z_4|=4$ y $|\Z|=\infty$.
+
+
+\subsection{Isomorfismo}
+\begin{definicion}
+Un \textbf{isomorfismo} $f:G\to H$ es una biyección que respeta la operación: $f(ab)=f(a)f(b)$. Se escribe $G\cong H$.
+\end{definicion}
+\textbf{Ejemplo.} $\Z\to 2\Z$, $k\mapsto 2k$, es un isomorfismo.
+
+
+\subsection{Grupo cíclico y generador}
+\begin{definicion}
+Un grupo es \textbf{cíclico} si $G=\gen a=\{a^k:k\in\Z\}$ para algún $a$; $a$ es un generador.
+\end{definicion}
+\textbf{Ejemplo.} $\Z_4=\gen{1}$ en notación aditiva.
+
+
+\subsection{Producto directo}
+\begin{definicion}
+El producto $G\times H$ tiene operación componente a componente: $(g,h)(g\prime,h\prime)=(gg\prime,hh\prime)$.
+\end{definicion}
+\textbf{Ejemplo.} $\Z_2\times\Z_2$ tiene cuatro elementos y todos los no neutros tienen orden $2$.
+
+
+\section{Orden, subgrupos y clases laterales}
+
+\subsection{Orden de un elemento}
+\begin{definicion}
+$\ord(a)$ es el mínimo $n\ge1$ tal que $a^n=e$; si no existe, su orden es infinito.
+\end{definicion}
+\textbf{Ejemplo.} En $\Z_6$ aditivo, $\ord(2)=3$.
+
+
+\subsection{Subgrupo}
+\begin{definicion}
+$H\le G$ si $H\subseteq G$ y, con la operación de $G$, $H$ es un grupo.
+\end{definicion}
+\textbf{Ejemplo.} $2\Z\le(\Z,+)$.
+
+
+\subsection{Subgrupo generado}
+\begin{definicion}
+$\gen a=\{a^k:k\in\Z\}$. Más generalmente, $\gen S$ es el menor subgrupo que contiene $S$.
+\end{definicion}
+\textbf{Ejemplo.} En $\Z_{12}$, $\gen{4}=\{0,4,8\}$.
+
+
+\subsection{Clase lateral e índice}
+\begin{definicion}
+Si $H\le G$, las clases laterales izquierdas son $gH=\{gh:h\in H\}$; las derechas son $Hg$. El índice $[G:H]$ es el número de clases laterales izquierdas.
+\end{definicion}
+\textbf{Ejemplo.} Si $H=2\Z$, las clases en $\Z$ son $2\Z$ y $1+2\Z$; así $[\Z:H]=2$.
+
+
+\subsection{Unidades módulo $n$}
+\begin{definicion}
+$\Z_n^*=\{\overline a\in\Z_n:\mcd(a,n)=1\}$, con producto módulo $n$.
+\end{definicion}
+\textbf{Ejemplo.} $\Z_8^*=\{1,3,5,7\}$ (clases módulo $8$).
+
+
+\section{Grupos diédricos y simétricos}
+
+\subsection{Grupo diédrico}
+\begin{definicion}
+$\Delta_n$ ($n\ge3$) es el grupo de simetrías de un polígono regular de $n$ lados, con composición.
+\end{definicion}
+\textbf{Ejemplo.} $\Delta_3$ tiene tres rotaciones y tres reflexiones.
+
+
+\subsection{Grupo simétrico}
+\begin{definicion}
+$S_n$ es el grupo de todas las biyecciones de $\{1,\ldots,n\}$ consigo mismo, con composición.
+\end{definicion}
+\textbf{Ejemplo.} $S_3$ tiene $3!=6$ permutaciones.
+
+
+\subsection{Ciclo y trasposición}
+\begin{definicion}
+El ciclo $(a_1\,a_2\,\cdots\,a_k)$ envía $a_i$ a $a_{i+1}$ y $a_k$ a $a_1$. Una \textbf{trasposición} es un ciclo de longitud dos.
+\end{definicion}
+\textbf{Ejemplo.} $(1\,3\,2)$ es un $3$-ciclo y $(1\,2)$ es una trasposición.
+
+
+\subsection{Paridad y grupo alternado}
+\begin{definicion}
+Una permutación es \textbf{par} o \textbf{impar} según pueda escribirse como producto de un número par o impar de trasposiciones. $A_n$ es el subgrupo de permutaciones pares.
+\end{definicion}
+\textbf{Ejemplo.} $(1\,2\,3)=(1\,3)(1\,2)$ es par.
+
+
+\section{Grupos infinitos}
+
+\subsection{Elemento de torsión}
+\begin{definicion}
+Un elemento de $G$ es de \textbf{torsión} cuando su orden es finito. Un grupo es de torsión si todos sus elementos son de torsión.
+\end{definicion}
+\textbf{Ejemplo.} Cada elemento de $\Q/\Z$ tiene orden finito; $1\in(\Z,+)$ tiene orden infinito.
+
+
+\subsection{Grupo divisible}
+\begin{definicion}
+Un grupo (en notación aditiva) es \textbf{divisible} si para cada $g$ y cada $n\ge1$ $\exists$ $x$ tal que $nx=g$.
+\end{definicion}
+\textbf{Ejemplo.} $(\Q,+)$ es divisible: dado $q$, se toma $x=q/n$.
+
+
+\subsection{Suma directa}
+\begin{definicion}
+La suma directa $\bigoplus_{i\in I}G_i$ consta de tuplas del producto directo con solo un número finito de coordenadas no neutras.
+\end{definicion}
+\textbf{Ejemplo.} $\bigoplus_{n\ge1}\Z_2$ contiene sucesiones binarias con soporte finito.
+
+
+\subsection{Grupo libre}
+\begin{definicion}
+El grupo libre $F(S)$ tiene por elementos las palabras reducidas sobre símbolos de $S$ y sus inversos, con concatenación y reducción.
+\end{definicion}
+\textbf{Ejemplo.} En $F(\{a,b\})$, la palabra $abb^{-1}a^{-1}$ se reduce a la identidad.
+
+
+\section{Normalidad, conjugación y cocientes}
+
+\subsection{Conjugación y automorfismo interno}
+\begin{definicion}
+Para $g\in G$, $\varphi_g(h)=ghg^{-1}$ es la conjugación por $g$.
+\end{definicion}
+\textbf{Ejemplo.} En $S_3$, $(1\,2\,3)(1\,2)(1\,2\,3)^{-1}=(2\,3)$.
+
+
+\subsection{Elementos conjugados}
+\begin{definicion}
+$a,b\in G$ son \textbf{conjugados} si $\exists$ $g\in G$ con $b=gag^{-1}$.
+\end{definicion}
+\textbf{Ejemplo.} En $S_3$, las tres trasposiciones son conjugadas.
+
+
+\subsection{Subgrupo normal}
+\begin{definicion}
+$N\trianglelefteq G$ si $gNg^{-1}=N$ $\forall$ $g\in G$; equivale a $gN=Ng$.
+\end{definicion}
+\textbf{Ejemplo.} Todo subgrupo de un grupo abeliano es normal.
+
+
+\subsection{Centro}
+\begin{definicion}
+$Z(G)=\{z\in G:zg=gz \hspace{1cm} \forall g\in G\}$.
+\end{definicion}
+\textbf{Ejemplo.} $Z(S_3)=\{e\}$ y $Z(\Z_4)=\Z_4$.
+
+
+\subsection{Conmutador y subgrupo derivado}
+\begin{definicion}
+$[a,b]=aba^{-1}b^{-1}$. El \textbf{subgrupo conmutador} es $G\prime=[G,G]=\gen{[a,b]:a,b\in G}$.
+\end{definicion}
+\textbf{Ejemplo.} Si $G$ es abeliano, $G\prime=\{e\}$.
+
+
+\subsection{Grupo simple y perfecto}
+\begin{definicion}
+$G\ne\{e\}$ es \textbf{simple} si sus únicos normales son $\{e\}$ y $G$. Es \textbf{perfecto} si $G\prime=G$.
+\end{definicion}
+\textbf{Ejemplo.} $\Z_5$ es simple; $A_5$ es simple y perfecto.
+
+
+\subsection{Grupo soluble}
+\begin{definicion}
+Un grupo $G$ es \textbf{soluble} si la serie derivada $G\supseteq G\prime\supseteq G\prime\prime\supseteq\cdots$ alcanza $\{e\}$ en un número finito de pasos.
+\end{definicion}
+\textbf{Ejemplo.} Los grupos abelianos son solubles; $S_3$ también.
+
+
+\subsection{Normalizador}
+\begin{definicion}
+$N_G(H)=\{g\in G:gHg^{-1}=H\}$ para $H\le G$.
+\end{definicion}
+\textbf{Ejemplo.} Si $H\trianglelefteq G$, entonces $N_G(H)=G$.
+
+
+\subsection{Grupo cociente}
+\begin{definicion}
+Si $N\trianglelefteq G$, el grupo cociente $G/N$ tiene elementos $gN$ y producto $(gN)(hN)=ghN$.
+\end{definicion}
+\textbf{Ejemplo.} $\Z/4\Z\cong\Z_4$.
+
+
+\section{Homomorfismos}
+
+\subsection{Homomorfismo y tipos}
+\begin{definicion}
+$f:G\to H$ es \textbf{homomorfismo} si $f(ab)=f(a)f(b)$. Si es inyectivo se llama monomorfismo; si es sobreyectivo, epimorfismo; si es biyectivo, isomorfismo. Un endomorfismo va de $G$ a $G$; uno biyectivo es automorfismo.
+\end{definicion}
+\textbf{Ejemplo.} $f:\Z_6\to\Z_3$, $f(\overline x)=\overline x$ es epimorfismo.
+
+
+\subsection{Núcleo e imagen}
+\begin{definicion}
+$\Ker f=\{g\in G:f(g)=e_H\}$ y $\Imf f=\{f(g):g\in G\}$.
+\end{definicion}
+\textbf{Ejemplo.} Para $f:\Z\to\Z_3$, $f(x)=x\bmod 3$, $\Ker f=3\Z$ y $\Imf f=\Z_3$.
+
+
+\subsection{Grupo de automorfismos}
+\begin{definicion}
+$\Aut(G)$ es el conjunto de automorfismos $G\to G$ con la composición.
+\end{definicion}
+\textbf{Ejemplo.} $\Aut(\Z_5)\cong\Z_5^*$.
+
+
+\end{document}

@@ -1,0 +1,2503 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{lmodern}
+\usepackage{microtype}
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\rg}{\operatorname{rg}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Span}{\operatorname{L}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Álgebra Lineal}\\[0.4em]
+{\Large Tema 3: Endomorfismos. Diagonalización --- Soluciones}
+\end{center}
+
+\section{Ejercicio 1}
+\subsection{Solución}
+
+Como $8$ es autovalor:
+
+\[
+\det(A-8I)=0
+\]
+
+por lo que:
+
+\[
+\rg(A-8I)<4.
+\]
+
+Además, $A-8I$ no puede tener rango $4$ y:
+
+\[
+\dim S(8)=4-\rg(A-8I).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\rg(A-8I)\in\{0,1,2,3\}
+}
+\]
+
+y:
+
+\[
+\boxed{
+\dim S(8)\in\{1,2,3,4\}.
+}
+\]
+
+\section{Ejercicio 2}
+\subsection{Solución}
+
+Tomamos:
+
+\[
+P=
+\begin{pmatrix}
+4&1\\
+1&1
+\end{pmatrix},
+\qquad
+D=
+\begin{pmatrix}
+3&0\\
+0&0
+\end{pmatrix}.
+\]
+
+Entonces:
+
+\[
+M=PDP^{-1}.
+\]
+
+Como:
+
+\[
+P^{-1}
+=
+\frac13
+\begin{pmatrix}
+1&-1\\
+-1&4
+\end{pmatrix},
+\]
+
+se obtiene:
+
+\[
+\boxed{
+M=
+\begin{pmatrix}
+4&-4\\
+1&-1
+\end{pmatrix}.
+}
+\]
+
+\section{Ejercicio 3}
+\subsection{Solución}
+
+Los autovalores de $A$ son:
+
+\[
+1,-1,2.
+\]
+
+Por las propiedades de los autovalores:
+
+\[
+\boxed{
+4A:\quad 4,-4,8
+}
+\]
+
+\[
+\boxed{
+A^t:\quad 1,-1,2
+}
+\]
+
+\[
+\boxed{
+A^3:\quad 1,-1,8
+}
+\]
+
+\[
+\boxed{
+A^{-1}:\quad 1,-1,\frac12.
+}
+\]
+
+\section{Ejercicio 4}
+\subsection{Solución}
+
+Una matriz con todos sus autovalores simples es diagonalizable.
+
+Por tanto:
+
+\[
+\boxed{
+\text{La matriz }2\times2\text{ con autovalores }3,5\text{ es diagonalizable.}
+}
+\]
+
+\[
+\boxed{
+\text{La matriz }3\times3\text{ con autovalores }6,7,8\text{ es diagonalizable.}
+}
+\]
+
+Si existe un autovalor doble, hace falta conocer su multiplicidad geométrica.
+
+Por tanto:
+
+\[
+\boxed{
+\text{Con un autovalor }-3\text{ doble no hay información suficiente.}
+}
+\]
+
+y:
+
+\[
+\boxed{
+\text{Con }9\text{ doble y }1\text{ simple es diagonalizable}
+\iff
+\dim S(9)=2.
+}
+\]
+
+\section{Ejercicio 5}
+\subsection{Solución}
+
+Sea:
+
+\[
+B=\{v_1,\ldots,v_n\}
+\]
+
+una base formada por autovectores.
+
+Entonces existen:
+
+\[
+\lambda_1,\ldots,\lambda_n
+\]
+
+tales que:
+
+\[
+f(v_i)=\lambda_i v_i.
+\]
+
+Las coordenadas de $f(v_i)$ en $B$ son:
+
+\[
+[f(v_i)]_B
+=
+(0,\ldots,0,\lambda_i,0,\ldots,0)^t.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+M_B(f)
+=
+\begin{pmatrix}
+\lambda_1&0&\cdots&0\\
+0&\lambda_2&\cdots&0\\
+\vdots&\vdots&\ddots&\vdots\\
+0&0&\cdots&\lambda_n
+\end{pmatrix}.
+}
+\]
+
+\section{Ejercicio 6}
+\subsection{Solución}
+
+Para:
+
+\[
+A=
+\begin{pmatrix}
+a&b\\
+c&d
+\end{pmatrix},
+\]
+
+\[
+P(\lambda)
+=
+\det(A-\lambda I)
+=
+(a-\lambda)(d-\lambda)-bc.
+\]
+
+Así:
+
+\[
+\boxed{
+P(\lambda)
+=
+\lambda^2-(a+d)\lambda+ad-bc
+=
+\lambda^2-(\tr A)\lambda+\det A.
+}
+\]
+
+Para una matriz $3\times3$:
+
+\[
+A=
+\begin{pmatrix}
+a&b&c\\
+d&e&f\\
+g&h&i
+\end{pmatrix},
+\]
+
+desarrollando:
+
+\[
+\boxed{
+P(\lambda)
+=
+-\lambda^3
++
+(\tr A)\lambda^2
+-
+(A_{11}+A_{22}+A_{33})\lambda
++
+\det A.
+}
+\]
+
+\section{Ejercicio 7}
+\subsection{Solución}
+
+El único autovalor es:
+
+\[
+\lambda=a
+\]
+
+con multiplicidad algebraica $n$.
+
+$A$ es diagonalizable si y sólo si:
+
+\[
+\dim\Ker(A-aI)=n.
+\]
+
+Esto equivale a:
+
+\[
+\rg(A-aI)=0.
+\]
+
+Por tanto:
+
+\[
+A-aI=0.
+\]
+
+Así:
+
+\[
+\boxed{
+A\text{ es diagonalizable}
+\iff
+A=aI_n.
+}
+\]
+
+\section{Ejercicio 8}
+\subsection{Solución}
+
+\[
+\det(A-\lambda I)
+=
+\det((A-\lambda I)^t)
+=
+\det(A^t-\lambda I).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A\text{ y }A^t\text{ tienen los mismos autovalores.}
+}
+\]
+
+No tienen necesariamente los mismos autovectores. Por ejemplo:
+
+\[
+A=
+\begin{pmatrix}
+0&1\\
+0&0
+\end{pmatrix},
+\qquad
+A^t=
+\begin{pmatrix}
+0&0\\
+1&0
+\end{pmatrix}.
+\]
+
+Para $\lambda=0$:
+
+\[
+S_A(0)=\Span\{(1,0)\}
+\]
+
+mientras que:
+
+\[
+S_{A^t}(0)=\Span\{(0,1)\}.
+\]
+
+\[
+\boxed{
+\text{En general no tienen los mismos autovectores.}
+}
+\]
+
+\section{Ejercicio 9}
+\subsection{Solución}
+
+Para ambas matrices:
+
+\[
+P(\lambda)
+=
+(4-\lambda)(-2-\lambda)^2.
+\]
+
+Para $A$:
+
+\[
+S_A(4)=\Span\{(1,-1,-2)\},
+\]
+
+\[
+S_A(-2)=\Span\{(1,0,-1)\}.
+\]
+
+Como:
+
+\[
+\dim S_A(-2)=1<2,
+\]
+
+\[
+\boxed{
+A\text{ no es diagonalizable.}
+}
+\]
+
+Para $B$:
+
+\[
+S_B(4)=\Span\{(1,1,2)\},
+\]
+
+\[
+S_B(-2)
+=
+\Span\{(1,1,0),(0,1,1)\}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+B\text{ es diagonalizable.}
+}
+\]
+
+Una matriz de paso es:
+
+\[
+\boxed{
+P=
+\begin{pmatrix}
+1&0&1\\
+1&1&1\\
+0&1&2
+\end{pmatrix}
+}
+\]
+
+y:
+
+\[
+\boxed{
+D=
+\begin{pmatrix}
+-2&0&0\\
+0&-2&0\\
+0&0&4
+\end{pmatrix}.
+}
+\]
+
+\section{Ejercicio 10}
+\subsection{Solución}
+
+El polinomio característico es:
+
+\[
+P(\lambda)
+=
+(2-\lambda)(-1-\lambda)\lambda^2.
+\]
+
+Para $\lambda=0$:
+
+\[
+S(0)
+=
+\{(z,-z,z,0):z\in\R\}.
+\]
+
+Luego:
+
+\[
+\dim S(0)=1<2.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A\text{ no es diagonalizable.}
+}
+\]
+
+\section{Ejercicio 11}
+\subsection{Solución}
+
+\[
+P(\lambda)
+=
+(3-\lambda)(\lambda^2-2\lambda+3).
+\]
+
+Los autovalores son:
+
+\[
+3,\qquad
+1+i\sqrt2,\qquad
+1-i\sqrt2.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A\text{ no es diagonalizable en }\R.
+}
+\]
+
+Como en $\C$ tiene tres autovalores distintos:
+
+\[
+\boxed{
+A\text{ sí es diagonalizable en }\C.
+}
+\]
+
+\section{Ejercicio 12}
+\subsection{Solución}
+
+\[
+P(\lambda)=\lambda^4.
+\]
+
+El único autovalor es:
+
+\[
+\lambda=0
+\]
+
+con multiplicidad algebraica $4$.
+
+Además:
+
+\[
+S(0)
+=
+\Ker A
+=
+\Span\{(1,0,0,0)\},
+\]
+
+de modo que:
+
+\[
+\dim S(0)=1<4.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A\text{ no es diagonalizable.}
+}
+\]
+
+\section{Ejercicio 13}
+\subsection{Solución}
+
+La matriz es:
+
+\[
+A=
+\begin{pmatrix}
+3&0&0\\
+0&-1&a\\
+3&0&b
+\end{pmatrix}.
+\]
+
+El polinomio característico es:
+
+\[
+(3-\lambda)(-1-\lambda)(b-\lambda).
+\]
+
+Si:
+
+\[
+b\neq-1,3,
+\]
+
+hay tres autovalores distintos y:
+
+\[
+A\text{ es diagonalizable.}
+\]
+
+Si:
+
+\[
+b=-1,
+\]
+
+entonces $\lambda=-1$ es doble. Se tiene:
+
+\[
+\dim S(-1)=2
+\iff
+a=0.
+\]
+
+Si:
+
+\[
+b=3,
+\]
+
+el autovalor $3$ es doble, pero:
+
+\[
+\dim S(3)=1.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A\text{ es diagonalizable}
+\iff
+b\neq3
+\text{ y }
+(b\neq-1\text{ o }a=0).
+}
+\]
+
+\section{Ejercicio 14}
+\subsection{Solución}
+
+Las dimensiones son:
+
+\[
+\dim\Ker(f-I)=1,
+\]
+
+\[
+\dim\Ker(f-I)^2=2,
+\]
+
+\[
+\dim\Ker(f-I)^3=3.
+\]
+
+Por tanto, para $\lambda=1$ existe un bloque de Jordan de orden $3$.
+
+Además:
+
+\[
+\Ker f=\Span\{(0,0,0,1)\},
+\]
+
+por lo que $\lambda=0$ aporta un bloque de orden $1$.
+
+Una base de Jordan es:
+
+\[
+v_1=(1,0,0,1),
+\]
+
+\[
+v_2=(1,1,0,0),
+\]
+
+\[
+v_3=(1,0,-1,0),
+\]
+
+\[
+v_4=(0,0,0,1).
+\]
+
+Así:
+
+\[
+\boxed{
+J=
+\begin{pmatrix}
+1&0&0&0\\
+1&1&0&0\\
+0&1&1&0\\
+0&0&0&0
+\end{pmatrix}.
+}
+\]
+
+La matriz de paso es:
+
+\[
+P=
+\begin{pmatrix}
+1&1&1&0\\
+0&1&0&0\\
+0&0&-1&0\\
+1&0&0&1
+\end{pmatrix}.
+\]
+
+Entonces:
+
+\[
+A=PJP^{-1}.
+\]
+
+Se obtiene:
+
+\[
+\boxed{
+A=
+\begin{pmatrix}
+2&0&1&0\\
+1&0&1&0\\
+0&-1&1&0\\
+1&-1&1&0
+\end{pmatrix}.
+}
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f(x_1,x_2,x_3,x_4)
+=
+(2x_1+x_3,\;
+x_1+x_3,\;
+-x_2+x_3,\;
+x_1-x_2+x_3).
+}
+\]
+
+Los autovalores de $A$ son:
+
+\[
+1,1,1,0.
+\]
+
+Los de:
+
+\[
+A-2I
+\]
+
+son:
+
+\[
+-1,-1,-1,-2.
+\]
+
+Por tanto, los de $(A-2I)^{-2}$ son:
+
+\[
+\boxed{
+1\text{ con multiplicidad }3,
+\qquad
+\frac14\text{ con multiplicidad }1.
+}
+\]
+
+\section{Ejercicio 15}
+\subsection{Solución}
+
+El polinomio característico es:
+
+\[
+P(\lambda)
+=
+\lambda^2-2(t+2)\lambda+4t+13.
+\]
+
+Sus raíces son:
+
+\[
+\lambda=t+2\pm\sqrt{t^2-9}.
+\]
+
+Si:
+
+\[
+|t|<3,
+\]
+
+los autovalores no son reales.
+
+Si:
+
+\[
+|t|>3,
+\]
+
+los autovalores son reales y distintos.
+
+Para:
+
+\[
+t=\pm3,
+\]
+
+el autovalor es doble y el subespacio propio tiene dimensión $1$.
+
+Por tanto:
+
+\[
+\boxed{
+A\text{ es diagonalizable en }\R
+\iff
+|t|>3.
+}
+\]
+
+\section{Ejercicio 16}
+\subsection{Solución}
+
+El polinomio característico es:
+
+\[
+P(\lambda)
+=
+(2-\lambda)^3(-2-\lambda).
+\]
+
+Los subespacios propios son:
+
+\[
+S(2)
+=
+\Span\{
+(1,1,0,0),
+(1,0,1,0),
+(1,0,0,1)
+\},
+\]
+
+\[
+S(-2)
+=
+\Span\{(-1,1,1,1)\}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A\text{ es diagonalizable.}
+}
+\]
+
+Una matriz de paso es:
+
+\[
+\boxed{
+P=
+\begin{pmatrix}
+1&1&1&-1\\
+1&0&0&1\\
+0&1&0&1\\
+0&0&1&1
+\end{pmatrix}
+}
+\]
+
+con:
+
+\[
+\boxed{
+D=
+\diag(2,2,2,-2).
+}
+\]
+
+Para $A^2$:
+
+\[
+\boxed{
+A^2
+=
+P\diag(4,4,4,4)P^{-1}.
+}
+\]
+
+Para $A^{-1}$:
+
+\[
+\boxed{
+A^{-1}
+=
+P
+\diag
+\left(
+\frac12,\frac12,\frac12,-\frac12
+\right)
+P^{-1}.
+}
+\]
+
+\section{Ejercicio 17}
+\subsection{Solución}
+
+El polinomio característico es:
+
+\[
+P(\lambda)
+=
+(1-\lambda)(\lambda^2-4\lambda+5).
+\]
+
+Los autovalores son:
+
+\[
+1,\qquad2+i,\qquad2-i.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+M\text{ no es diagonalizable en }\R.
+}
+\]
+
+En $\C$ son tres autovalores distintos.
+
+Bases de los subespacios propios:
+
+\[
+S(1)=\Span\{(1,2,1)\},
+\]
+
+\[
+S(2+i)=\Span\{(i,1+i,2)\},
+\]
+
+\[
+S(2-i)=\Span\{(i,i-1,-2)\}.
+\]
+
+Así:
+
+\[
+\boxed{
+P=
+\begin{pmatrix}
+1&i&i\\
+2&1+i&i-1\\
+1&2&-2
+\end{pmatrix}
+}
+\]
+
+y:
+
+\[
+\boxed{
+D=
+\diag(1,2+i,2-i).
+}
+\]
+
+\section{Ejercicio 18}
+\subsection{Solución}
+
+Como:
+
+\[
+\rg A=1,
+\]
+
+\[
+\dim\Ker A=5.
+\]
+
+Por tanto:
+
+\[
+\dim S(0)=5.
+\]
+
+Así, la multiplicidad algebraica de $\lambda=0$ sólo puede ser $5$ o $6$.
+
+Si es $6$, el único autovalor es $0$ y:
+
+\[
+g_0=5<6,
+\]
+
+por lo que no es diagonalizable. Su forma de Jordan tiene un bloque $J_2(0)$ y cuatro bloques $J_1(0)$.
+
+Si la multiplicidad algebraica de $0$ es $5$, existe otro autovalor $k\neq0$, simple. Entonces hay seis bloques $1\times1$:
+
+\[
+\boxed{
+J=
+\diag(0,0,0,0,0,k),
+}
+\]
+
+y la matriz es diagonalizable.
+
+\section{Ejercicio 19}
+\subsection{Solución}
+
+Usamos:
+
+\[
+\dim E_r(\lambda)
+=
+6-\rg(A-\lambda I)^r.
+\]
+
+En el caso a):
+
+\[
+\dim E_1=2,\qquad
+\dim E_2=4,\qquad
+\dim E_3=5,\qquad
+\dim E_4=6.
+\]
+
+Las diferencias:
+
+\[
+2,\quad2,\quad1,\quad1
+\]
+
+corresponden a dos cadenas de Jordan, de longitudes $4$ y $2$.
+
+Por tanto:
+
+\[
+\boxed{
+J=
+J_4(\lambda)\oplus J_2(\lambda).
+}
+\]
+
+En el caso b):
+
+\[
+\dim E_1=3,\qquad
+\dim E_2=4,\qquad
+\dim E_3=5,\qquad
+\dim E_4=6.
+\]
+
+Las diferencias son:
+
+\[
+3,\quad1,\quad1,\quad1.
+\]
+
+Por tanto hay tres bloques, de tamaños $4,1,1$:
+
+\[
+\boxed{
+J=
+J_4(\lambda)
+\oplus
+J_1(\lambda)
+\oplus
+J_1(\lambda).
+}
+\]
+
+Ambos casos son posibles.
+
+\section{Ejercicio 20}
+\subsection{Solución}
+
+Sean:
+
+\[
+v_1=(1,0,1),
+\quad
+v_2=(-1,1,0),
+\quad
+v_3=(0,1,-1).
+\]
+
+Imponiendo:
+
+\[
+Av_i=\lambda_i v_i
+\]
+
+se obtiene:
+
+\[
+\lambda_1=6,
+\qquad
+\lambda_2=-4,
+\qquad
+\lambda_3=0.
+\]
+
+La matriz resultante es:
+
+\[
+\boxed{
+A=
+\begin{pmatrix}
+1&5&5\\
+2&-2&-2\\
+3&3&3
+\end{pmatrix}.
+}
+\]
+
+Por tanto:
+
+\[
+\boxed{
+a=5,\quad b=-2,\quad c=3,\quad d=5,\quad e=-2,\quad f=3.
+}
+\]
+
+Para admitir diagonalización ortogonal, una matriz real debe ser simétrica. Esto exigiría, entre otras condiciones:
+
+\[
+a=2.
+\]
+
+Pero aquí:
+
+\[
+a=5.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{Con las condiciones anteriores no admite diagonalización ortogonal.}
+}
+\]
+
+\section{Ejercicio 21}
+\subsection{Solución}
+
+La evolución viene dada por:
+
+\[
+X_{k+1}
+=
+AX_k,
+\]
+
+con:
+
+\[
+A=
+\frac13
+\begin{pmatrix}
+0&1&1\\
+2&2&0\\
+1&0&2
+\end{pmatrix}.
+\]
+
+Sea:
+
+\[
+M=
+\begin{pmatrix}
+0&1&1\\
+2&2&0\\
+1&0&2
+\end{pmatrix}.
+\]
+
+Sus autovalores son:
+
+\[
+2,\qquad3,\qquad-1.
+\]
+
+El autovalor dominante de $A=\frac13M$ es:
+
+\[
+1.
+\]
+
+Un autovector asociado es:
+
+\[
+(1,2,1).
+\]
+
+La población total se conserva:
+
+\[
+60+200+300=560.
+\]
+
+En el estado estacionario:
+
+\[
+(A,B,C)=k(1,2,1).
+\]
+
+Entonces:
+
+\[
+4k=560
+\]
+
+y:
+
+\[
+k=140.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+(A,B,C)\longrightarrow(140,280,140).
+}
+\]
+
+\section{Ejercicio 22}
+\subsection{Solución}
+
+El polinomio característico es:
+
+\[
+(5-\lambda)(-1-\lambda)(a-\lambda).
+\]
+
+Si:
+
+\[
+a\neq-1,5,
+\]
+
+hay tres autovalores distintos y $A$ es diagonalizable.
+
+Si:
+
+\[
+a=-1,
+\]
+
+el autovalor $-1$ es doble y:
+
+\[
+\dim S(-1)=2
+\iff
+b=0.
+\]
+
+Si:
+
+\[
+a=5,
+\]
+
+el autovalor $5$ es doble y su multiplicidad geométrica es $1$.
+
+Por tanto:
+
+\[
+\boxed{
+A\text{ es diagonalizable}
+\iff
+a\neq5
+\text{ y }
+(a\neq-1\text{ o }b=0).
+}
+\]
+
+Para:
+
+\[
+a=-1,\qquad b=-1,
+\]
+
+los autovalores son:
+
+\[
+-1\text{ doble},\qquad5\text{ simple}.
+\]
+
+La forma de Jordan es:
+
+\[
+\boxed{
+J=
+\begin{pmatrix}
+-1&0&0\\
+1&-1&0\\
+0&0&5
+\end{pmatrix}.
+}
+\]
+
+Para Cayley--Hamilton:
+
+\[
+p(\lambda)
+=
+-(\lambda+1)^2(\lambda-5)
+=
+-\lambda^3+3\lambda^2+9\lambda+5.
+\]
+
+El resto de dividir $\lambda^9$ por $p(\lambda)$ es:
+
+\[
+r(\lambda)
+=
+54252\lambda^2
++
+108513\lambda
++
+54260.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A^9
+=
+54252A^2
++
+108513A
++
+54260I.
+}
+\]
+
+\section{Ejercicio 23}
+\subsection{Solución}
+
+La matriz tiene rango:
+
+\[
+\rg M=1.
+\]
+
+Por tanto:
+
+\[
+\dim S(0)
+=
+3-\rg M
+=
+2.
+\]
+
+Además:
+
+\[
+\tr M=3,
+\]
+
+por lo que los autovalores son:
+
+\[
+0,\quad0,\quad3.
+\]
+
+Para $\lambda=0$:
+
+\[
+S(0)
+=
+\Span\{(-2,1,0),(-3,0,1)\}.
+\]
+
+Para $\lambda=3$:
+
+\[
+S(3)
+=
+\Span\{(0,3,2)\}.
+\]
+
+Tenemos tres autovectores linealmente independientes, luego:
+
+\[
+\boxed{
+M\text{ es diagonalizable.}
+}
+\]
+
+Una base de autovectores de $\mathcal P_2(x)$ es:
+
+\[
+\boxed{
+\{-2+x,\;-3+x^2,\;3x+2x^2\}.
+}
+\]
+
+\section{Ejercicio 24}
+\subsection{Solución}
+
+El polinomio característico es:
+
+\[
+p(\lambda)
+=
+-(\lambda+1)^2(\lambda-2).
+\]
+
+Por tanto:
+
+\[
+\lambda=-1
+\]
+
+tiene multiplicidad algebraica $2$ y:
+
+\[
+\lambda=2
+\]
+
+es simple.
+
+Se obtiene:
+
+\[
+S(-1)
+=
+\Span\{(-3,1,0),(-9,0,1)\},
+\]
+
+\[
+S(2)
+=
+\Span\{(9,3,1)\}.
+\]
+
+Así:
+
+\[
+\boxed{
+M\text{ es diagonalizable.}
+}
+\]
+
+Una base de autovectores de $\mathcal P_2(x)$ es:
+
+\[
+\boxed{
+\{-3+x,\;-9+x^2,\;9+3x+x^2\}.
+}
+\]
+
+Por Cayley--Hamilton:
+
+\[
+p(A)
+=
+-A^3+3A+2I=0.
+\]
+
+Entonces:
+
+\[
+2I=A(A^2-3I),
+\]
+
+y:
+
+\[
+\boxed{
+M^{-1}
+=
+\frac12(M^2-3I).
+}
+\]
+
+Si:
+
+\[
+P=
+\begin{pmatrix}
+-3&-9&9\\
+1&0&3\\
+0&1&1
+\end{pmatrix},
+\qquad
+D=
+\diag(-1,-1,2),
+\]
+
+entonces:
+
+\[
+\boxed{
+M^p
+=
+PD^pP^{-1}.
+}
+\]
+
+\section{Ejercicio 25}
+\subsection{Solución}
+
+El polinomio característico es:
+
+\[
+p(\lambda)
+=
+(\lambda+1)^2(\lambda-2)^2
+\]
+
+o:
+
+\[
+p(\lambda)
+=
+\lambda^4-2\lambda^3-3\lambda^2+4\lambda+4.
+\]
+
+Por Cayley--Hamilton:
+
+\[
+A^4-2A^3-3A^2+4A+4I=0.
+\]
+
+Como $A$ es regular:
+
+\[
+I
+=
+\frac14
+A(-A^3+2A^2+3A-4I).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A^{-1}
+=
+\frac14
+\left(
+-A^3+2A^2+3A-4I
+\right).
+}
+\]
+
+\section{Ejercicio 26}
+\subsection{Solución}
+
+El polinomio característico es:
+
+\[
+p(\lambda)
+=
+(\lambda-1)(\lambda-6).
+\]
+
+Los autovectores pueden tomarse:
+
+\[
+v_1=(2,-3)
+\]
+
+para $\lambda=1$ y:
+
+\[
+v_2=(1,1)
+\]
+
+para $\lambda=6$.
+
+Por tanto:
+
+\[
+P=
+\begin{pmatrix}
+2&1\\
+-3&1
+\end{pmatrix},
+\qquad
+D=
+\begin{pmatrix}
+1&0\\
+0&6
+\end{pmatrix}.
+\]
+
+Así:
+
+\[
+\boxed{
+M^n
+=
+PD^nP^{-1}.
+}
+\]
+
+Por Cayley--Hamilton:
+
+\[
+M^2-7M+6I=0.
+\]
+
+Buscamos:
+
+\[
+M^n=aM+bI.
+\]
+
+Imponiendo los autovalores:
+
+\[
+1=a+b,
+\]
+
+\[
+6^n=6a+b.
+\]
+
+Por tanto:
+
+\[
+a=\frac{6^n-1}{5},
+\qquad
+b=\frac{6-6^n}{5}.
+\]
+
+Así:
+
+\[
+\boxed{
+M^n
+=
+\frac{6^n-1}{5}M
++
+\frac{6-6^n}{5}I.
+}
+\]
+
+\section{Ejercicio 27}
+\subsection{Solución}
+
+\[
+\tr A=2,
+\qquad
+\det A=1.
+\]
+
+Por tanto:
+
+\[
+p(\lambda)
+=
+(\lambda-1)^2.
+\]
+
+Cayley--Hamilton da:
+
+\[
+(A-I)^2=0.
+\]
+
+Se obtiene:
+
+\[
+A^n
+=
+nA+(1-n)I.
+\]
+
+Por tanto:
+
+\[
+\frac1nA^n
+=
+A+
+\left(
+\frac1n-1
+\right)I.
+\]
+
+Así:
+
+\[
+\boxed{
+\lim_{n\to\infty}\frac1nA^n
+=
+A-I
+=
+\begin{pmatrix}
+-15&25\\
+-9&15
+\end{pmatrix}.
+}
+\]
+
+\section{Ejercicio 28}
+\subsection{Solución}
+
+El único autovalor es:
+
+\[
+\lambda=3
+\]
+
+con multiplicidad algebraica $5$.
+
+Las dimensiones son:
+
+\[
+\dim E_1(3)=2,
+\qquad
+\dim E_2(3)=4,
+\qquad
+\dim E_3(3)=5.
+\]
+
+Por tanto hay dos bloques de Jordan, de tamaños $3$ y $2$.
+
+Una base de Jordan es:
+
+\[
+v_1=(1,0,0,0,0),
+\]
+
+\[
+v_2=(1,-1,1,1,0),
+\]
+
+\[
+v_3=(0,0,1,0,0),
+\]
+
+\[
+v_4=(0,0,0,1,1),
+\]
+
+\[
+v_5=(0,1,0,1,0).
+\]
+
+Así:
+
+\[
+\boxed{
+J=
+\begin{pmatrix}
+3&0&0&0&0\\
+1&3&0&0&0\\
+0&1&3&0&0\\
+0&0&0&3&0\\
+0&0&0&1&3
+\end{pmatrix}.
+}
+\]
+
+Una matriz de paso es:
+
+\[
+\boxed{
+P=
+\begin{pmatrix}
+1&1&0&0&0\\
+0&-1&0&0&1\\
+0&1&1&0&0\\
+0&1&0&1&1\\
+0&0&0&1&0
+\end{pmatrix}.
+}
+\]
+
+\section{Ejercicio 29}
+\subsection{Solución}
+
+Los autovalores son:
+
+\[
+2
+\quad\text{y}\quad
+-2,
+\]
+
+ambos con multiplicidad algebraica $2$.
+
+Para ambos:
+
+\[
+g_\lambda=1.
+\]
+
+Por tanto existe un bloque $2\times2$ para cada autovalor.
+
+Una base de Jordan es:
+
+\[
+v_1=(0,1,0,1),
+\qquad
+v_2=(0,0,1,0),
+\]
+
+\[
+v_3=(1,1,0,0),
+\qquad
+v_4=(1,0,1,0).
+\]
+
+Así:
+
+\[
+\boxed{
+J=
+\begin{pmatrix}
+2&0&0&0\\
+1&2&0&0\\
+0&0&-2&0\\
+0&0&1&-2
+\end{pmatrix}.
+}
+\]
+
+y:
+
+\[
+\boxed{
+P=
+\begin{pmatrix}
+0&0&1&1\\
+1&0&1&0\\
+0&1&0&1\\
+1&0&0&0
+\end{pmatrix}.
+}
+\]
+
+\section{Ejercicio 30}
+\subsection{Solución}
+
+El polinomio característico es:
+
+\[
+p(\lambda)
+=
+(1-\lambda)^2(1+\alpha-\lambda).
+\]
+
+Si:
+
+\[
+\alpha\neq0,
+\]
+
+los autovalores son:
+
+\[
+1\text{ doble},
+\qquad
+1+\alpha\text{ simple}.
+\]
+
+Para $\lambda=1$:
+
+\[
+\dim S(1)=1,
+\]
+
+por lo que aparece un bloque $2\times2$.
+
+Una base de Jordan es:
+
+\[
+v_1=(1,0,0),
+\]
+
+\[
+v_2=(0,1,1),
+\]
+
+\[
+v_3=(\alpha,1,1+\alpha^2).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+J=
+\begin{pmatrix}
+1&0&0\\
+1&1&0\\
+0&0&1+\alpha
+\end{pmatrix},
+\qquad
+\alpha\neq0.
+}
+\]
+
+Si:
+
+\[
+\alpha=0,
+\]
+
+el único autovalor es $1$ con multiplicidad $3$ y:
+
+\[
+\dim E_1=1,\qquad
+\dim E_2=2,\qquad
+\dim E_3=3.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+J=
+\begin{pmatrix}
+1&0&0\\
+1&1&0\\
+0&1&1
+\end{pmatrix},
+\qquad
+\alpha=0.
+}
+\]
+
+\section{Ejercicio 31}
+\subsection{Solución}
+
+El único autovalor es:
+
+\[
+\lambda=1
+\]
+
+con multiplicidad algebraica $4$.
+
+Si:
+
+\[
+k\neq0,
+\]
+
+las dimensiones de los núcleos sucesivos conducen a bloques de tamaños $3$ y $1$.
+
+Por tanto:
+
+\[
+\boxed{
+J=
+\begin{pmatrix}
+1&0&0&0\\
+1&1&0&0\\
+0&1&1&0\\
+0&0&0&1
+\end{pmatrix}.
+}
+\]
+
+Una matriz de paso proporcionada por las cadenas de Jordan es:
+
+\[
+\boxed{
+P=
+\begin{pmatrix}
+0&0&k&0\\
+0&k&0&0\\
+0&k&k&1\\
+1&0&-k&1
+\end{pmatrix}.
+}
+\]
+
+Si:
+
+\[
+k=0,
+\]
+
+los bloques tienen tamaños:
+
+\[
+2,1,1.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+J=
+\begin{pmatrix}
+1&0&0&0\\
+1&1&0&0\\
+0&0&1&0\\
+0&0&0&1
+\end{pmatrix}.
+}
+\]
+
+Una matriz de paso es:
+
+\[
+\boxed{
+P=
+\begin{pmatrix}
+0&1&1&0\\
+1&0&0&0\\
+0&1&0&1\\
+1&-1&0&0
+\end{pmatrix}.
+}
+\]
+
+\section{Ejercicio 32}
+\subsection{Solución}
+
+Para:
+
+\[
+\lambda=1
+\]
+
+la multiplicidad algebraica es $2$ y la geométrica $1$, por lo que aparece:
+
+\[
+J_2(1).
+\]
+
+Para:
+
+\[
+2+i
+\]
+
+y su conjugado:
+
+\[
+2-i,
+\]
+
+la multiplicidad algebraica es $2$ y la geométrica $1$.
+
+El bloque real básico es:
+
+\[
+C=
+\begin{pmatrix}
+2&1\\
+-1&2
+\end{pmatrix}.
+\]
+
+Como la multiplicidad es $2$, aparece un bloque real de Jordan de orden $2$.
+
+Por tanto, una forma real de Jordan es:
+
+\[
+\boxed{
+J_R=
+\begin{pmatrix}
+1&0&0&0&0&0\\
+1&1&0&0&0&0\\
+0&0&2&1&0&0\\
+0&0&-1&2&0&0\\
+0&0&1&0&2&1\\
+0&0&0&1&-1&2
+\end{pmatrix}.
+}
+\]
+
+\section{Ejercicio 33}
+\subsection{Solución}
+
+El polinomio característico es:
+
+\[
+p(\lambda)
+=
+(\lambda^2+1)^2.
+\]
+
+Los autovalores complejos son:
+
+\[
+i,\qquad-i,
+\]
+
+ambos de multiplicidad algebraica $2$.
+
+Para $\lambda=i$ puede tomarse la cadena:
+
+\[
+v_1=(0,0,1,-1-i),
+\]
+
+\[
+v_2=(M-iI)v_1=(-i,1+i,0,0).
+\]
+
+Escribimos:
+
+\[
+v_1=u_1+iw_1,
+\qquad
+v_2=u_2+iw_2,
+\]
+
+con:
+
+\[
+u_1=(0,0,1,-1),
+\qquad
+w_1=(0,0,0,-1),
+\]
+
+\[
+u_2=(0,1,0,0),
+\qquad
+w_2=(-1,1,0,0).
+\]
+
+Una base real es:
+
+\[
+\boxed{
+B'=
+\{u_1,w_1,u_2,w_2\}.
+}
+\]
+
+En ella:
+
+\[
+\boxed{
+J_R=
+\begin{pmatrix}
+0&1&0&0\\
+-1&0&0&0\\
+1&0&0&1\\
+0&1&-1&0
+\end{pmatrix}.
+}
+\]
+
+\section{Ejercicio 34}
+\subsection{Solución}
+
+Para:
+
+\[
+A=
+\begin{pmatrix}
+-2&0&0\\
+0&2&0\\
+0&1&2
+\end{pmatrix},
+\]
+
+el bloque asociado a $2$ tiene parte nilpotente de orden $2$.
+
+Por tanto:
+
+\[
+\boxed{
+e^A
+=
+\begin{pmatrix}
+e^{-2}&0&0\\
+0&e^2&0\\
+0&e^2&e^2
+\end{pmatrix}.
+}
+\]
+
+Más generalmente:
+
+\[
+\boxed{
+e^{At}
+=
+\begin{pmatrix}
+e^{-2t}&0&0\\
+0&e^{2t}&0\\
+0&te^{2t}&e^{2t}
+\end{pmatrix}.
+}
+\]
+
+Para:
+
+\[
+B=
+\begin{pmatrix}
+3&0&0\\
+1&3&0\\
+0&1&3
+\end{pmatrix},
+\]
+
+se tiene un único bloque de Jordan de orden $3$.
+
+Así:
+
+\[
+\boxed{
+e^B
+=
+e^3
+\begin{pmatrix}
+1&0&0\\
+1&1&0\\
+\frac12&1&1
+\end{pmatrix}.
+}
+\]
+
+y:
+
+\[
+\boxed{
+e^{Bt}
+=
+e^{3t}
+\begin{pmatrix}
+1&0&0\\
+t&1&0\\
+\frac{t^2}{2}&t&1
+\end{pmatrix}.
+}
+\]
+
+\section{Ejercicio 35}
+\subsection{Solución}
+
+Como:
+
+\[
+M=\lambda I,
+\]
+
+\[
+M^k=\lambda^kI.
+\]
+
+Entonces:
+
+\[
+e^M
+=
+\sum_{k=0}^\infty
+\frac{\lambda^k}{k!}I.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+e^M=e^\lambda I_n.
+}
+\]
+
+\section{Ejercicio 36}
+\subsection{Solución}
+
+La matriz es nilpotente y:
+
+\[
+A^n=0.
+\]
+
+Por tanto la serie termina:
+
+\[
+\boxed{
+e^A
+=
+I+A+\frac{A^2}{2!}
++\cdots+
+\frac{A^{n-1}}{(n-1)!}.
+}
+\]
+
+En forma matricial:
+
+\[
+\boxed{
+e^A=
+\begin{pmatrix}
+1&0&0&\cdots&0\\
+1&1&0&\cdots&0\\
+\frac1{2!}&1&1&\ddots&\vdots\\
+\vdots&\ddots&\ddots&\ddots&0\\
+\frac1{(n-1)!}&\cdots&\frac1{2!}&1&1
+\end{pmatrix}.
+}
+\]
+
+\section{Ejercicio 37}
+\subsection{Solución}
+
+Escribimos:
+
+\[
+A=
+aI+
+\begin{pmatrix}
+0&b\\
+-b&0
+\end{pmatrix}.
+\]
+
+Las dos matrices conmutan, luego:
+
+\[
+e^A
+=
+e^{aI}
+e^{
+\left(
+\begin{smallmatrix}
+0&b\\
+-b&0
+\end{smallmatrix}
+\right)
+}.
+\]
+
+La segunda exponencial es una rotación:
+
+\[
+\boxed{
+e^A
+=
+e^a
+\begin{pmatrix}
+\cos b&\sen b\\
+-\sen b&\cos b
+\end{pmatrix}.
+}
+\]
+
+\section{Ejercicio 38}
+\subsection{Solución}
+
+El polinomio característico es:
+
+\[
+p(\lambda)
+=
+(1-\lambda)^2
+\left(
+\frac12-\lambda
+\right).
+\]
+
+Desarrollando:
+
+\[
+p(\lambda)
+=
+-\lambda^3
++
+\frac52\lambda^2
+-
+2\lambda
++
+\frac12.
+\]
+
+Por Cayley--Hamilton:
+
+\[
+-A^3
++
+\frac52A^2
+-
+2A
++
+\frac12I
+=
+0.
+\]
+
+Multiplicando por $2$:
+
+\[
+-2A^3+5A^2-4A+I=0.
+\]
+
+Multiplicando por $A$:
+
+\[
+-2A^4+5A^3-4A^2+A=0.
+\]
+
+Restando adecuadamente ambas identidades:
+
+\[
+\boxed{
+2A^4-7A^3+9A^2-5A+I=0.
+}
+\]
+
+\section{Ejercicio 39}
+\subsection{Solución}
+
+Como $B$ tiene tres autovalores distintos:
+
+\[
+0,1,2,
+\]
+
+es diagonalizable.
+
+Su rango coincide con el de:
+
+\[
+D=\diag(0,1,2).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\rg B=2.
+}
+\]
+
+Además:
+
+\[
+\det B=0.
+\]
+
+Entonces:
+
+\[
+\det(B^tB)
+=
+\det(B^t)\det(B)
+=
+(\det B)^2.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\det(B^tB)=0.
+}
+\]
+
+Los autovalores de $B^tB$ no pueden deducirse únicamente a partir de los autovalores de $B$:
+
+\[
+\boxed{
+\text{No hay información suficiente para el apartado c).}
+}
+\]
+
+Para $B^2$ los autovalores son:
+
+\[
+0,1,4.
+\]
+
+Para:
+
+\[
+B^2+I
+\]
+
+son:
+
+\[
+1,2,5.
+\]
+
+Por tanto, para la inversa:
+
+\[
+\boxed{
+(B^2+I)^{-1}:
+\quad
+1,\frac12,\frac15.
+}
+\]
+
+\end{document}

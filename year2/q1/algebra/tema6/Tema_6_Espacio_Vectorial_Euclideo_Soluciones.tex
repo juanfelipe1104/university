@@ -1,0 +1,1973 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{lmodern}
+\usepackage{microtype}
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\rg}{\operatorname{rg}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Span}{\operatorname{L}}
+\newcommand{\proy}{\operatorname{proy}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\sg}{\operatorname{sg}}
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Álgebra Lineal}\\[0.4em]
+{\Large Tema 6: El Espacio Vectorial Euclídeo --- Soluciones}
+\end{center}
+
+\section{Ejercicio 1}
+\subsection{Solución}
+
+La matriz de Gram es:
+
+\[
+\boxed{
+G=
+\begin{pmatrix}
+1&0&1\\
+0&2&1\\
+1&1&2
+\end{pmatrix}.
+}
+\]
+
+Para $v=(1,1,1)$:
+
+\[
+\|v\|^2
+=
+v^tGv
+=
+9.
+\]
+
+Por tanto:
+
+\[
+\boxed{\|v\|=3.}
+\]
+
+Sean:
+
+\[
+u=(1,0,1),
+\qquad
+w=(0,1,0).
+\]
+
+\[
+\langle u,w\rangle=1,
+\qquad
+\|u\|=\sqrt5,
+\qquad
+\|w\|=\sqrt2.
+\]
+
+Así:
+
+\[
+\boxed{
+\cos\alpha=\frac1{\sqrt{10}},
+\qquad
+\alpha=\arccos\left(\frac1{\sqrt{10}}\right).
+}
+\]
+
+Para $(x,y,z)\in S^\perp$:
+
+\[
+x+z=0,
+\qquad
+2y+z=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+S^\perp
+=
+\Span\{(-2,-1,2)\}.
+}
+\]
+
+\section{Ejercicio 2}
+\subsection{Solución}
+
+Sea:
+
+\[
+p(x)=a+bx+cx^2.
+\]
+
+Si $p\in S\cap T$:
+
+\[
+a=0,
+\qquad
+b+c=0.
+\]
+
+Luego:
+
+\[
+\boxed{
+S\cap T
+=
+\Span\{x-x^2\}.
+}
+\]
+
+Por Grassmann:
+
+\[
+\dim(S+T)
+=
+\dim S+\dim T-\dim(S\cap T)
+=
+2+2-1=3.
+\]
+
+Así:
+
+\[
+\boxed{
+S+T=\R_2[x].
+}
+\]
+
+Tomando el suplementario ortogonal en la base canónica:
+
+\[
+(0,1,-1)\cdot(a,b,c)=0,
+\]
+
+por lo que:
+
+\[
+b-c=0.
+\]
+
+Así:
+
+\[
+\boxed{
+(S\cap T)^\perp
+=
+\Span\{1,x+x^2\}
+}
+\]
+
+con ecuación implícita:
+
+\[
+\boxed{b=c.}
+\]
+
+\section{Ejercicio 3}
+\subsection{Solución}
+
+Las ecuaciones de $W$ tienen vectores normales:
+
+\[
+n_1=(1,1,-1,1),
+\qquad
+n_2=(2,1,-1,3).
+\]
+
+Con el producto escalar usual:
+
+\[
+W^\perp
+=
+\Span\{n_1,n_2\}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+W^\perp
+=
+\Span\{(1,1,-1,1),(2,1,-1,3)\}.
+}
+\]
+
+\section{Ejercicio 4}
+\subsection{Solución}
+
+\[
+\|u+v\|^2
+=
+\langle u+v,u+v\rangle
+\]
+
+\[
+=
+\|u\|^2+\|v\|^2+2\langle u,v\rangle.
+\]
+
+Por tanto:
+
+\[
+\|u+v\|^2
+=
+\|u\|^2+\|v\|^2
+\]
+
+si y sólo si:
+
+\[
+\boxed{\langle u,v\rangle=0.}
+\]
+
+\section{Ejercicio 5}
+\subsection{Solución}
+
+\[
+\|u+v\|^2
+=
+\|u\|^2+\|v\|^2+2\langle u,v\rangle
+\]
+
+\[
+\|u-v\|^2
+=
+\|u\|^2+\|v\|^2-2\langle u,v\rangle.
+\]
+
+Sumando:
+
+\[
+\boxed{
+\|u+v\|^2+\|u-v\|^2
+=
+2\left(\|u\|^2+\|v\|^2\right).
+}
+\]
+
+\section{Ejercicio 6}
+\subsection{Solución}
+
+\[
+\langle u+v,u-v\rangle
+=
+\|u\|^2-\|v\|^2.
+\]
+
+Por tanto:
+
+\[
+u+v\perp u-v
+\iff
+\|u\|^2=\|v\|^2
+\iff
+\boxed{\|u\|=\|v\|.}
+\]
+
+En un paralelogramo, $u$ y $v$ representan dos lados y:
+
+\[
+u+v,
+\qquad
+u-v
+\]
+
+sus diagonales.
+
+Por tanto:
+
+\[
+\boxed{
+\text{es un rombo}
+\iff
+\text{sus diagonales son perpendiculares}.
+}
+\]
+
+\section{Ejercicio 7}
+\subsection{Solución}
+
+Una base de $F$ es:
+
+\[
+\{(-1,1,0),(-2,0,1)\}.
+\]
+
+Sea:
+
+\[
+v=(x_1,x_2,x_3)\in F^\perp.
+\]
+
+Entonces:
+
+\[
+-x_1+2x_2=0
+\]
+
+\[
+-2x_1+3x_3=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+F^\perp
+=
+\Span\{(6,3,4)\}.
+}
+\]
+
+\section{Ejercicio 8}
+\subsection{Solución}
+
+Para el apartado a), imponemos:
+
+\[
+x+2y+z=0
+\]
+
+\[
+-y+z=0
+\]
+
+\[
+x+y-2z+t=0.
+\]
+
+Se obtiene:
+
+\[
+(x,y,z,t)
+=
+\lambda(-3,1,1,4).
+\]
+
+Como:
+
+\[
+\|(-3,1,1,4)\|^2=27,
+\]
+
+un vector unitario es:
+
+\[
+\boxed{
+\frac1{\sqrt{27}}(-3,1,1,4).
+}
+\]
+
+Para el apartado b), tomamos:
+
+\[
+v_1=(1,2,-1,0),
+\quad
+v_2=(1,0,-2,1),
+\quad
+v_3=(0,1,1,0).
+\]
+
+Gram--Schmidt da:
+
+\[
+u_1=(1,2,-1,0)
+\]
+
+\[
+u_2=\frac12(1,-2,-3,2)
+\]
+
+\[
+u_3=\frac19(1,1,3,5).
+\]
+
+Normalizando:
+
+\[
+\boxed{
+e_1=
+\frac1{\sqrt6}(1,2,-1,0)
+}
+\]
+
+\[
+\boxed{
+e_2=
+\frac1{\sqrt{18}}(1,-2,-3,2)
+}
+\]
+
+\[
+\boxed{
+e_3=
+\frac16(1,1,3,5).
+}
+\]
+
+\section{Ejercicio 9}
+\subsection{Solución}
+
+Sea:
+
+\[
+s=
+\alpha(0,1,2)
++
+\beta(1,2,3).
+\]
+
+Exigimos:
+
+\[
+(1,2,1)-s
+\perp
+(0,1,2)
+\]
+
+y:
+
+\[
+(1,2,1)-s
+\perp
+(1,2,3).
+\]
+
+Se obtiene:
+
+\[
+5\alpha+8\beta=4
+\]
+
+\[
+8\alpha+14\beta=8.
+\]
+
+Por tanto:
+
+\[
+\alpha=-\frac43,
+\qquad
+\beta=\frac43.
+\]
+
+Así:
+
+\[
+\boxed{
+\proy_S(1,2,1)
+=
+\left(
+\frac43,\frac43,\frac43
+\right).
+}
+\]
+
+\section{Ejercicio 10}
+\subsection{Solución}
+
+En la base $\{1,x\}$:
+
+\[
+\langle1,1\rangle=1,
+\qquad
+\langle1,x\rangle=\frac12,
+\qquad
+\langle x,x\rangle=\frac13.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+G=
+\begin{pmatrix}
+1&\frac12\\
+\frac12&\frac13
+\end{pmatrix}.
+}
+\]
+
+Además:
+
+\[
+\langle x+3,2x+4\rangle
+=
+\frac{53}{3}
+\]
+
+\[
+\|x+3\|^2=\frac{37}{3}
+\]
+
+\[
+\|2x+4\|^2=\frac{76}{3}.
+\]
+
+Así:
+
+\[
+\boxed{
+\cos\alpha
+=
+\frac{53}{\sqrt{2812}}.
+}
+\]
+
+Para la proyección sobre $x+2$:
+
+\[
+\frac{\langle x+3,x+2\rangle}
+{\|x+2\|^2}
+=
+\frac{53}{38}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\proy_{x+2}(x+3)
+=
+\frac{53}{38}(x+2).
+}
+\]
+
+Aplicando Gram--Schmidt a $\{1,x\}$:
+
+\[
+u_1=1
+\]
+
+\[
+u_2=x-\frac12.
+\]
+
+Como:
+
+\[
+\left\|x-\frac12\right\|^2
+=
+\frac1{12},
+\]
+
+una base ortonormal es:
+
+\[
+\boxed{
+\left\{
+1,\;
+2\sqrt3\,x-\sqrt3
+\right\}.
+}
+\]
+
+\section{Ejercicio 11}
+\subsection{Solución}
+
+Como:
+
+\[
+S=
+\Span\{(1,0,0),(0,1,0)\},
+\]
+
+se tiene:
+
+\[
+\boxed{
+\proy_S(1,1,1)
+=
+(1,1,0).
+}
+\]
+
+\section{Ejercicio 12}
+\subsection{Solución}
+
+Para el ajuste cuadrático:
+
+\[
+y=a_0+a_1x+a_2x^2.
+\]
+
+Las ecuaciones normales dan:
+
+\[
+a_0=-\frac{11}{4},
+\qquad
+a_1=\frac{79}{20},
+\qquad
+a_2=-\frac14.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+y=
+-\frac{11}{4}
++
+\frac{79}{20}x
+-
+\frac14x^2.
+}
+\]
+
+Para el ajuste cúbico, al haber cuatro puntos se obtiene el polinomio interpolador:
+
+\[
+\boxed{
+y=
+-1
++
+\frac76x
++
+x^2
+-
+\frac16x^3.
+}
+\]
+
+\section{Ejercicio 13}
+\subsection{Solución}
+
+Buscamos:
+
+\[
+y=a+bx.
+\]
+
+Las ecuaciones normales son:
+
+\[
+\begin{pmatrix}
+4&\frac{43}{10}\\
+\frac{43}{10}&\frac{477}{100}
+\end{pmatrix}
+\begin{pmatrix}
+a\\b
+\end{pmatrix}
+=
+\begin{pmatrix}
+11\\
+\frac{127}{10}
+\end{pmatrix}.
+\]
+
+Se obtiene:
+
+\[
+a=-\frac{300}{59},
+\qquad
+b=\frac{430}{59}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+y=
+-\frac{300}{59}
++
+\frac{430}{59}x.
+}
+\]
+
+\section{Ejercicio 14}
+\subsection{Solución}
+
+El ajuste lineal de:
+
+\[
+(1,4),(2,8),(3,11),(4,14)
+\]
+
+es:
+
+\[
+\boxed{
+y=1+\frac{33}{10}x.
+}
+\]
+
+Para:
+
+\[
+x=7,
+\]
+
+\[
+y(7)
+=
+1+\frac{231}{10}
+=
+\frac{241}{10}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+N(7)\approx24.1
+\text{ miles de microorganismos}.
+}
+\]
+
+\section{Ejercicio 15}
+\subsection{Solución}
+
+El polinomio característico es:
+
+\[
+p(\lambda)
+=
+\lambda(1-\lambda)(\lambda-3).
+\]
+
+Los autovalores son:
+
+\[
+0,\quad1,\quad3.
+\]
+
+Podemos tomar:
+
+\[
+u_1=(-1,1,-1),
+\quad
+u_2=(1,0,-1),
+\quad
+u_3=(1,2,1).
+\]
+
+Son ortogonales.
+
+Normalizando:
+
+\[
+e_1=
+\frac1{\sqrt3}(-1,1,-1)
+\]
+
+\[
+e_2=
+\frac1{\sqrt2}(1,0,-1)
+\]
+
+\[
+e_3=
+\frac1{\sqrt6}(1,2,1).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+P=
+\begin{pmatrix}
+-\frac1{\sqrt3}&\frac1{\sqrt2}&\frac1{\sqrt6}\\
+\frac1{\sqrt3}&0&\frac2{\sqrt6}\\
+-\frac1{\sqrt3}&-\frac1{\sqrt2}&\frac1{\sqrt6}
+\end{pmatrix}
+}
+\]
+
+y:
+
+\[
+\boxed{
+P^tAP=
+\diag(0,1,3).
+}
+\]
+
+\section{Ejercicio 16}
+\subsection{Solución}
+
+Las coordenadas de:
+
+\[
+2e_1+e_2
+\]
+
+en $B$ son:
+
+\[
+(1,1,0).
+\]
+
+Entonces:
+
+\[
+\langle2e_1+e_2,2e_1+e_2\rangle
+=
+(1,1,0)
+G
+\begin{pmatrix}
+1\\1\\0
+\end{pmatrix}
+=3.
+\]
+
+Así:
+
+\[
+\boxed{\text{1) Falsa}.}
+\]
+
+Además:
+
+\[
+[e_1]_B=(1,0,0),
+\]
+
+\[
+[e_1+e_2]_B=(0,1,0),
+\]
+
+\[
+[e_3]_B=(0,-1,1).
+\]
+
+Se verifica:
+
+\[
+\langle e_1,e_1+e_2\rangle=0
+\]
+
+y:
+
+\[
+\langle e_1,e_3\rangle=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{\text{2) Cierta}.}
+\]
+
+La matriz de cambio es:
+
+\[
+P=
+\begin{pmatrix}
+1&-1&0\\
+0&1&-1\\
+0&0&1
+\end{pmatrix}.
+\]
+
+Así:
+
+\[
+G_{B'}
+=
+P^tGP
+=
+\begin{pmatrix}
+1&-1&0\\
+-1&3&-2\\
+0&-2&3
+\end{pmatrix}.
+\]
+
+Por tanto:
+
+\[
+\boxed{\text{3) Falsa}.}
+\]
+
+Si $Q$ es ortogonal:
+
+\[
+Q^tQ=I.
+\]
+
+Tomando determinantes:
+
+\[
+(\det Q)^2=1.
+\]
+
+Por tanto:
+
+\[
+\boxed{\text{4) Cierta}.}
+\]
+
+La afirmación 5 no es cierta en general para matrices ortogonales reales: sus autovalores complejos pueden tener módulo $1$ sin ser $\pm1$.
+
+Por tanto:
+
+\[
+\boxed{\text{5) Falsa}.}
+\]
+
+\section{Ejercicio 17}
+\subsection{Solución}
+
+Sean $A,B$ ortogonales:
+
+\[
+A^tA=I,
+\qquad
+B^tB=I.
+\]
+
+Entonces:
+
+\[
+(AB)^tAB
+=
+B^tA^tAB
+=
+B^tB
+=
+I.
+\]
+
+Por tanto:
+
+\[
+\boxed{AB\text{ es ortogonal}.}
+\]
+
+Además:
+
+\[
+A^{-1}=A^t.
+\]
+
+Entonces:
+
+\[
+(A^{-1})^tA^{-1}
+=
+AA^t
+=
+I.
+\]
+
+Por tanto:
+
+\[
+\boxed{A^{-1}\text{ es ortogonal}.}
+\]
+
+\section{Ejercicio 18}
+\subsection{Solución}
+
+Las columnas deben ser unitarias.
+
+Para la primera:
+
+\[
+\frac{4+9+s^2}{49}=1
+\]
+
+de donde:
+
+\[
+s=\pm6.
+\]
+
+Para la segunda:
+
+\[
+\frac{t^2+s^2+4}{49}=1.
+\]
+
+Así:
+
+\[
+t=\pm3.
+\]
+
+Imponiendo además la ortogonalidad entre columnas se obtiene:
+
+\[
+\boxed{
+s=6,
+\qquad
+t=-3.
+}
+\]
+
+\section{Ejercicio 19}
+\subsection{Solución}
+
+Sean:
+
+\[
+C_1,\ldots,C_n
+\]
+
+las columnas de $A$.
+
+Entonces:
+
+\[
+A^tA
+=
+\left(
+C_i^tC_j
+\right)
+=
+\left(
+\langle C_i,C_j\rangle
+\right).
+\]
+
+Así:
+
+\[
+A^tA=I
+\]
+
+si y sólo si:
+
+\[
+\langle C_i,C_j\rangle
+=
+\begin{cases}
+1,&i=j,\\
+0,&i\neq j.
+\end{cases}
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A\text{ es ortogonal}
+\iff
+\{C_1,\ldots,C_n\}
+\text{ es ortonormal}.
+}
+\]
+
+\section{Ejercicio 20}
+\subsection{Solución}
+
+El polinomio característico es:
+
+\[
+p(\lambda)
+=
+-(1+\lambda)^2(\lambda-3).
+\]
+
+Los autovalores son:
+
+\[
+-1\text{ doble},
+\qquad
+3\text{ simple}.
+\]
+
+Para $\lambda=-1$ podemos tomar:
+
+\[
+u_1=(1,0,-1),
+\qquad
+u_2=(0,1,0).
+\]
+
+Para $\lambda=3$:
+
+\[
+u_3=(1,0,1).
+\]
+
+Normalizando:
+
+\[
+\boxed{
+P=
+\begin{pmatrix}
+\frac1{\sqrt2}&0&\frac1{\sqrt2}\\
+0&1&0\\
+-\frac1{\sqrt2}&0&\frac1{\sqrt2}
+\end{pmatrix}
+}
+\]
+
+y:
+
+\[
+\boxed{
+P^tAP
+=
+\diag(-1,-1,3).
+}
+\]
+
+\section{Ejercicio 21}
+\subsection{Solución}
+
+Para $A$:
+
+\[
+p_A(\lambda)
+=
+-\lambda^3+9\lambda^2-16\lambda
+\]
+
+tiene un autovalor nulo y dos positivos.
+
+Por tanto:
+
+\[
+\sg(A)=(2,0).
+\]
+
+Para $B$:
+
+\[
+p_B(\lambda)
+=
+-\lambda^3+10\lambda^2+8\lambda
+\]
+
+tiene un autovalor nulo, uno positivo y uno negativo.
+
+Así:
+
+\[
+\sg(B)=(1,1).
+\]
+
+Como dos matrices simétricas reales son congruentes si y sólo si tienen la misma inercia:
+
+\[
+\boxed{
+A\text{ y }B\text{ no son congruentes}.
+}
+\]
+
+\section{Ejercicio 22}
+\subsection{Solución}
+
+Los autovalores son:
+
+\[
+3,
+\qquad
+-1.
+\]
+
+Podemos tomar:
+
+\[
+v_1=(-1,1),
+\qquad
+v_2=(1,1).
+\]
+
+Normalizando:
+
+\[
+e_1=
+\frac1{\sqrt2}(-1,1),
+\qquad
+e_2=
+\frac1{\sqrt2}(1,1).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+P=
+\frac1{\sqrt2}
+\begin{pmatrix}
+-1&1\\
+1&1
+\end{pmatrix}
+}
+\]
+
+y:
+
+\[
+\boxed{
+P^tMP=
+\diag(3,-1).
+}
+\]
+
+\section{Ejercicio 23}
+\subsection{Solución}
+
+Los autovalores son:
+
+\[
+-1\text{ doble},
+\qquad
+2\text{ simple}.
+\]
+
+Una base ortogonal de autovectores es:
+
+\[
+u_1=(1,0,-1)
+\]
+
+\[
+u_2=(1,-2,1)
+\]
+
+\[
+u_3=(1,1,1).
+\]
+
+Normalizando:
+
+\[
+\boxed{
+P=
+\begin{pmatrix}
+\frac1{\sqrt2}&\frac1{\sqrt6}&\frac1{\sqrt3}\\
+0&-\frac2{\sqrt6}&\frac1{\sqrt3}\\
+-\frac1{\sqrt2}&\frac1{\sqrt6}&\frac1{\sqrt3}
+\end{pmatrix}
+}
+\]
+
+y:
+
+\[
+\boxed{
+P^tAP
+=
+\diag(-1,-1,2).
+}
+\]
+
+\section{Ejercicio 24}
+\subsection{Solución}
+
+El plano puede escribirse como:
+
+\[
+S=
+\{(-2\alpha,\beta,\alpha):
+\alpha,\beta\in\R\}.
+\]
+
+Sea:
+
+\[
+s=(-2\alpha,\beta,\alpha)
+\]
+
+la proyección de:
+
+\[
+v=(1,1,1).
+\]
+
+Entonces:
+
+\[
+v-s
+=
+(1+2\alpha,1-\beta,1-\alpha)
+\]
+
+debe ser ortogonal a:
+
+\[
+(-2,0,1)
+\]
+
+y:
+
+\[
+(0,1,0)
+\]
+
+respecto del producto de Gram $G$.
+
+Se obtiene:
+
+\[
+1-20\alpha-5\beta=0
+\]
+
+\[
+1-5\alpha-2\beta=0.
+\]
+
+Resolviendo:
+
+\[
+\alpha=-\frac15,
+\qquad
+\beta=1.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\proy_S(1,1,1)
+=
+\left(
+\frac25,1,-\frac15
+\right).
+}
+\]
+
+\section{Ejercicio 25}
+\subsection{Solución}
+
+Como $A$ es real y simétrica, es ortogonalmente diagonalizable.
+
+Sus autovalores son:
+
+\[
+1\text{ doble},
+\qquad
+4\text{ simple}.
+\]
+
+Una base ortogonal de autovectores es:
+
+\[
+u_1=(1,0,-1),
+\qquad
+u_2=(1,-2,1),
+\qquad
+u_3=(1,1,1).
+\]
+
+Se verifica:
+
+\[
+u_1\cdot u_2
+=
+u_1\cdot u_3
+=
+u_2\cdot u_3
+=
+0.
+\]
+
+Normalizando:
+
+\[
+\boxed{
+B'=
+\left\{
+\frac1{\sqrt2}(1,0,-1),
+\frac1{\sqrt6}(1,-2,1),
+\frac1{\sqrt3}(1,1,1)
+\right\}.
+}
+\]
+
+La matriz de paso es:
+
+\[
+\boxed{
+P=
+\begin{pmatrix}
+\frac1{\sqrt2}&\frac1{\sqrt6}&\frac1{\sqrt3}\\
+0&-\frac2{\sqrt6}&\frac1{\sqrt3}\\
+-\frac1{\sqrt2}&\frac1{\sqrt6}&\frac1{\sqrt3}
+\end{pmatrix}
+}
+\]
+
+y:
+
+\[
+P^tP=I.
+\]
+
+Por tanto:
+
+\[
+\boxed{P\text{ es ortogonal}.}
+\]
+
+Además:
+
+\[
+\boxed{
+P^tAP=
+\diag(1,1,4).
+}
+\]
+
+Todos los autovalores son positivos, luego:
+
+\[
+\boxed{
+q(x)=x^tAx
+\text{ es definida positiva}.
+}
+\]
+
+\section{Ejercicio 26}
+\subsection{Solución}
+
+En:
+
+\[
+B=\{(1,1),(1,2)\}
+\]
+
+se tiene:
+
+\[
+f(1,1)
+=
+-3(1,1)+2(1,2)
+\]
+
+y:
+
+\[
+f(1,2)
+=
+-4(1,1)+3(1,2).
+\]
+
+Por tanto:
+
+\[
+A=
+\begin{pmatrix}
+-3&-4\\
+2&3
+\end{pmatrix}.
+\]
+
+La matriz de Gram del producto usual en $B$ es:
+
+\[
+G_B=
+\begin{pmatrix}
+2&3\\
+3&5
+\end{pmatrix}.
+\]
+
+Calculando:
+
+\[
+A^tG_BA
+=
+\begin{pmatrix}
+2&3\\
+3&5
+\end{pmatrix}.
+\]
+
+Así:
+
+\[
+\boxed{
+G_B=A^tG_BA.
+}
+\]
+
+\section{Ejercicio 27}
+\subsection{Solución}
+
+Como:
+
+\[
+S\subseteq S(a)
+\]
+
+y:
+
+\[
+\dim S=2,
+\]
+
+el autovalor $a$ tiene multiplicidad al menos $2$.
+
+Si:
+
+\[
+a\neq b,
+\]
+
+los autovalores son:
+
+\[
+a,a,b.
+\]
+
+Una base ortonormal adaptada es:
+
+\[
+e_1=
+\frac1{\sqrt2}(1,0,-1)
+\]
+
+\[
+e_2=
+\frac1{\sqrt6}(1,-2,1)
+\]
+
+\[
+e_3=
+\frac1{\sqrt3}(1,1,1).
+\]
+
+Así:
+
+\[
+\boxed{
+P=
+\begin{pmatrix}
+\frac1{\sqrt2}&\frac1{\sqrt6}&\frac1{\sqrt3}\\
+0&-\frac2{\sqrt6}&\frac1{\sqrt3}\\
+-\frac1{\sqrt2}&\frac1{\sqrt6}&\frac1{\sqrt3}
+\end{pmatrix}
+}
+\]
+
+y:
+
+\[
+\boxed{
+J=
+\diag(a,a,b).
+}
+\]
+
+Si:
+
+\[
+a=b,
+\]
+
+todos los autovalores son $a$ y:
+
+\[
+\boxed{
+A=aI,
+\qquad
+J=aI,
+\qquad
+P=I.
+}
+\]
+
+Para que $A$ sea matriz de un producto escalar debe ser definida positiva.
+
+Por tanto:
+
+\[
+\boxed{
+a>0,
+\qquad
+b>0.
+}
+\]
+
+Los valores naturales más pequeños son:
+
+\[
+a=b=1.
+\]
+
+Entonces:
+
+\[
+A=I.
+\]
+
+Para:
+
+\[
+u=(1,-1,0),
+\qquad
+v=(1,1,1),
+\]
+
+\[
+\langle u,v\rangle=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\alpha=\frac{\pi}{2}.
+}
+\]
+
+\section{Ejercicio 28}
+\subsection{Solución}
+
+Para:
+
+\[
+u=(1,1,1),
+\]
+
+\[
+U^tU=3.
+\]
+
+Por tanto:
+
+\[
+H
+=
+I-\frac23UU^t.
+\]
+
+Así:
+
+\[
+\boxed{
+H=
+\frac13
+\begin{pmatrix}
+1&-2&-2\\
+-2&1&-2\\
+-2&-2&1
+\end{pmatrix}.
+}
+\]
+
+Aplicando $H$:
+
+\[
+\boxed{
+H(3,3,3)=(-3,-3,-3)
+}
+\]
+
+\[
+\boxed{
+H(1,-1,0)=(1,-1,0)
+}
+\]
+
+\[
+\boxed{
+H(1,2,3)=(-3,-2,-1).
+}
+\]
+
+\section{Ejercicio 29}
+\subsection{Solución}
+
+Como:
+
+\[
+B'=\{e_1,e_2+e_3,e_2-e_3\}
+\]
+
+es ortogonal:
+
+\[
+\langle e_1,e_2\rangle
+=
+\langle e_1,e_3\rangle
+=
+0
+\]
+
+y:
+
+\[
+\|e_2\|=\|e_3\|.
+\]
+
+Además:
+
+\[
+\cos\frac{\pi}{3}
+=
+\frac{\langle e_2,e_3\rangle}
+{\|e_2\|\|e_3\|}
+=
+\frac12.
+\]
+
+Los números naturales pares más pequeños son:
+
+\[
+\|e_1\|=\|e_2\|=\|e_3\|=2.
+\]
+
+Así:
+
+\[
+\langle e_2,e_3\rangle=2.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+G=
+\begin{pmatrix}
+4&0&0\\
+0&4&2\\
+0&2&4
+\end{pmatrix}.
+}
+\]
+
+Para:
+
+\[
+S=
+\Span\{e_1+e_2+e_3,e_1+2e_2\},
+\]
+
+sea:
+
+\[
+u=xe_1+ye_2+ze_3\in S^\perp.
+\]
+
+Las condiciones son:
+
+\[
+4x+6y+6z=0
+\]
+
+\[
+4x+8y+4z=0.
+\]
+
+Se obtiene:
+
+\[
+(x,y,z)=\lambda(-3,1,1).
+\]
+
+Como:
+
+\[
+\|(-3,1,1)\|^2=48,
+\]
+
+una base ortonormal es:
+
+\[
+\boxed{
+\left\{
+\frac1{\sqrt{48}}(-3e_1+e_2+e_3)
+\right\}.
+}
+\]
+
+Además:
+
+\[
+e_2-e_3\in S.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\proy_{S^\perp}(e_2-e_3)=0.
+}
+\]
+
+\section{Ejercicio 30}
+\subsection{Solución}
+
+La matriz asociada es:
+
+\[
+A=
+\begin{pmatrix}
+10&-6\\
+-6&5
+\end{pmatrix}.
+\]
+
+El polinomio característico es:
+
+\[
+\lambda^2-15\lambda+14.
+\]
+
+Por tanto:
+
+\[
+\lambda_1=14,
+\qquad
+\lambda_2=1.
+\]
+
+Autovectores asociados:
+
+\[
+v_1=(3,-2),
+\qquad
+v_2=(2,3).
+\]
+
+Normalizando:
+
+\[
+e_1=
+\frac1{\sqrt{13}}(3,-2),
+\qquad
+e_2=
+\frac1{\sqrt{13}}(2,3).
+\]
+
+Así:
+
+\[
+\boxed{
+B'=
+\left\{
+\frac1{\sqrt{13}}(3,-2),
+\frac1{\sqrt{13}}(2,3)
+\right\}
+}
+\]
+
+y:
+
+\[
+\boxed{
+P=
+\frac1{\sqrt{13}}
+\begin{pmatrix}
+3&2\\
+-2&3
+\end{pmatrix}.
+}
+\]
+
+Por tanto:
+
+\[
+\boxed{
+P^tAP=
+\diag(14,1).
+}
+\]
+
+En la nueva base:
+
+\[
+\boxed{
+14x'^2+y'^2=1.
+}
+\]
+
+\section{Ejercicio 31}
+\subsection{Solución}
+
+Las coordenadas de:
+
+\[
+2e_1+e_2
+\]
+
+en $B$ son:
+
+\[
+(1,1,0).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\langle2e_1+e_2,2e_1+e_2\rangle
+=
+3.
+}
+\]
+
+Las coordenadas en $B$ de los vectores de $B'$ son:
+
+\[
+[e_1]_B=(1,0,0)
+\]
+
+\[
+[e_2]_B=(-1,1,0)
+\]
+
+\[
+[e_3]_B=(0,-1,1).
+\]
+
+Luego:
+
+\[
+P=
+\begin{pmatrix}
+1&-1&0\\
+0&1&-1\\
+0&0&1
+\end{pmatrix}.
+\]
+
+Así:
+
+\[
+G_{B'}
+=
+P^tGP.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+G_{B'}
+=
+\begin{pmatrix}
+1&-1&0\\
+-1&3&-2\\
+0&-2&3
+\end{pmatrix}.
+}
+\]
+
+\[
+\langle e_1,e_1+e_2\rangle=0
+\]
+
+y:
+
+\[
+\langle e_1,e_3\rangle=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+V_1\perp V_2.
+}
+\]
+
+\end{document}

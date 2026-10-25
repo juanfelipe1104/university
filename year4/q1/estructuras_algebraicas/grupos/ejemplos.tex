@@ -1,0 +1,286 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools,amsthm}
+\usepackage{geometry,lmodern,microtype,array,booktabs,xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}\setlength{\parskip}{.5em}
+\newcommand{\N}{\mathbb{N}}\newcommand{\Z}{\mathbb{Z}}\newcommand{\Q}{\mathbb{Q}}\newcommand{\R}{\mathbb{R}}\newcommand{\C}{\mathbb{C}}
+\newcommand{\ord}{\operatorname{ord}}\newcommand{\gen}[1]{\langle #1\rangle}
+\newcommand{\Ker}{\operatorname{Ker}}\newcommand{\Imf}{\operatorname{Im}}\newcommand{\Aut}{\operatorname{Aut}}\newcommand{\mcd}{\operatorname{mcd}}\newcommand{\mcm}{\operatorname{mcm}}
+\newtcolorbox{definicion}[1][]{colback=gray!6,colframe=gray!55,boxrule=.6pt,arc=2mm,left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,breakable,#1}
+\newtcolorbox{resultado}[1][]{colback=gray!4,colframe=black!45,boxrule=.6pt,arc=2mm,left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,breakable,#1}
+\newtcolorbox{ejemplo}[1][]{colback=gray!2,colframe=gray!45,boxrule=.5pt,arc=2mm,breakable,#1}
+\newtcolorbox{demostracion}[1][]{colback=white,colframe=gray!35,boxrule=.5pt,arc=1mm,breakable,#1}
+\begin{document}
+\begin{center}{\LARGE\bfseries Estructuras algebraicas}\\[.4em]{\Large Ejemplos de grupos}\\[.4em]{\large Fichas de Propiedades y comprobaciones}\end{center}
+\tableofcontents\newpage
+\section{Grupos cíclicos y numéricos}
+
+\subsection{$(\Z_4,+)$}
+\begin{ejemplo}
+Clases $\{0,1,2,3\}$, sumadas módulo $4$.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Orden $4$.
+\item Abeliano, cíclico, finito y soluble.
+\item Neutro $0$; inverso de $x$ es $-x\pmod 4$.
+\item Generadores: $1$ y $3$.
+\item Todos sus subgrupos son normales.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} $\ord(2)=2$, mientras que $\ord(1)=4$.
+
+\subsection{$(\Z_n,+)$}
+\begin{ejemplo}
+Clases de congruencia módulo $n$, con suma módulo $n$.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Orden $n$.
+\item Abeliano, cíclico y soluble.
+\item Neutro $\overline0$; inverso de $\overline a$ es $\overline{-a}$.
+\item La clase $\overline k$ genera el grupo si y solo si $\mcd(k,n)=1$.
+\item Todos sus subgrupos son normales.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} $\Z_6$ tiene generadores $1$ y $5$, pero no $2$.
+
+\subsection{$(\Z,+)$ y $n\Z$}
+\begin{ejemplo}
+Los enteros y sus subgrupos de múltiplos de $n$, con la suma.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Abelianos y solubles.
+\item Para $n\ne0$, $n\Z\cong\Z$: son cíclicos infinitos.
+\item No son grupos de torsión ni divisibles.
+\item Todos sus subgrupos son normales.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} $6\Z\cap10\Z=30\Z$ y $6\Z+10\Z=2\Z$.
+
+\subsection{$(\Q,+)$, $(\R,+)$ y $(\C,+)$}
+\begin{ejemplo}
+Los racionales, reales y complejos con suma.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Abelianos, infinitos y solubles.
+\item Son divisibles y libres de torsión.
+\item El neutro es $0$; inverso de $x$ es $-x$.
+\item No son cíclicos.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} La ecuación $nx=q$ se resuelve tomando $x=q/n$.
+
+\subsection{$(\Q^*,\cdot)$, $(\R^*,\cdot)$ y $(\C^*,\cdot)$}
+\begin{ejemplo}
+Los números distintos de cero con la multiplicación habitual.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Abelianos, infinitos y solubles.
+\item Neutro $1$; inverso de $x$ es $1/x$.
+\item No son cíclicos.
+\item Contienen torsión: $-1$ tiene orden $2$.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} $0$ debe excluirse: no tiene inverso multiplicativo.
+
+\subsection{$(\Z_n^*,\cdot)$}
+\begin{ejemplo}
+Unidades módulo $n$, con producto módulo $n$.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Abeliano, finito y soluble.
+\item Orden $\varphi(n)$ (función de Euler).
+\item No siempre es cíclico.
+\item Cada elemento tiene inverso multiplicativo módulo $n$.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} $\Z_8^*=\{1,3,5,7\}\cong\Z_2\times\Z_2$, por lo que no es cíclico.
+
+\subsection{$\Z_2\times\Z_2$}
+\begin{ejemplo}
+Pares de clases módulo $2$, sumados coordenada a coordenada.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Orden $4$, abeliano y soluble.
+\item No cíclico.
+\item Todos los elementos no neutros tienen orden $2$.
+\item Todos sus subgrupos son normales.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} $(1,0)+(1,0)=(0,0)$ y ocurre lo mismo con $(0,1)$ y $(1,1)$.
+
+\subsection{$\Z_m\times\Z_n$}
+\begin{ejemplo}
+Producto directo de dos grupos cíclicos, con suma coordenada a coordenada.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Orden $mn$.
+\item Abeliano y soluble.
+\item Es cíclico precisamente si $\mcd(m,n)=1$.
+\item El orden de $(a,b)$ es $\mcm(\ord(a),\ord(b))$.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} $\Z_2\times\Z_3\cong\Z_6$; $\Z_2\times\Z_4$ no es cíclico.
+
+\section{Simetrías y permutaciones}
+
+\subsection{$\Delta_n$ (grupo diédrico)}
+\begin{ejemplo}
+Simetrías de un polígono regular de $n\ge3$ lados: $\Delta_n=\{r^k,sr^k:0\le k<n\}$ con $r^n=s^2=e$ y $srs=r^{-1}$.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Orden $2n$.
+\item No abeliano para $n\ge3$.
+\item Generado por $r$ y $s$; no cíclico.
+\item Todas las reflexiones tienen orden $2$.
+\item El subgrupo de rotaciones $\gen r\cong\Z_n$ es normal.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} En $\Delta_3$, $sr\ne rs$ y $\Delta_3\cong S_3$.
+
+\subsection{$S_n$ (grupo simétrico)}
+\begin{ejemplo}
+Todas las permutaciones de $n$ símbolos con composición.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Orden $n!$.
+\item No abeliano si $n\ge3$; $S_1,S_2$ son abelianos.
+\item Para $n\ge3$, no es cíclico.
+\item Contiene el subgrupo normal $A_n$ de índice $2$.
+\item Para $n\ge5$, no es soluble.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} En $S_3$, $(1\,2)(2\,3)\ne(2\,3)(1\,2)$.
+
+\subsection{$A_n$ (grupo alternado)}
+\begin{ejemplo}
+Permutaciones pares de $n$ símbolos.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Orden $n!/2$ para $n\ge2$.
+\item Normal en $S_n$.
+\item Para $n\ge5$, simple, no abeliano y no soluble.
+\item Para $n=3$, $A_3\cong\Z_3$ y es cíclico.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} $A_4$ tiene $12$ elementos: identidad, $3$ dobles trasposiciones y $8$ ciclos de longitud $3$.
+
+\subsection{$A_5$}
+\begin{ejemplo}
+Grupo alternado de cinco letras.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Orden $60$.
+\item No abeliano y no cíclico.
+\item Simple y perfecto.
+\item No soluble.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} El único subgrupo normal propio de $A_5$ es el trivial.
+
+\section{Grupos infinitos, matrices y cocientes}
+
+\subsection{$\Q/\Z$}
+\begin{ejemplo}
+Clases de números racionales que difieren en un entero, con suma.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Abeliano, infinito y soluble.
+\item Grupo de torsión y divisible.
+\item No es cíclico.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} La clase $1/6+\Z$ tiene orden $6$.
+
+\subsection{$\mu_\infty$}
+\begin{ejemplo}
+Todas las raíces complejas de la unidad, bajo multiplicación.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Abeliano, infinito y de torsión.
+\item Divisible; no cíclico.
+\item Isomorfo a $\Q/\Z$.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} $e^{2\pi i/5}$ tiene orden $5$.
+
+\subsection{$GL_n(\R)$}
+\begin{ejemplo}
+Matrices reales invertibles $n\times n$, bajo multiplicación.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Grupo infinito.
+\item Para $n\ge2$, no abeliano ni cíclico.
+\item Neutro $I_n$; inverso la matriz inversa.
+\item La aplicación determinante toma valores en $\R^*$.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} $AB$ y $BA$ pueden ser distintos incluso siendo $A,B$ invertibles.
+
+\subsection{$SL_n(\R)$}
+\begin{ejemplo}
+Matrices reales de determinante $1$, con multiplicación.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Subgrupo normal de $GL_n(\R)$ (núcleo del determinante).
+\item Infinito para $n\ge2$.
+\item No abeliano para $n\ge2$.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} $\begin{pmatrix}1&1\\0&1\end{pmatrix}\in SL_2(\R)$.
+
+\subsection{$F(S)$ (grupo libre)}
+\begin{ejemplo}
+Palabras reducidas formadas con generadores y sus inversos.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Para dos o más generadores, no abeliano.
+\item No tiene torsión no trivial.
+\item El grupo libre con un generador es isomorfo a $\Z$.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} En $F(a,b)$ las palabras $ab$ y $ba$ son distintas.
+
+\subsection{$G/N$ (grupo cociente)}
+\begin{ejemplo}
+Clases laterales de un normal $N\trianglelefteq G$.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Si $G$ es finito, $|G/N|=[G:N]=|G|/|N|$.
+\item Neutro $N$; inverso de $gN$ es $g^{-1}N$.
+\item Si $G$ es abeliano, el cociente también es abeliano.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} $\Z_{12}/\gen4\cong\Z_4$ y $\Delta_3/\gen r\cong\Z_2$.
+
+\section{Operaciones que no forman grupos}
+
+\subsection{$(\N,+)$ y $(\Q,\cdot)$}
+\begin{ejemplo}
+Casos útiles para distinguir semigrupos, monoides y grupos.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item $(\N,+)$ es monoide si $0\in\N$, pero no grupo: faltan inversos aditivos.
+\item $(\Q,\cdot)$ es monoide, pero no grupo: $0$ carece de inverso.
+\item $(\Q^*,\cdot)$ sí es un grupo abeliano.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} El fallo concreto en $\Q$ multiplicativo es $0\cdot x\ne1$ para todo $x$.
+
+\subsection{Operaciones inventadas}
+\begin{ejemplo}
+En $\R\setminus\{-1\}$ se define $a*b=a+b+ab$; en $\R^*$ se define $a\star b=3ab$.
+\end{ejemplo}
+\textbf{Propiedades}
+\begin{itemize}
+\item Ambas operaciones forman grupos abelianos.
+\item Para $*$: neutro $0$ e inverso $-a/(a+1)$.
+\item Para $\star$: neutro $1/3$ e inverso $1/(9a)$.
+\end{itemize}
+\textbf{Comprobación o ejemplo.} $1+(a*b)=(1+a)(1+b)$ explica la primera operación mediante transporte de estructura.
+
+\end{document}

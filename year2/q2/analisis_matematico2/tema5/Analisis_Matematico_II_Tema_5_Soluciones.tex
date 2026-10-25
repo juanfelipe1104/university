@@ -1,0 +1,1943 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\sen}{\operatorname{sen}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Análisis Matemático II}\\[0.4em]
+{\Large Tema 5: Teorema de la función implícita y de la función inversa}\\[0.4em]
+{\large Soluciones}
+\end{center}
+
+\section{Ejercicio 1}
+\subsection{Solución}
+
+Sea:
+
+\[
+F(x,y)=x^2+y^2-2.
+\]
+
+En el punto \((1,1)\):
+
+\[
+F(1,1)=0.
+\]
+
+Además:
+
+\[
+F_y(x,y)=2y
+\]
+
+y:
+
+\[
+F_y(1,1)=2\neq0.
+\]
+
+Por tanto, la ecuación define implícitamente a:
+
+\[
+y=f(x)
+\]
+
+en un entorno de \((1,1)\).
+
+La primera derivada es:
+
+\[
+y'
+=
+-\frac{F_x}{F_y}
+=
+-\frac{x}{y}.
+\]
+
+Así:
+
+\[
+\boxed{
+y'(1)=-1
+}
+\]
+
+Derivando:
+
+\[
+2x+2yy'=0,
+\]
+
+se obtiene:
+
+\[
+2+2(y')^2+2yy''=0.
+\]
+
+Por tanto:
+
+\[
+y''
+=
+-\frac{1+(y')^2}{y}.
+\]
+
+En \((1,1)\):
+
+\[
+\boxed{
+y''(1)=-2
+}
+\]
+
+\section{Ejercicio 2}
+\subsection{Solución}
+
+Sea:
+
+\[
+F(x,y)=y^3+x^3-6xy.
+\]
+
+La pendiente de la recta tangente es:
+
+\[
+y'
+=
+-\frac{F_x}{F_y}.
+\]
+
+Se tiene:
+
+\[
+F_x=3x^2-6y,
+\]
+
+\[
+F_y=3y^2-6x.
+\]
+
+En \((3,3)\):
+
+\[
+F_x(3,3)=9,
+\qquad
+F_y(3,3)=9.
+\]
+
+Por tanto:
+
+\[
+y'(3)=-1.
+\]
+
+La recta tangente es:
+
+\[
+y-3=-(x-3).
+\]
+
+Así:
+
+\[
+\boxed{
+y=-x+6
+}
+\]
+
+\section{Ejercicio 3}
+\subsection{Solución}
+
+Sea:
+
+\[
+F(x,y)=xy+x+\ln y.
+\]
+
+En \((0,1)\):
+
+\[
+F(0,1)=0.
+\]
+
+Además:
+
+\[
+F_y=x+\frac1y.
+\]
+
+Por tanto:
+
+\[
+F_y(0,1)=1\neq0.
+\]
+
+Así, la ecuación define implícitamente a:
+
+\[
+y=f(x)
+\]
+
+en un entorno de \((0,1)\).
+
+La derivada es:
+
+\[
+y'
+=
+-\frac{F_x}{F_y}
+=
+-\frac{y+1}{x+\frac1y}.
+\]
+
+En \((0,1)\):
+
+\[
+y'(0)=-2.
+\]
+
+La recta tangente es:
+
+\[
+y-1=-2x.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+y=1-2x
+}
+\]
+
+\section{Ejercicio 4}
+\subsection{Solución}
+
+Sea:
+
+\[
+F(x,y)
+=
+(x^2+y^2)^2-4xy.
+\]
+
+Se tiene:
+
+\[
+F_x
+=
+4x(x^2+y^2)-4y,
+\]
+
+\[
+F_y
+=
+4y(x^2+y^2)-4x.
+\]
+
+En \((1,1)\):
+
+\[
+F_x(1,1)=4,
+\qquad
+F_y(1,1)=4.
+\]
+
+Por tanto:
+
+\[
+y'(1)
+=
+-\frac{F_x(1,1)}{F_y(1,1)}
+=
+-1.
+\]
+
+La recta tangente es:
+
+\[
+y-1=-(x-1).
+\]
+
+Así:
+
+\[
+\boxed{
+x+y=2
+}
+\]
+
+\section{Ejercicio 5}
+\subsection{Solución}
+
+Sea:
+
+\[
+h(x,y)
+=
+x^2+y^3+xy+x^3+ay.
+\]
+
+En \((0,0)\):
+
+\[
+h(0,0)=0.
+\]
+
+Para definir:
+
+\[
+y=f(x),
+\]
+
+debe cumplirse:
+
+\[
+h_y(0,0)\neq0.
+\]
+
+Como:
+
+\[
+h_y
+=
+3y^2+x+a,
+\]
+
+se tiene:
+
+\[
+h_y(0,0)=a.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+a\neq0
+}
+\]
+
+Para definir:
+
+\[
+x=g(y),
+\]
+
+debe cumplirse:
+
+\[
+h_x(0,0)\neq0.
+\]
+
+Pero:
+
+\[
+h_x
+=
+2x+y+3x^2
+\]
+
+y:
+
+\[
+h_x(0,0)=0
+\]
+
+para cualquier valor de \(a\).
+
+Por tanto:
+
+\[
+\boxed{
+\text{No define }x\text{ como función implícita diferenciable de }y
+\text{ para ningún }a
+}
+\]
+
+\section{Ejercicio 6}
+\subsection{Solución}
+
+Sea:
+
+\[
+F(x,y)
+=
+1-\ln\left(
+1+\frac1{e^{xy}}
+\right)
+=
+0.
+\]
+
+Entonces:
+
+\[
+\ln(1+e^{-xy})=1.
+\]
+
+Por tanto:
+
+\[
+e^{-xy}=e-1
+\]
+
+y:
+
+\[
+xy=-\ln(e-1).
+\]
+
+Como \(a\neq0\), localmente:
+
+\[
+y
+=
+-\frac{\ln(e-1)}{x}.
+\]
+
+Así:
+
+\[
+y'
+=
+\frac{\ln(e-1)}{x^2}.
+\]
+
+Usando:
+
+\[
+ab=-\ln(e-1),
+\]
+
+se obtiene:
+
+\[
+\boxed{
+f'(a)
+=
+-\frac ba
+}
+\]
+
+Derivando nuevamente:
+
+\[
+y''
+=
+-\frac{2\ln(e-1)}{x^3}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f''(a)
+=
+\frac{2b}{a^2}
+}
+\]
+
+\section{Ejercicio 7}
+\subsection{Solución}
+
+Las circunferencias son:
+
+\[
+C_1:
+(x-2)^2+y^2=2
+\]
+
+y:
+
+\[
+C_2:
+x^2+(y-2)^2=2.
+\]
+
+Sus centros son:
+
+\[
+(2,0),
+\qquad
+(0,2),
+\]
+
+y ambas tienen radio:
+
+\[
+\sqrt2.
+\]
+
+La distancia entre los centros es:
+
+\[
+\sqrt{(2-0)^2+(0-2)^2}
+=
+2\sqrt2.
+\]
+
+Como coincide con la suma de los radios, son tangentes exteriormente en el punto medio de los centros:
+
+\[
+\boxed{
+(1,1)
+}
+\]
+
+Para:
+
+\[
+F_1(x,y)
+=
+(x-2)^2+y^2-2,
+\]
+
+\[
+(F_1)_y(1,1)=2\neq0.
+\]
+
+Por tanto, \(C_1\) define localmente a \(y\) como función de \(x\), y:
+
+\[
+y_1'
+=
+-\frac{(F_1)_x}{(F_1)_y}.
+\]
+
+En \((1,1)\):
+
+\[
+y_1'(1)=1.
+\]
+
+Para:
+
+\[
+F_2(x,y)
+=
+x^2+(y-2)^2-2,
+\]
+
+\[
+(F_2)_y(1,1)=-2\neq0.
+\]
+
+Así:
+
+\[
+y_2'
+=
+-\frac{(F_2)_x}{(F_2)_y}
+\]
+
+y:
+
+\[
+y_2'(1)=1.
+\]
+
+Las dos curvas tienen la misma recta tangente:
+
+\[
+y-1=x-1.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+y=x
+}
+\]
+
+\section{Ejercicio 8}
+\subsection{Solución}
+
+Sea:
+
+\[
+F(x,y,z)
+=
+2x+3y-xe^{x+y-2z}-8.
+\]
+
+En:
+
+\[
+(-1,3,1),
+\]
+
+se tiene:
+
+\[
+F(-1,3,1)=0.
+\]
+
+Además:
+
+\[
+F_z
+=
+2xe^{x+y-2z}.
+\]
+
+Por tanto:
+
+\[
+F_z(-1,3,1)=-2\neq0.
+\]
+
+La ecuación define implícitamente:
+
+\[
+z=f(x,y).
+\]
+
+Las derivadas son:
+
+\[
+z_x
+=
+-\frac{F_x}{F_z},
+\qquad
+z_y
+=
+-\frac{F_y}{F_z}.
+\]
+
+Se tiene:
+
+\[
+F_x
+=
+2-(1+x)e^{x+y-2z},
+\]
+
+\[
+F_y
+=
+3-xe^{x+y-2z}.
+\]
+
+En el punto:
+
+\[
+F_x(-1,3,1)=2,
+\]
+
+\[
+F_y(-1,3,1)=4.
+\]
+
+Así:
+
+\[
+\boxed{
+z_x(-1,3)=1
+}
+\]
+
+\[
+\boxed{
+z_y(-1,3)=2
+}
+\]
+
+\section{Ejercicio 9}
+\subsection{Solución}
+
+Sea:
+
+\[
+F(x,y,z)
+=
+yze^{x+3}
++
+3xe^{z-y}.
+\]
+
+En:
+
+\[
+(1,-1,3),
+\]
+
+\[
+F(1,-1,3)=0.
+\]
+
+Además:
+
+\[
+F_z
+=
+ye^{x+3}
++
+3xe^{z-y}.
+\]
+
+Por tanto:
+
+\[
+F_z(1,-1,3)
+=
+2e^4\neq0.
+\]
+
+Así, la ecuación define:
+
+\[
+z=z(x,y)
+\]
+
+en un entorno de \((1,-1)\).
+
+Calculamos:
+
+\[
+F_x
+=
+yze^{x+3}
++
+3e^{z-y},
+\]
+
+\[
+F_y
+=
+ze^{x+3}
+-
+3xe^{z-y}.
+\]
+
+En el punto:
+
+\[
+F_x(1,-1,3)=0,
+\qquad
+F_y(1,-1,3)=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+z_x(1,-1)=0
+}
+\]
+
+\[
+\boxed{
+z_y(1,-1)=0
+}
+\]
+
+\section{Ejercicio 10}
+\subsection{Solución}
+
+Sea:
+
+\[
+F(x,y,z)
+=
+1+x+y+z-e^{-(x+y+z)}.
+\]
+
+Se tiene:
+
+\[
+F_z
+=
+1+e^{-(x+y+z)}>0.
+\]
+
+Por tanto, en cualquier punto que satisfaga la ecuación:
+
+\[
+F(x,y,z)=0,
+\]
+
+puede definirse localmente:
+
+\[
+z=f(x,y).
+\]
+
+Además:
+
+\[
+F_x
+=
+F_y
+=
+F_z
+=
+1+e^{-(x+y+z)}.
+\]
+
+Por tanto:
+
+\[
+z_x
+=
+-\frac{F_x}{F_z}
+=
+-1,
+\]
+
+\[
+z_y
+=
+-\frac{F_y}{F_z}
+=
+-1.
+\]
+
+Así:
+
+\[
+\boxed{
+\frac{\partial z}{\partial x}=-1,
+\qquad
+\frac{\partial z}{\partial y}=-1
+}
+\]
+
+y:
+
+\[
+\boxed{
+dz=-dx-dy
+}
+\]
+
+\section{Ejercicio 11}
+\subsection{Solución}
+
+Sea:
+
+\[
+z=x^2+y^2
+\]
+
+con la condición:
+
+\[
+F(x,y)
+=
+x^2+y^3+y
+=
+0.
+\]
+
+Como:
+
+\[
+F_y
+=
+3y^2+1>0,
+\]
+
+la ecuación define:
+
+\[
+y=y(x).
+\]
+
+Por tanto:
+
+\[
+y'
+=
+-\frac{F_x}{F_y}
+=
+-\frac{2x}{3y^2+1}.
+\]
+
+Derivando:
+
+\[
+z=x^2+y^2,
+\]
+
+se obtiene:
+
+\[
+\frac{\partial z}{\partial x}
+=
+2x+2yy'.
+\]
+
+Sustituyendo:
+
+\[
+\boxed{
+\frac{\partial z}{\partial x}
+=
+2x
+-
+\frac{4xy}{3y^2+1}
+}
+\]
+
+Equivalentemente:
+
+\[
+\boxed{
+\frac{\partial z}{\partial x}
+=
+\frac{
+2x(3y^2-2y+1)
+}{
+3y^2+1
+}
+}
+\]
+
+\section{Ejercicio 12}
+\subsection{Solución}
+
+Sea:
+
+\[
+F(x,y,z)
+=
+z^3+xz+y.
+\]
+
+En:
+
+\[
+(x,y,z)=(1,-2,1),
+\]
+
+se tiene:
+
+\[
+F(1,-2,1)=0.
+\]
+
+Además:
+
+\[
+F_z
+=
+3z^2+x.
+\]
+
+Por tanto:
+
+\[
+F_z(1,-2,1)=4\neq0.
+\]
+
+La ecuación define implícitamente:
+
+\[
+z=f(x,y).
+\]
+
+Las primeras derivadas son:
+
+\[
+z_x
+=
+-\frac{F_x}{F_z}
+=
+-\frac{z}{3z^2+x},
+\]
+
+\[
+z_y
+=
+-\frac{F_y}{F_z}
+=
+-\frac1{3z^2+x}.
+\]
+
+Así:
+
+\[
+\boxed{
+\nabla f(1,-2)
+=
+\left(
+-\frac14,
+-\frac14
+\right)
+}
+\]
+
+Para las segundas derivadas:
+
+\[
+z_{xx}
+=
+-
+\frac{
+F_{xx}
++
+2F_{xz}z_x
++
+F_{zz}z_x^2
+}{
+F_z
+},
+\]
+
+\[
+z_{xy}
+=
+-
+\frac{
+F_{xy}
++
+F_{xz}z_y
++
+F_{yz}z_x
++
+F_{zz}z_xz_y
+}{
+F_z
+},
+\]
+
+\[
+z_{yy}
+=
+-
+\frac{
+F_{yy}
++
+2F_{yz}z_y
++
+F_{zz}z_y^2
+}{
+F_z
+}.
+\]
+
+En el punto:
+
+\[
+F_{xz}=1,
+\qquad
+F_{zz}=6,
+\]
+
+y el resto de derivadas segundas de \(F\) son nulas.
+
+Se obtiene:
+
+\[
+z_{xx}(1,-2)=\frac1{32},
+\]
+
+\[
+z_{xy}(1,-2)=z_{yx}(1,-2)=-\frac1{32},
+\]
+
+\[
+z_{yy}(1,-2)=-\frac3{32}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+H_f(1,-2)
+=
+\frac1{32}
+\begin{pmatrix}
+1&-1\\
+-1&-3
+\end{pmatrix}
+}
+\]
+
+\section{Ejercicio 13}
+\subsection{Solución}
+
+Sea:
+
+\[
+F(x,y,z)
+=
+z^2+z-xy-1.
+\]
+
+En \((1,1,1)\):
+
+\[
+F(1,1,1)=0.
+\]
+
+Además:
+
+\[
+F_z=2z+1
+\]
+
+y:
+
+\[
+F_z(1,1,1)=3\neq0.
+\]
+
+Por tanto, existe localmente:
+
+\[
+z=f(x,y).
+\]
+
+Las primeras derivadas son:
+
+\[
+z_x
+=
+\frac{y}{2z+1},
+\]
+
+\[
+z_y
+=
+\frac{x}{2z+1}.
+\]
+
+En \((1,1)\):
+
+\[
+z_x(1,1)=z_y(1,1)=\frac13.
+\]
+
+Las segundas derivadas en el punto son:
+
+\[
+z_{xx}(1,1)
+=
+-\frac2{27},
+\]
+
+\[
+z_{xy}(1,1)
+=
+z_{yx}(1,1)
+=
+\frac7{27},
+\]
+
+\[
+z_{yy}(1,1)
+=
+-\frac2{27}.
+\]
+
+Tomando:
+
+\[
+h=x-1,
+\qquad
+k=y-1,
+\]
+
+el polinomio de Taylor de segundo orden es:
+
+\[
+\boxed{
+P_2(x,y)
+=
+1
++
+\frac{h+k}{3}
+-
+\frac{h^2+k^2}{27}
++
+\frac{7hk}{27}
+}
+\]
+
+es decir:
+
+\[
+\boxed{
+\begin{aligned}
+P_2(x,y)
+={}&
+1
++
+\frac{x-1}{3}
++
+\frac{y-1}{3}\\
+&-
+\frac{(x-1)^2}{27}
++
+\frac{7(x-1)(y-1)}{27}
+-
+\frac{(y-1)^2}{27}.
+\end{aligned}
+}
+\]
+
+\section{Ejercicio 14}
+\subsection{Solución}
+
+Sea:
+
+\[
+F(x,y,z)
+=
+\cos\left(\frac{\pi z}{2}\right)
+-xy+x+y-z^2.
+\]
+
+En \((1,1,1)\):
+
+\[
+F(1,1,1)=0.
+\]
+
+Además:
+
+\[
+F_z
+=
+-\frac{\pi}{2}
+\sen\left(
+\frac{\pi z}{2}
+\right)
+-2z.
+\]
+
+Así:
+
+\[
+F_z(1,1,1)
+=
+-\frac{\pi+4}{2}\neq0.
+\]
+
+Por tanto:
+
+\[
+z=z(x,y)
+\]
+
+está definida implícitamente en un entorno de \((1,1)\).
+
+Como:
+
+\[
+F_x=-y+1,
+\qquad
+F_y=-x+1,
+\]
+
+se tiene:
+
+\[
+z_x(1,1)=z_y(1,1)=0.
+\]
+
+Además:
+
+\[
+F_{xy}=-1,
+\]
+
+y en el punto:
+
+\[
+z_{xx}=z_{yy}=0.
+\]
+
+Para la derivada mixta:
+
+\[
+z_{xy}
+=
+-\frac{F_{xy}}{F_z}
+=
+-\frac{2}{\pi+4}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+P_2(x,y)
+=
+1
+-
+\frac{2}{\pi+4}
+(x-1)(y-1)
+}
+\]
+
+\section{Ejercicio 15}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\left(
+e^x+e^y,
+e^x-e^y
+\right).
+\]
+
+Su matriz jacobiana es:
+
+\[
+J_f(x,y)
+=
+\begin{pmatrix}
+e^x&e^y\\
+e^x&-e^y
+\end{pmatrix}.
+\]
+
+Su determinante es:
+
+\[
+|J_f(x,y)|
+=
+-2e^{x+y}\neq0
+\]
+
+para todo \((x,y)\in\R^2\).
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ es localmente invertible en todo punto de }\R^2
+}
+\]
+
+La matriz jacobiana de la inversa es:
+
+\[
+J_{f^{-1}}
+=
+J_f^{-1}.
+\]
+
+Así:
+
+\[
+\boxed{
+J_{f^{-1}}
+=
+\begin{pmatrix}
+\dfrac1{2e^x}&\dfrac1{2e^x}\\[2mm]
+\dfrac1{2e^y}&-\dfrac1{2e^y}
+\end{pmatrix}
+}
+\]
+
+Sea:
+
+\[
+u=e^x+e^y,
+\qquad
+v=e^x-e^y.
+\]
+
+Entonces:
+
+\[
+e^x=\frac{u+v}{2},
+\qquad
+e^y=\frac{u-v}{2}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f^{-1}(u,v)
+=
+\left(
+\ln\frac{u+v}{2},
+\ln\frac{u-v}{2}
+\right)
+}
+\]
+
+con:
+
+\[
+u+v>0,
+\qquad
+u-v>0.
+\]
+
+\section{Ejercicio 16}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\left(
+\frac{x}{y},
+\frac{x^3+y^3}{x^3-y^3}
+\right).
+\]
+
+Su dominio exige:
+
+\[
+y\neq0,
+\qquad
+x^3-y^3\neq0.
+\]
+
+La segunda componente puede escribirse en función de:
+
+\[
+u=\frac{x}{y}.
+\]
+
+En efecto:
+
+\[
+\frac{x^3+y^3}{x^3-y^3}
+=
+\frac{u^3+1}{u^3-1}.
+\]
+
+Por tanto, las dos componentes no son funcionalmente independientes.
+
+El determinante jacobiano es:
+
+\[
+\boxed{
+|J_f(x,y)|=0
+}
+\]
+
+en todo su dominio.
+
+Así:
+
+\[
+\boxed{
+\text{No puede aplicarse el teorema de la función inversa en ningún punto}
+}
+\]
+
+\section{Ejercicio 17}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\left(
+e^x\cos y,
+e^x\sen y
+\right).
+\]
+
+Su matriz jacobiana es:
+
+\[
+J_f(x,y)
+=
+\begin{pmatrix}
+e^x\cos y&-e^x\sen y\\
+e^x\sen y&e^x\cos y
+\end{pmatrix}.
+\]
+
+Por tanto:
+
+\[
+|J_f(x,y)|
+=
+e^{2x}
+\left(
+\cos^2y+\sen^2y
+\right)
+=
+e^{2x}>0.
+\]
+
+Así:
+
+\[
+\boxed{
+f\text{ posee inversa local en todo punto de }\R^2
+}
+\]
+
+Sin embargo:
+
+\[
+f(x,y+2\pi)=f(x,y).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ no es inyectiva globalmente}
+}
+\]
+
+Esto no contradice el teorema de la función inversa, ya que dicho teorema garantiza invertibilidad local, no global.
+
+\section{Ejercicio 18}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\left(
+x+\alpha y,
+e^x+\alpha e^y
+\right).
+\]
+
+La matriz jacobiana es:
+
+\[
+J_f(x,y)
+=
+\begin{pmatrix}
+1&\alpha\\
+e^x&\alpha e^y
+\end{pmatrix}.
+\]
+
+Su determinante es:
+
+\[
+|J_f(x,y)|
+=
+\alpha(e^y-e^x).
+\]
+
+Por tanto:
+
+\[
+|J_f(x,y)|\neq0
+\]
+
+si y sólo si:
+
+\[
+\alpha\neq0
+\]
+
+y:
+
+\[
+x\neq y.
+\]
+
+Así:
+
+\[
+\boxed{
+f\text{ es localmente invertible en }(x,y)
+\iff
+\alpha\neq0
+\text{ y }
+x\neq y
+}
+\]
+
+En particular:
+
+\[
+\boxed{
+\alpha\neq0
+}
+\]
+
+es necesario para que exista algún punto en el que pueda aplicarse el teorema de la función inversa.
+
+\section{Ejercicio 19}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y,z)
+=
+\left(
+e^x,
+\sen(x+y),
+e^z
+\right).
+\]
+
+Su matriz jacobiana es:
+
+\[
+J_f(x,y,z)
+=
+\begin{pmatrix}
+e^x&0&0\\
+\cos(x+y)&\cos(x+y)&0\\
+0&0&e^z
+\end{pmatrix}.
+\]
+
+Por tanto:
+
+\[
+|J_f(x,y,z)|
+=
+e^{x+z}\cos(x+y).
+\]
+
+En \((0,0,0)\):
+
+\[
+|J_f(0,0,0)|=1\neq0.
+\]
+
+Así:
+
+\[
+\boxed{
+f\text{ es localmente invertible en }(0,0,0)
+}
+\]
+
+Las hipótesis del teorema no se cumplen cuando:
+
+\[
+\cos(x+y)=0.
+\]
+
+Es decir:
+
+\[
+\boxed{
+x+y
+=
+\frac{\pi}{2}
++k\pi,
+\qquad
+k\in\mathbb Z
+}
+\]
+
+En esos puntos:
+
+\[
+|J_f|=0.
+\]
+
+\section{Ejercicio 20}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\left(
+x^2-y^2,
+2xy
+\right).
+\]
+
+Su matriz jacobiana es:
+
+\[
+J_f(x,y)
+=
+\begin{pmatrix}
+2x&-2y\\
+2y&2x
+\end{pmatrix}.
+\]
+
+El determinante es:
+
+\[
+|J_f(x,y)|
+=
+4(x^2+y^2).
+\]
+
+Por tanto, puede aplicarse el teorema de la función inversa cuando:
+
+\[
+\boxed{
+(x,y)\neq(0,0)
+}
+\]
+
+Sea:
+
+\[
+g(u,v)=(x,y)
+\]
+
+la inversa local.
+
+Entonces:
+
+\[
+J_g(u,v)
+=
+J_f(x,y)^{-1}.
+\]
+
+Así:
+
+\[
+\boxed{
+J_g(u,v)
+=
+\frac1{2(x^2+y^2)}
+\begin{pmatrix}
+x&y\\
+-y&x
+\end{pmatrix}
+}
+\]
+
+Además:
+
+\[
+f(-x,-y)=f(x,y).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ no es inyectiva globalmente}
+}
+\]
+
+\section{Ejercicio 21}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\left(
+x\cos y,
+\sen(x-y)
+\right).
+\]
+
+En:
+
+\[
+\left(
+\frac{\pi}{2},
+\frac{\pi}{2}
+\right),
+\]
+
+se tiene:
+
+\[
+f\left(
+\frac{\pi}{2},
+\frac{\pi}{2}
+\right)
+=
+(0,0).
+\]
+
+La matriz jacobiana es:
+
+\[
+J_f(x,y)
+=
+\begin{pmatrix}
+\cos y&-x\sen y\\
+\cos(x-y)&-\cos(x-y)
+\end{pmatrix}.
+\]
+
+En el punto:
+
+\[
+J_f\left(
+\frac{\pi}{2},
+\frac{\pi}{2}
+\right)
+=
+\begin{pmatrix}
+0&-\frac{\pi}{2}\\
+1&-1
+\end{pmatrix}.
+\]
+
+Su determinante es:
+
+\[
+\frac{\pi}{2}\neq0.
+\]
+
+Por tanto, existe una inversa local:
+
+\[
+g(u,v).
+\]
+
+Además:
+
+\[
+J_g(0,0)
+=
+J_f\left(
+\frac{\pi}{2},
+\frac{\pi}{2}
+\right)^{-1}.
+\]
+
+Así:
+
+\[
+\boxed{
+J_g(0,0)
+=
+\begin{pmatrix}
+-\frac2\pi&1\\[1mm]
+-\frac2\pi&0
+\end{pmatrix}
+}
+\]
+
+El jacobiano de \(g\) en ese punto es:
+
+\[
+\boxed{
+|J_g(0,0)|
+=
+\frac2\pi
+}
+\]
+
+\section{Ejercicio 22}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y,z)
+=
+\left(
+x+xyz,
+2y+xy,
+z+2x+3z^2
+\right).
+\]
+
+En:
+
+\[
+(0,1,0),
+\]
+
+se obtiene:
+
+\[
+f(0,1,0)
+=
+(0,2,0).
+\]
+
+La matriz jacobiana es:
+
+\[
+J_f(x,y,z)
+=
+\begin{pmatrix}
+1+yz&xz&xy\\
+y&2+x&0\\
+2&0&1+6z
+\end{pmatrix}.
+\]
+
+En \((0,1,0)\):
+
+\[
+J_f(0,1,0)
+=
+\begin{pmatrix}
+1&0&0\\
+1&2&0\\
+2&0&1
+\end{pmatrix}.
+\]
+
+Su determinante es:
+
+\[
+|J_f(0,1,0)|=2\neq0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ admite una inversa local }g
+\text{ en un entorno de }(0,1,0)
+}
+\]
+
+Como:
+
+\[
+g(0,2,0)=(0,1,0),
+\]
+
+se tiene:
+
+\[
+J_g(0,2,0)
+=
+J_f(0,1,0)^{-1}.
+\]
+
+Calculando la inversa:
+
+\[
+\boxed{
+J_g(0,2,0)
+=
+\begin{pmatrix}
+1&0&0\\[1mm]
+-\frac12&\frac12&0\\[1mm]
+-2&0&1
+\end{pmatrix}
+}
+\]
+
+\end{document}

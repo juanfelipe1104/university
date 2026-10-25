@@ -1,0 +1,495 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{lmodern}
+\usepackage{microtype}
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\rg}{\operatorname{rg}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Span}{\operatorname{L}}
+\newcommand{\proy}{\operatorname{proy}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\sg}{\operatorname{sg}}
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Álgebra Lineal}\\[0.4em]
+{\Large Tema 6: El Espacio Vectorial Euclídeo --- Ejercicios}
+\end{center}
+
+\section{Ejercicio 1}
+En $\R^3$ se considera:
+\[
+\langle(x,y,z),(x',y',z')\rangle
+=
+xx'+2yy'+2zz'+xz'+zx'+yz'+zy'.
+\]
+\begin{enumerate}[label=\alph*)]
+\item Calcular su matriz en la base canónica.
+\item Calcular la norma de $(1,1,1)$ y el ángulo entre $(1,0,1)$ y $(0,1,0)$.
+\item Calcular:
+\[
+S^\perp,
+\qquad
+S=\Span\{(1,0,0),(0,1,0)\}.
+\]
+\end{enumerate}
+
+\section{Ejercicio 2}
+En $\R_2[x]$ sean:
+\[
+S=\{p(x):p(1)=0\},
+\qquad
+T=\{p(x):p(x)\text{ no tiene término independiente}\}.
+\]
+\begin{enumerate}[label=\alph*)]
+\item Calcular una base de $S\cap T$ y otra de $S+T$.
+\item Hallar, en la base canónica, unas ecuaciones implícitas de un subespacio suplementario de $S\cap T$.
+\end{enumerate}
+
+\section{Ejercicio 3}
+En $\R^4$ con el producto escalar usual, obtener el subespacio ortogonal suplementario de:
+\[
+W=
+\{(x,y,z,t):
+x+y-z+t=0,\;
+2x+y-z+3t=0\}.
+\]
+
+\section{Ejercicio 4}
+Demostrar:
+\[
+\|u+v\|^2
+=
+\|u\|^2+\|v\|^2
+\iff
+\langle u,v\rangle=0.
+\]
+
+\section{Ejercicio 5}
+Demostrar la ley del paralelogramo:
+\[
+\|u+v\|^2+\|u-v\|^2
+=
+2\left(\|u\|^2+\|v\|^2\right).
+\]
+
+\section{Ejercicio 6}
+Demostrar:
+\[
+\|u\|=\|v\|
+\iff
+u+v\perp u-v.
+\]
+Deducir que un paralelogramo es un rombo si y sólo si sus diagonales son perpendiculares.
+
+\section{Ejercicio 7}
+En $\R^3$:
+\[
+\langle x,y\rangle
+=
+x_1y_1+2x_2y_2+3x_3y_3.
+\]
+Determinar una base de $F^\perp$, siendo:
+\[
+F=\{(x_1,x_2,x_3):x_1+x_2+2x_3=0\}.
+\]
+
+\section{Ejercicio 8}
+En $\R^4$ con el producto escalar usual:
+\begin{enumerate}[label=\alph*)]
+\item Determinar un vector unitario ortogonal a:
+\[
+(1,2,1,0),\quad(0,-1,1,0),\quad(1,1,-2,1).
+\]
+\item Obtener por Gram--Schmidt una base ortonormal de:
+\[
+V=
+\Span\{(1,2,-1,0),(0,1,1,0),(1,0,-2,1)\}.
+\]
+\end{enumerate}
+
+\section{Ejercicio 9}
+Calcular la proyección ortogonal de:
+\[
+(1,2,1)
+\]
+sobre:
+\[
+S=
+\Span\{(0,1,2),(1,2,3)\}.
+\]
+
+\section{Ejercicio 10}
+En $\mathcal P_1(x)$:
+\[
+\langle p,q\rangle
+=
+\int_0^1p(x)q(x)\,dx.
+\]
+\begin{enumerate}[label=\alph*)]
+\item Obtener la matriz del producto escalar en la base canónica.
+\item Calcular el ángulo entre $x+3$ y $2x+4$.
+\item Calcular la proyección ortogonal de $x+3$ sobre $x+2$.
+\item Determinar una base ortonormal a partir de la base canónica.
+\end{enumerate}
+
+\section{Ejercicio 11}
+Obtener la proyección de:
+\[
+(1,1,1)
+\]
+sobre:
+\[
+S=
+\Span\{(1,0,0),(0,1,0),(2,1,0)\}.
+\]
+
+\section{Ejercicio 12}
+Dados:
+\[
+(1,1),\quad(2,4),\quad(3,7),\quad(4,9),
+\]
+ajustar por mínimos cuadrados:
+\begin{enumerate}[label=\alph*)]
+\item mediante un polinomio de grado $2$;
+\item mediante un polinomio de grado $3$.
+\end{enumerate}
+
+\section{Ejercicio 13}
+Se relacionan pesos $a_i$ de vehículos y precios $b_i$:
+\[
+\begin{array}{c|cccc}
+a_i&0.8&1&1.2&1.3\\
+\hline
+b_i&1&2&3&5
+\end{array}
+\]
+Hallar el mejor ajuste lineal por mínimos cuadrados.
+
+\section{Ejercicio 14}
+Para un cultivo se obtienen:
+\[
+\begin{array}{c|cccc}
+t\text{ (h)}&1&2&3&4\\
+\hline
+N\text{ (miles)}&4&8&11&14
+\end{array}
+\]
+Determinar la población aproximada al cabo de $7$ horas mediante un ajuste lineal.
+
+\section{Ejercicio 15}
+Determinar una matriz ortogonal $P$ que diagonalice ortogonalmente:
+\[
+A=
+\begin{pmatrix}
+1&1&0\\
+1&2&1\\
+0&1&1
+\end{pmatrix}.
+\]
+
+\section{Ejercicio 16}
+Sea $E$ un espacio euclídeo de dimensión $3$. La matriz del producto escalar en:
+\[
+B=\{e_1,e_1+e_2,e_1+e_2+e_3\}
+\]
+es:
+\[
+G=
+\begin{pmatrix}
+1&0&0\\
+0&2&0\\
+0&0&1
+\end{pmatrix}.
+\]
+Sea:
+\[
+B'=\{e_1,e_2,e_3\}.
+\]
+Razonar si son ciertas o falsas:
+\begin{enumerate}[label=\arabic*)]
+\item
+\[
+\langle2e_1+e_2,2e_1+e_2\rangle=5.
+\]
+\item
+\[
+S_1=\Span\{e_1\},
+\qquad
+S_2=\Span\{e_1+e_2,e_3\}
+\]
+son ortogonales.
+\item La matriz del producto escalar en $B'$ es:
+\[
+\begin{pmatrix}
+1&2&0\\
+2&5&1\\
+0&1&2
+\end{pmatrix}.
+\]
+\item El determinante de una matriz ortogonal es $1$ o $-1$.
+\item Los únicos valores propios de una matriz ortogonal son $1$ o $-1$.
+\end{enumerate}
+
+\section{Ejercicio 17}
+Demostrar:
+\begin{enumerate}[label=\alph*)]
+\item El producto de dos matrices ortogonales del mismo orden es ortogonal.
+\item La inversa de una matriz ortogonal es ortogonal.
+\end{enumerate}
+
+\section{Ejercicio 18}
+Calcular $s,t$ para que:
+\[
+A=
+\frac17
+\begin{pmatrix}
+2&t&s\\
+3&s&2\\
+s&-2&t
+\end{pmatrix}
+\]
+sea ortogonal.
+
+\section{Ejercicio 19}
+Demostrar que una matriz es ortogonal si y sólo si sus vectores columna forman un sistema ortonormal para el producto escalar usual.
+
+\section{Ejercicio 20}
+Diagonalizar ortogonalmente:
+\[
+A=
+\begin{pmatrix}
+1&0&2\\
+0&-1&0\\
+2&0&1
+\end{pmatrix},
+\]
+obteniendo $P$ tal que:
+\[
+J=P^tAP.
+\]
+
+\section{Ejercicio 21}
+Determinar si:
+\[
+A=
+\begin{pmatrix}
+3&3&1\\
+3&3&1\\
+1&1&3
+\end{pmatrix},
+\qquad
+B=
+\begin{pmatrix}
+3&3&4\\
+3&3&4\\
+4&4&4
+\end{pmatrix}
+\]
+son congruentes.
+
+\section{Ejercicio 22}
+Dada:
+\[
+M=
+\begin{pmatrix}
+1&-2\\
+-2&1
+\end{pmatrix},
+\]
+hallar una base ortonormal formada por vectores propios y la matriz diagonal correspondiente.
+
+\section{Ejercicio 23}
+Diagonalizar ortogonalmente:
+\[
+A=
+\begin{pmatrix}
+0&1&1\\
+1&0&1\\
+1&1&0
+\end{pmatrix},
+\]
+obteniendo $P$ tal que:
+\[
+J=P^tAP.
+\]
+
+\section{Ejercicio 24}
+Sea:
+\[
+G=
+\begin{pmatrix}
+2&-1&0\\
+-1&1&\frac12\\
+0&\frac12&2
+\end{pmatrix}
+\]
+la matriz de Gram de un producto escalar. Obtener la proyección ortogonal de:
+\[
+(1,1,1)
+\]
+sobre:
+\[
+x+2z=0.
+\]
+
+\section{Ejercicio 25}
+Dada:
+\[
+A=
+\begin{pmatrix}
+2&1&1\\
+1&2&1\\
+1&1&2
+\end{pmatrix},
+\]
+\begin{enumerate}[label=\alph*)]
+\item Comprobar que es diagonalizable en $\R$.
+\item Comprobar la ortogonalidad de sus autovectores.
+\item Encontrar una base ortonormal de autovectores.
+\item Comprobar que la matriz de paso es ortogonal.
+\item Clasificar:
+\[
+q(x)=x^tAx.
+\]
+\end{enumerate}
+
+\section{Ejercicio 26}
+Sea:
+\[
+f:\R^2\to\R^2
+\]
+definido por:
+\[
+f(1,1)=(-1,1),
+\qquad
+f(1,2)=(-1,2).
+\]
+Demostrar, en la base:
+\[
+B=\{(1,1),(1,2)\},
+\]
+que si $A=M_B(f)$ y $G_B$ es la matriz del producto escalar usual en $B$, entonces:
+\[
+G_B=A^tG_BA.
+\]
+
+\section{Ejercicio 27}
+Sea $A$ una matriz simétrica $3\times3$ con traza:
+\[
+2a+b.
+\]
+El subespacio propio correspondiente a $a$ contiene:
+\[
+S=\{(x,y,z):x+y+z=0\}.
+\]
+\begin{enumerate}[label=\alph*)]
+\item Calcular una forma diagonal $J$ y una matriz ortogonal $P$ tal que:
+\[
+J=P^tAP
+\]
+según los valores de $a$ y $b$.
+\item Determinar para qué valores de $a,b$ puede ser $A$ la matriz de un producto escalar.
+\item Para los valores naturales más pequeños que cumplen lo anterior, calcular el ángulo entre:
+\[
+(1,-1,0)
+\quad\text{y}\quad
+(1,1,1).
+\]
+\end{enumerate}
+
+\section{Ejercicio 28}
+Para:
+\[
+u=(1,1,1),
+\]
+\begin{enumerate}[label=\alph*)]
+\item Calcular la matriz de Householder $H(u)$.
+\item Obtener los transformados de:
+\[
+(3,3,3),\qquad
+(1,-1,0),\qquad
+(1,2,3).
+\]
+\end{enumerate}
+
+\section{Ejercicio 29}
+Sea $E$ un espacio euclídeo con base:
+\[
+B=\{e_1,e_2,e_3\}.
+\]
+Se sabe que:
+\begin{itemize}
+\item $e_2$ y $e_3$ forman un ángulo $\pi/3$;
+\item $\|e_1\|,\|e_2\|,\|e_3\|$ son los números naturales pares más pequeños compatibles con el producto escalar;
+\item
+\[
+B'=\{e_1,e_2+e_3,e_2-e_3\}
+\]
+es una base ortogonal.
+\end{itemize}
+Calcular:
+\begin{enumerate}[label=\alph*)]
+\item La matriz del producto escalar en $B$.
+\item Una base ortonormal de:
+\[
+S^\perp,
+\qquad
+S=\Span\{e_1+e_2+e_3,e_1+2e_2\}.
+\]
+\item La proyección ortogonal de $e_2-e_3$ sobre $S^\perp$.
+\end{enumerate}
+
+\section{Ejercicio 30}
+Dada la curva:
+\[
+C=
+\{(x,y)\in\R^2:
+10x^2-12xy+5y^2=1\},
+\]
+encontrar una base en la que la matriz asociada sea diagonal.
+
+\section{Ejercicio 31}
+En un espacio euclídeo $E$ de dimensión $3$, la matriz de Gram en:
+\[
+B=\{e_1,e_1+e_2,e_1+e_2+e_3\}
+\]
+es:
+\[
+G=
+\begin{pmatrix}
+1&0&0\\
+0&2&0\\
+0&0&1
+\end{pmatrix}.
+\]
+Sea:
+\[
+B'=\{e_1,e_2,e_3\}.
+\]
+\begin{enumerate}[label=\alph*)]
+\item Calcular:
+\[
+\langle2e_1+e_2,2e_1+e_2\rangle.
+\]
+\item Obtener la matriz del producto escalar en $B'$.
+\item Comprobar si:
+\[
+V_1=\Span\{e_1\},
+\qquad
+V_2=\Span\{e_1+e_2,e_3\}
+\]
+son ortogonales.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,587 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{lmodern}
+\usepackage{microtype}
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\rg}{\operatorname{rg}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Span}{\operatorname{L}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Álgebra Lineal}\\[0.4em]
+{\Large Tema 3: Endomorfismos. Diagonalización}
+\end{center}
+
+\tableofcontents
+\newpage
+
+\section{Endomorfismos}
+
+Un \textbf{endomorfismo} es una aplicación lineal:
+
+\[
+f:V\longrightarrow V
+\]
+
+de un espacio vectorial en sí mismo.
+
+Si:
+
+\[
+\dim V=n
+\]
+
+la matriz asociada a $f$ en cualquier base es cuadrada de orden $n$.
+
+Para un endomorfismo $f$ con matriz asociada $A$ son equivalentes:
+
+\[
+\Ker f=\{0\}
+\]
+
+\[
+\dim(\Ima f)=n
+\]
+
+\[
+\rg A=n
+\]
+
+\[
+\det A\neq 0
+\]
+
+\[
+f\text{ es inyectivo}
+\iff
+f\text{ es suprayectivo}
+\iff
+f\text{ es biyectivo}
+\]
+
+\section{Matrices semejantes}
+
+Si $A$ y $M$ son matrices asociadas al mismo endomorfismo en bases diferentes, existe una matriz regular $P$ tal que:
+
+\[
+\boxed{
+M=P^{-1}AP
+}
+\]
+
+Dos matrices relacionadas de esta forma se denominan \textbf{semejantes}.
+
+Las matrices semejantes tienen el mismo:
+
+\[
+\boxed{
+\rg,\qquad \tr,\qquad \det
+}
+\]
+
+y el mismo polinomio característico.
+
+\section{Autovalores y autovectores}
+
+Sea $A$ la matriz de un endomorfismo.
+
+Un vector no nulo $v$ es un \textbf{autovector} asociado al escalar $\lambda$ si:
+
+\[
+\boxed{
+Av=\lambda v
+}
+\]
+
+El escalar $\lambda$ se denomina \textbf{autovalor}.
+
+Equivalentemente:
+
+\[
+(A-\lambda I)v=0
+\]
+
+Para que exista una solución no trivial:
+
+\[
+\boxed{
+\det(A-\lambda I)=0
+}
+\]
+
+\subsection{Polinomio característico}
+
+El polinomio:
+
+\[
+\boxed{
+p(\lambda)=\det(A-\lambda I)
+}
+\]
+
+se denomina polinomio característico.
+
+Sus raíces son los autovalores del endomorfismo.
+
+\subsection{Subespacio propio}
+
+El subespacio propio correspondiente a $\lambda$ es:
+
+\[
+\boxed{
+S(\lambda)=\Ker(A-\lambda I)
+}
+\]
+
+Sus vectores no nulos son los autovectores asociados a $\lambda$.
+
+\subsection{Propiedades}
+
+Si $A$ es triangular o diagonal, sus autovalores son sus elementos diagonales.
+
+Si $\lambda$ es autovalor de $A$, entonces:
+
+\[
+\lambda^k
+\]
+
+es autovalor de $A^k$,
+
+\[
+\alpha\lambda
+\]
+
+es autovalor de $\alpha A$,
+
+\[
+\lambda-k
+\]
+
+es autovalor de $A-kI$, y, si $A$ es regular,
+
+\[
+\frac1\lambda
+\]
+
+es autovalor de $A^{-1}$.
+
+Además, $A$ y $A^t$ tienen los mismos autovalores.
+
+Los autovectores asociados a autovalores distintos son linealmente independientes.
+
+\section{Multiplicidad algebraica y geométrica}
+
+Sea $\lambda$ un autovalor.
+
+Su \textbf{multiplicidad algebraica} es la multiplicidad de $\lambda$ como raíz de:
+
+\[
+p(\lambda)
+\]
+
+y se denota $a_\lambda$.
+
+Su \textbf{multiplicidad geométrica} es:
+
+\[
+\boxed{
+g_\lambda=\dim S(\lambda)
+=
+\dim\Ker(A-\lambda I)
+}
+\]
+
+Se verifica:
+
+\[
+\boxed{
+1\leq g_\lambda\leq a_\lambda
+}
+\]
+
+\section{Diagonalización}
+
+Un endomorfismo es diagonalizable si existe una base:
+
+\[
+B=\{v_1,\ldots,v_n\}
+\]
+
+formada por autovectores.
+
+En esa base:
+
+\[
+f(v_i)=\lambda_i v_i
+\]
+
+y:
+
+\[
+\boxed{
+M_B(f)
+=
+D=
+\diag(\lambda_1,\ldots,\lambda_n)
+}
+\]
+
+Si $A$ es la matriz en la base canónica y $P$ tiene por columnas los autovectores de la base diagonalizadora:
+
+\[
+\boxed{
+D=P^{-1}AP
+}
+\]
+
+o equivalentemente:
+
+\[
+\boxed{
+A=PDP^{-1}
+}
+\]
+
+\subsection{Criterio de diagonalización}
+
+Una matriz $A$ de orden $n$ es diagonalizable si y sólo si:
+
+\[
+\boxed{
+\sum_\lambda a_\lambda=n
+}
+\]
+
+y para cada autovalor:
+
+\[
+\boxed{
+g_\lambda=a_\lambda
+}
+\]
+
+En particular, si $A$ tiene $n$ autovalores distintos, entonces es diagonalizable.
+
+\section{Diagonalización ortogonal}
+
+Una matriz $P$ es ortogonal si:
+
+\[
+P^{-1}=P^t
+\]
+
+Una matriz real $A$ es ortogonalmente diagonalizable si existe una matriz ortogonal $P$ tal que:
+
+\[
+\boxed{
+D=P^tAP
+}
+\]
+
+El teorema espectral establece:
+
+\[
+\boxed{
+A\text{ real y simétrica}
+\iff
+A\text{ es ortogonalmente diagonalizable}
+}
+\]
+
+Los autovectores de una matriz simétrica asociados a autovalores distintos son ortogonales.
+
+\section{Subespacios invariantes}
+
+Un subespacio $S\leq V$ es \textbf{invariante} por $f$ si:
+
+\[
+\boxed{
+f(S)\subseteq S
+}
+\]
+
+Todo subespacio propio:
+
+\[
+S(\lambda)=\Ker(f-\lambda I)
+\]
+
+es invariante.
+
+Para estudiar cadenas de Jordan se utilizan los subespacios:
+
+\[
+\boxed{
+E_k(\lambda)=\Ker(f-\lambda I)^k
+}
+\]
+
+que verifican:
+
+\[
+E_1(\lambda)\subseteq
+E_2(\lambda)\subseteq
+\cdots
+\]
+
+hasta estabilizar en el subespacio característico asociado a $\lambda$.
+
+\section{Teorema de Cayley--Hamilton}
+
+Toda matriz cuadrada satisface su propio polinomio característico.
+
+Si:
+
+\[
+p(\lambda)
+=
+a_0+a_1\lambda+\cdots+a_n\lambda^n
+\]
+
+entonces:
+
+\[
+\boxed{
+p(A)
+=
+a_0I+a_1A+\cdots+a_nA^n
+=
+0
+}
+\]
+
+Este resultado permite reducir potencias altas de matrices.
+
+Si $\det A\neq0$, también permite expresar $A^{-1}$ como combinación lineal de:
+
+\[
+I,A,\ldots,A^{n-1}
+\]
+
+\section{Forma canónica de Jordan}
+
+Un bloque de Jordan de orden $r$ asociado a $\lambda$ es:
+
+\[
+J_r(\lambda)
+=
+\begin{pmatrix}
+\lambda&0&\cdots&0\\
+1&\lambda&\ddots&\vdots\\
+0&1&\ddots&0\\
+\vdots&\ddots&\ddots&\lambda
+\end{pmatrix}
+\]
+
+La forma canónica de Jordan es una matriz diagonal por bloques:
+
+\[
+\boxed{
+J=
+\diag
+\left(
+J_{r_1}(\lambda_1),
+\ldots,
+J_{r_s}(\lambda_s)
+\right)
+}
+\]
+
+tal que:
+
+\[
+\boxed{
+J=P^{-1}AP
+}
+\]
+
+El número de bloques asociados a $\lambda$ coincide con:
+
+\[
+\boxed{
+\dim\Ker(A-\lambda I)
+}
+\]
+
+y el tamaño del mayor bloque es el menor entero $k$ para el que:
+
+\[
+\Ker(A-\lambda I)^k
+\]
+
+alcanza el subespacio característico.
+
+\subsection{Cadenas de Jordan}
+
+Si:
+
+\[
+v_1\in
+\Ker(A-\lambda I)^r
+\setminus
+\Ker(A-\lambda I)^{r-1}
+\]
+
+se construye la cadena:
+
+\[
+v_1,
+\quad
+v_2=(A-\lambda I)v_1,
+\quad
+\ldots,
+\quad
+v_r=(A-\lambda I)^{r-1}v_1
+\]
+
+que genera un bloque de Jordan de orden $r$.
+
+\section{Forma real de Jordan}
+
+Si $A$ es real y tiene un autovalor complejo:
+
+\[
+\lambda=a+bi
+\]
+
+también aparece:
+
+\[
+\overline{\lambda}=a-bi
+\]
+
+La pareja se representa en forma real mediante el bloque:
+
+\[
+\boxed{
+C(\lambda)
+=
+\begin{pmatrix}
+a&b\\
+-b&a
+\end{pmatrix}
+}
+\]
+
+Los bloques reales de Jordan correspondientes se construyen a partir de estos bloques $2\times2$.
+
+\section{Exponencial de una matriz}
+
+La exponencial de una matriz se define como:
+
+\[
+\boxed{
+e^A
+=
+I+A+\frac{A^2}{2!}
++\frac{A^3}{3!}
++\cdots
+}
+\]
+
+Si:
+
+\[
+A=PJP^{-1}
+\]
+
+entonces:
+
+\[
+\boxed{
+e^A
+=
+Pe^JP^{-1}
+}
+\]
+
+Para un bloque:
+
+\[
+J_r(\lambda)
+=
+\lambda I+N
+\]
+
+con $N^r=0$:
+
+\[
+\boxed{
+e^{J_r(\lambda)}
+=
+e^\lambda
+\left(
+I+N+\frac{N^2}{2!}
++\cdots+
+\frac{N^{r-1}}{(r-1)!}
+\right)
+}
+\]
+
+En particular:
+
+\[
+e^{\lambda I}=e^\lambda I
+\]
+
+\section{Factorización LU y LDU}
+
+La factorización LU expresa una matriz como:
+
+\[
+\boxed{
+A=LU
+}
+\]
+
+donde $L$ es triangular inferior y $U$ triangular superior.
+
+La factorización LDU separa además los elementos diagonales:
+
+\[
+\boxed{
+A=LDU
+}
+\]
+
+donde:
+
+\[
+L
+\]
+
+es triangular inferior invertible,
+
+\[
+D
+\]
+
+es diagonal invertible, y:
+
+\[
+U
+\]
+
+es triangular superior invertible.
+
+La idea consiste en obtener primero una factorización LU y extraer la diagonal de $U$ para formar $D$.
+
+\end{document}

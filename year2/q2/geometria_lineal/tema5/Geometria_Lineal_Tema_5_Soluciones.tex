@@ -1,0 +1,2304 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\sen}{\operatorname{sen}}
+\newcommand{\rg}{\operatorname{rg}}
+\newcommand{\tr}{\operatorname{tr}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Geometría Lineal}\\[0.4em]
+{\Large Tema 5: Cónicas y cuádricas}\\[0.4em]
+{\large Soluciones}
+\end{center}
+
+\section{Ejercicio 1}
+\subsection{Solución}
+
+La cónica es:
+
+\[
+x^2-4xy+3y^2-2x-y-5=0.
+\]
+
+Su matriz homogénea es:
+
+\[
+\boxed{
+A=
+\begin{pmatrix}
+1&-2&-1\\
+-2&3&-\frac12\\
+-1&-\frac12&-5
+\end{pmatrix}
+}
+\]
+
+y:
+
+\[
+\boxed{
+\widetilde X^tA\widetilde X=0,
+\qquad
+\widetilde X=
+\begin{pmatrix}
+x\\y\\1
+\end{pmatrix}.
+}
+\]
+
+Equivalentemente:
+
+\[
+A_0=
+\begin{pmatrix}
+1&-2\\
+-2&3
+\end{pmatrix},
+\qquad
+L=
+\begin{pmatrix}
+-1&-\frac12
+\end{pmatrix},
+\qquad
+C_1=-5.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+X^tA_0X+2LX+C_1=0.
+}
+\]
+
+\section{Ejercicio 2}
+\subsection{Solución}
+
+Tomamos la ecuación general:
+
+\[
+ax^2+2bxy+cy^2+2dx+2ey+f=0.
+\]
+
+Sustituyendo los cinco puntos se obtiene:
+
+\[
+a=\frac e4,
+\qquad
+b=-\frac e2,
+\qquad
+c=e,
+\qquad
+d=-\frac e4,
+\qquad
+f=0.
+\]
+
+Tomando:
+
+\[
+e=4,
+\]
+
+se obtiene:
+
+\[
+\boxed{
+x^2-4xy+4y^2-2x+8y=0.
+}
+\]
+
+\section{Ejercicio 3}
+\subsection{Solución}
+
+Los focos son:
+
+\[
+F_1=(1,-2),
+\qquad
+F_2=(1,4).
+\]
+
+El centro es:
+
+\[
+C=(1,1)
+\]
+
+y:
+
+\[
+c=3.
+\]
+
+Para el punto:
+
+\[
+P=(5,1),
+\]
+
+se tiene:
+
+\[
+PF_1=PF_2=5.
+\]
+
+Por tanto:
+
+\[
+2a=10,
+\qquad
+a=5.
+\]
+
+Además:
+
+\[
+b^2=a^2-c^2=25-9=16.
+\]
+
+Como el eje mayor es vertical:
+
+\[
+\boxed{
+\frac{(x-1)^2}{16}
++
+\frac{(y-1)^2}{25}
+=
+1.
+}
+\]
+
+\section{Ejercicio 4}
+\subsection{Solución}
+
+El vértice es:
+
+\[
+V=(3,2)
+\]
+
+y el foco:
+
+\[
+F=(5,2).
+\]
+
+Por tanto:
+
+\[
+p=2.
+\]
+
+La parábola tiene eje horizontal y abre hacia la derecha.
+
+Así:
+
+\[
+\boxed{
+(y-2)^2=8(x-3).
+}
+\]
+
+\section{Ejercicio 5}
+\subsection{Solución}
+
+La ecuación es:
+
+\[
+(x+6)^2=-24(y-2).
+\]
+
+Comparando con:
+
+\[
+(x-h)^2=4p(y-k),
+\]
+
+se obtiene:
+
+\[
+h=-6,
+\qquad
+k=2,
+\qquad
+p=-6.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+V=(-6,2)
+}
+\]
+
+\[
+\boxed{
+F=(-6,-4)
+}
+\]
+
+y la directriz es:
+
+\[
+\boxed{
+y=8.
+}
+\]
+
+\section{Ejercicio 6}
+\subsection{Solución}
+
+La hipérbola es:
+
+\[
+x^2-\frac{y^2}{9}=1.
+\]
+
+Así:
+
+\[
+a=1,
+\qquad
+b=3,
+\qquad
+c=\sqrt{a^2+b^2}=\sqrt{10}.
+\]
+
+Los vértices son:
+
+\[
+\boxed{
+(\pm1,0)
+}
+\]
+
+y los focos:
+
+\[
+\boxed{
+(\pm\sqrt{10},0).
+}
+\]
+
+Las asíntotas son:
+
+\[
+\boxed{
+y=\pm3x.
+}
+\]
+
+\section{Ejercicio 7}
+\subsection{Solución}
+
+La hipérbola es:
+
+\[
+\frac{(y-2)^2}{4}
+-
+\frac{(x+2)^2}{4}
+=
+1.
+\]
+
+Por tanto:
+
+\[
+a=2,
+\qquad
+b=2,
+\qquad
+c=2\sqrt2.
+\]
+
+Los vértices son:
+
+\[
+\boxed{
+(-2,4),
+\qquad
+(-2,0)
+}
+\]
+
+y los focos:
+
+\[
+\boxed{
+(-2,2+2\sqrt2),
+\qquad
+(-2,2-2\sqrt2).
+}
+\]
+
+Las asíntotas son:
+
+\[
+\boxed{
+y-2=\pm(x+2).
+}
+\]
+
+\section{Ejercicio 8}
+\subsection{Solución}
+
+\textbf{a)}
+
+\[
+x^2+2xy+y^2+2x-1=0.
+\]
+
+La matriz cuadrática es:
+
+\[
+A_0=
+\begin{pmatrix}
+1&1\\
+1&1
+\end{pmatrix}
+\]
+
+y:
+
+\[
+|A_0|=0,
+\qquad
+|A|\neq0.
+\]
+
+Por tanto:
+
+\[
+\boxed{\text{Parábola}.}
+\]
+
+\textbf{b)}
+
+\[
+2xy+2x-2y+1=0.
+\]
+
+Se tiene:
+
+\[
+A_0=
+\begin{pmatrix}
+0&1\\
+1&0
+\end{pmatrix},
+\qquad
+|A_0|=-1<0.
+\]
+
+Por tanto:
+
+\[
+\boxed{\text{Hipérbola}.}
+\]
+
+\textbf{c)}
+
+\[
+x^2+y^2-2x+2y-3=0.
+\]
+
+Completando cuadrados:
+
+\[
+(x-1)^2+(y+1)^2=5.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{Circunferencia de centro }(1,-1)
+\text{ y radio }\sqrt5.
+}
+\]
+
+\section{Ejercicio 9}
+\subsection{Solución}
+
+La cónica es:
+
+\[
+x^2-2\alpha xy+2\alpha y^2-2x+4\alpha y=0.
+\]
+
+Se tiene:
+
+\[
+|A|=-2\alpha,
+\]
+
+\[
+|A_0|
+=
+-\alpha(\alpha-2).
+\]
+
+Si:
+
+\[
+\alpha<0
+\quad\text{o}\quad
+\alpha>2,
+\]
+
+entonces:
+
+\[
+|A_0|<0
+\]
+
+y la cónica es una hipérbola.
+
+Si:
+
+\[
+0<\alpha<2,
+\]
+
+entonces:
+
+\[
+|A_0|>0
+\]
+
+y:
+
+\[
+|A|\tr(A_0)<0.
+\]
+
+Por tanto, es una elipse real.
+
+Para:
+
+\[
+\alpha=2,
+\]
+
+se tiene:
+
+\[
+|A_0|=0,
+\qquad
+|A|\neq0,
+\]
+
+por lo que es una parábola.
+
+Para:
+
+\[
+\alpha=0,
+\]
+
+la ecuación queda:
+
+\[
+x^2-2x=0.
+\]
+
+Así:
+
+\[
+x(x-2)=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\begin{array}{c|c}
+\alpha & \text{cónica}\\
+\hline
+\alpha<0 & \text{hipérbola}\\
+\alpha=0 & \text{dos rectas paralelas }x=0,\ x=2\\
+0<\alpha<2 & \text{elipse real}\\
+\alpha=2 & \text{parábola}\\
+\alpha>2 & \text{hipérbola}
+\end{array}
+}
+\]
+
+\section{Ejercicio 10}
+\subsection{Solución}
+
+La cónica es:
+
+\[
+F(x,y)
+=
+9x^2+4y^2-18x-16y-11=0.
+\]
+
+En:
+
+\[
+P=(-1,2),
+\]
+
+se tiene:
+
+\[
+F_x=-36,
+\qquad
+F_y=0.
+\]
+
+Por tanto, la tangente es:
+
+\[
+\boxed{x=-1.}
+\]
+
+Para las tangentes desde:
+
+\[
+Q=(5,5),
+\]
+
+tomamos:
+
+\[
+y-5=m(x-5).
+\]
+
+Sustituyendo en la cónica y anulando el discriminante se obtiene:
+
+\[
+m(m-2)=0.
+\]
+
+Así:
+
+\[
+\boxed{
+y=5
+}
+\]
+
+y:
+
+\[
+\boxed{
+y=2x-5.
+}
+\]
+
+\section{Ejercicio 11}
+\subsection{Solución}
+
+La cónica es:
+
+\[
+8x^2+2y^2-4y+2=0.
+\]
+
+Su matriz homogénea es:
+
+\[
+A=
+\begin{pmatrix}
+8&0&0\\
+0&2&-2\\
+0&-2&2
+\end{pmatrix}.
+\]
+
+Para:
+
+\[
+P=(0,1),
+\]
+
+la ecuación polar es:
+
+\[
+\begin{pmatrix}
+0&1&1
+\end{pmatrix}
+A
+\begin{pmatrix}
+x\\y\\1
+\end{pmatrix}
+=0.
+\]
+
+Pero:
+
+\[
+\begin{pmatrix}
+0&1&1
+\end{pmatrix}
+A
+=
+\begin{pmatrix}
+0&0&0
+\end{pmatrix}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+0=0.
+}
+\]
+
+La cónica es degenerada:
+
+\[
+8x^2+2(y-1)^2=0,
+\]
+
+por lo que representa únicamente el punto \((0,1)\). En consecuencia, en este caso no se obtiene una recta polar no trivial.
+
+\section{Ejercicio 12}
+\subsection{Solución}
+
+La cónica es:
+
+\[
+x^2-4xy+y^2-6x+2y=0.
+\]
+
+Las rectas que pasan por:
+
+\[
+P=(-1,-3)
+\]
+
+son:
+
+\[
+y+3=m(x+1).
+\]
+
+Sustituyendo en la cónica y anulando el discriminante:
+
+\[
+(m-1)(m-3)=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+y=x-2
+}
+\]
+
+y:
+
+\[
+\boxed{
+y=3x.
+}
+\]
+
+\section{Ejercicio 13}
+\subsection{Solución}
+
+La hipérbola es:
+
+\[
+6xy-2x-1=0.
+\]
+
+Su centro satisface:
+
+\[
+A_0C=-L^t.
+\]
+
+Se obtiene:
+
+\[
+\boxed{
+C=
+\left(
+0,\frac13
+\right).
+}
+\]
+
+La ecuación puede escribirse como:
+
+\[
+6x\left(
+y-\frac13
+\right)-1=0.
+\]
+
+Por tanto, sus asíntotas son:
+
+\[
+\boxed{
+x=0
+}
+\]
+
+y:
+
+\[
+\boxed{
+y=\frac13.
+}
+\]
+
+\section{Ejercicio 14}
+\subsection{Solución}
+
+La cónica es:
+
+\[
+3x^2-5y^2-2xy-4x+2
++
+\alpha(x^2-2y^2-xy)
+=
+0.
+\]
+
+Para que la hipérbola sea equilátera debe cumplirse:
+
+\[
+\tr(A_0)=0.
+\]
+
+Así:
+
+\[
+3+\alpha-5-2\alpha=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\alpha=-2.
+}
+\]
+
+La ecuación queda:
+
+\[
+x^2-y^2-4x+2=0.
+\]
+
+Completando cuadrados:
+
+\[
+(x-2)^2-y^2=2.
+\]
+
+Las asíntotas son:
+
+\[
+\boxed{
+y=x-2
+}
+\]
+
+y:
+
+\[
+\boxed{
+y=-x+2.
+}
+\]
+
+\section{Ejercicio 15}
+\subsection{Solución}
+
+La hipérbola es:
+
+\[
+\frac{x^2}{4}-y^2=1.
+\]
+
+Sea:
+
+\[
+P=(x_0,y_0)
+\]
+
+un punto de la hipérbola.
+
+Un vector normal viene dado por el gradiente:
+
+\[
+\nabla F(P)
+=
+\left(
+\frac{x_0}{2},
+-2y_0
+\right).
+\]
+
+Por tanto, la normal en \(P\) es:
+
+\[
+\boxed{
+(x,y)
+=
+(x_0,y_0)
++
+\lambda
+\left(
+\frac{x_0}{2},
+-2y_0
+\right).
+}
+\]
+
+Equivalentemente:
+
+\[
+\boxed{
+y-y_0
+=
+-\frac{4y_0}{x_0}(x-x_0).
+}
+\]
+
+\section{Ejercicio 16}
+\subsection{Solución}
+
+La cónica es:
+
+\[
+11x^2+14y^2-4xy+40x+20y+45=0.
+\]
+
+La matriz cuadrática es:
+
+\[
+A_0=
+\begin{pmatrix}
+11&-2\\
+-2&14
+\end{pmatrix}.
+\]
+
+Sus autovalores son:
+
+\[
+\lambda_1=10,
+\qquad
+\lambda_2=15,
+\]
+
+con autovectores ortonormales:
+
+\[
+u_1=
+\frac1{\sqrt5}(2,1),
+\qquad
+u_2=
+\frac1{\sqrt5}(-1,2).
+\]
+
+El centro satisface:
+
+\[
+A_0C=-L^t.
+\]
+
+Así:
+
+\[
+\boxed{
+C=(-2,-1).
+}
+\]
+
+Tomando coordenadas \((X,Y)\) respecto de los ejes \(u_1,u_2\) con origen \(C\), se obtiene:
+
+\[
+10X^2+15Y^2-5=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\frac{X^2}{1/2}
++
+\frac{Y^2}{1/3}
+=
+1.
+}
+\]
+
+Así, la cónica es una elipse real.
+
+Se tiene:
+
+\[
+a=\frac1{\sqrt2},
+\qquad
+b=\frac1{\sqrt3},
+\]
+
+\[
+c=
+\sqrt{a^2-b^2}
+=
+\frac1{\sqrt6}.
+\]
+
+La excentricidad es:
+
+\[
+\boxed{
+e=\frac1{\sqrt3}.
+}
+\]
+
+Los ejes son:
+
+\[
+\boxed{
+(x,y)
+=
+(-2,-1)
++
+t(2,1)
+}
+\]
+
+y:
+
+\[
+\boxed{
+(x,y)
+=
+(-2,-1)
++
+t(-1,2).
+}
+\]
+
+Los cuatro vértices son:
+
+\[
+\boxed{
+C\pm
+\frac1{\sqrt{10}}(2,1)
+}
+\]
+
+y:
+
+\[
+\boxed{
+C\pm
+\frac1{\sqrt{15}}(-1,2).
+}
+\]
+
+Los focos son:
+
+\[
+\boxed{
+F_{1,2}
+=
+(-2,-1)
+\pm
+\frac1{\sqrt{30}}(2,1).
+}
+\]
+
+\section{Ejercicio 17}
+\subsection{Solución}
+
+La cónica es:
+
+\[
+x^2-4xy+4y^2-2x+8y=0.
+\]
+
+La matriz cuadrática es:
+
+\[
+A_0=
+\begin{pmatrix}
+1&-2\\
+-2&4
+\end{pmatrix}.
+\]
+
+Sus autovalores son:
+
+\[
+0,
+\qquad
+5.
+\]
+
+Tomamos:
+
+\[
+u=
+\frac1{\sqrt5}(1,-2),
+\qquad
+v=
+\frac1{\sqrt5}(2,1).
+\]
+
+Con:
+
+\[
+\begin{pmatrix}
+x\\y
+\end{pmatrix}
+=
+u\,\xi+v\,\eta,
+\]
+
+se obtiene:
+
+\[
+5\xi^2
+-\frac{18\sqrt5}{5}\xi
++
+\frac{4\sqrt5}{5}\eta
+=
+0.
+\]
+
+Definimos:
+
+\[
+\xi'
+=
+\xi-\frac{9\sqrt5}{25},
+\]
+
+\[
+\eta'
+=
+\eta-\frac{81}{20\sqrt5}.
+\]
+
+Entonces:
+
+\[
+\boxed{
+(\xi')^2
+=
+-\frac{4\sqrt5}{25}\eta'.
+}
+\]
+
+Por tanto, es una parábola y no tiene centro.
+
+El vértice es:
+
+\[
+\boxed{
+V=
+\left(
+\frac{99}{50},
+\frac9{100}
+\right).
+}
+\]
+
+Su eje tiene dirección:
+
+\[
+(2,1)
+\]
+
+y ecuación:
+
+\[
+\boxed{
+x-2y=\frac95.
+}
+\]
+
+Como:
+
+\[
+4p=-\frac{4\sqrt5}{25},
+\]
+
+se tiene:
+
+\[
+p=-\frac{\sqrt5}{25}.
+\]
+
+La excentricidad es:
+
+\[
+\boxed{e=1.}
+\]
+
+El foco es:
+
+\[
+\boxed{
+F=
+\left(
+\frac{19}{10},
+\frac1{20}
+\right).
+}
+\]
+
+\section{Ejercicio 18}
+\subsection{Solución}
+
+La cónica es:
+
+\[
+x^2-8xy+y^2-4x-4y+1=0.
+\]
+
+La matriz cuadrática es:
+
+\[
+A_0=
+\begin{pmatrix}
+1&-4\\
+-4&1
+\end{pmatrix}.
+\]
+
+Sus autovalores son:
+
+\[
+-3,
+\qquad
+5,
+\]
+
+con autovectores ortonormales:
+
+\[
+u=
+\frac1{\sqrt2}(1,1),
+\qquad
+v=
+\frac1{\sqrt2}(1,-1).
+\]
+
+El centro es:
+
+\[
+\boxed{
+C=
+\left(
+-\frac23,-\frac23
+\right).
+}
+\]
+
+En coordenadas \((X,Y)\) respecto de \(u,v\):
+
+\[
+-3X^2+5Y^2+\frac{11}{3}=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\frac{X^2}{11/9}
+-
+\frac{Y^2}{11/15}
+=
+1.
+}
+\]
+
+Es una hipérbola.
+
+Se tiene:
+
+\[
+a=\frac{\sqrt{11}}{3},
+\qquad
+b=\sqrt{\frac{11}{15}},
+\]
+
+\[
+c=\sqrt{a^2+b^2},
+\qquad
+e=\frac ca.
+\]
+
+Así:
+
+\[
+\boxed{
+e=\sqrt{\frac85}.
+}
+\]
+
+Los ejes son:
+
+\[
+\boxed{
+y=x
+}
+\]
+
+y:
+
+\[
+\boxed{
+x+y=-\frac43.
+}
+\]
+
+Los vértices son:
+
+\[
+\boxed{
+\left(
+-\frac23\pm\frac{\sqrt{22}}6,
+-\frac23\pm\frac{\sqrt{22}}6
+\right).
+}
+\]
+
+Los focos son:
+
+\[
+\boxed{
+\left(
+-\frac23\pm\frac{2\sqrt{55}}{15},
+-\frac23\pm\frac{2\sqrt{55}}{15}
+\right).
+}
+\]
+
+\section{Ejercicio 19}
+\subsection{Solución}
+
+La cónica es:
+
+\[
+4x^2+\alpha y^2+2x-2=0.
+\]
+
+Completando cuadrados:
+
+\[
+4\left(
+x+\frac14
+\right)^2
++
+\alpha y^2
+=
+\frac94.
+\]
+
+Si:
+
+\[
+\alpha>0,
+\]
+
+se obtiene:
+
+\[
+\boxed{
+\frac{(x+\frac14)^2}{9/16}
++
+\frac{y^2}{9/(4\alpha)}
+=
+1.
+}
+\]
+
+Es una elipse real.
+
+Si:
+
+\[
+\alpha=0,
+\]
+
+se tiene:
+
+\[
+4\left(
+x+\frac14
+\right)^2
+=
+\frac94.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+x=\frac12
+\quad\text{o}\quad
+x=-1.
+}
+\]
+
+Si:
+
+\[
+\alpha<0,
+\]
+
+se obtiene:
+
+\[
+\boxed{
+\frac{(x+\frac14)^2}{9/16}
+-
+\frac{y^2}{-9/(4\alpha)}
+=
+1.
+}
+\]
+
+Es una hipérbola.
+
+\section{Ejercicio 20}
+\subsection{Solución}
+
+La familia es:
+
+\[
+x^2+m^2y^2+2xy+2x+2my+2m=0.
+\]
+
+Se tiene:
+
+\[
+|A|
+=
+2m^2(m-1),
+\]
+
+\[
+|A_0|
+=
+(m-1)(m+1).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\begin{array}{c|c}
+m & \text{cónica}\\
+\hline
+m<-1 & \text{elipse real}\\
+m=-1 & \text{parábola}\\
+-1<m<1,\ m\neq0 & \text{hipérbola}\\
+m=0 & \text{dos rectas secantes}\\
+m=1 & \text{dos rectas paralelas imaginarias}\\
+m>1 & \text{elipse imaginaria}
+\end{array}
+}
+\]
+
+Para:
+
+\[
+m=-1,
+\]
+
+la ecuación es:
+
+\[
+(x+y)^2+2(x-y)-2=0.
+\]
+
+Tomamos:
+
+\[
+\xi=\frac{x+y}{\sqrt2},
+\qquad
+\eta=\frac{x-y}{\sqrt2}.
+\]
+
+Entonces:
+
+\[
+2\xi^2+2\sqrt2\,\eta-2=0.
+\]
+
+Definiendo:
+
+\[
+\eta'
+=
+\eta-\frac1{\sqrt2},
+\]
+
+se obtiene:
+
+\[
+\boxed{
+\xi^2=-\sqrt2\,\eta'.
+}
+\]
+
+El vértice es:
+
+\[
+V=
+\left(
+\frac12,-\frac12
+\right).
+\]
+
+Como:
+
+\[
+4p=-\sqrt2,
+\]
+
+se tiene:
+
+\[
+p=-\frac1{2\sqrt2}.
+\]
+
+El foco es:
+
+\[
+\boxed{
+F=
+\left(
+\frac14,-\frac14
+\right).
+}
+\]
+
+\section{Ejercicio 21}
+\subsection{Solución}
+
+La cónica es:
+
+\[
+3y^2+4xy-4x-6y-1=0.
+\]
+
+La matriz cuadrática es:
+
+\[
+A_0=
+\begin{pmatrix}
+0&2\\
+2&3
+\end{pmatrix}.
+\]
+
+Se tiene:
+
+\[
+|A_0|=-4<0.
+\]
+
+Por tanto:
+
+\[
+\boxed{\text{Es una hipérbola}.}
+\]
+
+El centro es:
+
+\[
+\boxed{
+C=(0,1).
+}
+\]
+
+Los autovalores son:
+
+\[
+-1,
+\qquad
+4,
+\]
+
+con autovectores ortonormales:
+
+\[
+u=
+\frac1{\sqrt5}(-2,1),
+\qquad
+v=
+\frac1{\sqrt5}(1,2).
+\]
+
+En coordenadas \((X,Y)\) respecto de \(u,v\):
+
+\[
+-X^2+4Y^2-4=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+Y^2-\frac{X^2}{4}=1.
+}
+\]
+
+Así:
+
+\[
+a=1,
+\qquad
+b=2,
+\qquad
+c=\sqrt5.
+\]
+
+Los focos son:
+
+\[
+\boxed{
+F_1=(1,3),
+\qquad
+F_2=(-1,-1).
+}
+\]
+
+Para obtener el punto cuya polar es:
+
+\[
+x=1,
+\]
+
+tomamos:
+
+\[
+P=(x_0,y_0)
+\]
+
+y exigimos que:
+
+\[
+(x_0,y_0,1)A
+\]
+
+sea proporcional a:
+
+\[
+(1,0,-1).
+\]
+
+Se obtiene:
+
+\[
+\boxed{
+P=(-3,3).
+}
+\]
+
+\section{Ejercicio 22}
+\subsection{Solución}
+
+\textbf{a)}
+
+\[
+4x^2+z^2+4xz-4y+1=0.
+\]
+
+La parte cuadrática es:
+
+\[
+(2x+z)^2.
+\]
+
+Se tiene:
+
+\[
+\rg(A)=3,
+\qquad
+\rg(A_0)=1.
+\]
+
+Por tanto:
+
+\[
+\boxed{\text{Cilindro parabólico}.}
+\]
+
+\textbf{b)}
+
+\[
+x^2+y^2+9z^2-6xz+2x-2y+2=0.
+\]
+
+La matriz \(A_0\) es semidefinida positiva de rango \(2\), mientras que:
+
+\[
+|A|<0.
+\]
+
+Por tanto:
+
+\[
+\boxed{\text{Paraboloide elíptico}.}
+\]
+
+\textbf{c)}
+
+\[
+xy+yz+xz-1=0.
+\]
+
+La matriz cuadrática tiene autovalores:
+
+\[
+1,
+\qquad
+-\frac12,
+\qquad
+-\frac12.
+\]
+
+Por tanto:
+
+\[
+\boxed{\text{Hiperboloide elíptico de dos hojas}.}
+\]
+
+\section{Ejercicio 23}
+\subsection{Solución}
+
+La cuádrica es:
+
+\[
+9y^2+4z^2-36=0.
+\]
+
+Dividiendo entre \(36\):
+
+\[
+\boxed{
+\frac{y^2}{4}
++
+\frac{z^2}{9}
+=
+1.
+}
+\]
+
+La variable \(x\) es libre.
+
+Por tanto:
+
+\[
+\boxed{\text{Cilindro elíptico}.}
+\]
+
+\section{Ejercicio 24}
+\subsection{Solución}
+
+La cuádrica es:
+
+\[
+x^2+y^2-5z^2+4xy-8xz+8yz
++18x-18y+36z-54=0.
+\]
+
+La matriz cuadrática es:
+
+\[
+A_0=
+\begin{pmatrix}
+1&2&-4\\
+2&1&4\\
+-4&4&-5
+\end{pmatrix}.
+\]
+
+Sus autovalores son:
+
+\[
+-9,
+\qquad
+3,
+\qquad
+3.
+\]
+
+El centro es:
+
+\[
+\boxed{
+C=(1,-1,2).
+}
+\]
+
+Tomamos la base ortonormal:
+
+\[
+u_1=
+\frac1{\sqrt6}(1,-1,2),
+\]
+
+\[
+u_2=
+\frac1{\sqrt2}(1,1,0),
+\]
+
+\[
+u_3=
+\frac1{\sqrt3}(1,-1,-1).
+\]
+
+En coordenadas \((X,Y,Z)\) con origen \(C\):
+
+\[
+-9X^2+3Y^2+3Z^2=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+Y^2+Z^2=3X^2.
+}
+\]
+
+Así:
+
+\[
+\boxed{\text{Cono elíptico real}.}
+\]
+
+\section{Ejercicio 25}
+\subsection{Solución}
+
+La cuádrica es:
+
+\[
+11x^2+11y^2+14z^2
+-2xy-8xz-8yz
++6x-18y-60z+104=0.
+\]
+
+La matriz cuadrática tiene autovalores:
+
+\[
+6,
+\qquad
+12,
+\qquad
+18.
+\]
+
+El centro es:
+
+\[
+\boxed{
+C=(1,2,3).
+}
+\]
+
+Tomamos la base ortonormal:
+
+\[
+u_1=
+\frac1{\sqrt3}(1,1,1),
+\]
+
+\[
+u_2=
+\frac1{\sqrt2}(-1,1,0),
+\]
+
+\[
+u_3=
+\frac1{\sqrt6}(-1,-1,2).
+\]
+
+En coordenadas \((X,Y,Z)\) con origen \(C\):
+
+\[
+6X^2+12Y^2+18Z^2-1=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+6X^2+12Y^2+18Z^2=1.
+}
+\]
+
+Así:
+
+\[
+\boxed{\text{Elipsoide real}.}
+\]
+
+\section{Ejercicio 26}
+\subsection{Solución}
+
+La cuádrica es:
+
+\[
+x^2+y^2+z^2-2xy+2xz+3x-y+z+1=0.
+\]
+
+La matriz cuadrática es:
+
+\[
+A_0=
+\begin{pmatrix}
+1&-1&1\\
+-1&1&0\\
+1&0&1
+\end{pmatrix}.
+\]
+
+El centro satisface:
+
+\[
+A_0C=-L^t.
+\]
+
+Se obtiene:
+
+\[
+\boxed{
+C=
+\left(
+\frac12,1,-1
+\right).
+}
+\]
+
+Los autovalores son:
+
+\[
+1,
+\qquad
+1-\sqrt2,
+\qquad
+1+\sqrt2,
+\]
+
+con autovectores:
+
+\[
+v_1=(0,1,1),
+\]
+
+\[
+v_2=(-\sqrt2,-1,1),
+\]
+
+\[
+v_3=(\sqrt2,-1,1).
+\]
+
+Por tanto, los ejes son:
+
+\[
+\boxed{
+r_1:
+X=C+\lambda(0,1,1)
+}
+\]
+
+\[
+\boxed{
+r_2:
+X=C+\lambda(-\sqrt2,-1,1)
+}
+\]
+
+\[
+\boxed{
+r_3:
+X=C+\lambda(\sqrt2,-1,1).
+}
+\]
+
+\section{Ejercicio 27}
+\subsection{Solución}
+
+La cuádrica es:
+
+\[
+x^2+2y^2+z^2-2xz+4x+4y+5=0.
+\]
+
+La matriz cuadrática tiene autovalores:
+
+\[
+0,
+\qquad
+2,
+\qquad
+2.
+\]
+
+Tomamos:
+
+\[
+u_0=
+\frac1{\sqrt2}(1,0,1),
+\]
+
+\[
+u_1=
+\frac1{\sqrt2}(1,0,-1),
+\]
+
+\[
+u_2=(0,1,0).
+\]
+
+Con coordenadas \((\xi,\eta,\zeta)\) respecto de esta base:
+
+\[
+2\eta^2+2\zeta^2
++
+2\sqrt2\,\xi
++
+2\sqrt2\,\eta
++
+4\zeta
++
+5
+=
+0.
+\]
+
+Completando cuadrados:
+
+\[
+\eta'=
+\eta+\frac1{\sqrt2},
+\]
+
+\[
+\zeta'=\zeta+1,
+\]
+
+\[
+\xi'=
+\xi+\frac1{\sqrt2},
+\]
+
+se obtiene:
+
+\[
+\boxed{
+(\eta')^2+(\zeta')^2+\sqrt2\,\xi'=0.
+}
+\]
+
+Por tanto, el vértice es:
+
+\[
+\boxed{
+V=(-1,-1,0).
+}
+\]
+
+El eje principal tiene dirección:
+
+\[
+(1,0,1).
+\]
+
+Así:
+
+\[
+\boxed{
+r:
+X=(-1,-1,0)+\lambda(1,0,1).
+}
+\]
+
+\section{Ejercicio 28}
+\subsection{Solución}
+
+La cuádrica es:
+
+\[
+x^2+2\alpha xy+2xz+z^2-2x+4y-z+1=0.
+\]
+
+La matriz cuadrática es:
+
+\[
+A_0=
+\begin{pmatrix}
+1&\alpha&1\\
+\alpha&0&0\\
+1&0&1
+\end{pmatrix}.
+\]
+
+Su determinante es:
+
+\[
+|A_0|=-\alpha^2.
+\]
+
+Si:
+
+\[
+\alpha\neq0,
+\]
+
+existe un centro único.
+
+Resolviendo:
+
+\[
+A_0C=-L^t,
+\]
+
+se obtiene:
+
+\[
+\boxed{
+C=
+\left(
+-\frac2\alpha,
+\frac1{2\alpha},
+\frac{\alpha+4}{2\alpha}
+\right).
+}
+\]
+
+Para:
+
+\[
+\alpha=0,
+\]
+
+el sistema que determina el centro es incompatible.
+
+Por tanto:
+
+\[
+\boxed{
+\text{La cuádrica tiene centro si y solo si }\alpha\neq0.
+}
+\]
+
+\section{Ejercicio 29}
+\subsection{Solución}
+
+El hiperboloide es:
+
+\[
+\frac{x^2}{4}
++
+\frac{y^2}{9}
+-
+\frac{z^2}{16}
+=
+1.
+\]
+
+Sea:
+
+\[
+F(x,y,z)
+=
+\frac{x^2}{4}
++
+\frac{y^2}{9}
+-
+\frac{z^2}{16}
+-
+1.
+\]
+
+En:
+
+\[
+P=(2,0,0),
+\]
+
+se tiene:
+
+\[
+\nabla F(P)=(1,0,0).
+\]
+
+Por tanto, el plano tangente es:
+
+\[
+\boxed{
+x=2.
+}
+\]
+
+Intersecando con el hiperboloide:
+
+\[
+1+\frac{y^2}{9}-\frac{z^2}{16}=1.
+\]
+
+Así:
+
+\[
+\frac{y^2}{9}
+=
+\frac{z^2}{16}.
+\]
+
+Por tanto, la intersección está formada por las dos rectas:
+
+\[
+\boxed{
+\begin{cases}
+x=2,\\
+y=\frac34z,
+\end{cases}
+}
+\]
+
+y:
+
+\[
+\boxed{
+\begin{cases}
+x=2,\\
+y=-\frac34z.
+\end{cases}
+}
+\]
+
+\section{Ejercicio 30}
+\subsection{Solución}
+
+La cuádrica es:
+
+\[
+Q:
+x^2+y^2+2xy-2z=0.
+\]
+
+Su matriz homogénea es:
+
+\[
+A=
+\begin{pmatrix}
+1&1&0&0\\
+1&1&0&0\\
+0&0&0&-1\\
+0&0&-1&0
+\end{pmatrix}.
+\]
+
+Tomamos:
+
+\[
+P=(0,1,-1).
+\]
+
+Se tiene:
+
+\[
+\varphi(P,P)=3,
+\]
+
+\[
+\varphi(X,X)
+=
+x^2+2xy+y^2-2z,
+\]
+
+\[
+\varphi(X,P)
+=
+x+y-z+1.
+\]
+
+El cono tangente viene dado por:
+
+\[
+\varphi(P,P)\varphi(X,X)
+-
+\varphi(X,P)^2
+=
+0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+3(x^2+2xy+y^2-2z)
+-
+(x+y-z+1)^2
+=
+0.
+}
+\]
+
+Equivalentemente:
+
+\[
+\boxed{
+2x^2+4xy+2xz-2x
++
+2y^2+2yz-2y
+-z^2-4z-1
+=
+0.
+}
+\]
+
+El contorno aparente verifica:
+
+\[
+\varphi(X,X)=0
+\]
+
+y:
+
+\[
+\varphi(X,P)=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\begin{cases}
+x^2+2xy+y^2-2z=0,\\
+x+y-z+1=0.
+\end{cases}
+}
+\]
+
+\end{document}

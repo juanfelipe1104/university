@@ -1,0 +1,2021 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\rg}{\operatorname{rg}}
+\newcommand{\Span}{\operatorname{L}}
+\newcommand{\Mat}{\operatorname{M}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\an}{\operatorname{an}}
+
+\begin{document}
+
+\begin{center}
+	{\LARGE\bfseries Álgebra Lineal}\\[0.4em]
+	{\Large Tema 2: Aplicaciones Lineales --- Soluciones}
+\end{center}
+
+\section{Ejercicio 1}
+	\subsection{Solución}
+
+	Sean $u=(x,y,z)$, $v=(x',y',z')$ y $\alpha,\beta\in\R$.
+
+	\[
+	f(\alpha u+\beta v)
+	=
+	(\alpha z+\beta z',
+	\alpha x+\beta x'+\alpha y+\beta y',
+	0,
+	-\alpha z-\beta z')
+	\]
+
+	\[
+	=
+	\alpha(z,x+y,0,-z)
+	+
+	\beta(z',x'+y',0,-z')
+	\]
+
+	\[
+	=
+	\alpha f(u)+\beta f(v)
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	f\text{ es una aplicación lineal}
+	}
+	\]
+
+\section{Ejercicio 2}
+	\subsection{Solución}
+
+	Una aplicación lineal debe verificar:
+
+	\[
+	f(0,0,0)=(0,0)
+	\]
+
+	Pero:
+
+	\[
+	f(0,0,0)=(a,0)
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	f\text{ es lineal si y sólo si }a=0
+	}
+	\]
+
+\section{Ejercicio 3}
+	\subsection{Solución}
+
+	Sean $u=(x,y,z)$, $v=(x',y',z')$ y $\alpha,\beta\in\R$.
+
+	\[
+	f(\alpha u+\beta v)
+	=
+	\begin{pmatrix}
+	a(\alpha x+\beta x')&
+	b(\alpha y+\beta y')\\
+	c(\alpha z+\beta z')&
+	\alpha(x+y+z)+\beta(x'+y'+z')
+	\end{pmatrix}
+	\]
+
+	\[
+	=
+	\alpha f(u)+\beta f(v)
+	\]
+
+	para cualquier $a,b,c\in\R$.
+
+	\[
+	\boxed{
+	f\text{ es lineal para todo }a,b,c\in\R
+	}
+	\]
+
+\section{Ejercicio 4}
+	\subsection{Solución}
+
+	Para el núcleo:
+
+	\[
+	f(x_1,x_2,x_3)=(0,0,0)
+	\]
+
+	implica:
+
+	\[
+	x_1+x_2+x_3=0
+	\]
+
+	\[
+	x_1+x_2-x_3=0
+	\]
+
+	\[
+	x_3=0
+	\]
+
+	Por tanto:
+
+	\[
+	x_2=-x_1
+	\]
+
+	\[
+	\boxed{
+	\Ker f
+	=
+	\Span\{(1,-1,0)\}
+	}
+	\]
+
+	Como:
+
+	\[
+	\dim(\Ker f)=1
+	\]
+
+	se tiene:
+
+	\[
+	\dim(\Ima f)=3-1=2
+	\]
+
+	Además:
+
+	\[
+	f(1,0,0)=(1,1,0)
+	\]
+
+	\[
+	f(0,0,1)=(1,-1,1)
+	\]
+
+	son linealmente independientes.
+
+	\[
+	\boxed{
+	\Ima f
+	=
+	\Span\{(1,1,0),(1,-1,1)\}
+	}
+	\]
+
+	Para:
+
+	\[
+	V=
+	\{(x_1,x_2,-x_1-x_2)\}
+	\]
+
+	se tiene:
+
+	\[
+	f(x_1,x_2,-x_1-x_2)
+	=
+	(0,2x_1+2x_2,-x_1-x_2)
+	\]
+
+	\[
+	=
+	(x_1+x_2)(0,2,-1)
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	f(V)=\Span\{(0,2,-1)\}
+	}
+	\]
+
+\section{Ejercicio 5}
+	\subsection{Solución}
+
+	Para el núcleo:
+
+	\[
+	x_1+2x_2+3x_3=0
+	\]
+
+	\[
+	\boxed{
+	\Ker f
+	=
+	\{(-2s-3t,s,t):s,t\in\R\}
+	}
+	\]
+
+	\[
+	=
+	\Span\{(-2,1,0),(-3,0,1)\}
+	\]
+
+	Así:
+
+	\[
+	\boxed{
+	\dim(\Ker f)=2
+	}
+	\]
+
+	La imagen está generada por:
+
+	\[
+	f(1,0,0)=(1,2)
+	\]
+
+	\[
+	f(0,1,0)=(2,4)=2(1,2)
+	\]
+
+	\[
+	f(0,0,1)=(3,6)=3(1,2)
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	\Ima f=\Span\{(1,2)\}
+	}
+	\]
+
+	\[
+	\boxed{
+	\dim(\Ima f)=1
+	}
+	\]
+
+	y:
+
+	\[
+	2+1=3=\dim\R^3
+	\]
+
+\section{Ejercicio 6}
+	\subsection{Solución}
+
+	Para el núcleo:
+
+	\[
+	x_3=0,
+	\qquad
+	x_1+x_2=0
+	\]
+
+	\[
+	\boxed{
+	\Ker f
+	=
+	\Span\{(1,-1,0)\}
+	}
+	\]
+
+	La imagen está generada por:
+
+	\[
+	f(1,0,0)=(0,1,0)
+	\]
+
+	\[
+	f(0,0,1)=(1,0,-1)
+	\]
+
+	\[
+	\boxed{
+	\Ima f
+	=
+	\Span\{(0,1,0),(1,0,-1)\}
+	}
+	\]
+
+	Además:
+
+	\[
+	\boxed{
+	f^{-1}(0,0,0)
+	=
+	\Ker f
+	}
+	\]
+
+	Para:
+
+	\[
+	f(x_1,x_2,x_3)=(1,2,3)
+	\]
+
+	se exigiría simultáneamente:
+
+	\[
+	x_3=1
+	\]
+
+	y:
+
+	\[
+	-x_3=3
+	\]
+
+	lo cual es imposible.
+
+	\[
+	\boxed{
+	f^{-1}(1,2,3)=\emptyset
+	}
+	\]
+
+	Para:
+
+	\[
+	f(x_1,x_2,x_3)=(1,0,-1)
+	\]
+
+	se obtiene:
+
+	\[
+	x_3=1,
+	\qquad
+	x_1+x_2=0
+	\]
+
+	\[
+	\boxed{
+	f^{-1}(1,0,-1)
+	=
+	\{(s,-s,1):s\in\R\}
+	}
+	\]
+
+\section{Ejercicio 7}
+	\subsection{Solución}
+
+	Buscamos:
+
+	\[
+	1-x+5x^2
+	=
+	\alpha(1+x^2)+\beta x+\gamma(3+x)
+	\]
+
+	Comparando coeficientes:
+
+	\[
+	\alpha+3\gamma=1
+	\]
+
+	\[
+	\beta+\gamma=-1
+	\]
+
+	\[
+	\alpha=5
+	\]
+
+	Por tanto:
+
+	\[
+	\alpha=5,
+	\qquad
+	\beta=\frac13,
+	\qquad
+	\gamma=-\frac43
+	\]
+
+	Aplicando linealidad:
+
+	\[
+	f(1-x+5x^2)
+	=
+	5f(1+x^2)
+	+
+	\frac13f(x)
+	-
+	\frac43f(3+x)
+	\]
+
+	\[
+	=
+	5(3+2x^2)
+	+
+	\frac13(1+x+2x^2)
+	+
+	\frac43
+	\]
+
+	\[
+	\boxed{
+	f(1-x+5x^2)
+	=
+	\frac{50}{3}
+	+
+	\frac13x
+	+
+	\frac{32}{3}x^2
+	}
+	\]
+
+\section{Ejercicio 8}
+	\subsection{Solución}
+
+	Definimos:
+
+	\[
+	w_1=3u_1-2u_2
+	\]
+
+	\[
+	w_2=4u_1-3u_2
+	\]
+
+	Se obtiene:
+
+	\[
+	u_1=3w_1-2w_2
+	\]
+
+	\[
+	u_2=4w_1-3w_2
+	\]
+
+	Entonces:
+
+	\[
+	g(u_1)
+	=
+	3g(w_1)-2g(w_2)
+	\]
+
+	\[
+	=
+	7v_1+8v_2-7v_3
+	\]
+
+	y:
+
+	\[
+	g(u_2)
+	=
+	4g(w_1)-3g(w_2)
+	\]
+
+	\[
+	=
+	9v_1+9v_2-9v_3
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	M_{B,B'}(g)
+	=
+	\begin{pmatrix}
+	7&9\\
+	8&9\\
+	-7&-9
+	\end{pmatrix}
+	}
+	\]
+
+	El núcleo viene dado por:
+
+	\[
+	\begin{pmatrix}
+	7&9\\
+	8&9\\
+	-7&-9
+	\end{pmatrix}
+	\begin{pmatrix}
+	x\\y
+	\end{pmatrix}
+	=
+	0
+	\]
+
+	que únicamente tiene la solución:
+
+	\[
+	x=y=0
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	g\text{ es inyectiva}
+	}
+	\]
+
+	Como:
+
+	\[
+	\rg M=2<3
+	\]
+
+	\[
+	\boxed{
+	g\text{ no es suprayectiva}
+	}
+	\]
+
+\section{Ejercicio 9}
+	\subsection{Solución}
+
+	Calculamos:
+
+	\[
+	f(1,1,1)=(9,11)
+	\]
+
+	\[
+	f(1,1,0)=(4,4)
+	\]
+
+	\[
+	f(0,1,1)=(8,9)
+	\]
+
+	Expresamos estas imágenes en $B'$:
+
+	\[
+	(9,11)
+	=
+	17(1,1)-2(4,3)
+	\]
+
+	\[
+	(4,4)
+	=
+	4(1,1)
+	\]
+
+	\[
+	(8,9)
+	=
+	12(1,1)-(4,3)
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	M_{A',B'}(f)
+	=
+	\begin{pmatrix}
+	17&4&12\\
+	-2&0&-1
+	\end{pmatrix}
+	}
+	\]
+
+\section{Ejercicio 10}
+	\subsection{Solución}
+
+	Llamamos:
+
+	\[
+	w_1=u_1+3u_2+2u_3
+	\]
+
+	\[
+	w_2=u_2+u_3
+	\]
+
+	\[
+	w_3=u_1+u_3
+	\]
+
+	La matriz respecto de la base $\{w_1,w_2,w_3\}$ en el dominio es:
+
+	\[
+	\begin{pmatrix}
+	1&-1&4\\
+	3&1&2
+	\end{pmatrix}
+	\]
+
+	El cambio de base da:
+
+	\[
+	M_{A',B'}(f)
+	=
+	\frac12
+	\begin{pmatrix}
+	1&-1&4\\
+	3&1&2
+	\end{pmatrix}
+	\begin{pmatrix}
+	-1&1&-1\\
+	3&-1&3\\
+	1&-1&1
+	\end{pmatrix}
+	\]
+
+	\[
+	\boxed{
+	M_{A',B'}(f)
+	=
+	\begin{pmatrix}
+	4&-1&0\\
+	1&0&1
+	\end{pmatrix}
+	}
+	\]
+
+\section{Ejercicio 11}
+	\subsection{Solución}
+
+	La matriz de cambio de $C'$ a $C$ es:
+
+	\[
+	P=
+	\begin{pmatrix}
+	1&1&0\\
+	1&0&-1\\
+	0&1&2
+	\end{pmatrix}
+	\]
+
+	y:
+
+	\[
+	P^{-1}
+	=
+	\begin{pmatrix}
+	-1&2&1\\
+	2&-2&-1\\
+	-1&1&1
+	\end{pmatrix}
+	\]
+
+	Como se trata de un endomorfismo:
+
+	\[
+	M_{C'}(f)
+	=
+	P^{-1}M_C(f)P
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	M_{C'}(f)
+	=
+	\begin{pmatrix}
+	1&0&0\\
+	0&1&0\\
+	0&0&2
+	\end{pmatrix}
+	}
+	\]
+
+\section{Ejercicio 12}
+	\subsection{Solución}
+
+	Una base de:
+
+	\[
+	S=
+	\{(x,y,z):x+y+z=0\}
+	\]
+
+	es:
+
+	\[
+	\{(1,0,-1),(0,1,-1)\}
+	\]
+
+	y:
+
+	\[
+	f(1,0,-1)=(1,0,-1)
+	\]
+
+	\[
+	f(0,1,-1)=(0,1,-1)
+	\]
+
+	Además:
+
+	\[
+	\Ker f=S^\perp
+	\]
+
+	Por tanto:
+
+	\[
+	\Ker f
+	=
+	\Span\{(1,1,1)\}
+	\]
+
+	y:
+
+	\[
+	f(1,1,1)=0
+	\]
+
+	Así:
+
+	\[
+	\boxed{
+	M_{B,B_c}(f)
+	=
+	\begin{pmatrix}
+	1&0&0\\
+	0&1&0\\
+	-1&-1&0
+	\end{pmatrix}
+	}
+	\]
+
+	La matriz en la base canónica es:
+
+	\[
+	\boxed{
+	M_{B_c}(f)
+	=
+	\frac13
+	\begin{pmatrix}
+	2&-1&-1\\
+	-1&2&-1\\
+	-1&-1&2
+	\end{pmatrix}
+	}
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	f(x,y,z)
+	=
+	\frac13
+	(2x-y-z,\;-x+2y-z,\;-x-y+2z)
+	}
+	\]
+
+	Sea:
+
+	\[
+	W=\Span\{(1,0,0)\}
+	\]
+
+	El sistema:
+
+	\[
+	f(x,y,z)=(1,0,0)
+	\]
+
+	es incompatible.
+
+	Por tanto:
+
+	\[
+	\boxed{
+	f^{-1}(W)=\emptyset
+	}
+	\]
+
+	Además:
+
+	\[
+	\dim(\Ker f)=1
+	\]
+
+	\[
+	\dim(\Ima f)=2
+	\]
+
+	Así:
+
+	\[
+	\boxed{
+	f\text{ no es inyectiva ni suprayectiva}
+	}
+	\]
+
+\section{Ejercicio 13}
+	\subsection{Solución}
+
+	Calculamos las imágenes de los vectores de $B$:
+
+	\[
+	f(1,3,0)=(3,11)
+	\]
+
+	\[
+	f(1,0,2)=(-1,9)
+	\]
+
+	\[
+	f(0,4,-2)=(4,-4)
+	\]
+
+	Expresándolas en $B'$:
+
+	\[
+	(3,11)
+	=
+	-\frac{35}{2}(2,1)
+	+
+	\frac{19}{2}(4,3)
+	\]
+
+	\[
+	(-1,9)
+	=
+	-\frac{39}{2}(2,1)
+	+
+	\frac{19}{2}(4,3)
+	\]
+
+	\[
+	(4,-4)
+	=
+	-6(2,1)+4(4,3)
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	M_{B,B'}(f)
+	=
+	\begin{pmatrix}
+	-\frac{35}{2}&-\frac{39}{2}&-6\\
+	\frac{19}{2}&\frac{19}{2}&4
+	\end{pmatrix}
+	}
+	\]
+
+\section{Ejercicio 14}
+	\subsection{Solución}
+
+	Como:
+
+	\[
+	\Ker f
+	=
+	\{(x,y,z):x-y+2z=0\}
+	\]
+
+	y:
+
+	\[
+	h=g\circ f
+	\]
+
+	se tiene:
+
+	\[
+	\Ker f\subseteq\Ker h
+	\]
+
+	Una base del núcleo es:
+
+	\[
+	(1,1,0),
+	\qquad
+	(-2,0,1)
+	\]
+
+	Además:
+
+	\[
+	h(1,1,1)=(-1,0,2)
+	\]
+
+	Expresando los vectores canónicos respecto de esta base ampliada se obtiene:
+
+	\[
+	\boxed{
+	M_{B_1}(h)
+	=
+	\begin{pmatrix}
+	-\frac12&\frac12&-1\\
+	0&0&0\\
+	1&-1&2
+	\end{pmatrix}
+	}
+	\]
+
+	Para $W$, resolvemos:
+
+	\[
+	W=
+	\Span\{(-7,-2,1)\}_{B_1}
+	\]
+
+	Entonces:
+
+	\[
+	h(-7,-2,1)
+	=
+	\left(
+	\frac32,0,-3
+	\right)
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	h(W)
+	=
+	\Span
+	\left\{
+	\left(\frac32,0,-3\right)
+	\right\}
+	}
+	\]
+
+	El cambio a la base $B'$ proporciona:
+
+	\[
+	\boxed{
+	M_{B'}(h)
+	=
+	\frac14
+	\begin{pmatrix}
+	5&-3&-2\\
+	-5&3&2\\
+	5&-3&-2
+	\end{pmatrix}
+	}
+	\]
+
+	Si las ecuaciones propuestas fueran las de $\Ima g$, entonces:
+
+	\[
+	\Ima g
+	=
+	\Span\{(-11,4,1)\}
+	\]
+
+	pero:
+
+	\[
+	h(1,1,1)=(-1,0,2)
+	\]
+
+	pertenece necesariamente a $\Ima g$ y no verifica esas ecuaciones.
+
+	Por tanto:
+
+	\[
+	\boxed{
+	\text{No pueden ser ecuaciones implícitas de }\Ima g
+	}
+	\]
+
+\section{Ejercicio 15}
+	\subsection{Solución}
+
+	Escribimos los vectores de $B$ por columnas:
+
+	\[
+	A=
+	\begin{pmatrix}
+	1&1&1\\
+	1&1&0\\
+	1&0&0
+	\end{pmatrix}
+	\]
+
+	Entonces:
+
+	\[
+	A^{-1}
+	=
+	\begin{pmatrix}
+	0&0&1\\
+	0&1&-1\\
+	1&-1&0
+	\end{pmatrix}
+	\]
+
+	Las filas de $A^{-1}$ son las formas de la base dual.
+
+	Por tanto:
+
+	\[
+	\boxed{
+	B^*
+	=
+	\{
+	u_1^*=x_3,\;
+	u_2^*=x_2-x_3,\;
+	u_3^*=x_1-x_2
+	\}
+	}
+	\]
+
+\section{Ejercicio 16}
+	\subsection{Solución}
+
+	Como:
+
+	\[
+	f=3v_1^*+4v_2^*
+	\]
+
+	se tiene:
+
+	\[
+	f(v_1)=3
+	\]
+
+	\[
+	f(v_2)=4
+	\]
+
+	Escribimos:
+
+	\[
+	(x_1,x_2)
+	=
+	\alpha(1,2)+\beta(3,1)
+	\]
+
+	de donde:
+
+	\[
+	\alpha
+	=
+	\frac{3x_2-x_1}{5}
+	\]
+
+	\[
+	\beta
+	=
+	\frac{2x_1-x_2}{5}
+	\]
+
+	Entonces:
+
+	\[
+	f(x_1,x_2)
+	=
+	3\alpha+4\beta
+	\]
+
+	\[
+	=
+	x_1+x_2
+	\]
+
+	\[
+	\boxed{
+	f(x_1,x_2)=x_1+x_2
+	}
+	\]
+
+\section{Ejercicio 17}
+	\subsection{Solución}
+
+	Sea:
+
+	\[
+	p(x)=a+bx+cx^2
+	\]
+
+	Entonces:
+
+	\[
+	p(1)=a+b+c
+	\]
+
+	\[
+	p'(1)=b+2c
+	\]
+
+	\[
+	p''(1)=2c
+	\]
+
+	\[
+	p'''(1)=0
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	M_{B_1,B_2}(f_\beta)
+	=
+	\begin{pmatrix}
+	\beta&\beta&\beta\\
+	0&1&2\\
+	0&0&2\\
+	0&0&0
+	\end{pmatrix}
+	}
+	\]
+
+	Si:
+
+	\[
+	\beta\neq0
+	\]
+
+	el rango es $3$, luego:
+
+	\[
+	\boxed{
+	\dim(\Ima f_\beta)=3,
+	\qquad
+	\dim(\Ker f_\beta)=0
+	}
+	\]
+
+	Si:
+
+	\[
+	\beta=0
+	\]
+
+	el rango es $2$, luego:
+
+	\[
+	\boxed{
+	\dim(\Ima f_0)=2,
+	\qquad
+	\dim(\Ker f_0)=1
+	}
+	\]
+
+	Para $\beta=0$:
+
+	\[
+	\Ker f_0
+	=
+	\{(x,0,0):x\in\R\}_{B_1}
+	\]
+
+	\[
+	\boxed{
+	\Ker f_0=\Span\{(1,0,0)\}
+	}
+	\]
+
+	y:
+
+	\[
+	\Ima f_0
+	=
+	\{(x_1,x_2,x_3,x_4)_{B_2}:x_1=0,\ x_4=0\}
+	\]
+
+	Para $\beta=1$, una matriz:
+
+	\[
+	f_1(a+bx+cx^2)
+	=
+	\begin{pmatrix}
+	a+b+c&b+2c\\
+	2c&0
+	\end{pmatrix}
+	\]
+
+	es simétrica si:
+
+	\[
+	b+2c=2c
+	\]
+
+	\[
+	b=0
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	f_1^{-1}(S_{2\times2})
+	=
+	\Span\{1,x^2\}
+	}
+	\]
+
+	Con las bases $B_1'$ y $B_2'$:
+
+	\[
+	\boxed{
+	M_{B_1',B_2'}(f_1)
+	=
+	\begin{pmatrix}
+	1&0&2\\
+	0&-1&-2\\
+	0&0&-2\\
+	0&0&0
+	\end{pmatrix}
+	}
+	\]
+
+\section{Ejercicio 18}
+	\subsection{Solución}
+
+	Los polinomios con término independiente nulo verifican:
+
+	\[
+	f(x)=x
+	\]
+
+	\[
+	f(x^2)=x^2
+	\]
+
+	Además:
+
+	\[
+	1+x+x^2\in\Ker f
+	\]
+
+	por lo que:
+
+	\[
+	f(1)+f(x)+f(x^2)=0
+	\]
+
+	\[
+	f(1)=-x-x^2
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	M_{B_c}(f)
+	=
+	\begin{pmatrix}
+	0&0&0\\
+	-1&1&0\\
+	-1&0&1
+	\end{pmatrix}
+	}
+	\]
+
+	El subespacio $S$ tiene base:
+
+	\[
+	\{(1,1,1),(1,-1,0)\}
+	\]
+
+	y:
+
+	\[
+	f(1,1,1)=0
+	\]
+
+	\[
+	f(1,-1,0)=(0,-2,-1)
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	f(S)
+	=
+	\Span\{(0,-2,-1)\}
+	}
+	\]
+
+	El rango de la matriz es:
+
+	\[
+	\rg M=2
+	\]
+
+	Por tanto:
+
+	\[
+	\dim(\Ima f)=2
+	\]
+
+	\[
+	\dim(\Ker f)=1
+	\]
+
+	Así:
+
+	\[
+	\boxed{
+	f\text{ no es inyectiva ni suprayectiva}
+	}
+	\]
+
+	En la base:
+
+	\[
+	B=\{1+x+x^2,1+x,1\}
+	\]
+
+	se obtiene:
+
+	\[
+	M_B(f)
+	=
+	\begin{pmatrix}
+	0&-1&-1\\
+	0&1&0\\
+	0&0&1
+	\end{pmatrix}
+	\]
+
+	Calculando las coordenadas del vector dado en $B$ y aplicando la matriz se obtiene:
+
+	\[
+	\boxed{
+	f(1-3x+5x^2)
+	=
+	-4x+4x^2
+	}
+	\]
+
+\section{Ejercicio 19}
+	\subsection{Solución}
+
+	La matriz formada por los vectores de $B$ es:
+
+	\[
+	A=
+	\begin{pmatrix}
+	1&0&1\\
+	1&1&0\\
+	0&1&1
+	\end{pmatrix}
+	\]
+
+	\[
+	A^{-1}
+	=
+	\frac12
+	\begin{pmatrix}
+	1&1&-1\\
+	-1&1&1\\
+	1&-1&1
+	\end{pmatrix}
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	B^*
+	=
+	\left\{
+	\frac12(x_1+x_2-x_3),
+	\frac12(-x_1+x_2+x_3),
+	\frac12(x_1-x_2+x_3)
+	\right\}
+	}
+	\]
+
+\section{Ejercicio 20}
+	\subsection{Solución}
+
+	Del núcleo:
+
+	\[
+	z=-2t
+	\]
+
+	\[
+	y=-2x
+	\]
+
+	Por tanto:
+
+	\[
+	\Ker f
+	=
+	\Span\{(1,-2,0,0),(0,0,-2,1)\}
+	\]
+
+	Usando los datos:
+
+	\[
+	f(e_1)=(2,0,2,0)
+	\]
+
+	\[
+	f(e_4)=(2,0,0,0)
+	\]
+
+	y expresando $e_2,e_3$ mediante $e_1,e_4$ y los vectores del núcleo:
+
+	\[
+	f(e_2)=(1,0,1,0)
+	\]
+
+	\[
+	f(e_3)=(1,0,0,0)
+	\]
+
+	Así:
+
+	\[
+	\boxed{
+	M_{B_c}(f)
+	=
+	\begin{pmatrix}
+	2&1&1&2\\
+	0&0&0&0\\
+	2&1&0&0\\
+	0&0&0&0
+	\end{pmatrix}
+	}
+	\]
+
+	Una base de:
+
+	\[
+	V=\{(x,y,z,t):x+y+z+t=0\}
+	\]
+
+	es:
+
+	\[
+	(1,0,0,-1),
+	\quad
+	(0,1,0,-1),
+	\quad
+	(0,0,1,-1)
+	\]
+
+	Sus imágenes son:
+
+	\[
+	(0,0,2,0),
+	\quad
+	(-1,0,1,0),
+	\quad
+	(-1,0,0,0)
+	\]
+
+	y tienen rango $2$.
+
+	Por tanto:
+
+	\[
+	\boxed{
+	f(V)
+	=
+	\Span\{(-1,0,-1,0),(-1,0,0,0)\}
+	}
+	\]
+
+	Para la base $B$ del enunciado:
+
+	\[
+	\boxed{
+	M_B(f)
+	=
+	\frac12
+	\begin{pmatrix}
+	3&1&3&-1\\
+	3&1&3&-1\\
+	3&1&0&0\\
+	3&1&0&0
+	\end{pmatrix}
+	}
+	\]
+
+\section{Ejercicio 21}
+	\subsection{Solución}
+
+	Calculamos:
+
+	\[
+	h(e_1)
+	=
+	g(u_1-u_2)
+	=
+	2c_3
+	\]
+
+	\[
+	h(e_2)
+	=
+	g(u_2)
+	=
+	c_1-c_2
+	\]
+
+	\[
+	h(e_3)
+	=
+	2g(u_2)
+	=
+	2c_1-2c_2
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	M_{B_A,B_C}(h)
+	=
+	\begin{pmatrix}
+	0&1&2\\
+	0&-1&-2\\
+	2&0&0
+	\end{pmatrix}
+	}
+	\]
+
+	Para:
+
+	\[
+	h(x_1,x_2,x_3)=(1,1,1)
+	\]
+
+	se obtiene:
+
+	\[
+	x_2+2x_3=1
+	\]
+
+	\[
+	-x_2-2x_3=1
+	\]
+
+	que es incompatible.
+
+	\[
+	\boxed{
+	h^{-1}(1,1,1)=\emptyset
+	}
+	\]
+
+	Para el núcleo:
+
+	\[
+	x_1=0
+	\]
+
+	\[
+	x_2=-2x_3
+	\]
+
+	\[
+	\boxed{
+	\Ker h
+	=
+	\Span\{(0,-2,1)\}
+	}
+	\]
+
+	Para la intersección:
+
+	\[
+	V\cap W
+	=
+	\Span\{(5,1,-2)\}
+	\]
+
+	y:
+
+	\[
+	h(5,1,-2)=(-3,3,10)
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	h(V\cap W)
+	=
+	\Span\{(-3,3,10)\}
+	}
+	\]
+
+\section{Ejercicio 22}
+	\subsection{Solución}
+
+	Para $f$:
+
+	\[
+	f(x)
+	=
+	\begin{pmatrix}
+	1&0\\
+	0&1
+	\end{pmatrix}
+	\]
+
+	\[
+	f(1)
+	=
+	\begin{pmatrix}
+	0&1\\
+	1&0
+	\end{pmatrix}
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	M_{B,B'}(f)
+	=
+	\begin{pmatrix}
+	1&0\\
+	0&1\\
+	1&0
+	\end{pmatrix}
+	}
+	\]
+
+	Para $g$:
+
+	\[
+	\boxed{
+	M_{B',B''}(g)
+	=
+	\begin{pmatrix}
+	1&0&0\\
+	0&0&1\\
+	1&0&1
+	\end{pmatrix}
+	}
+	\]
+
+	Por composición:
+
+	\[
+	\boxed{
+	M_{B,B''}(g\circ f)
+	=
+	\begin{pmatrix}
+	1&0\\
+	1&0\\
+	2&0
+	\end{pmatrix}
+	}
+	\]
+
+	Como:
+
+	\[
+	V=\Span\{x+1\}
+	\]
+
+	\[
+	(g\circ f)(x+1)=(1,1,2)
+	\]
+
+	\[
+	\boxed{
+	(g\circ f)(V)
+	=
+	\Span\{(1,1,2)\}
+	}
+	\]
+
+	Para $g$:
+
+	\[
+	\Ker g
+	=
+	\left\{
+	\begin{pmatrix}
+	0&b\\
+	b&0
+	\end{pmatrix}
+	:b\in\R
+	\right\}
+	\]
+
+	\[
+	\boxed{
+	\dim(\Ker g)=1
+	}
+	\]
+
+	Por rango-nulidad:
+
+	\[
+	\boxed{
+	\dim(\Ima g)=2
+	}
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	g\text{ no es inyectiva ni suprayectiva}
+	}
+	\]
+
+	En la base:
+
+	\[
+	B^*=
+	\left\{
+	\begin{pmatrix}1&0\\0&1\end{pmatrix},
+	\begin{pmatrix}0&1\\1&0\end{pmatrix},
+	\begin{pmatrix}1&0\\0&-1\end{pmatrix}
+	\right\}
+	\]
+
+	se obtiene:
+
+	\[
+	\boxed{
+	M_{B,B^*}(f)
+	=
+	\begin{pmatrix}
+	1&0\\
+	0&1\\
+	0&0
+	\end{pmatrix}
+	}
+	\]
+
+	\[
+	\boxed{
+	M_{B^*,B''}(g)
+	=
+	\begin{pmatrix}
+	1&0&1\\
+	1&0&-1\\
+	2&0&0
+	\end{pmatrix}
+	}
+	\]
+
+	y la matriz de $g\circ f$ permanece:
+
+	\[
+	\boxed{
+	M_{B,B''}(g\circ f)
+	=
+	\begin{pmatrix}
+	1&0\\
+	1&0\\
+	2&0
+	\end{pmatrix}
+	}
+	\]
+
+\section{Ejercicio 23}
+	\subsection{Solución}
+
+	Sea:
+
+	\[
+	p(x)=a+bx+cx^2
+	\]
+
+	Entonces:
+
+	\[
+	p'(x)=b+2cx
+	\]
+
+	\[
+	p'(0)=b
+	\]
+
+	\[
+	p'(1)=b+2c
+	\]
+
+	\[
+	p'(-1)=b-2c
+	\]
+
+	Por tanto:
+
+	\[
+	f(a+bx+cx^2)
+	=
+	\begin{pmatrix}
+	b&b+2c\\
+	b+2c&b-2c
+	\end{pmatrix}
+	\]
+
+	La expresión depende linealmente de $a,b,c$, luego:
+
+	\[
+	\boxed{
+	f\text{ es lineal}
+	}
+	\]
+
+	En las bases canónicas:
+
+	\[
+	\boxed{
+	M(f)
+	=
+	\begin{pmatrix}
+	0&1&0\\
+	0&1&2\\
+	0&1&-2
+	\end{pmatrix}
+	}
+	\]
+
+	El núcleo canónico es:
+
+	\[
+	\Ker f
+	=
+	\Span\{1\}
+	\]
+
+	En la base:
+
+	\[
+	B=\{x^2,(x-1)^2,(x+1)^2\}
+	\]
+
+	se tiene:
+
+	\[
+	1
+	=
+	-x^2
+	+
+	\frac12(x-1)^2
+	+
+	\frac12(x+1)^2
+	\]
+
+	Por tanto:
+
+	\[
+	[\Ker f]_B
+	=
+	\Span\left\{
+	\left(-1,\frac12,\frac12\right)
+	\right\}
+	\]
+
+	Equivalentemente:
+
+	\[
+	\boxed{
+	\Ker f
+	=
+	\{(x,y,z)_B:y=z,\ x=-2z\}
+	}
+	\]
+
+	Para:
+
+	\[
+	h=g\circ f
+	\]
+
+	se obtiene:
+
+	\[
+	h(a+bx+cx^2)
+	=
+	(2b-2c)+2cx
+	\]
+
+	Por tanto:
+
+	\[
+	M_{B_c}(h)
+	=
+	\begin{pmatrix}
+	0&2&-2\\
+	0&0&2
+	\end{pmatrix}
+	\]
+
+	La condición:
+
+	\[
+	h(p)\in T=\Span\{1+x\}
+	\]
+
+	implica:
+
+	\[
+	2b-2c=2c
+	\]
+
+	\[
+	b=2c
+	\]
+
+	Así:
+
+	\[
+	\boxed{
+	h^{-1}(T)
+	=
+	\Span\{1,2x+x^2\}
+	}
+	\]
+
+	En las bases:
+
+	\[
+	B=\{x^2,(x-1)^2,(x+1)^2\}
+	\]
+
+	y:
+
+	\[
+	B'=\{1-2x,x\}
+	\]
+
+	se obtiene:
+
+	\[
+	\boxed{
+	M_{B,B'}(h)
+	=
+	\begin{pmatrix}
+	-2&-6&2\\
+	-2&-10&6
+	\end{pmatrix}
+	}
+	\]
+
+	Para:
+
+	\[
+	p(x)=3-2x+6x^2
+	\]
+
+	sus coordenadas en $B$ son:
+
+	\[
+	[p]_B=(3,2,1)
+	\]
+
+	Entonces:
+
+	\[
+	[h(p)]_{B'}
+	=
+	\begin{pmatrix}
+	-2&-6&2\\
+	-2&-10&6
+	\end{pmatrix}
+	\begin{pmatrix}
+	3\\2\\1
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	-16\\-20
+	\end{pmatrix}
+	\]
+
+	Pasando a la base canónica:
+
+	\[
+	-16(1-2x)-20x
+	=
+	-16+12x
+	\]
+
+	\[
+	\boxed{
+	h(3-2x+6x^2)
+	=
+	-16+12x
+	}
+	\]
+
+\end{document}

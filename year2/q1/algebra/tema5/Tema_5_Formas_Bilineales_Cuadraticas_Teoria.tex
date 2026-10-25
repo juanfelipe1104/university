@@ -1,0 +1,647 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{lmodern}
+\usepackage{microtype}
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\rg}{\operatorname{rg}}
+\newcommand{\sg}{\operatorname{sg}}
+\newcommand{\Span}{\operatorname{L}}
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Álgebra Lineal}\\[0.4em]
+{\Large Tema 5: Formas Bilineales y Cuadráticas}
+\end{center}
+
+\tableofcontents
+\newpage
+
+\section{Aplicaciones multilineales y formas bilineales}
+
+Sean $V_1,\ldots,V_n,W$ espacios vectoriales sobre $\K$.
+
+Una aplicación:
+
+\[
+f:V_1\times\cdots\times V_n\longrightarrow W
+\]
+
+es multilineal si es lineal en cada una de sus componentes.
+
+Si:
+
+\[
+f:V\times V\longrightarrow\K,
+\]
+
+se denomina \textbf{forma bilineal} cuando es lineal en cada variable:
+
+\[
+f(au+bv,w)=af(u,w)+bf(v,w)
+\]
+
+\[
+f(u,av+bw)=af(u,v)+bf(u,w).
+\]
+
+\subsection{Propiedades}
+
+Toda forma bilineal verifica:
+
+\[
+f(u,0)=f(0,v)=0
+\]
+
+\[
+f(-u,v)=f(u,-v)=-f(u,v)
+\]
+
+y:
+
+\[
+f\left(\sum_i a_i u_i,\sum_j b_jv_j\right)
+=
+\sum_{i,j}a_ib_jf(u_i,v_j).
+\]
+
+\section{Formas bilineales simétricas y antisimétricas}
+
+Una forma bilineal es \textbf{simétrica} si:
+
+\[
+\boxed{
+f(x,y)=f(y,x)
+}
+\]
+
+y es \textbf{antisimétrica} si:
+
+\[
+\boxed{
+f(x,y)=-f(y,x).
+}
+\]
+
+Sobre $\R$ o $\C$:
+
+\[
+\boxed{
+f\text{ antisimétrica}
+\iff
+f(x,x)=0\quad\forall x.
+}
+\]
+
+Toda forma bilineal puede descomponerse como:
+
+\[
+\boxed{
+f=f_s+f_a
+}
+\]
+
+donde:
+
+\[
+\boxed{
+f_s(u,v)=\frac12\left(f(u,v)+f(v,u)\right)
+}
+\]
+
+y:
+
+\[
+\boxed{
+f_a(u,v)=\frac12\left(f(u,v)-f(v,u)\right).
+}
+\]
+
+\section{Matriz asociada a una forma bilineal}
+
+Sea:
+
+\[
+B=\{v_1,\ldots,v_n\}
+\]
+
+una base de $V$.
+
+La matriz asociada a $f$ en $B$ es:
+
+\[
+\boxed{
+M_B(f)=\left(f(v_i,v_j)\right).
+}
+\]
+
+Si:
+
+\[
+[x]_B=X,
+\qquad
+[y]_B=Y,
+\]
+
+entonces:
+
+\[
+\boxed{
+f(x,y)=X^tM_B(f)Y.
+}
+\]
+
+En particular, una matriz cuadrada $A$ define la forma bilineal:
+
+\[
+\boxed{
+f(x,y)=X^tAY.
+}
+\]
+
+Además:
+
+\[
+f\text{ simétrica}
+\iff
+A^t=A
+\]
+
+y:
+
+\[
+f\text{ antisimétrica}
+\iff
+A^t=-A.
+\]
+
+\section{Cambio de base y congruencia}
+
+Sean $B$ y $B'$ dos bases y:
+
+\[
+X=PX',
+\qquad
+Y=PY'.
+\]
+
+Entonces:
+
+\[
+f(x,y)
+=
+X'^tP^tAPY'.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+M_{B'}(f)=P^tM_B(f)P.
+}
+\]
+
+Dos matrices que representan la misma forma bilineal en bases distintas son \textbf{congruentes}.
+
+Las matrices congruentes tienen el mismo rango.
+
+\section{Rango, núcleo y degeneración}
+
+El rango de una forma bilineal es:
+
+\[
+\boxed{
+\rg f=\rg M_B(f).
+}
+\]
+
+Su núcleo es:
+
+\[
+\boxed{
+N(f)
+=
+\{x\in V:f(x,y)=0\quad\forall y\in V\}.
+}
+\]
+
+Matricialmente:
+
+\[
+\boxed{
+N(f)=\Ker M_B(f).
+}
+\]
+
+Si:
+
+\[
+\dim V=n,
+\]
+
+la forma es \textbf{no degenerada} si:
+
+\[
+\boxed{
+\rg f=n
+}
+\]
+
+y es \textbf{degenerada} si:
+
+\[
+\boxed{
+\rg f<n.
+}
+\]
+
+\section{Formas cuadráticas}
+
+Si $f:V\times V\to\K$ es bilineal, la aplicación:
+
+\[
+q:V\longrightarrow\K
+\]
+
+definida por:
+
+\[
+\boxed{
+q(v)=f(v,v)
+}
+\]
+
+es una forma cuadrática.
+
+Una misma forma cuadrática puede proceder de varias formas bilineales, pero existe una única forma bilineal simétrica asociada.
+
+\section{Forma polar}
+
+La forma polar asociada a una forma cuadrática $q$ es:
+
+\[
+\boxed{
+f_q(u,v)
+=
+\frac12
+\left(
+q(u+v)-q(u)-q(v)
+\right).
+}
+\]
+
+Es bilineal y simétrica, y satisface:
+
+\[
+\boxed{
+f_q(v,v)=q(v).
+}
+\]
+
+Si una forma bilineal $f$ genera $q$, su forma polar es precisamente la parte simétrica de $f$.
+
+\section{Matriz asociada a una forma cuadrática}
+
+La matriz asociada a una forma cuadrática es la matriz de su forma polar.
+
+Si:
+
+\[
+A=M_B(q),
+\]
+
+entonces $A$ es simétrica y:
+
+\[
+\boxed{
+q(x)=X^tAX.
+}
+\]
+
+Para construirla a partir de la expresión de $q$:
+
+\begin{itemize}
+\item los coeficientes de $x_i^2$ se colocan en la diagonal;
+\item el coeficiente de $x_ix_j$ se divide entre dos y se coloca en las posiciones $(i,j)$ y $(j,i)$.
+\end{itemize}
+
+\section{Conjugación}
+
+Sea $f$ una forma bilineal simétrica.
+
+Dos vectores $u,v$ son \textbf{conjugados} si:
+
+\[
+\boxed{
+f(u,v)=0.
+}
+\]
+
+Un vector no nulo es autoconjugado si:
+
+\[
+f(v,v)=0.
+\]
+
+El núcleo es el conjunto de vectores conjugados con todos los vectores del espacio.
+
+Para un subconjunto no vacío $S\subseteq V$, su conjugado es:
+
+\[
+\boxed{
+S^c
+=
+\{u\in V:f(u,v)=0\quad\forall v\in S\}.
+}
+\]
+
+Si:
+
+\[
+S=\Span\{v_1,\ldots,v_k\},
+\]
+
+entonces:
+
+\[
+x\in S^c
+\iff
+f(x,v_i)=0
+\quad
+i=1,\ldots,k.
+\]
+
+Se verifica:
+
+\[
+\boxed{
+\dim S^c+\dim S\geq n.
+}
+\]
+
+Si la forma es no degenerada:
+
+\[
+\boxed{
+\dim S^c+\dim S=n.
+}
+\]
+
+\section{Diagonalización por congruencia}
+
+Toda forma bilineal simétrica posee una base de vectores conjugados.
+
+Por tanto, toda matriz simétrica es congruente con una matriz diagonal:
+
+\[
+\boxed{
+D=P^tAP.
+}
+\]
+
+Las columnas de $P$ son las coordenadas de una base de vectores conjugados.
+
+En dicha base:
+
+\[
+\boxed{
+q(x_1,\ldots,x_n)
+=
+d_1x_1^2+\cdots+d_nx_n^2.
+}
+\]
+
+Sobre $\R$, mediante una normalización adecuada, toda forma cuadrática es congruente con una diagonal cuyos elementos son:
+
+\[
+\boxed{
+1,\;-1,\;0.
+}
+\]
+
+\subsection{Método por transformaciones elementales}
+
+Para diagonalizar una matriz simétrica $A$:
+
+\begin{enumerate}
+\item se aplican operaciones elementales por filas para triangularizar;
+\item se aplican las mismas operaciones por columnas;
+\item las operaciones aplicadas a $I$ permiten obtener la matriz de paso.
+\end{enumerate}
+
+El resultado cumple:
+
+\[
+\boxed{
+D=P^tAP.
+}
+\]
+
+\section{Ley de inercia de Sylvester}
+
+Todas las matrices diagonales asociadas a una misma forma cuadrática real tienen el mismo número de elementos positivos, negativos y nulos.
+
+Si hay:
+
+\[
+p\text{ positivos},
+\qquad
+q\text{ negativos},
+\]
+
+la signatura es:
+
+\[
+\boxed{
+\sg(q)=(p,q).
+}
+\]
+
+Además:
+
+\[
+\boxed{
+\rg q=p+q.
+}
+\]
+
+\section{Clasificación de formas cuadráticas reales}
+
+Una forma cuadrática real es:
+
+\[
+\boxed{
+\text{definida positiva}
+\iff
+\sg(q)=(n,0)
+}
+\]
+
+\[
+\boxed{
+\text{semidefinida positiva}
+\iff
+\sg(q)=(p,0),\quad p<n
+}
+\]
+
+\[
+\boxed{
+\text{definida negativa}
+\iff
+\sg(q)=(0,n)
+}
+\]
+
+\[
+\boxed{
+\text{semidefinida negativa}
+\iff
+\sg(q)=(0,q),\quad q<n
+}
+\]
+
+\[
+\boxed{
+\text{indefinida}
+\iff
+p>0,\ q>0.
+}
+\]
+
+\section{Criterio de Sylvester}
+
+Sean:
+
+\[
+\Delta_k
+\]
+
+los menores principales de orden $k$ de una matriz simétrica $A$.
+
+La forma es definida positiva si:
+
+\[
+\boxed{
+\Delta_k>0
+\quad
+\forall k=1,\ldots,n.
+}
+\]
+
+Es definida negativa si:
+
+\[
+\boxed{
+(-1)^k\Delta_k>0
+\quad
+\forall k=1,\ldots,n.
+}
+\]
+
+En dimensión $3$, si:
+
+\[
+\Delta_1>0,
+\qquad
+\Delta_2>0,
+\qquad
+\Delta_3=0,
+\]
+
+la forma es semidefinida positiva.
+
+\section{Determinación práctica del carácter}
+
+El carácter de una forma cuadrática puede determinarse mediante:
+
+\begin{enumerate}
+\item una diagonalización por congruencia;
+\item los menores principales;
+\item el signo de los autovalores de una matriz asociada;
+\item el rango y la signatura.
+\end{enumerate}
+
+\section{Desigualdad de Schwarz}
+
+Si $q$ es definida positiva y $f_q$ es su forma polar:
+
+\[
+\boxed{
+f_q(u,v)^2
+\leq
+q(u)q(v).
+}
+\]
+
+\section{Formas sesquilineales}
+
+Sea $V$ un espacio vectorial complejo.
+
+Una forma sesquilineal:
+
+\[
+f:V\times V\longrightarrow\C
+\]
+
+es lineal en la primera variable y semilineal en la segunda:
+
+\[
+f(au,v)=af(u,v)
+\]
+
+\[
+f(u,bv)=\overline b\,f(u,v).
+\]
+
+Si:
+
+\[
+[x]_B=X,
+\qquad
+[y]_B=Y,
+\]
+
+entonces:
+
+\[
+\boxed{
+f(x,y)=X^tA\overline Y.
+}
+\]
+
+Bajo un cambio de base $X=PX'$:
+
+\[
+\boxed{
+A'=P^tA\overline P.
+}
+\]
+
+Una forma sesquilineal es hermítica si:
+
+\[
+\boxed{
+f(v,u)=\overline{f(u,v)}.
+}
+\]
+
+Equivalentemente, su matriz es hermítica:
+
+\[
+\boxed{
+\overline A^t=A.
+}
+\]
+
+\end{document}

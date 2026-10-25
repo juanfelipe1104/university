@@ -1,0 +1,1020 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\sen}{\operatorname{sen}}
+\newcommand{\Dom}{\operatorname{Dom}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\Int}{\operatorname{int}}
+\newcommand{\Ext}{\operatorname{ext}}
+\newcommand{\Fr}{\operatorname{fr}}
+\newcommand{\Adh}{\operatorname{adh}}
+\newcommand{\Ac}{\operatorname{ac}}
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Análisis Matemático II}\\[0.4em]
+{\Large Tema 1: Conceptos fundamentales de funciones de varias variables}\\[0.4em]
+{\large Soluciones}
+\end{center}
+
+\section{Ejercicio 1}
+Sean
+\[
+u=(-1,1,0,-2,0),\qquad v=(3,-1,2,2,3).
+\]
+\subsection{Solución}
+\[
+u\cdot v=-3-1-4=-8.
+\]
+\[
+\boxed{u\cdot v=-8}
+\]
+\[
+\|u\|=\sqrt{1+1+4}=\sqrt6,
+\qquad
+\|v\|=\sqrt{9+1+4+4+9}=3\sqrt3.
+\]
+\[
+\boxed{\|u\|=\sqrt6,\qquad \|v\|=3\sqrt3}
+\]
+\[
+d(u,v)=\|u-v\|
+=\|(-4,2,-2,-4,-3)\|
+=\sqrt{49}=7.
+\]
+\[
+\boxed{d(u,v)=7}
+\]
+\[
+u+v=(2,0,2,0,3),
+\qquad
+\|u+v\|=\sqrt{17}\leq \sqrt6+3\sqrt3.
+\]
+\[
+\boxed{\|u+v\|\leq\|u\|+\|v\|}
+\]
+\[
+|u\cdot v|=8\leq \sqrt6\,3\sqrt3=9\sqrt2.
+\]
+\[
+\boxed{|u\cdot v|\leq\|u\|\|v\|}
+\]
+
+\section{Ejercicio 2}
+\subsection{Solución}
+Si \(y=0\), la desigualdad es inmediata. Si \(y\neq0\),
+\[
+\left\|x-\lambda y\right\|^2\geq0.
+\]
+Tomando
+\[
+\lambda=\frac{x\cdot y}{\|y\|^2},
+\]
+se obtiene
+\[
+0\leq
+\|x\|^2-\frac{(x\cdot y)^2}{\|y\|^2}.
+\]
+Por tanto,
+\[
+(x\cdot y)^2\leq \|x\|^2\|y\|^2
+\]
+y
+\[
+\boxed{|x\cdot y|\leq\|x\|\|y\|}.
+\]
+
+\section{Ejercicio 3}
+\subsection{Solución}
+\[
+\|x+y\|^2
+=\|x\|^2+2x\cdot y+\|y\|^2.
+\]
+Por Cauchy--Schwarz,
+\[
+x\cdot y\leq \|x\|\|y\|.
+\]
+Así,
+\[
+\|x+y\|^2
+\leq
+\|x\|^2+2\|x\|\|y\|+\|y\|^2
+=(\|x\|+\|y\|)^2.
+\]
+Por tanto,
+\[
+\boxed{\|x+y\|\leq\|x\|+\|y\|}.
+\]
+
+\section{Ejercicio 4}
+Sea
+\[
+d(x,y)=|x_1-y_1|+|x_2-y_2|.
+\]
+\subsection{Solución}
+\[
+d(x,y)\geq0,
+\]
+\[
+d(x,y)=0\iff x=y,
+\]
+\[
+d(x,y)=d(y,x).
+\]
+Además,
+\[
+|x_1-y_1|\leq|x_1-z_1|+|z_1-y_1|,
+\]
+\[
+|x_2-y_2|\leq|x_2-z_2|+|z_2-y_2|.
+\]
+Sumando,
+\[
+d(x,y)\leq d(x,z)+d(z,y).
+\]
+Por tanto,
+\[
+\boxed{d\text{ es una distancia en }\R^2}.
+\]
+La bola abierta de centro \((0,0)\) y radio \(1\) es
+\[
+\boxed{
+B((0,0),1)=\{(x,y)\in\R^2:|x|+|y|<1\}.
+}
+\]
+
+\section{Ejercicio 5}
+\subsection{Solución}
+\[
+\boxed{
+B((0,1),2)
+=
+\{(x,y)\in\R^2:x^2+(y-1)^2<4\}.
+}
+\]
+\[
+d((0,1),(0,1))=0<2,
+\]
+\[
+d((0,1),(1,1))=1<2,
+\]
+\[
+d((0,1),(0,3))=2.
+\]
+Por tanto,
+\[
+\boxed{
+(0,1),(1,1)\in B((0,1),2),
+\qquad
+(0,3)\notin B((0,1),2).
+}
+\]
+
+\section{Ejercicio 6}
+\subsection{Solución}
+Para
+\[
+A=[1,2]\times[2,3],
+\]
+\[
+\boxed{\Int(A)=(1,2)\times(2,3)}
+\]
+y
+\[
+\boxed{\Fr(A)=A\setminus\Int(A)}.
+\]
+Como \(A\) es cerrado,
+\[
+\boxed{\Ext(A)=\R^2\setminus A}.
+\]
+Por tanto,
+\[
+\boxed{A\text{ es cerrado y no abierto}.}
+\]
+
+Para
+\[
+B=\{(x,y)\in\R^2:4<x^2\leq9\},
+\]
+\[
+B=\left([-3,-2)\cup(2,3]\right)\times\R.
+\]
+Entonces
+\[
+\boxed{
+\Int(B)=\left((-3,-2)\cup(2,3)\right)\times\R
+}
+\]
+\[
+\boxed{
+\Fr(B)=\{-3,-2,2,3\}\times\R
+}
+\]
+y
+\[
+\boxed{
+\Ext(B)=
+\bigl((-\infty,-3)\cup(-2,2)\cup(3,\infty)\bigr)\times\R.
+}
+\]
+Por tanto,
+\[
+\boxed{B\text{ no es abierto ni cerrado}.}
+\]
+
+\section{Ejercicio 7}
+\subsection{Solución}
+Para
+\[
+A=\{(x,y,z):0\leq x,y,z\leq1\},
+\]
+\[
+\boxed{
+\Int(A)=\{(x,y,z):0<x<1,\ 0<y<1,\ 0<z<1\}
+}
+\]
+y
+\[
+\boxed{\Fr(A)=A\setminus\Int(A)}.
+\]
+
+Para
+\[
+B=\{(x,y,z):x^2+y^2\leq2,\ 0\leq z\leq2\},
+\]
+\[
+\boxed{
+\Int(B)=\{(x,y,z):x^2+y^2<2,\ 0<z<2\}.
+}
+\]
+Además,
+\[
+\boxed{
+\begin{aligned}
+\Fr(B)
+={}&\{(x,y,z):x^2+y^2=2,\ 0\leq z\leq2\}\\
+&\cup\{(x,y,0):x^2+y^2\leq2\}\\
+&\cup\{(x,y,2):x^2+y^2\leq2\}.
+\end{aligned}
+}
+\]
+
+\section{Ejercicio 8}
+Sea
+\[
+A=
+\left\{
+\left(-\frac1n,\frac1n\right):n\in\mathbb N
+\right\}.
+\]
+\subsection{Solución}
+\[
+\boxed{\Int(A)=\varnothing}.
+\]
+Como
+\[
+\left(-\frac1n,\frac1n\right)\longrightarrow(0,0),
+\]
+se tiene
+\[
+\boxed{\Ac(A)=\{(0,0)\}}
+\]
+\[
+\boxed{\Adh(A)=A\cup\{(0,0)\}}
+\]
+\[
+\boxed{\Fr(A)=A\cup\{(0,0)\}}
+\]
+y
+\[
+\boxed{
+\Ext(A)=\R^2\setminus\left(A\cup\{(0,0)\}\right).
+}
+\]
+
+\section{Ejercicio 9}
+\subsection{Solución}
+\[
+A_n=
+\left(-\frac1n,\frac1n\right)
+\times
+\left(-\frac1n,\frac1n\right).
+\]
+Por tanto,
+\[
+\boxed{
+A=\bigcap_{n=1}^{\infty}A_n=\{(0,0)\}.
+}
+\]
+Además, los \(A_n\) son decrecientes, por lo que
+\[
+\boxed{
+B=\bigcup_{n=1}^{\infty}A_n=A_1=(-1,1)\times(-1,1).
+}
+\]
+Así,
+\[
+\boxed{A\text{ es cerrado y no abierto}}
+\]
+y
+\[
+\boxed{B\text{ es abierto y no cerrado}.}
+\]
+
+\section{Ejercicio 10}
+\subsection{Solución}
+Para
+\[
+A=\{(x,y):x^2+y^2<1\},
+\]
+\[
+\boxed{
+A\text{ es acotado},
+\qquad
+\operatorname{diam}(A)=2.
+}
+\]
+Para
+\[
+B=\{(x,y,z):x^2+y^2+z^2<1\},
+\]
+\[
+\boxed{
+B\text{ es acotado},
+\qquad
+\operatorname{diam}(B)=2.
+}
+\]
+Para
+\[
+C=\{(x,y):y=x^2\},
+\]
+\[
+\|(x,x^2)\|\longrightarrow\infty
+\qquad(x\to\infty),
+\]
+por lo que
+\[
+\boxed{C\text{ no es acotado}.}
+\]
+Para
+\[
+D=
+\left\{
+\left(\frac1n,\frac1n\right):n\in\mathbb N
+\right\},
+\]
+\[
+\left\|
+\left(\frac1n,\frac1n\right)
+\right\|
+=
+\frac{\sqrt2}{n}\leq\sqrt2.
+\]
+Por tanto,
+\[
+\boxed{
+D\text{ es acotado},
+\qquad
+\operatorname{diam}(D)=\sqrt2.
+}
+\]
+
+\section{Ejercicio 11}
+\subsection{Solución}
+Para
+\[
+A=\{(x,y):|x|\leq1,\ |y|\leq1\},
+\]
+el conjunto es cerrado y acotado. Por tanto,
+\[
+\boxed{A\text{ es compacto}.}
+\]
+Para
+\[
+B=\{(x,y):xy\leq1\},
+\]
+se tiene
+\[
+(0,n)\in B\qquad\forall n\in\mathbb N,
+\]
+por lo que no es acotado. Así,
+\[
+\boxed{
+B\text{ no es compacto y no existe un compacto que lo contenga}.
+}
+\]
+Para
+\[
+C=\{(x,y,z):0<x^2+y^2+z^2\leq1\},
+\]
+el conjunto es acotado pero no cerrado, ya que \((0,0,0)\) es punto de acumulación y no pertenece a \(C\). Por tanto,
+\[
+\boxed{C\text{ no es compacto}.}
+\]
+Su clausura es
+\[
+\boxed{
+\overline C=
+\{(x,y,z):x^2+y^2+z^2\leq1\},
+}
+\]
+que es el compacto mínimo que contiene a \(C\).
+
+\section{Ejercicio 12}
+\subsection{Solución}
+Si
+\[
+A=(2,-1),
+\qquad
+v=(7,6),
+\]
+el punto final \(B\) cumple
+\[
+\overrightarrow{AB}=B-A=v.
+\]
+Por tanto,
+\[
+B=A+v=(9,5).
+\]
+\[
+\boxed{B=(9,5)}
+\]
+
+\section{Ejercicio 13}
+\subsection{Solución}
+El vector buscado es
+\[
+w=-\frac12(-2,4)=(1,-2).
+\]
+Si \(P\) es el punto inicial y \(Q=(2,0)\) el final,
+\[
+Q-P=w.
+\]
+Entonces
+\[
+P=Q-w=(2,0)-(1,-2)=(1,2).
+\]
+\[
+\boxed{P=(1,2)}
+\]
+
+\section{Ejercicio 14}
+\subsection{Solución}
+\[
+\overrightarrow{AB}
+=
+(-3,2)-(2,1)
+=
+(-5,1).
+\]
+Por tanto,
+\[
+\|\overrightarrow{AB}\|
+=
+\sqrt{25+1}
+=
+\sqrt{26}.
+\]
+\[
+\boxed{\|\overrightarrow{AB}\|=\sqrt{26}}
+\]
+
+\section{Ejercicio 15}
+\subsection{Solución}
+Para
+\[
+a=(4,-3),
+\qquad
+\|a\|=5,
+\]
+\[
+\boxed{
+u_a=
+\left(\frac45,-\frac35\right).
+}
+\]
+Para
+\[
+b=(1,-4,2),
+\qquad
+\|b\|=\sqrt{21},
+\]
+\[
+\boxed{
+u_b=
+\frac1{\sqrt{21}}(1,-4,2).
+}
+\]
+
+\section{Ejercicio 16}
+\subsection{Solución}
+\[
+a\times b
+=
+\begin{vmatrix}
+i&j&k\\
+1&2&3\\
+3&2&1
+\end{vmatrix}.
+\]
+Por tanto,
+\[
+\boxed{
+a\times b=(-4,8,-4).
+}
+\]
+
+\section{Ejercicio 17}
+\subsection{Solución}
+\[
+a\times b
+=
+\begin{vmatrix}
+i&j&k\\
+2&0&1\\
+1&-1&3
+\end{vmatrix}
+=
+(1,-5,-2).
+\]
+Así,
+\[
+\boxed{a\times b=(1,-5,-2)}
+\]
+y
+\[
+\boxed{b\times a=(-1,5,2)}.
+\]
+
+\section{Ejercicio 18}
+\subsection{Solución}
+Sean
+\[
+x=(x_1,\ldots,x_n),
+\quad
+y=(y_1,\ldots,y_n),
+\quad
+z=(z_1,\ldots,z_n).
+\]
+Entonces
+\[
+x\cdot y
+=
+\sum_{i=1}^nx_iy_i
+=
+\sum_{i=1}^ny_ix_i
+=
+y\cdot x.
+\]
+\[
+\boxed{x\cdot y=y\cdot x}
+\]
+Además,
+\[
+x\cdot(y+z)
+=
+\sum_{i=1}^nx_i(y_i+z_i)
+=
+x\cdot y+x\cdot z.
+\]
+\[
+\boxed{x\cdot(y+z)=x\cdot y+x\cdot z}
+\]
+Y
+\[
+x\cdot(\lambda y)
+=
+\sum_{i=1}^nx_i\lambda y_i
+=
+\lambda(x\cdot y).
+\]
+Por conmutatividad,
+\[
+y\cdot(\lambda x)=\lambda(x\cdot y).
+\]
+Así,
+\[
+\boxed{
+x\cdot(\lambda y)
+=
+y\cdot(\lambda x)
+=
+\lambda(x\cdot y).
+}
+\]
+
+\section{Ejercicio 19}
+\subsection{Solución}
+\[
+a\times b
+=
+\begin{vmatrix}
+i&j&k\\
+a_1&a_2&a_3\\
+b_1&b_2&b_3
+\end{vmatrix}.
+\]
+Intercambiando las dos últimas filas,
+\[
+\boxed{a\times b=-(b\times a)}.
+\]
+Por linealidad del determinante respecto de una fila,
+\[
+a\times(b+c)
+=
+a\times b+a\times c.
+\]
+Por tanto,
+\[
+\boxed{
+a\times(b+c)=a\times b+a\times c.
+}
+\]
+Asimismo,
+\[
+a\times(\lambda b)=\lambda(a\times b)
+\]
+y
+\[
+(\lambda a)\times b=\lambda(a\times b).
+\]
+Así,
+\[
+\boxed{
+a\times(\lambda b)
+=
+(\lambda a)\times b
+=
+\lambda(a\times b).
+}
+\]
+
+\section{Ejercicio 20}
+\subsection{Solución}
+Tomamos
+\[
+a=(1,0,0),
+\qquad
+b=(0,1,0),
+\qquad
+c=(0,1,0).
+\]
+Entonces
+\[
+a\times b=(0,0,1)
+\]
+y
+\[
+(a\times b)\times c
+=
+(0,0,1)\times(0,1,0)
+=
+(-1,0,0).
+\]
+Sin embargo,
+\[
+b\times c=0,
+\]
+por lo que
+\[
+a\times(b\times c)=0.
+\]
+Por tanto,
+\[
+\boxed{
+(a\times b)\times c
+\neq
+a\times(b\times c).
+}
+\]
+
+\section{Ejercicio 21}
+\subsection{Solución}
+\[
+r=-6\cos\theta.
+\]
+Multiplicando por \(r\),
+\[
+r^2=-6r\cos\theta.
+\]
+Como
+\[
+r^2=x^2+y^2,
+\qquad
+r\cos\theta=x,
+\]
+se obtiene
+\[
+\boxed{x^2+y^2+6x=0}
+\]
+o
+\[
+\boxed{(x+3)^2+y^2=9}.
+\]
+Una parametrización es
+\[
+\boxed{
+\begin{cases}
+x=-6\cos^2\theta,\\
+y=-6\sen\theta\cos\theta,
+\end{cases}
+\qquad
+0\leq\theta<2\pi.
+}
+\]
+
+\section{Ejercicio 22}
+\subsection{Solución}
+La curva pasa por el origen cuando
+\[
+r=0.
+\]
+Entonces
+\[
+1-2\sen\theta=0
+\]
+y
+\[
+\sen\theta=\frac12.
+\]
+Por tanto,
+\[
+\boxed{
+\theta=\frac{\pi}{6},
+\qquad
+\theta=\frac{5\pi}{6}.
+}
+\]
+La curva \(r=1-2\sen\theta\) es un limacón con lazo interior, simétrico respecto del eje \(Y\).
+
+\section{Ejercicio 23}
+\subsection{Solución}
+La curva
+\[
+\boxed{r=2\sen(3\theta)}
+\]
+es una rosa polar de tres pétalos de longitud \(2\).
+
+La curva
+\[
+\boxed{r^2=\cos(2\theta)}
+\]
+es una lemniscata de Bernoulli con los dos lóbulos sobre el eje \(X\).
+
+\section{Ejercicio 24}
+\subsection{Solución}
+Para los puntos distintos del origen,
+\[
+\cos\theta=\cos(2\theta).
+\]
+Como
+\[
+\cos(2\theta)=2\cos^2\theta-1,
+\]
+\[
+2\cos^2\theta-\cos\theta-1=0.
+\]
+Factorizando,
+\[
+(2\cos\theta+1)(\cos\theta-1)=0.
+\]
+Así,
+\[
+\cos\theta=1
+\]
+o
+\[
+\cos\theta=-\frac12.
+\]
+Se obtienen los puntos
+\[
+(1,0),
+\]
+\[
+\left(\frac14,\frac{\sqrt3}{4}\right),
+\qquad
+\left(\frac14,-\frac{\sqrt3}{4}\right).
+\]
+Además, ambas curvas pasan por el origen. Por tanto,
+\[
+\boxed{
+(0,0),\quad
+(1,0),\quad
+\left(\frac14,\frac{\sqrt3}{4}\right),\quad
+\left(\frac14,-\frac{\sqrt3}{4}\right).
+}
+\]
+
+\section{Ejercicio 25}
+Sea
+\[
+f(x,y)=\frac{x+y}{|x+y|}.
+\]
+\subsection{Solución}
+Debe cumplirse
+\[
+x+y\neq0.
+\]
+Por tanto,
+\[
+\boxed{
+\Dom(f)=\{(x,y)\in\R^2:x+y\neq0\}.
+}
+\]
+Además,
+\[
+f(x,y)=
+\begin{cases}
+1,&x+y>0,\\
+-1,&x+y<0.
+\end{cases}
+\]
+Por tanto,
+\[
+\boxed{\Ima(f)=\{-1,1\}}.
+\]
+
+\section{Ejercicio 26}
+Sean
+\[
+f(x,y)=\frac{\sqrt{4-y^2}}{3+\sqrt{2-x^2}}
+\]
+y
+\[
+g(x,y,z)=\frac{3z}{y^2-x^2}.
+\]
+\subsection{Solución}
+Para \(f\),
+\[
+4-y^2\geq0,
+\qquad
+2-x^2\geq0.
+\]
+Por tanto,
+\[
+\boxed{
+\Dom(f)
+=
+[-\sqrt2,\sqrt2]\times[-2,2].
+}
+\]
+Como
+\[
+0\leq\sqrt{4-y^2}\leq2
+\]
+y
+\[
+3\leq3+\sqrt{2-x^2}\leq3+\sqrt2,
+\]
+se obtiene
+\[
+\boxed{
+\Ima(f)=\left[0,\frac23\right].
+}
+\]
+
+Para \(g\),
+\[
+y^2-x^2\neq0.
+\]
+Así,
+\[
+\boxed{
+\Dom(g)
+=
+\{(x,y,z)\in\R^3:y\neq x,\ y\neq-x\}.
+}
+\]
+Para cualquier \(k\in\R\), tomando
+\[
+x=0,\qquad y=1,\qquad z=\frac{k}{3},
+\]
+se tiene \(g(0,1,k/3)=k\). Por tanto,
+\[
+\boxed{\Ima(g)=\R}.
+\]
+
+\section{Ejercicio 27}
+Sea
+\[
+f(x,y)
+=
+xy\sen\left(
+\frac1{\sqrt{x^2+y^2}}
+\right).
+\]
+\subsection{Solución}
+Debe cumplirse
+\[
+x^2+y^2>0.
+\]
+Por tanto,
+\[
+\boxed{
+\Dom(f)=\R^2\setminus\{(0,0)\}.
+}
+\]
+
+\section{Ejercicio 28}
+Sea
+\[
+f(x,y)
+=
+\left(
+x^2+y^2,\,
+\sen(xy),\,
+\ln(x+y)
+\right).
+\]
+\subsection{Solución}
+La única restricción procede del logaritmo:
+\[
+x+y>0.
+\]
+Por tanto,
+\[
+\boxed{
+\Dom(f)=\{(x,y)\in\R^2:x+y>0\}.
+}
+\]
+
+\section{Ejercicio 29}
+\subsection{Solución}
+Para
+\[
+f(x,y)=x^2+y^2,
+\]
+las curvas de nivel son
+\[
+x^2+y^2=k.
+\]
+Por tanto,
+\[
+\boxed{
+C_k=
+\begin{cases}
+\varnothing,&k<0,\\
+\{(0,0)\},&k=0,\\
+\text{circunferencia de radio }\sqrt{k},&k>0.
+\end{cases}
+}
+\]
+
+Para
+\[
+g(x,y)=x+y,
+\]
+las curvas de nivel son
+\[
+\boxed{
+C_k:\ y=-x+k,
+\qquad k\in\R.
+}
+\]
+
+\section{Ejercicio 30}
+\subsection{Solución}
+Las curvas de nivel satisfacen
+\[
+xy=k.
+\]
+Si \(k\neq0\),
+\[
+y=\frac{k}{x},
+\]
+que son hipérbolas equiláteras.
+
+Si \(k=0\),
+\[
+xy=0,
+\]
+por lo que
+\[
+x=0
+\]
+o
+\[
+y=0.
+\]
+Así,
+\[
+\boxed{
+C_k=
+\begin{cases}
+\left\{(x,y):y=\dfrac{k}{x}\right\},&k\neq0,\\[2mm]
+\{x=0\}\cup\{y=0\},&k=0.
+\end{cases}
+}
+\]
+
+\end{document}

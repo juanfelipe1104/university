@@ -1,0 +1,515 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{lmodern}
+\usepackage{microtype}
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Span}{\operatorname{L}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\sen}{\operatorname{sen}}
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Álgebra Lineal}\\[0.4em]
+{\Large Tema 4: El Espacio Afín}
+\end{center}
+
+\tableofcontents
+\newpage
+
+\section{Espacio afín}
+
+Sea $V$ un espacio vectorial. Un conjunto no vacío $\mathcal A$ es un espacio afín sobre $V$ si a cada par $P,Q\in\mathcal A$ le corresponde un único vector $\overrightarrow{PQ}\in V$ y:
+
+\[
+\overrightarrow{PQ}+\overrightarrow{QR}=\overrightarrow{PR}.
+\]
+
+Equivalentemente, existe una operación:
+
+\[
+\mathcal A\times V\longrightarrow\mathcal A,
+\qquad
+(P,v)\longmapsto P+v,
+\]
+
+tal que para cada $P,Q\in\mathcal A$ existe un único $v\in V$ con $P+v=Q$ y:
+
+\[
+(P+u)+v=P+(u+v).
+\]
+
+Los elementos de $\mathcal A$ se denominan puntos y $V$ es su espacio de dirección.
+
+\[
+\boxed{\dim\mathcal A=\dim V}
+\]
+
+\subsection{Propiedades}
+
+\[
+P+v=P\iff v=0
+\]
+
+\[
+\overrightarrow{QP}=-\overrightarrow{PQ}
+\]
+
+\[
+\boxed{\overrightarrow{PQ}+\overrightarrow{QR}=\overrightarrow{PR}}
+\]
+
+La última igualdad es la relación de Chasles.
+
+Si:
+
+\[
+\overrightarrow{PQ}=\overrightarrow{P'Q'},
+\]
+
+entonces:
+
+\[
+\boxed{\overrightarrow{PP'}=\overrightarrow{QQ'}}.
+\]
+
+\section{Espacio afín métrico}
+
+Si $V$ es un espacio vectorial euclídeo, $\mathcal A$ es un espacio afín métrico.
+
+La distancia entre dos puntos es:
+
+\[
+\boxed{
+d(P,Q)=\left\|\overrightarrow{PQ}\right\|
+}
+\]
+
+y cumple:
+
+\[
+d(P,Q)=0\iff P=Q
+\]
+
+\[
+d(P,Q)=d(Q,P)
+\]
+
+\[
+d(P,R)\leq d(P,Q)+d(Q,R).
+\]
+
+En $\R^n$:
+
+\[
+\boxed{
+d(P,Q)=
+\sqrt{\sum_{i=1}^{n}(b_i-a_i)^2}
+}
+\]
+
+si $P=(a_1,\ldots,a_n)$ y $Q=(b_1,\ldots,b_n)$.
+
+El ángulo entre dos vectores no nulos viene dado por:
+
+\[
+\boxed{
+\cos\alpha=
+\frac{u\cdot v}{\|u\|\|v\|}
+}
+\]
+
+\section{Sistemas de referencia. Coordenadas}
+
+Un sistema de referencia cartesiano de un espacio afín de dimensión $n$ es:
+
+\[
+\boxed{
+R=\{O,B\}
+}
+\]
+
+donde $O$ es un punto y:
+
+\[
+B=\{u_1,\ldots,u_n\}
+\]
+
+es una base del espacio de dirección.
+
+Si:
+
+\[
+\overrightarrow{OP}=x_1u_1+\cdots+x_nu_n,
+\]
+
+entonces:
+
+\[
+\boxed{
+[P]_R=(x_1,\ldots,x_n).
+}
+\]
+
+Dados:
+
+\[
+[P]_R=(a_1,\ldots,a_n),
+\qquad
+[Q]_R=(b_1,\ldots,b_n),
+\]
+
+se tiene:
+
+\[
+\boxed{
+[\overrightarrow{PQ}]_B=
+(b_1-a_1,\ldots,b_n-a_n).
+}
+\]
+
+Si $B$ es ortonormal, $R$ es un sistema de referencia rectangular.
+
+\section{Cambio de sistema de referencia}
+
+Sean:
+
+\[
+R=\{O,B\},
+\qquad
+R'=\{O',B'\}.
+\]
+
+Si:
+
+\[
+[O']_R=b
+\]
+
+y $M_{B'B}$ tiene por columnas los vectores de $B'$ expresados en $B$, para un punto $P$:
+
+\[
+[P]_R=x,
+\qquad
+[P]_{R'}=y,
+\]
+
+se cumple:
+
+\[
+\overrightarrow{OP}
+=
+\overrightarrow{OO'}
++
+\overrightarrow{O'P}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+x=b+M_{B'B}y
+}
+\]
+
+y:
+
+\[
+\boxed{
+y=M_{B'B}^{-1}(x-b).
+}
+\]
+
+En coordenadas homogéneas:
+
+\[
+\boxed{
+\begin{pmatrix}1\\x\end{pmatrix}
+=
+\begin{pmatrix}
+1&0\\
+b&M_{B'B}
+\end{pmatrix}
+\begin{pmatrix}1\\y\end{pmatrix}.
+}
+\]
+
+\section{Variedades afines}
+
+Sea $P\in\mathcal A$ y $S\leq V$. La variedad afín que pasa por $P$ y tiene espacio de dirección $S$ es:
+
+\[
+\boxed{
+F=P+S.
+}
+\]
+
+Si:
+
+\[
+S=\Span\{v_1,\ldots,v_k\},
+\]
+
+entonces:
+
+\[
+\boxed{
+F=
+P+\Span\{v_1,\ldots,v_k\}
+}
+\]
+
+y:
+
+\[
+\boxed{\dim F=k.}
+\]
+
+\subsection{Ecuaciones paramétricas}
+
+\[
+\boxed{
+X=P+\lambda_1v_1+\cdots+\lambda_kv_k.
+}
+\]
+
+\subsection{Ecuaciones cartesianas}
+
+Una variedad afín es el conjunto de soluciones de un sistema compatible:
+
+\[
+AX=b.
+\]
+
+Si $P$ es una solución particular:
+
+\[
+AP=b,
+\]
+
+entonces:
+
+\[
+A(X-P)=0.
+\]
+
+Así:
+
+\[
+\boxed{
+F=P+\Ker A.
+}
+\]
+
+\section{Independencia afín}
+
+Los puntos:
+
+\[
+P_0,P_1,\ldots,P_k
+\]
+
+son afínmente independientes si:
+
+\[
+\boxed{
+\overrightarrow{P_0P_1},
+\ldots,
+\overrightarrow{P_0P_k}
+\text{ son linealmente independientes}.
+}
+\]
+
+Un conjunto de $n+1$ puntos afínmente independientes determina un sistema de referencia afín de dimensión $n$.
+
+\section{Variedad afín generada por puntos}
+
+Dado:
+
+\[
+\mathcal P=\{P_0,P_1,\ldots,P_k\},
+\]
+
+la menor variedad afín que los contiene es:
+
+\[
+\boxed{
+L(\mathcal P)
+=
+P_0+
+\Span\{
+\overrightarrow{P_0P_1},
+\ldots,
+\overrightarrow{P_0P_k}
+\}.
+}
+\]
+
+En $\R^3$, una recta se determina por dos puntos distintos y un plano por tres puntos no alineados.
+
+\section{Intersección y suma de variedades afines}
+
+Sean:
+
+\[
+F_1=P_1+S_1,
+\qquad
+F_2=P_2+S_2.
+\]
+
+Si:
+
+\[
+F_1\cap F_2\neq\emptyset
+\]
+
+y $P\in F_1\cap F_2$, entonces:
+
+\[
+\boxed{
+F_1\cap F_2=P+(S_1\cap S_2)
+}
+\]
+
+y:
+
+\[
+\boxed{
+F_1+F_2=P+(S_1+S_2).
+}
+\]
+
+Además:
+
+\[
+\boxed{
+\dim F_1+\dim F_2
+=
+\dim(F_1\cap F_2)+\dim(F_1+F_2).
+}
+\]
+
+Si la intersección es vacía, la variedad generada por ambas tiene como espacio de dirección:
+
+\[
+\boxed{
+\Span\{
+S_1,S_2,\overrightarrow{P_1P_2}
+\}.
+}
+\]
+
+\section{Aplicaciones afines}
+
+Sean $\mathcal A$ y $\mathcal A'$ espacios afines, con espacios de dirección $V$ y $V'$.
+
+Una aplicación:
+
+\[
+f:\mathcal A\longrightarrow\mathcal A'
+\]
+
+es afín si existe una aplicación lineal:
+
+\[
+\widetilde f:V\longrightarrow V'
+\]
+
+tal que:
+
+\[
+\boxed{
+\widetilde f(\overrightarrow{PQ})
+=
+\overrightarrow{f(P)f(Q)}
+}
+\]
+
+para todos $P,Q\in\mathcal A$.
+
+Fijando un punto $O$:
+
+\[
+\boxed{
+f(X)=f(O)+\widetilde f(\overrightarrow{OX}).
+}
+\]
+
+La composición de aplicaciones afines es afín.
+
+Además:
+
+\[
+\boxed{
+f\text{ es inyectiva}
+\iff
+\widetilde f\text{ es inyectiva}
+}
+\]
+
+y:
+
+\[
+\boxed{
+f\text{ es suprayectiva}
+\iff
+\widetilde f\text{ es suprayectiva}.
+}
+\]
+
+\section{Expresión matricial de una aplicación afín}
+
+Sean:
+
+\[
+R=\{O,B\},
+\qquad
+R'=\{O',B'\}.
+\]
+
+Si:
+
+\[
+[f(O)]_{R'}=C
+\]
+
+y:
+
+\[
+A=M_{B,B'}(\widetilde f),
+\]
+
+entonces:
+
+\[
+\boxed{
+Y=C+AX.
+}
+\]
+
+En coordenadas homogéneas:
+
+\[
+\boxed{
+\begin{pmatrix}
+1\\Y
+\end{pmatrix}
+=
+\begin{pmatrix}
+1&0\\
+C&A
+\end{pmatrix}
+\begin{pmatrix}
+1\\X
+\end{pmatrix}.
+}
+\]
+
+\end{document}

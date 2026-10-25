@@ -1,0 +1,2208 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Pn}{\mathcal{P}}
+\newcommand{\Span}{\operatorname{L}}
+\newcommand{\rg}{\operatorname{rg}}
+\newcommand{\dimn}{\operatorname{dim}}
+
+\begin{document}
+
+\begin{center}
+	{\LARGE\bfseries Álgebra Lineal}\\[0.4em]
+	{\Large Tema 1: Espacios Vectoriales --- Soluciones}
+\end{center}
+
+\section{Ejercicio 1}
+	Sea:
+
+	\[
+	S=
+	\left\{
+	(x,y,z)\in\R^3:
+	2x-y+3z=0
+	\right\}
+	\]
+
+	\subsection{Solución}
+
+	El vector nulo pertenece a $S$:
+
+	\[
+	(0,0,0)\in S
+	\]
+
+	Sean $u=(x,y,z)\in S$ y $v=(x',y',z')\in S$. Entonces:
+
+	\[
+	2x-y+3z=0
+	\]
+
+	\[
+	2x'-y'+3z'=0
+	\]
+
+	Para $\alpha,\beta\in\R$:
+
+	\[
+	2(\alpha x+\beta x')
+	-(\alpha y+\beta y')
+	+3(\alpha z+\beta z')
+	\]
+
+	\[
+	=
+	\alpha(2x-y+3z)
+	+
+	\beta(2x'-y'+3z')
+	=
+	0
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{S\text{ es subespacio vectorial de }\R^3}
+	\]
+
+	Despejando:
+
+	\[
+	y=2x+3z
+	\]
+
+	\[
+	(x,y,z)
+	=
+	x(1,2,0)+z(0,3,1)
+	\]
+
+	\[
+	\boxed{
+	S=
+	\Span\{(1,2,0),(0,3,1)\}
+	}
+	\]
+
+\section{Ejercicio 2}
+	Sea:
+
+	\[
+	S=
+	\left\{
+	(x,y)\in\R^2:
+	xy=0
+	\right\}
+	\]
+
+	\subsection{Solución}
+
+	Aunque:
+
+	\[
+	(0,0)\in S
+	\]
+
+	el conjunto no es cerrado para la suma. Por ejemplo:
+
+	\[
+	(1,0)\in S,
+	\qquad
+	(0,1)\in S
+	\]
+
+	pero:
+
+	\[
+	(1,0)+(0,1)
+	=
+	(1,1)
+	\notin S
+	\]
+
+	porque:
+
+	\[
+	1\cdot1\neq0
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	S\text{ no es subespacio vectorial de }\R^2
+	}
+	\]
+
+\section{Ejercicio 3}
+	Sea:
+
+	\[
+	S=
+	\left\{
+	A\in M_{2\times2}(\R):
+	\det A=0
+	\right\}
+	\]
+
+	\subsection{Solución}
+
+	La matriz nula pertenece a $S$.
+
+	Sin embargo, consideramos:
+
+	\[
+	A=
+	\begin{pmatrix}
+	1&0\\
+	0&0
+	\end{pmatrix},
+	\qquad
+	B=
+	\begin{pmatrix}
+	0&0\\
+	0&1
+	\end{pmatrix}
+	\]
+
+	Se tiene:
+
+	\[
+	\det A=\det B=0
+	\]
+
+	pero:
+
+	\[
+	A+B=
+	\begin{pmatrix}
+	1&0\\
+	0&1
+	\end{pmatrix}
+	\]
+
+	y:
+
+	\[
+	\det(A+B)=1
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	S\text{ no es subespacio vectorial}
+	}
+	\]
+
+\section{Ejercicio 4}
+	Determinar $x$ para que:
+
+	\[
+	(1,x,5)
+	\in
+	\Span\{(1,2,3),(1,1,1)\}
+	\]
+
+	\subsection{Solución}
+
+	Deben existir $\alpha,\beta\in\R$ tales que:
+
+	\[
+	(1,x,5)
+	=
+	\alpha(1,2,3)
+	+
+	\beta(1,1,1)
+	\]
+
+	Por coordenadas:
+
+	\[
+	\alpha+\beta=1
+	\]
+
+	\[
+	3\alpha+\beta=5
+	\]
+
+	Restando:
+
+	\[
+	2\alpha=4
+	\]
+
+	\[
+	\alpha=2,
+	\qquad
+	\beta=-1
+	\]
+
+	Entonces:
+
+	\[
+	x=2\alpha+\beta
+	=
+	4-1
+	=
+	3
+	\]
+
+	\[
+	\boxed{x=3}
+	\]
+
+\section{Ejercicio 5}
+	Determinar si:
+
+	\[
+	A=
+	\{p\in\Pn_2(x):p(0)=0,\ p'(0)=0\}
+	\]
+
+	y:
+
+	\[
+	B=
+	\{p\in\Pn_2(x):p(0)=0,\ p'(0)=1\}
+	\]
+
+	son subespacios.
+
+	\subsection{Solución}
+
+	Sea:
+
+	\[
+	p(x)=a+bx+cx^2
+	\]
+
+	Para $A$:
+
+	\[
+	p(0)=a=0
+	\]
+
+	\[
+	p'(x)=b+2cx
+	\]
+
+	\[
+	p'(0)=b=0
+	\]
+
+	Por tanto:
+
+	\[
+	A=
+	\{cx^2:c\in\R\}
+	=
+	\Span\{x^2\}
+	\]
+
+	\[
+	\boxed{
+	A\text{ es subespacio vectorial}
+	}
+	\]
+
+	Para $B$:
+
+	\[
+	p(0)=0
+	\quad\Longrightarrow\quad
+	a=0
+	\]
+
+	\[
+	p'(0)=1
+	\quad\Longrightarrow\quad
+	b=1
+	\]
+
+	Así:
+
+	\[
+	B=
+	\{x+cx^2:c\in\R\}
+	\]
+
+	El polinomio nulo no pertenece a $B$.
+
+	\[
+	\boxed{
+	B\text{ no es subespacio vectorial}
+	}
+	\]
+
+\section{Ejercicio 6}
+	Sea:
+
+	\[
+	M=
+	\left\{
+	(x_1,x_2,x_3,x_4)\in\R^4:
+	\begin{array}{rcl}
+	x_1+5x_2-2x_3-x_4&=&0\\
+	2x_1+x_2+2x_3+x_4&=&0
+	\end{array}
+	\right\}
+	\]
+
+	\subsection{Solución}
+
+	Tomamos:
+
+	\[
+	x_3=s,
+	\qquad
+	x_4=t
+	\]
+
+	Resolviendo el sistema:
+
+	\[
+	x_1
+	=
+	-\frac{4}{3}s
+	-\frac{2}{3}t
+	\]
+
+	\[
+	x_2
+	=
+	\frac{2}{3}s
+	+\frac{1}{3}t
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	\begin{aligned}
+	x_1&=-\frac{4}{3}s-\frac{2}{3}t\\
+	x_2&=\frac{2}{3}s+\frac{1}{3}t\\
+	x_3&=s\\
+	x_4&=t
+	\end{aligned}
+	\qquad s,t\in\R
+	}
+	\]
+
+	Equivalentemente:
+
+	\[
+	M=
+	\Span\left\{
+	(-4,2,3,0),
+	(-2,1,0,3)
+	\right\}
+	\]
+
+\section{Ejercicio 7}
+	Sean:
+
+	\[
+	S=
+	\{(x_1,x_2,x_3,x_4)\in\R^4:x_1-x_2=0\}
+	\]
+
+	\[
+	T=
+	\Span\{(1,1,2,1),(2,3,-1,1)\}
+	\]
+
+	\subsection{Solución}
+
+	Para $S$:
+
+	\[
+	x_1=x_2
+	\]
+
+	\[
+	(x_1,x_2,x_3,x_4)
+	=
+	(x_1,x_1,x_3,x_4)
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	B_S=
+	\{(1,1,0,0),(0,0,1,0),(0,0,0,1)\}
+	}
+	\]
+
+	Los generadores de $T$ son linealmente independientes:
+
+	\[
+	\boxed{
+	B_T=
+	\{(1,1,2,1),(2,3,-1,1)\}
+	}
+	\]
+
+	Un vector de $T$ es:
+
+	\[
+	(\alpha+2\beta,\alpha+3\beta,2\alpha-\beta,\alpha+\beta)
+	\]
+
+	Para pertenecer a $S$:
+
+	\[
+	\alpha+2\beta
+	=
+	\alpha+3\beta
+	\]
+
+	\[
+	\beta=0
+	\]
+
+	Por tanto:
+
+	\[
+	S\cap T
+	=
+	\{\alpha(1,1,2,1):\alpha\in\R\}
+	\]
+
+	\[
+	\boxed{
+	B_{S\cap T}
+	=
+	\{(1,1,2,1)\}
+	}
+	\]
+
+	Aplicamos Grassmann:
+
+	\[
+	\dimn(S+T)
+	=
+	3+2-1
+	=
+	4
+	\]
+
+	Así:
+
+	\[
+	S+T=\R^4
+	\]
+
+	y podemos tomar:
+
+	\[
+	\boxed{
+	B_{S+T}
+	=
+	\{(1,0,0,0),(0,1,0,0),(0,0,1,0),(0,0,0,1)\}
+	}
+	\]
+
+\section{Ejercicio 8}
+	Analizar para qué valores de $a$ son linealmente independientes:
+
+	\[
+	A_1=
+	\begin{pmatrix}
+	0&a&0\\
+	0&1&0
+	\end{pmatrix},
+	\quad
+	A_2=
+	\begin{pmatrix}
+	0&1&0\\
+	0&a&0
+	\end{pmatrix},
+	\quad
+	A_3=
+	\begin{pmatrix}
+	0&1&0\\
+	0&a&a
+	\end{pmatrix}
+	\]
+
+	\subsection{Solución}
+
+	Consideramos:
+
+	\[
+	\alpha A_1+\beta A_2+\gamma A_3=0
+	\]
+
+	De las entradas no nulas:
+
+	\[
+	\alpha a+\beta+\gamma=0
+	\]
+
+	\[
+	\alpha+a\beta+a\gamma=0
+	\]
+
+	\[
+	a\gamma=0
+	\]
+
+	Si $a=0$, el sistema es ligado.
+
+	Si $a\neq0$:
+
+	\[
+	\gamma=0
+	\]
+
+	y:
+
+	\[
+	a\alpha+\beta=0
+	\]
+
+	\[
+	\alpha+a\beta=0
+	\]
+
+	Sustituyendo:
+
+	\[
+	(1-a^2)\alpha=0
+	\]
+
+	Para que únicamente exista la solución trivial:
+
+	\[
+	a\neq\pm1
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	a\notin\{-1,0,1\}
+	}
+	\]
+
+\section{Ejercicio 9}
+	Analizar para qué valores de $a$ son linealmente independientes:
+
+	\[
+	x^2+3x+1,
+	\qquad
+	2-x,
+	\qquad
+	1+ax+x^2
+	\]
+
+	\subsection{Solución}
+
+	En la base canónica de $\Pn_2(x)$:
+
+	\[
+	v_1=(1,3,1)
+	\]
+
+	\[
+	v_2=(2,-1,0)
+	\]
+
+	\[
+	v_3=(1,a,1)
+	\]
+
+	Calculamos:
+
+	\[
+	\det
+	\begin{pmatrix}
+	1&3&1\\
+	2&-1&0\\
+	1&a&1
+	\end{pmatrix}
+	=
+	2(a-3)
+	\]
+
+	Los vectores son linealmente independientes si el determinante es distinto de cero:
+
+	\[
+	2(a-3)\neq0
+	\]
+
+	\[
+	\boxed{
+	a\neq3
+	}
+	\]
+
+\section{Ejercicio 10}
+	Sea:
+
+	\[
+	A=
+	\begin{pmatrix}
+	1&-1&1\\
+	1&-1&1
+	\end{pmatrix}
+	\]
+
+	y:
+
+	\[
+	U=
+	\{X\in M_{2\times2}(\R):XA=0\}
+	\]
+
+	\subsection{Solución}
+
+	Tomamos:
+
+	\[
+	X=
+	\begin{pmatrix}
+	x&y\\
+	z&t
+	\end{pmatrix}
+	\]
+
+	Entonces:
+
+	\[
+	XA=
+	\begin{pmatrix}
+	x+y&-(x+y)&x+y\\
+	z+t&-(z+t)&z+t
+	\end{pmatrix}
+	\]
+
+	La condición $XA=0$ implica:
+
+	\[
+	x+y=0
+	\]
+
+	\[
+	z+t=0
+	\]
+
+	Por tanto:
+
+	\[
+	X=
+	\begin{pmatrix}
+	x&-x\\
+	z&-z
+	\end{pmatrix}
+	\]
+
+	\[
+	=
+	x
+	\begin{pmatrix}
+	1&-1\\
+	0&0
+	\end{pmatrix}
+	+
+	z
+	\begin{pmatrix}
+	0&0\\
+	1&-1
+	\end{pmatrix}
+	\]
+
+	Así:
+
+	\[
+	\boxed{\dimn U=2}
+	\]
+
+	\[
+	\boxed{
+	B_U=
+	\left\{
+	\begin{pmatrix}
+	1&-1\\
+	0&0
+	\end{pmatrix},
+	\begin{pmatrix}
+	0&0\\
+	1&-1
+	\end{pmatrix}
+	\right\}
+	}
+	\]
+
+\section{Ejercicio 11}
+	En $\R^4$ calcular las bases pedidas.
+
+	\subsection{Solución}
+
+	\textbf{a)}
+
+	Partimos de:
+
+	\[
+	v=(1,2,1,1)
+	\]
+
+	Añadimos tres vectores canónicos:
+
+	\[
+	e_1=(1,0,0,0),
+	\quad
+	e_2=(0,1,0,0),
+	\quad
+	e_3=(0,0,1,0)
+	\]
+
+	Los cuatro vectores son linealmente independientes.
+
+	\[
+	\boxed{
+	B=
+	\{(1,2,1,1),(1,0,0,0),(0,1,0,0),(0,0,1,0)\}
+	}
+	\]
+
+	\textbf{b)}
+
+	Los tres vectores dados tienen rango $3$:
+
+	\[
+	\rg
+	\begin{pmatrix}
+	1&1&0&0\\
+	0&0&2&2\\
+	0&3&3&0
+	\end{pmatrix}
+	=
+	3
+	\]
+
+	Añadimos, por ejemplo:
+
+	\[
+	(0,0,0,1)
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	B=
+	\{(1,1,0,0),(0,0,2,2),(0,3,3,0),(0,0,0,1)\}
+	}
+	\]
+
+\section{Ejercicio 12}
+	Sean:
+
+	\[
+	B=\{e_1,e_2,e_3\}
+	\]
+
+	\[
+	B'=
+	\{2e_1+3e_2,\ e_1+e_3,\ -e_2+e_3\}
+	\]
+
+	\subsection{Solución}
+
+	La matriz que transforma coordenadas de $B'$ a $B$ es:
+
+	\[
+	M_{B'B}
+	=
+	\begin{pmatrix}
+	2&1&0\\
+	3&0&-1\\
+	0&1&1
+	\end{pmatrix}
+	\]
+
+	Su inversa es:
+
+	\[
+	M_{BB'}
+	=
+	\begin{pmatrix}
+	-1&1&1\\
+	3&-2&-2\\
+	-3&2&3
+	\end{pmatrix}
+	\]
+
+	\textbf{a)}
+
+	\[
+	[u]_{B'}
+	=
+	M_{BB'}[u]_B
+	\]
+
+	\[
+	=
+	\begin{pmatrix}
+	-1&1&1\\
+	3&-2&-2\\
+	-3&2&3
+	\end{pmatrix}
+	\begin{pmatrix}
+	1\\2\\3
+	\end{pmatrix}
+	\]
+
+	\[
+	=
+	\begin{pmatrix}
+	4\\-7\\10
+	\end{pmatrix}
+	\]
+
+	\[
+	\boxed{
+	[u]_{B'}=(4,-7,10)
+	}
+	\]
+
+	\textbf{b)}
+
+	\[
+	[u]_B
+	=
+	M_{B'B}[u]_{B'}
+	\]
+
+	\[
+	=
+	\begin{pmatrix}
+	2&1&0\\
+	3&0&-1\\
+	0&1&1
+	\end{pmatrix}
+	\begin{pmatrix}
+	-2\\1\\0
+	\end{pmatrix}
+	\]
+
+	\[
+	=
+	\begin{pmatrix}
+	-3\\-6\\1
+	\end{pmatrix}
+	\]
+
+	\[
+	\boxed{
+	[u]_B=(-3,-6,1)
+	}
+	\]
+
+\section{Ejercicio 13}
+	Sean las bases $B$, $B'$ y $B''$ del enunciado.
+
+	\subsection{Solución}
+
+	La matriz cuyas columnas son los vectores de $B'$ en la base canónica $B$ es:
+
+	\[
+	P=
+	\begin{pmatrix}
+	1&0&0&1\\
+	1&1&0&0\\
+	0&1&1&0\\
+	0&0&-1&2
+	\end{pmatrix}
+	\]
+
+	Por tanto:
+
+	\[
+	M_{BB'}
+	=
+	P^{-1}
+	\]
+
+	\[
+	\boxed{
+	M_{BB'}
+	=
+	\frac{1}{3}
+	\begin{pmatrix}
+	2&1&-1&-1\\
+	-2&2&1&1\\
+	2&-2&2&-1\\
+	1&-1&1&1
+	\end{pmatrix}
+	}
+	\]
+
+	Para $B''$:
+
+	\[
+	Q=
+	\begin{pmatrix}
+	1&1&1&1\\
+	0&1&1&1\\
+	0&0&1&1\\
+	0&0&0&1
+	\end{pmatrix}
+	\]
+
+	Entonces:
+
+	\[
+	M_{BB''}
+	=
+	Q^{-1}
+	\]
+
+	\[
+	\boxed{
+	M_{BB''}
+	=
+	\begin{pmatrix}
+	1&-1&0&0\\
+	0&1&-1&0\\
+	0&0&1&-1\\
+	0&0&0&1
+	\end{pmatrix}
+	}
+	\]
+
+	Además:
+
+	\[
+	M_{B'B''}
+	=
+	M_{BB''}M_{B'B}
+	\]
+
+	\[
+	\boxed{
+	M_{B'B''}
+	=
+	\begin{pmatrix}
+	0&-1&0&1\\
+	1&0&-1&0\\
+	0&1&2&-2\\
+	0&0&-1&2
+	\end{pmatrix}
+	}
+	\]
+
+	Para:
+
+	\[
+	p(x)=x^3-2x
+	\]
+
+	se tiene:
+
+	\[
+	[p]_B=(0,-2,0,1)
+	\]
+
+	\[
+	[p]_{B'}
+	=
+	M_{BB'}[p]_B
+	=
+	(-1,-1,1,1)
+	\]
+
+	\[
+	[p]_{B''}
+	=
+	M_{BB''}[p]_B
+	=
+	(2,-2,-1,1)
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	[p]_B=(0,-2,0,1),
+	\quad
+	[p]_{B'}=(-1,-1,1,1),
+	\quad
+	[p]_{B''}=(2,-2,-1,1)
+	}
+	\]
+
+\section{Ejercicio 14}
+	Sean las bases $B_1$ y $B_2$ del enunciado.
+
+	\subsection{Solución}
+
+	\textbf{a)}
+
+	En coordenadas canónicas:
+
+	\[
+	B_1=
+	\{(1,1,1),(0,1,2),(1,1,0)\}
+	\]
+
+	\[
+	B_2=
+	\{(1,2,3),(\alpha,\alpha-1,-2),(2,2,0)\}
+	\]
+
+	La condición:
+
+	\[
+	(1,1,0)_{B_2}
+	=
+	(1,0,3)_{B_1}
+	\]
+
+	implica:
+
+	\[
+	(1,2,3)+(\alpha,\alpha-1,-2)
+	=
+	(1,1,1)+3(1,1,0)
+	\]
+
+	\[
+	(1+\alpha,1+\alpha,1)
+	=
+	(4,4,1)
+	\]
+
+	\[
+	\boxed{\alpha=3}
+	\]
+
+	\textbf{b)}
+
+	Con $\alpha=3$, un vector tiene las mismas coordenadas $(a,b,c)$ en ambas bases si:
+
+	\[
+	a(1,2,3)+b(3,2,-2)+c(2,2,0)
+	\]
+
+	\[
+	=
+	a(1,1,1)+b(0,1,2)+c(1,1,0)
+	\]
+
+	De aquí:
+
+	\[
+	(a,b,c)
+	=
+	(2\lambda,\lambda,-3\lambda)
+	\]
+
+	Por tanto:
+
+	\[
+	W=
+	\Span\{(2,1,-3)\}
+	\]
+
+	\[
+	\boxed{
+	\dimn W=1
+	}
+	\]
+
+	y $W$ es un subespacio vectorial.
+
+	\textbf{c)}
+
+	Un posible subespacio suplementario de $W$ viene dado, en coordenadas respecto de $B_1$, por:
+
+	\[
+	W_s=
+	\{(x,y,z)_{B_1}:y=x+z\}
+	\]
+
+	\[
+	\boxed{
+	W\oplus W_s=\Pn_2(x)
+	}
+	\]
+
+\section{Ejercicio 15}
+	Sean $S_1$ y $S_2$ los subespacios del enunciado.
+
+	\subsection{Solución}
+
+	Tomamos:
+
+	\[
+	p(x)=a+bx+cx^2+dx^3
+	\]
+
+	Para $S_1$:
+
+	\[
+	p(0)=0
+	\quad\Longrightarrow\quad
+	a=0
+	\]
+
+	Las tangentes en $x=1$ y $x=-1$ son paralelas si:
+
+	\[
+	p'(1)=p'(-1)
+	\]
+
+	Como:
+
+	\[
+	p'(x)=b+2cx+3dx^2
+	\]
+
+	se obtiene:
+
+	\[
+	b+2c+3d
+	=
+	b-2c+3d
+	\]
+
+	\[
+	c=0
+	\]
+
+	Así:
+
+	\[
+	S_1=
+	\{bx+dx^3:b,d\in\R\}
+	\]
+
+	\[
+	\boxed{
+	\dimn S_1=2,
+	\qquad
+	B_{S_1}=\{x,x^3\}
+	}
+	\]
+
+	Para $S_2$:
+
+	\[
+	p(2)=0
+	\]
+
+	\[
+	a+2b+4c+8d=0
+	\]
+
+	\[
+	a=-2b-4c-8d
+	\]
+
+	Por tanto:
+
+	\[
+	S_2=
+	\Span\{-2+x,-4+x^2,-8+x^3\}
+	\]
+
+	\[
+	\boxed{
+	\dimn S_2=3
+	}
+	\]
+
+	Para la intersección, los polinomios son:
+
+	\[
+	p(x)=bx+dx^3
+	\]
+
+	y además:
+
+	\[
+	p(2)=2b+8d=0
+	\]
+
+	\[
+	b=-4d
+	\]
+
+	Así:
+
+	\[
+	S_1\cap S_2
+	=
+	\Span\{x^3-4x\}
+	\]
+
+	\[
+	\boxed{
+	B_{S_1\cap S_2}
+	=
+	\{x^3-4x\}
+	}
+	\]
+
+	Como:
+
+	\[
+	S_1\cap S_2\neq\{0\}
+	\]
+
+	\[
+	\boxed{
+	S_1+S_2\text{ no es suma directa}
+	}
+	\]
+
+	Consideramos el vector generador:
+
+	\[
+	p(x)=x^3-4x
+	\]
+
+	En la base:
+
+	\[
+	B=
+	\{1+x,x+x^2,x^2+x^3,x^3\}
+	\]
+
+	planteamos:
+
+	\[
+	(0,-4,0,1)
+	=
+	\alpha(1,1,0,0)
+	+\beta(0,1,1,0)
+	+\gamma(0,0,1,1)
+	+\delta(0,0,0,1)
+	\]
+
+	Se obtiene:
+
+	\[
+	\alpha=0,
+	\qquad
+	\beta=-4,
+	\qquad
+	\gamma=4,
+	\qquad
+	\delta=-3
+	\]
+
+	\[
+	\boxed{
+	[p]_B=(0,-4,4,-3)
+	}
+	\]
+
+	La matriz de paso de $B$ a la base canónica es:
+
+	\[
+	M_{BB_c}
+	=
+	\begin{pmatrix}
+	1&0&0&0\\
+	1&1&0&0\\
+	0&1&1&0\\
+	0&0&1&1
+	\end{pmatrix}
+	\]
+
+	y:
+
+	\[
+	M_{BB_c}
+	\begin{pmatrix}
+	0\\-4\\4\\-3
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	0\\-4\\0\\1
+	\end{pmatrix}
+	\]
+
+	que corresponde a:
+
+	\[
+	\boxed{
+	p(x)=x^3-4x
+	}
+	\]
+
+\section{Ejercicio 16}
+	Sea:
+
+	\[
+	p(x)=a+bx+cx^2,
+	\qquad
+	c\neq0
+	\]
+
+	\subsection{Solución}
+
+	\textbf{a)}
+
+	Se tiene:
+
+	\[
+	p'(x)=b+2cx
+	\]
+
+	\[
+	p''(x)=2c
+	\]
+
+	En la base canónica:
+
+	\[
+	p=(a,b,c)
+	\]
+
+	\[
+	p'=(b,2c,0)
+	\]
+
+	\[
+	p''=(2c,0,0)
+	\]
+
+	La matriz formada por estos vectores tiene rango $3$ porque $c\neq0$.
+
+	Por tanto:
+
+	\[
+	\boxed{
+	B=\{p,p',p''\}\text{ es base de }\Pn_2(x)
+	}
+	\]
+
+	Para:
+
+	\[
+	B'=\{p,p+p',p'+p''\}
+	\]
+
+	restando vectores se obtiene el mismo sistema generado por $\{p,p',p''\}$, por lo que también tiene rango $3$.
+
+	\[
+	\boxed{
+	B'\text{ es base de }\Pn_2(x)
+	}
+	\]
+
+	\textbf{b)}
+
+	\[
+	S=
+	\{x(x-a):a\in\R\}
+	\]
+
+	\[
+	=
+	\{x^2-ax:a\in\R\}
+	\]
+
+	En coordenadas:
+
+	\[
+	S=
+	\{(0,-a,1):a\in\R\}
+	\]
+
+	El vector nulo no pertenece a $S$.
+
+	\[
+	\boxed{
+	S\text{ no es subespacio vectorial}
+	}
+	\]
+
+	\textbf{c)}
+
+	Si $p(x)\in S$ y $-1$ es raíz:
+
+	\[
+	p(x)=x^2-ax
+	\]
+
+	\[
+	p(-1)=1+a=0
+	\]
+
+	\[
+	a=-1
+	\]
+
+	Así:
+
+	\[
+	p(x)=x^2+x
+	\]
+
+	\[
+	p'(x)=1+2x
+	\]
+
+	\[
+	p''(x)=2
+	\]
+
+	La base $B'$ es:
+
+	\[
+	B'=
+	\{x+x^2,\;1+3x+x^2,\;3+2x\}
+	\]
+
+	Buscamos:
+
+	\[
+	q(x)=x^2+x+2
+	\]
+
+	como:
+
+	\[
+	q=
+	\alpha(x+x^2)
+	+
+	\beta(1+3x+x^2)
+	+
+	\gamma(3+2x)
+	\]
+
+	Se obtiene:
+
+	\[
+	\alpha=2,
+	\qquad
+	\beta=-1,
+	\qquad
+	\gamma=1
+	\]
+
+	\[
+	\boxed{
+	[q]_{B'}=(2,-1,1)
+	}
+	\]
+
+	\textbf{d)}
+
+	La matriz de cambio de $B'$ a la base canónica es:
+
+	\[
+	M_{B'B_c}
+	=
+	\begin{pmatrix}
+	0&1&3\\
+	1&3&2\\
+	1&1&0
+	\end{pmatrix}
+	\]
+
+	\[
+	M_{B'B_c}
+	\begin{pmatrix}
+	2\\-1\\1
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	2\\1\\1
+	\end{pmatrix}
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	q(x)=2+x+x^2
+	}
+	\]
+
+\section{Ejercicio 17}
+	Sean:
+
+	\[
+	V=
+	\Span\{(1,2,3,4),(-1,0,1,-1)\}
+	\]
+
+	\[
+	W=
+	\{(x,y,z,t)\in\R^4:2x+5y-z-t=0\}
+	\]
+
+	\subsection{Solución}
+
+	\textbf{a)}
+
+	Despejamos:
+
+	\[
+	t=2x+5y-z
+	\]
+
+	\[
+	(x,y,z,t)
+	=
+	x(1,0,0,2)
+	+y(0,1,0,5)
+	+z(0,0,1,-1)
+	\]
+
+	\[
+	\boxed{
+	B_W=
+	\{(1,0,0,2),(0,1,0,5),(0,0,1,-1)\}
+	}
+	\]
+
+	\textbf{b)}
+
+	Un vector de $V$ tiene la forma:
+
+	\[
+	(\alpha-\beta,2\alpha,3\alpha+\beta,4\alpha-\beta)
+	\]
+
+	Para pertenecer a $W$:
+
+	\[
+	2(\alpha-\beta)
+	+
+	5(2\alpha)
+	-
+	(3\alpha+\beta)
+	-
+	(4\alpha-\beta)
+	=
+	0
+	\]
+
+	\[
+	5\alpha-4\beta=0
+	\]
+
+	\[
+	\alpha=\frac45\beta
+	\]
+
+	Por tanto:
+
+	\[
+	V\cap W
+	=
+	\Span\{(-1,8,17,11)\}
+	\]
+
+	\[
+	\boxed{
+	B_{V\cap W}
+	=
+	\{(-1,8,17,11)\}
+	}
+	\]
+
+	Una expresión paramétrica es:
+
+	\[
+	\boxed{
+	(x,y,z,t)
+	=
+	\lambda(-1,8,17,11)
+	}
+	\]
+
+	y una expresión implícita:
+
+	\[
+	\boxed{
+	y+8x=0,
+	\qquad
+	z+17x=0,
+	\qquad
+	t+11x=0
+	}
+	\]
+
+	\textbf{c)}
+
+	Como:
+
+	\[
+	V\cap W\neq\{0\}
+	\]
+
+	\[
+	\boxed{
+	V+W\text{ no es suma directa}
+	}
+	\]
+
+	\textbf{d)}
+
+	Planteamos:
+
+	\[
+	(-1,1,1,2)
+	=
+	\alpha(1,2,3,4)
+	+
+	\beta(-1,0,1,-1)
+	\]
+
+	El sistema es incompatible.
+
+	\[
+	\boxed{
+	(-1,1,1,2)\notin V
+	}
+	\]
+
+	Por tanto, no existen coordenadas de dicho vector en una base de $V$.
+
+\section{Ejercicio 18}
+	Sean $V$ y $W$ los subespacios del enunciado.
+
+	\subsection{Solución}
+
+	Sea:
+
+	\[
+	p(x)=a+bx+cx^2+dx^3
+	\]
+
+	Entonces:
+
+	\[
+	p'(x)=b+2cx+3dx^2
+	\]
+
+	Para que:
+
+	\[
+	p'(x)\in
+	\Span\{1+x^2,x^3\}
+	\]
+
+	como $p'(x)$ tiene grado menor o igual que $2$, debe cumplirse:
+
+	\[
+	p'(x)=\alpha(1+x^2)
+	\]
+
+	Por tanto:
+
+	\[
+	b=\alpha,
+	\qquad
+	c=0,
+	\qquad
+	3d=\alpha
+	\]
+
+	\[
+	b=3d
+	\]
+
+	Así:
+
+	\[
+	V=
+	\{(a,3d,0,d):a,d\in\R\}
+	\]
+
+	\[
+	\boxed{
+	B_V=
+	\{(1,0,0,0),(0,3,0,1)\}
+	}
+	\]
+
+	y sus ecuaciones implícitas son:
+
+	\[
+	\boxed{
+	c=0,
+	\qquad
+	b-3d=0
+	}
+	\]
+
+	Para $W$:
+
+	\[
+	p'(x)=p''(x)
+	\]
+
+	\[
+	b+2cx+3dx^2
+	=
+	2c+6dx
+	\]
+
+	Comparando coeficientes:
+
+	\[
+	b=2c,
+	\qquad
+	2c=6d,
+	\qquad
+	3d=0
+	\]
+
+	\[
+	b=c=d=0
+	\]
+
+	Por tanto:
+
+	\[
+	W=
+	\{(a,0,0,0):a\in\R\}
+	\]
+
+	\[
+	\boxed{
+	B_W=\{(1,0,0,0)\}
+	}
+	\]
+
+	Como:
+
+	\[
+	W\subset V
+	\]
+
+	se tiene:
+
+	\[
+	V\cap W=W
+	\]
+
+	\[
+	\boxed{
+	B_{V\cap W}
+	=
+	\{(1,0,0,0)\}
+	}
+	\]
+
+	La expresión paramétrica es:
+
+	\[
+	\boxed{
+	(a,0,0,0),
+	\qquad
+	a\in\R
+	}
+	\]
+
+	El polinomio $p(x)=1$ pertenece a $V\cap W$, y por tanto también a $V$.
+
+	En la base obtenida de $V$:
+
+	\[
+	\boxed{
+	[1]_{B_V}=(1,0)
+	}
+	\]
+
+	En la base de $V\cap W$:
+
+	\[
+	\boxed{
+	[1]_{B_{V\cap W}}=(1)
+	}
+	\]
+
+\section{Ejercicio 19}
+	Sea $\Pn_n(x)$.
+
+	\subsection{Solución}
+
+	\textbf{a)}
+
+	Consideramos:
+
+	\[
+	x^n,
+	\quad
+	nx^{n-1},
+	\quad
+	n(n-1)x^{n-2},
+	\quad\ldots,\quad
+	n!
+	\]
+
+	En la base canónica:
+
+	\[
+	\{1,x,\ldots,x^n\}
+	\]
+
+	cada uno tiene un único coeficiente principal no nulo en una posición distinta.
+
+	Por tanto, son $n+1$ vectores linealmente independientes de un espacio de dimensión $n+1$.
+
+	\[
+	\boxed{
+	\{x^n,(x^n)',\ldots,(x^n)^{(n)}\}
+	\text{ es una base de }\Pn_n(x)
+	}
+	\]
+
+	\textbf{b)}
+
+	En coordenadas:
+
+	\[
+	v_1=(1,3,5)
+	\]
+
+	\[
+	v_2=(-1,0,2)
+	\]
+
+	\[
+	v_3=(3,3,1)
+	\]
+
+	Se tiene:
+
+	\[
+	\rg
+	\begin{pmatrix}
+	1&3&5\\
+	-1&0&2\\
+	3&3&1
+	\end{pmatrix}
+	=
+	2
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	v_1,v_2,v_3
+	\text{ son linealmente dependientes}
+	}
+	\]
+
+	\textbf{c)}
+
+	\[
+	V=
+	\Span\{(1,0,1),(1,0,-1)\}
+	\]
+
+	Para:
+
+	\[
+	p(x)=1+5x^2
+	\]
+
+	\[
+	(1,0,5)
+	=
+	3(1,0,1)
+	-2(1,0,-1)
+	\]
+
+	\[
+	\boxed{
+	p(x)\in V
+	}
+	\]
+
+	Para:
+
+	\[
+	r(x)=1+x
+	\]
+
+	\[
+	(1,1,0)
+	\]
+
+	no puede expresarse como combinación lineal de los generadores de $V$, ya que todos ellos tienen coeficiente de $x$ igual a cero.
+
+	\[
+	\boxed{
+	r(x)\notin V
+	}
+	\]
+
+	\textbf{d)}
+
+	Como el tercer generador de $W$ depende de los dos primeros:
+
+	\[
+	\dimn W=2
+	\]
+
+	Podemos escribir:
+
+	\[
+	W=
+	\Span\{(1,3,5),(-1,0,2)\}
+	\]
+
+	Un vector de $V$ tiene forma:
+
+	\[
+	(\alpha+\beta,0,\alpha-\beta)
+	\]
+
+	y uno de $W$:
+
+	\[
+	(\gamma-\delta,3\gamma,5\gamma+2\delta)
+	\]
+
+	Igualando:
+
+	\[
+	\gamma=0
+	\]
+
+	\[
+	\delta=2\alpha
+	\]
+
+	\[
+	\beta=-3\alpha
+	\]
+
+	Así:
+
+	\[
+	V\cap W
+	=
+	\Span\{(-2,0,4)\}
+	\]
+
+	\[
+	\boxed{
+	V\cap W
+	=
+	\Span\{-2+4x^2\}
+	}
+	\]
+
+	Por Grassmann:
+
+	\[
+	\dimn(V+W)
+	=
+	2+2-1
+	=
+	3
+	\]
+
+	Por tanto:
+
+	\[
+	V+W=\Pn_2(x)
+	\]
+
+	Una base es:
+
+	\[
+	\boxed{
+	B_{V+W}
+	=
+	\{1+x^2,\;1-x^2,\;1+3x+5x^2\}
+	}
+	\]
+
+\section{Ejercicio 20}
+	Sean $E=F=\R^2$.
+
+	\subsection{Solución}
+
+	La base canónica de $\R^2$ es:
+
+	\[
+	e_1=(1,0),
+	\qquad
+	e_2=(0,1)
+	\]
+
+	Una base de $E\times F$ es:
+
+	\[
+	\{(e_1,0),(e_2,0),(0,e_1),(0,e_2)\}
+	\]
+
+	En coordenadas:
+
+	\[
+	\boxed{
+	B_{E\times F}
+	=
+	\{(1,0,0,0),(0,1,0,0),(0,0,1,0),(0,0,0,1)\}
+	}
+	\]
+
+	\[
+	\boxed{
+	\dimn(E\times F)=4
+	}
+	\]
+
+\section{Ejercicio 21}
+	Sea $\dimn E=3$ y:
+
+	\[
+	V=
+	\Span\{e_1-e_2,e_1+e_2\}
+	\]
+
+	\subsection{Solución}
+
+	Los dos generadores de $V$ son linealmente independientes:
+
+	\[
+	\dimn V=2
+	\]
+
+	Por tanto:
+
+	\[
+	\dimn(E/V)
+	=
+	3-2
+	=
+	1
+	\]
+
+	Necesitamos una clase no nula de $E/V$, es decir, la clase de un vector que no pertenezca a $V$.
+
+	Podemos tomar $e_3$:
+
+	\[
+	e_3\notin V
+	\]
+
+	Por tanto:
+
+	\[
+	\boxed{
+	B_{E/V}
+	=
+	\{[e_3]\}
+	}
+	\]
+
+\section{Ejercicio 22}
+	Sea:
+
+	\[
+	V=
+	\Span\{(1,0,1,1),(1,2,1,1),(2,2,2,2)\}
+	\]
+
+	\subsection{Solución}
+
+	Calculamos:
+
+	\[
+	\rg
+	\begin{pmatrix}
+	1&0&1&1\\
+	1&2&1&1\\
+	2&2&2&2
+	\end{pmatrix}
+	=
+	2
+	\]
+
+	Por tanto:
+
+	\[
+	\dimn V=2
+	\]
+
+	y:
+
+	\[
+	\dimn(\R^4/V)
+	=
+	4-2
+	=
+	2
+	\]
+
+	Además:
+
+	\[
+	V=
+	\Span\{(1,0,1,1),(1,2,1,1)\}
+	\]
+
+	Un vector de $V$ tiene la forma:
+
+	\[
+	(\alpha+\beta,2\beta,\alpha+\beta,\alpha+\beta)
+	\]
+
+	por lo que:
+
+	\[
+	x=z=t
+	\]
+
+	Los vectores:
+
+	\[
+	(1,0,0,0)
+	\]
+
+	y:
+
+	\[
+	(0,0,0,1)
+	\]
+
+	no pertenecen a $V$ y sus clases son linealmente independientes módulo $V$.
+
+	Por tanto:
+
+	\[
+	\boxed{
+	B_{\R^4/V}
+	=
+	\left\{
+	[(1,0,0,0)],
+	[(0,0,0,1)]
+	\right\}
+	}
+	\]
+
+\end{document}

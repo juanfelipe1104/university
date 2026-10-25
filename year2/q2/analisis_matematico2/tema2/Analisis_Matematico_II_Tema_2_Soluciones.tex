@@ -1,0 +1,1538 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\sen}{\operatorname{sen}}
+\newcommand{\Dom}{\operatorname{Dom}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Análisis Matemático II}\\[0.4em]
+{\Large Tema 2: Límites y continuidad en funciones de varias variables}\\[0.4em]
+{\large Soluciones}
+\end{center}
+
+\section{Ejercicio 1}
+\subsection{Solución}
+
+Queremos demostrar:
+
+\[
+\lim_{(x,y)\to(0,0)}
+\frac{x^2y^2}{x^2+y^2}
+=
+0.
+\]
+
+Se tiene:
+
+\[
+x^2y^2
+\leq
+\frac{(x^2+y^2)^2}{4}.
+\]
+
+Por tanto:
+
+\[
+0
+\leq
+\frac{x^2y^2}{x^2+y^2}
+\leq
+\frac{x^2+y^2}{4}.
+\]
+
+Si:
+
+\[
+0<\sqrt{x^2+y^2}<\delta,
+\]
+
+entonces:
+
+\[
+\left|
+\frac{x^2y^2}{x^2+y^2}
+\right|
+<
+\frac{\delta^2}{4}.
+\]
+
+Tomando:
+
+\[
+\delta=2\sqrt{\varepsilon},
+\]
+
+se obtiene:
+
+\[
+\left|
+\frac{x^2y^2}{x^2+y^2}
+\right|
+<
+\varepsilon.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\lim_{(x,y)\to(0,0)}
+\frac{x^2y^2}{x^2+y^2}
+=
+0
+}
+\]
+
+\section{Ejercicio 2}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\frac{xy^3}{x^2+y^6}.
+\]
+
+Según una recta:
+
+\[
+y=mx,
+\]
+
+se obtiene:
+
+\[
+f(x,mx)
+=
+\frac{m^3x^4}{x^2+m^6x^6}
+=
+\frac{m^3x^2}{1+m^6x^4}.
+\]
+
+Así:
+
+\[
+\boxed{
+\lim_{x\to0}f(x,mx)=0
+}
+\]
+
+para todo \(m\in\R\).
+
+Según el subconjunto:
+
+\[
+x=y^3,
+\]
+
+se tiene:
+
+\[
+f(y^3,y)
+=
+\frac{y^6}{y^6+y^6}
+=
+\frac12.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\lim_{y\to0}f(y^3,y)=\frac12
+}
+\]
+
+Como se obtienen límites distintos:
+
+\[
+\boxed{
+\lim_{(x,y)\to(0,0)}
+\frac{xy^3}{x^2+y^6}
+\text{ no existe}
+}
+\]
+
+\section{Ejercicio 3}
+\subsection{Solución}
+
+Consideramos:
+
+\[
+f(x,y)
+=
+\frac{(x+1)x+(2y-1)y}{x-y}.
+\]
+
+Según las rectas:
+
+\[
+y=mx,
+\]
+
+con \(m\neq1\):
+
+\[
+f(x,mx)
+=
+\frac{x^2+x+2m^2x^2-mx}{x-mx}
+\]
+
+\[
+=
+\frac{(1-m)+(1+2m^2)x}{1-m}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\lim_{x\to0}f(x,mx)=1
+}
+\]
+
+para toda recta \(y=mx\), \(m\neq1\).
+
+Ahora tomamos:
+
+\[
+y=x-\alpha x^2,
+\qquad
+\alpha\neq0.
+\]
+
+Entonces:
+
+\[
+x-y=\alpha x^2
+\]
+
+y:
+
+\[
+(x+1)x+(2y-1)y
+=
+(3+\alpha)x^2
+-
+4\alpha x^3
++
+2\alpha^2x^4.
+\]
+
+Así:
+
+\[
+f(x,x-\alpha x^2)
+=
+\frac{3+\alpha}{\alpha}
+-
+4x
++
+2\alpha x^2.
+\]
+
+Luego:
+
+\[
+\boxed{
+\lim_{x\to0}
+f(x,x-\alpha x^2)
+=
+1+\frac3\alpha
+}
+\]
+
+que depende de \(\alpha\).
+
+Por tanto:
+
+\[
+\boxed{
+\lim_{(x,y)\to(0,0)}f(x,y)
+\text{ no existe}
+}
+\]
+
+\section{Ejercicio 4}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\frac{xy-x+y}{x+y}.
+\]
+
+Primero:
+
+\[
+\lim_{y\to0}f(x,y)
+=
+\frac{-x}{x}
+=
+-1.
+\]
+
+Por tanto:
+
+\[
+\lim_{x\to0}
+\left(
+\lim_{y\to0}f(x,y)
+\right)
+=
+-1.
+\]
+
+En el otro orden:
+
+\[
+\lim_{x\to0}f(x,y)
+=
+\frac{y}{y}
+=
+1.
+\]
+
+Así:
+
+\[
+\lim_{y\to0}
+\left(
+\lim_{x\to0}f(x,y)
+\right)
+=
+1.
+\]
+
+Como los límites reiterados son distintos:
+
+\[
+\boxed{
+\lim_{(x,y)\to(0,0)}
+\frac{xy-x+y}{x+y}
+\text{ no existe}
+}
+\]
+
+\section{Ejercicio 5}
+\subsection{Solución}
+
+Realizamos el cambio:
+
+\[
+x=r\cos\theta,
+\qquad
+y=r\sen\theta.
+\]
+
+Entonces:
+
+\[
+\frac{x^2y}{x^2+xy+2y^2}
+=
+r
+\frac{\cos^2\theta\,\sen\theta}
+{\cos^2\theta+\cos\theta\sen\theta+2\sen^2\theta}.
+\]
+
+El denominador angular es estrictamente positivo:
+
+\[
+\cos^2\theta+\cos\theta\sen\theta+2\sen^2\theta
+=
+\left(
+\cos\theta+\frac12\sen\theta
+\right)^2
++
+\frac74\sen^2\theta.
+\]
+
+Por tanto, el cociente angular está acotado y:
+
+\[
+\boxed{
+\lim_{(x,y)\to(0,0)}
+\frac{x^2y}{x^2+xy+2y^2}
+=
+0
+}
+\]
+
+\section{Ejercicio 6}
+\subsection{Solución}
+
+Con:
+
+\[
+x=r\cos\theta,
+\qquad
+y=r\sen\theta,
+\]
+
+se obtiene:
+
+\[
+(x+y)\ln(x^2+y^2)
+=
+r(\cos\theta+\sen\theta)\ln(r^2).
+\]
+
+Así:
+
+\[
+=
+2r\ln r\,(\cos\theta+\sen\theta).
+\]
+
+Como:
+
+\[
+|\cos\theta+\sen\theta|
+\leq
+\sqrt2
+\]
+
+y:
+
+\[
+\lim_{r\to0^+}r\ln r=0,
+\]
+
+se concluye:
+
+\[
+\boxed{
+\lim_{(x,y)\to(0,0)}
+(x+y)\ln(x^2+y^2)
+=
+0
+}
+\]
+
+\section{Ejercicio 7}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\frac{(1-\cos(xy))\sen x}{x^2+y^2}.
+\]
+
+Utilizamos:
+
+\[
+1-\cos(xy)
+\sim
+\frac{x^2y^2}{2}
+\]
+
+y:
+
+\[
+\sen x\sim x.
+\]
+
+Por tanto:
+
+\[
+f(x,y)
+\sim
+\frac{x^3y^2}{2(x^2+y^2)}.
+\]
+
+Además:
+
+\[
+\left|
+\frac{x^3y^2}{2(x^2+y^2)}
+\right|
+\leq
+\frac{(x^2+y^2)^{5/2}}
+{2(x^2+y^2)}
+=
+\frac12(x^2+y^2)^{3/2}.
+\]
+
+Luego:
+
+\[
+\boxed{
+\lim_{(x,y)\to(0,0)}
+\frac{(1-\cos(xy))\sen x}{x^2+y^2}
+=
+0
+}
+\]
+
+\section{Ejercicio 8}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\frac{e^{xy}-1}
+{\sen x\,\ln(1+y)}.
+\]
+
+Utilizamos los infinitésimos equivalentes:
+
+\[
+e^{xy}-1\sim xy,
+\]
+
+\[
+\sen x\sim x,
+\]
+
+\[
+\ln(1+y)\sim y.
+\]
+
+Por tanto:
+
+\[
+f(x,y)
+\sim
+\frac{xy}{xy}
+=
+1.
+\]
+
+Así:
+
+\[
+\boxed{
+\lim_{(x,y)\to(0,0)}
+\frac{e^{xy}-1}
+{\sen x\,\ln(1+y)}
+=
+1
+}
+\]
+
+\section{Ejercicio 9}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\frac{x^2+xy+y^2}{x^2+y^2}.
+\]
+
+Los límites reiterados son:
+
+\[
+\lim_{x\to0}
+\left(
+\lim_{y\to0}f(x,y)
+\right)
+=
+1
+\]
+
+y:
+
+\[
+\lim_{y\to0}
+\left(
+\lim_{x\to0}f(x,y)
+\right)
+=
+1.
+\]
+
+Según:
+
+\[
+y=mx,
+\]
+
+se obtiene:
+
+\[
+f(x,mx)
+=
+\frac{1+m+m^2}{1+m^2}.
+\]
+
+Por ejemplo:
+
+\[
+m=0
+\Longrightarrow
+1,
+\]
+
+\[
+m=1
+\Longrightarrow
+\frac32.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\lim_{(x,y)\to(0,0)}f(x,y)
+\text{ no existe}
+}
+\]
+
+En coordenadas polares:
+
+\[
+f(r,\theta)
+=
+1+\cos\theta\sen\theta,
+\]
+
+que depende de \(\theta\), confirmando el resultado.
+
+\section{Ejercicio 10}
+\subsection{Solución}
+
+Con:
+
+\[
+x=r\cos\theta,
+\qquad
+y=r\sen\theta,
+\]
+
+se obtiene:
+
+\[
+\frac{x^3+y^3}{x^2-y^2}
+=
+r
+\frac{\cos^3\theta+\sen^3\theta}
+{\cos^2\theta-\sen^2\theta}.
+\]
+
+Factorizando:
+
+\[
+=
+r
+\frac{\cos^2\theta-\cos\theta\sen\theta+\sen^2\theta}
+{\cos\theta-\sen\theta}.
+\]
+
+Para un \(\theta\) fijo distinto de \(\pi/4\), el límite es:
+
+\[
+0.
+\]
+
+Sin embargo, tomamos:
+
+\[
+\theta=\frac{\pi}{4}-r.
+\]
+
+Entonces:
+
+\[
+\cos\theta-\sen\theta
+\sim
+\sqrt2\,r
+\]
+
+y:
+
+\[
+\cos^2\theta-\cos\theta\sen\theta+\sen^2\theta
+\to
+\frac12.
+\]
+
+Por tanto:
+
+\[
+\lim_{r\to0^+}
+r
+\frac{\cos^2\theta-\cos\theta\sen\theta+\sen^2\theta}
+{\cos\theta-\sen\theta}
+=
+\frac1{2\sqrt2}.
+\]
+
+Como se obtienen valores distintos:
+
+\[
+\boxed{
+\lim_{(x,y)\to(0,0)}
+\frac{x^3+y^3}{x^2-y^2}
+\text{ no existe}
+}
+\]
+
+\section{Ejercicio 11}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\begin{cases}
+\dfrac{x^2+2y^2}{2x^2+y^2},
+&
+(x,y)\neq(0,0),\\[2mm]
+0,
+&
+(x,y)=(0,0).
+\end{cases}
+\]
+
+Primero:
+
+\[
+\lim_{y\to0}f(x,y)
+=
+\frac{x^2}{2x^2}
+=
+\frac12.
+\]
+
+Así:
+
+\[
+\boxed{
+\lim_{x\to0}
+\left(
+\lim_{y\to0}f(x,y)
+\right)
+=
+\frac12
+}
+\]
+
+En el otro orden:
+
+\[
+\lim_{x\to0}f(x,y)
+=
+\frac{2y^2}{y^2}
+=
+2.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\lim_{y\to0}
+\left(
+\lim_{x\to0}f(x,y)
+\right)
+=
+2
+}
+\]
+
+Como son distintos:
+
+\[
+\boxed{
+\lim_{(x,y)\to(0,0)}f(x,y)
+\text{ no existe}
+}
+\]
+
+\section{Ejercicio 12}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\begin{cases}
+y\sen\left(\dfrac1x\right)
++
+x\sen\left(\dfrac1y\right),
+&
+x\neq0,\ y\neq0,\\[2mm]
+0,
+&
+x=0\text{ o }y=0.
+\end{cases}
+\]
+
+Para \(x\neq0\):
+
+\[
+\lim_{y\to0}
+x\sen\left(\frac1y\right)
+\]
+
+no existe.
+
+Por tanto:
+
+\[
+\boxed{
+\lim_{x\to0}
+\left(
+\lim_{y\to0}f(x,y)
+\right)
+\text{ no existe}
+}
+\]
+
+Análogamente:
+
+\[
+\boxed{
+\lim_{y\to0}
+\left(
+\lim_{x\to0}f(x,y)
+\right)
+\text{ no existe}
+}
+\]
+
+Esto no permite concluir que el límite doble no exista.
+
+De hecho:
+
+\[
+|f(x,y)|
+\leq
+|x|+|y|.
+\]
+
+Como:
+
+\[
+|x|+|y|
+\to0,
+\]
+
+se obtiene:
+
+\[
+\boxed{
+\lim_{(x,y)\to(0,0)}f(x,y)=0
+}
+\]
+
+\section{Ejercicio 13}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\frac{x\sen y}{y\sen x}.
+\]
+
+Escribimos:
+
+\[
+f(x,y)
+=
+\frac{\sen y}{y}
+\frac{x}{\sen x}.
+\]
+
+Como:
+
+\[
+\lim_{y\to0}\frac{\sen y}{y}=1
+\]
+
+y:
+
+\[
+\lim_{x\to0}\frac{x}{\sen x}=1,
+\]
+
+se obtiene:
+
+\[
+\boxed{
+\lim_{(x,y)\to(0,0)}
+\frac{x\sen y}{y\sen x}
+=
+1
+}
+\]
+
+\section{Ejercicio 14}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\frac{3x-12}{x^2-16y^2}.
+\]
+
+Según:
+
+\[
+y=1,
+\]
+
+se tiene:
+
+\[
+f(x,1)
+=
+\frac{3(x-4)}
+{(x-4)(x+4)}
+=
+\frac3{x+4}.
+\]
+
+Por tanto:
+
+\[
+\lim_{x\to4}f(x,1)
+=
+\frac38.
+\]
+
+Según:
+
+\[
+x=4,
+\]
+
+se tiene:
+
+\[
+f(4,y)=0
+\]
+
+para \(y\neq1\), luego:
+
+\[
+\lim_{y\to1}f(4,y)=0.
+\]
+
+Como los resultados son distintos:
+
+\[
+\boxed{
+\lim_{(x,y)\to(4,1)}
+\frac{3x-12}{x^2-16y^2}
+\text{ no existe}
+}
+\]
+
+\section{Ejercicio 15}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\sqrt{x}
+\ln\left(
+1+\sqrt{x^2-y^2}
++
+\left|\frac yx\right|
+\right).
+\]
+
+En su dominio, cerca del origen:
+
+\[
+x>0,
+\qquad
+|y|\leq x.
+\]
+
+Entonces:
+
+\[
+0\leq
+\sqrt{x^2-y^2}
+\leq x
+\]
+
+y:
+
+\[
+0\leq
+\left|\frac yx\right|
+\leq1.
+\]
+
+Por tanto:
+
+\[
+1
+\leq
+1+\sqrt{x^2-y^2}
++
+\left|\frac yx\right|
+\leq
+2+x.
+\]
+
+Así:
+
+\[
+0
+\leq
+f(x,y)
+\leq
+\sqrt{x}\ln(2+x).
+\]
+
+Como:
+
+\[
+\lim_{x\to0^+}
+\sqrt{x}\ln(2+x)
+=
+0,
+\]
+
+se concluye:
+
+\[
+\boxed{
+\lim_{(x,y)\to(0,0)}
+\sqrt{x}
+\ln\left(
+1+\sqrt{x^2-y^2}
++
+\left|\frac yx\right|
+\right)
+=
+0
+}
+\]
+
+\section{Ejercicio 16}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\frac{x^2y^2}
+{x^2y^2+(x-y)^2}.
+\]
+
+Según:
+
+\[
+y=x,
+\]
+
+se obtiene:
+
+\[
+f(x,x)
+=
+\frac{x^4}{x^4}
+=
+1.
+\]
+
+Por tanto:
+
+\[
+\lim_{x\to0}f(x,x)=1.
+\]
+
+Según:
+
+\[
+y=0,
+\]
+
+se tiene:
+
+\[
+f(x,0)=0.
+\]
+
+Luego:
+
+\[
+\lim_{x\to0}f(x,0)=0.
+\]
+
+Como los valores son distintos:
+
+\[
+\boxed{
+\lim_{(x,y)\to(0,0)}
+\frac{x^2y^2}
+{x^2y^2+(x-y)^2}
+\text{ no existe}
+}
+\]
+
+\section{Ejercicio 17}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\left(
+1-x\sen y,\,
+3x^2e^{-y^2}
+\right).
+\]
+
+Calculamos componente a componente:
+
+\[
+\lim_{(x,y)\to(0,0)}
+(1-x\sen y)
+=
+1
+\]
+
+y:
+
+\[
+\lim_{(x,y)\to(0,0)}
+3x^2e^{-y^2}
+=
+0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\lim_{(x,y)\to(0,0)}f(x,y)
+=
+(1,0)
+}
+\]
+
+\section{Ejercicio 18}
+\subsection{Solución}
+
+Sea:
+
+\[
+t=x^2+y^2+z^2.
+\]
+
+Cuando:
+
+\[
+(x,y,z)\to(0,0,0),
+\]
+
+se tiene:
+
+\[
+t\to0.
+\]
+
+Por tanto:
+
+\[
+\frac{\sen(x^2+y^2+z^2)}
+{x^2+y^2+z^2}
+=
+\frac{\sen t}{t}.
+\]
+
+Así:
+
+\[
+\boxed{
+\lim_{(x,y,z)\to(0,0,0)}
+\frac{\sen(x^2+y^2+z^2)}
+{x^2+y^2+z^2}
+=
+1
+}
+\]
+
+\section{Ejercicio 19}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y,z)
+=
+\frac{xy+yz}{x^2+y^2+z^2}.
+\]
+
+Según:
+
+\[
+(x,y,z)=(t,0,0),
+\]
+
+se obtiene:
+
+\[
+f(t,0,0)=0.
+\]
+
+Según:
+
+\[
+(x,y,z)=(t,t,0),
+\]
+
+se tiene:
+
+\[
+f(t,t,0)
+=
+\frac{t^2}{2t^2}
+=
+\frac12.
+\]
+
+Como se obtienen límites distintos:
+
+\[
+\boxed{
+\lim_{(x,y,z)\to(0,0,0)}
+\frac{xy+yz}{x^2+y^2+z^2}
+\text{ no existe}
+}
+\]
+
+\section{Ejercicio 20}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\begin{cases}
+\dfrac{\sen^2x\,\sen y}{x^2+y^2},
+&
+(x,y)\neq(0,0),\\[2mm]
+0,
+&
+(x,y)=(0,0).
+\end{cases}
+\]
+
+Fuera del origen es cociente de funciones continuas con denominador no nulo.
+
+En el origen:
+
+\[
+|\sen x|\leq|x|,
+\qquad
+|\sen y|\leq|y|.
+\]
+
+Por tanto:
+
+\[
+\left|
+\frac{\sen^2x\,\sen y}{x^2+y^2}
+\right|
+\leq
+\frac{x^2|y|}{x^2+y^2}
+\leq
+|y|.
+\]
+
+Como:
+
+\[
+|y|\to0,
+\]
+
+se obtiene:
+
+\[
+\lim_{(x,y)\to(0,0)}f(x,y)=0=f(0,0).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ es continua en todo }\R^2
+}
+\]
+
+\section{Ejercicio 21}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\begin{cases}
+x\sen\left(\dfrac1{x^2+y^2}\right)
++
+y\cos\left(\dfrac1{x^2+y^2}\right),
+&
+(x,y)\neq(0,0),\\[2mm]
+0,
+&
+(x,y)=(0,0).
+\end{cases}
+\]
+
+Para \((x,y)\neq(0,0)\):
+
+\[
+|f(x,y)|
+\leq
+|x|+|y|.
+\]
+
+Además:
+
+\[
+|x|+|y|
+\leq
+\sqrt2\sqrt{x^2+y^2}.
+\]
+
+Por tanto:
+
+\[
+\lim_{(x,y)\to(0,0)}f(x,y)=0.
+\]
+
+Como:
+
+\[
+f(0,0)=0,
+\]
+
+se concluye:
+
+\[
+\boxed{
+f\text{ es continua en }(0,0)
+}
+\]
+
+\section{Ejercicio 22}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\begin{cases}
+\dfrac{2xy^2+3x}{x^2+y^2},
+&
+(x,y)\neq(0,0),\\[2mm]
+0,
+&
+(x,y)=(0,0).
+\end{cases}
+\]
+
+Fuera del origen es continua.
+
+En el origen, según:
+
+\[
+y=0,
+\]
+
+se obtiene:
+
+\[
+f(x,0)
+=
+\frac{3x}{x^2}
+=
+\frac3x.
+\]
+
+Este valor no posee límite cuando:
+
+\[
+x\to0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ no es continua en }(0,0)
+}
+\]
+
+y:
+
+\[
+\boxed{
+f\text{ es continua en }
+\R^2\setminus\{(0,0)\}.
+}
+\]
+
+\section{Ejercicio 23}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\begin{cases}
+\dfrac{x}{4x^2+y^2-1},
+&
+4x^2+y^2\neq1
+\text{ y }(x,y)\neq(0,0),\\[2mm]
+1,
+&
+4x^2+y^2=1
+\text{ o }(x,y)=(0,0).
+\end{cases}
+\]
+
+En los puntos donde:
+
+\[
+4x^2+y^2\neq1
+\]
+
+y:
+
+\[
+(x,y)\neq(0,0),
+\]
+
+la función es racional con denominador no nulo, luego es continua.
+
+En el origen:
+
+\[
+\lim_{(x,y)\to(0,0)}
+\frac{x}{4x^2+y^2-1}
+=
+0
+\]
+
+pero:
+
+\[
+f(0,0)=1.
+\]
+
+Por tanto, no es continua en el origen.
+
+Si:
+
+\[
+4x_0^2+y_0^2=1
+\]
+
+y \(x_0\neq0\), el denominador tiende a \(0\) mientras el numerador tiende a \(x_0\neq0\), por lo que no existe un límite finito.
+
+En los puntos:
+
+\[
+(0,1),
+\qquad
+(0,-1),
+\]
+
+tomando \(x=0\):
+
+\[
+f(0,y)=0
+\]
+
+para \(y\neq\pm1\), mientras que el valor asignado es \(1\).
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ es continua exactamente en }
+\R^2
+\setminus
+\left(
+\{(0,0)\}
+\cup
+\{(x,y):4x^2+y^2=1\}
+\right)
+}
+\]
+
+\section{Ejercicio 24}
+\subsection{Solución}
+
+Sea:
+
+\[
+h(x,y,z)
+=
+\left(
+3e^{x+y+z},
+\sen(x^2+y^2),
+1+x+y+z
+\right).
+\]
+
+Sus tres componentes:
+
+\[
+h_1(x,y,z)=3e^{x+y+z},
+\]
+
+\[
+h_2(x,y,z)=\sen(x^2+y^2),
+\]
+
+\[
+h_3(x,y,z)=1+x+y+z
+\]
+
+son continuas en todo \(\R^3\).
+
+Por tanto:
+
+\[
+\boxed{
+h\text{ es continua en todo }\R^3
+}
+\]
+
+\end{document}

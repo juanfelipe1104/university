@@ -1,0 +1,1406 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+
+\newcommand{\R}{\mathbb{R}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Geometría Lineal}\\[0.4em]
+{\Large Tema 6: Geometría proyectiva}\\[0.4em]
+{\large Soluciones}
+\end{center}
+
+\section{Ejercicio 1}
+\subsection{Solución}
+
+Sean:
+
+\[
+P=(1:2:8),
+\qquad
+Q=(-7:0:3).
+\]
+
+La recta que pasa por ambos puntos viene dada por:
+
+\[
+\begin{vmatrix}
+x_1&x_2&x_3\\
+1&2&8\\
+-7&0&3
+\end{vmatrix}
+=0.
+\]
+
+Desarrollando:
+
+\[
+\boxed{
+6x_1-59x_2+14x_3=0.
+}
+\]
+
+\section{Ejercicio 2}
+\subsection{Solución}
+
+Sean:
+
+\[
+P=(1:-1:2),
+\qquad
+Q=(2:1:1).
+\]
+
+La recta proyectiva está formada por los puntos:
+
+\[
+\lambda(1,-1,2)+\mu(2,1,1),
+\qquad
+(\lambda,\mu)\neq(0,0).
+\]
+
+Por tanto, sus ecuaciones paramétricas son:
+
+\[
+\boxed{
+\begin{cases}
+\alpha x_1=\lambda+2\mu,\\
+\alpha x_2=-\lambda+\mu,\\
+\alpha x_3=2\lambda+\mu,
+\end{cases}
+\qquad
+(\alpha,\lambda,\mu)\neq(0,0,0).
+}
+\]
+
+La ecuación implícita se obtiene mediante:
+
+\[
+\begin{vmatrix}
+x_1&x_2&x_3\\
+1&-1&2\\
+2&1&1
+\end{vmatrix}
+=0.
+\]
+
+Así:
+
+\[
+\boxed{
+x_1-x_2-x_3=0.
+}
+\]
+
+\section{Ejercicio 3}
+\subsection{Solución}
+
+La recta \(r\) del ejercicio anterior tiene parametrización:
+
+\[
+(x_1:x_2:x_3)
+=
+(\lambda+2\mu:-\lambda+\mu:2\lambda+\mu).
+\]
+
+La recta:
+
+\[
+s:
+x_1+x_2+x_3=0
+\]
+
+impone:
+
+\[
+2\lambda+4\mu=0.
+\]
+
+Por tanto:
+
+\[
+\lambda=-2\mu.
+\]
+
+Tomando:
+
+\[
+\mu=1,
+\qquad
+\lambda=-2,
+\]
+
+se obtiene:
+
+\[
+(0:3:-3).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+r\cap s=(0:1:-1).
+}
+\]
+
+\section{Ejercicio 4}
+\subsection{Solución}
+
+\textbf{a)}
+
+Las matrices de coeficientes de las tres rectas forman:
+
+\[
+M_a=
+\begin{pmatrix}
+1&-1&1\\
+3&0&1\\
+1&-1&-1
+\end{pmatrix}.
+\]
+
+Se tiene:
+
+\[
+\det M_a=-6\neq0.
+\]
+
+Por tanto, las tres rectas no pasan por un mismo punto:
+
+\[
+\boxed{
+\text{Las tres rectas forman un triángulo proyectivo.}
+}
+\]
+
+\textbf{b)}
+
+\[
+M_b=
+\begin{pmatrix}
+1&1&1\\
+1&3&-3\\
+1&0&3
+\end{pmatrix}.
+\]
+
+Se tiene:
+
+\[
+\det M_b=0.
+\]
+
+Resolviendo:
+
+\[
+M_b
+\begin{pmatrix}
+x_1\\x_2\\x_3
+\end{pmatrix}
+=0,
+\]
+
+se obtiene:
+
+\[
+(x_1:x_2:x_3)=(-3:2:1).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{Las tres rectas son concurrentes en }(-3:2:1).
+}
+\]
+
+\textbf{c)}
+
+\[
+M_c=
+\begin{pmatrix}
+1&1&0\\
+1&0&1\\
+0&1&1
+\end{pmatrix}.
+\]
+
+Como:
+
+\[
+\det M_c=-2\neq0,
+\]
+
+se concluye:
+
+\[
+\boxed{
+\text{Las tres rectas forman un triángulo proyectivo.}
+}
+\]
+
+\section{Ejercicio 5}
+\subsection{Solución}
+
+Sean:
+
+\[
+P_1=(-1:0:0:1),
+\]
+
+\[
+P_2=(0:1:1:1),
+\]
+
+\[
+P_3=(1:2:a:b).
+\]
+
+Para que estén sobre una misma recta proyectiva debe cumplirse:
+
+\[
+P_3\in\mathcal L\{P_1,P_2\}.
+\]
+
+Por tanto:
+
+\[
+(1,2,a,b)
+=
+\lambda(-1,0,0,1)
++
+\mu(0,1,1,1).
+\]
+
+Comparando coordenadas:
+
+\[
+-\lambda=1,
+\]
+
+\[
+\mu=2,
+\]
+
+\[
+a=\mu,
+\]
+
+\[
+b=\lambda+\mu.
+\]
+
+Así:
+
+\[
+\boxed{
+a=2,
+\qquad
+b=1.
+}
+\]
+
+\section{Ejercicio 6}
+\subsection{Solución}
+
+La referencia es:
+
+\[
+R=\{P_1,P_2;P_3\},
+\]
+
+con:
+
+\[
+P_1=(1:1:0),
+\qquad
+P_2=(1:2:0),
+\qquad
+P_3=(0:1:0).
+\]
+
+Elegimos representantes normalizados:
+
+\[
+v_1=(-1,-1,0),
+\]
+
+\[
+v_2=(1,2,0),
+\]
+
+de forma que:
+
+\[
+v_1+v_2=(0,1,0),
+\]
+
+que representa a \(P_3\).
+
+Para:
+
+\[
+Q=(1:0:0),
+\]
+
+buscamos:
+
+\[
+(1,0,0)
+=
+\omega_1v_1+\omega_2v_2.
+\]
+
+Se obtiene:
+
+\[
+\omega_1=-2,
+\qquad
+\omega_2=-1.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+Q=(2:1)_R.
+}
+\]
+
+\section{Ejercicio 7}
+\subsection{Solución}
+
+El sistema:
+
+\[
+R=\{P_1,P_2,P_3;P_4\}
+\]
+
+es la referencia canónica.
+
+Para:
+
+\[
+R'=\{Q_1,Q_2,Q_3;Q_4\},
+\]
+
+se tiene:
+
+\[
+Q_1=(3:1:-3),
+\]
+
+\[
+Q_2=(-1:0:5),
+\]
+
+\[
+Q_3=(1:8:-1),
+\]
+
+\[
+Q_4=(3:9:1).
+\]
+
+Además:
+
+\[
+Q_1+Q_2+Q_3=Q_4,
+\]
+
+por lo que la base ya está normalizada.
+
+La matriz formada por los representantes de \(Q_1,Q_2,Q_3\) es:
+
+\[
+M=
+\begin{pmatrix}
+3&-1&1\\
+1&0&8\\
+-3&5&-1
+\end{pmatrix}.
+\]
+
+Por tanto:
+
+\[
+X_R=M X_{R'}.
+\]
+
+Así:
+
+\[
+X_{R'}=M^{-1}X_R.
+\]
+
+Multiplicando por \(92\), que no altera las coordenadas homogéneas:
+
+\[
+\boxed{
+\begin{pmatrix}
+x_1'\\x_2'\\x_3'
+\end{pmatrix}
+\sim
+\begin{pmatrix}
+40&-4&8\\
+23&0&23\\
+-5&12&-1
+\end{pmatrix}
+\begin{pmatrix}
+x_1\\x_2\\x_3
+\end{pmatrix}.
+}
+\]
+
+\section{Ejercicio 8}
+\subsection{Solución}
+
+La nueva referencia es:
+
+\[
+R'=\{P_4,P_2,P_3;P_1\}.
+\]
+
+Tomamos como base normalizada:
+
+\[
+v_1=(1,1,1),
+\]
+
+\[
+v_2=(0,-1,0),
+\]
+
+\[
+v_3=(0,0,-1),
+\]
+
+ya que:
+
+\[
+v_1+v_2+v_3=(1,0,0),
+\]
+
+que representa a \(P_1\).
+
+La matriz de cambio es:
+
+\[
+M=
+\begin{pmatrix}
+1&0&0\\
+1&-1&0\\
+1&0&-1
+\end{pmatrix}.
+\]
+
+Además:
+
+\[
+M^{-1}=M.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\begin{pmatrix}
+x_1'\\x_2'\\x_3'
+\end{pmatrix}
+=
+\begin{pmatrix}
+1&0&0\\
+1&-1&0\\
+1&0&-1
+\end{pmatrix}
+\begin{pmatrix}
+x_1\\x_2\\x_3
+\end{pmatrix}.
+}
+\]
+
+Es decir:
+
+\[
+\boxed{
+(x_1':x_2':x_3')
+=
+(x_1:x_1-x_2:x_1-x_3).
+}
+\]
+
+\section{Ejercicio 9}
+\subsection{Solución}
+
+Para la referencia:
+
+\[
+R=
+\{(1:1:0),(1:2:0),(0:1:1);(0:0:1)\},
+\]
+
+una base normalizada es:
+
+\[
+B_R=
+\{(1,1,0),(-1,-2,0),(0,1,1)\}.
+\]
+
+Por tanto:
+
+\[
+M_R=
+\begin{pmatrix}
+1&-1&0\\
+1&-2&1\\
+0&0&1
+\end{pmatrix}.
+\]
+
+Para:
+
+\[
+R'=
+\{(1:0:0),(1:0:1),(0:1:1);(2:1:2)\},
+\]
+
+los tres primeros representantes ya están normalizados, ya que su suma es:
+
+\[
+(2,1,2).
+\]
+
+Así:
+
+\[
+M_{R'}=
+\begin{pmatrix}
+1&1&0\\
+0&0&1\\
+0&1&1
+\end{pmatrix}.
+\]
+
+Para:
+
+\[
+P=(2:1:2),
+\]
+
+se obtiene:
+
+\[
+M_R^{-1}
+\begin{pmatrix}
+2\\1\\2
+\end{pmatrix}
+=
+\begin{pmatrix}
+5\\3\\2
+\end{pmatrix}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+P=(5:3:2)_R.
+}
+\]
+
+Como \(P\) es el cuarto punto de \(R'\):
+
+\[
+\boxed{
+P=(1:1:1)_{R'}.
+}
+\]
+
+El cambio de \(R\) a \(R'\) es:
+
+\[
+M_{R'}^{-1}M_R
+=
+\begin{pmatrix}
+2&-3&0\\
+-1&2&0\\
+1&-2&1
+\end{pmatrix}.
+\]
+
+Así:
+
+\[
+\boxed{
+X_{R'}
+=
+\begin{pmatrix}
+2&-3&0\\
+-1&2&0\\
+1&-2&1
+\end{pmatrix}
+X_R.
+}
+\]
+
+El cambio inverso es:
+
+\[
+\boxed{
+X_R
+=
+\begin{pmatrix}
+2&3&0\\
+1&2&0\\
+0&1&1
+\end{pmatrix}
+X_{R'}.
+}
+\]
+
+\section{Ejercicio 10}
+\subsection{Solución}
+
+Sean:
+
+\[
+A=(1:-1),
+\quad
+B=(3:-1),
+\quad
+C=(1:0),
+\quad
+D=(2:-1).
+\]
+
+La razón doble es:
+
+\[
+[A,B,C,D]
+=
+\frac{
+\begin{vmatrix}
+1&-1\\
+1&0
+\end{vmatrix}
+\begin{vmatrix}
+3&-1\\
+2&-1
+\end{vmatrix}
+}{
+\begin{vmatrix}
+1&-1\\
+2&-1
+\end{vmatrix}
+\begin{vmatrix}
+3&-1\\
+1&0
+\end{vmatrix}
+}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+[A,B,C,D]=-1.
+}
+\]
+
+\section{Ejercicio 11}
+\subsection{Solución}
+
+Sean:
+
+\[
+A=(1:0:0),
+\]
+
+\[
+B=(1:1:1),
+\]
+
+\[
+C=(0:1:1),
+\]
+
+\[
+D=(-2:1:1).
+\]
+
+\textbf{a)}
+
+Tomando \(A\) y \(B\) como generadores de la recta:
+
+\[
+C=-A+B,
+\]
+
+\[
+D=-3A+B.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+A,B,C,D\text{ están alineados}.
+}
+\]
+
+\textbf{b)}
+
+Respecto de la base \(\{A,B\}\):
+
+\[
+A=(1:0),
+\qquad
+B=(0:1),
+\qquad
+C=(-1:1),
+\qquad
+D=(-3:1).
+\]
+
+Así:
+
+\[
+\boxed{
+[A,B,C,D]=3.
+}
+\]
+
+\textbf{c)}
+
+Sea:
+
+\[
+A'=(a:b).
+\]
+
+Imponemos:
+
+\[
+[A',B,C,D]=-1.
+\]
+
+Se obtiene:
+
+\[
+2a+3b=0.
+\]
+
+Podemos tomar:
+
+\[
+(a,b)=(-3,2).
+\]
+
+Por tanto:
+
+\[
+A'=-3A+2B.
+\]
+
+Así:
+
+\[
+\boxed{
+A'=(-1:2:2).
+}
+\]
+
+\section{Ejercicio 12}
+\subsection{Solución}
+
+Tomamos:
+
+\[
+A=(1:1:-1:1),
+\]
+
+\[
+B=(0:1:1:-1).
+\]
+
+Los otros puntos se expresan como:
+
+\[
+C=2A-B,
+\]
+
+\[
+D=4A-B.
+\]
+
+Por tanto, respecto de la referencia inducida en la recta:
+
+\[
+A=(1:0),
+\]
+
+\[
+B=(0:1),
+\]
+
+\[
+C=(2:-1),
+\]
+
+\[
+D=(4:-1).
+\]
+
+Así:
+
+\[
+\boxed{
+[A,B,C,D]=2.
+}
+\]
+
+\section{Ejercicio 13}
+\subsection{Solución}
+
+Sea la matriz de la proyectividad:
+
+\[
+A=
+\begin{pmatrix}
+a&b\\
+c&d
+\end{pmatrix}.
+\]
+
+Como:
+
+\[
+f(1:0)=(2:-3),
+\]
+
+la primera columna es proporcional a:
+
+\[
+(2,-3).
+\]
+
+Como:
+
+\[
+f(0:1)=(1:1),
+\]
+
+la segunda columna es proporcional a:
+
+\[
+(1,1).
+\]
+
+Por tanto:
+
+\[
+A=
+\begin{pmatrix}
+2\alpha&\beta\\
+-3\alpha&\beta
+\end{pmatrix}.
+\]
+
+La condición:
+
+\[
+f(1:1)=(0:5)
+\]
+
+impone:
+
+\[
+2\alpha+\beta=0.
+\]
+
+Tomando:
+
+\[
+\alpha=1,
+\qquad
+\beta=-2,
+\]
+
+obtenemos:
+
+\[
+A=
+\begin{pmatrix}
+2&-2\\
+-3&-2
+\end{pmatrix}.
+\]
+
+Entonces:
+
+\[
+A
+\begin{pmatrix}
+7\\21
+\end{pmatrix}
+=
+\begin{pmatrix}
+-28\\-63
+\end{pmatrix}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f(7:21)=(4:9).
+}
+\]
+
+\section{Ejercicio 14}
+\subsection{Solución}
+
+La proyectividad verifica:
+
+\[
+f(1:0:0)=(0:0:1),
+\]
+
+\[
+f(0:1:0)=(0:1:1),
+\]
+
+\[
+f(1:1:1)=(1:0:1),
+\]
+
+\[
+f(2:0:1)=(-1:2:3).
+\]
+
+Tomando las columnas de la matriz asociada y ajustando los escalares mediante las dos últimas condiciones, se obtiene:
+
+\[
+A=
+\begin{pmatrix}
+0&0&-1\\
+0&-2&2\\
+2&-2&-1
+\end{pmatrix}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\begin{pmatrix}
+x_1'\\x_2'\\x_3'
+\end{pmatrix}
+=
+\begin{pmatrix}
+0&0&-1\\
+0&-2&2\\
+2&-2&-1
+\end{pmatrix}
+\begin{pmatrix}
+x_1\\x_2\\x_3
+\end{pmatrix}.
+}
+\]
+
+\section{Ejercicio 15}
+\subsection{Solución}
+
+La matriz de la homografía es:
+
+\[
+A=
+\begin{pmatrix}
+2&1&-1\\
+0&2&-1\\
+-3&-2&3
+\end{pmatrix}.
+\]
+
+Los puntos fijos corresponden a autovectores de \(A\).
+
+El polinomio característico es:
+
+\[
+(\lambda-1)^2(\lambda-5).
+\]
+
+Para:
+
+\[
+\lambda=1,
+\]
+
+se obtiene:
+
+\[
+V_1=\mathcal L\{(0,1,1)\}.
+\]
+
+Para:
+
+\[
+\lambda=5,
+\]
+
+se obtiene:
+
+\[
+V_5=\mathcal L\{(-4,-3,9)\}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+P_1=(0:1:1),
+\qquad
+P_2=(-4:-3:9).
+}
+\]
+
+\section{Ejercicio 16}
+\subsection{Solución}
+
+Los puntos son:
+
+\[
+A=(0:0:1),
+\quad
+B=(0:1:0),
+\quad
+C=(1:0:0),
+\quad
+D=(1:1:1).
+\]
+
+Buscamos una homografía que verifique:
+
+\[
+A\mapsto B,
+\quad
+B\mapsto C,
+\quad
+C\mapsto D,
+\quad
+D\mapsto A.
+\]
+
+Una matriz asociada es:
+
+\[
+\boxed{
+A_f=
+\begin{pmatrix}
+1&-1&0\\
+1&0&-1\\
+1&0&0
+\end{pmatrix}.
+}
+\]
+
+Su polinomio característico es:
+
+\[
+(\lambda-1)(\lambda^2+1).
+\]
+
+El único autovalor real es:
+
+\[
+\lambda=1,
+\]
+
+con autovector:
+
+\[
+(1,0,1).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+P=(1:0:1)
+}
+\]
+
+es el único punto fijo real.
+
+\section{Ejercicio 17}
+\subsection{Solución}
+
+La matriz de la homografía es:
+
+\[
+A=
+\begin{pmatrix}
+0&-1&1\\
+\beta&0&-1\\
+1&-7&0
+\end{pmatrix}.
+\]
+
+\textbf{a)}
+
+El punto:
+
+\[
+P=(1:0:1)
+\]
+
+debe ser fijo.
+
+Se tiene:
+
+\[
+A
+\begin{pmatrix}
+1\\0\\1
+\end{pmatrix}
+=
+\begin{pmatrix}
+1\\
+\beta-1\\
+1
+\end{pmatrix}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\beta=1.
+}
+\]
+
+Para este valor, los autovalores son:
+
+\[
+-3,\qquad1,\qquad2.
+\]
+
+Los puntos fijos son:
+
+\[
+\boxed{
+(-1:2:5),
+\qquad
+(1:0:1),
+\qquad
+(3:-1:5).
+}
+\]
+
+\textbf{b)}
+
+Las rectas invariantes corresponden a autovectores de \(A^t\).
+
+Se obtiene:
+
+\[
+\boxed{
+-x_1+2x_2+x_3=0,
+}
+\]
+
+\[
+\boxed{
+-3x_1-4x_2+x_3=0,
+}
+\]
+
+\[
+\boxed{
+-x_1-3x_2+x_3=0.
+}
+\]
+
+\section{Ejercicio 18}
+\subsection{Solución}
+
+La matriz es:
+
+\[
+A=
+\begin{pmatrix}
+2&1&-1\\
+0&2&-1\\
+-3&-2&3
+\end{pmatrix}.
+\]
+
+Los puntos fijos son los autovectores de \(A\):
+
+\[
+\boxed{
+(0:1:1),
+\qquad
+(-4:-3:9).
+}
+\]
+
+Las rectas invariantes se obtienen a partir de los autovectores de \(A^t\).
+
+Para:
+
+\[
+\lambda=1,
+\]
+
+se obtiene:
+
+\[
+(3,-1,1).
+\]
+
+Para:
+
+\[
+\lambda=5,
+\]
+
+se obtiene:
+
+\[
+(-1,-1,1).
+\]
+
+Por tanto, las rectas invariantes son:
+
+\[
+\boxed{
+3x_1-x_2+x_3=0
+}
+\]
+
+y:
+
+\[
+\boxed{
+-x_1-x_2+x_3=0.
+}
+\]
+
+\section{Ejercicio 19}
+\subsection{Solución}
+
+La matriz es:
+
+\[
+A=
+\begin{pmatrix}
+2&0&0\\
+1&2&-1\\
+1&0&2
+\end{pmatrix}.
+\]
+
+Su único autovalor es:
+
+\[
+\lambda=2.
+\]
+
+El subespacio propio es:
+
+\[
+V_2=\mathcal L\{(0,1,0)\}.
+\]
+
+Por tanto, el único punto fijo es:
+
+\[
+\boxed{
+P=(0:1:0).
+}
+\]
+
+Para \(A^t\), el subespacio propio es:
+
+\[
+\mathcal L\{(1,0,0)\}.
+\]
+
+Así, la única recta invariante es:
+
+\[
+\boxed{
+x_1=0.
+}
+\]
+
+\section{Ejercicio 20}
+\subsection{Solución}
+
+La matriz de la homografía es:
+
+\[
+A=
+\begin{pmatrix}
+-11&-8&-16\\
+16&11&20\\
+1&1&3
+\end{pmatrix}.
+\]
+
+El polinomio característico es:
+
+\[
+(\lambda-1)^3.
+\]
+
+El subespacio propio de \(A\) es:
+
+\[
+V_1=
+\mathcal L\{(0,-2,1)\}.
+\]
+
+Por tanto, el único punto fijo es:
+
+\[
+\boxed{
+P=(0:-2:1).
+}
+\]
+
+Para la matriz traspuesta:
+
+\[
+A^t,
+\]
+
+el subespacio propio es:
+
+\[
+\mathcal L\{(3,2,4)\}.
+\]
+
+Por tanto, la única recta invariante es:
+
+\[
+\boxed{
+3x_1+2x_2+4x_3=0.
+}
+\]
+
+\end{document}

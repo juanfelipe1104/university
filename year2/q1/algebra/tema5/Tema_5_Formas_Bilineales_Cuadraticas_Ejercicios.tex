@@ -1,0 +1,331 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{lmodern}
+\usepackage{microtype}
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\rg}{\operatorname{rg}}
+\newcommand{\sg}{\operatorname{sg}}
+\newcommand{\Span}{\operatorname{L}}
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Álgebra Lineal}\\[0.4em]
+{\Large Tema 5: Formas Bilineales y Cuadráticas --- Ejercicios}
+\end{center}
+
+\section{Ejercicio 1}
+Estudiar si:
+\[
+f:\R^2\times\R^2\to\R
+\]
+\[
+f((x,y),(x',y'))=xx'+4xy'-3yx'
+\]
+es una forma bilineal.
+
+\section{Ejercicio 2}
+Estudiar si:
+\[
+f:\R^2\times\R^2\to\R
+\]
+\[
+f((x,y),(x',y'))=2xy'+5x-3y
+\]
+es una forma bilineal.
+
+\section{Ejercicio 3}
+Estudiar si:
+\[
+f:\R^3\times\R^3\to\R
+\]
+\[
+f((x_1,x_2,x_3),(y_1,y_2,y_3))=x_1y_1+1
+\]
+es una forma bilineal.
+
+\section{Ejercicio 4}
+En el espacio vectorial de funciones continuas en $[a,b]$, estudiar:
+\[
+f(p,q)=\int_a^bp(x)q(x)\,dx.
+\]
+
+\section{Ejercicio 5}
+Demostrar que toda forma bilineal puede descomponerse como suma de una forma bilineal simétrica y otra antisimétrica.
+
+\section{Ejercicio 6}
+Sea:
+\[
+f:\R^3\times\R^3\to\R
+\]
+\[
+f(x,y)=x_1y_1-x_1y_3+x_2y_2-x_3y_1+x_3y_2+2x_3y_3+x_2y_3.
+\]
+Calcular:
+\begin{enumerate}[label=\alph*)]
+\item La expresión matricial de $f$.
+\item El rango y núcleo.
+\item Si:
+\[
+x_1'=2x_1+2x_2+3x_3,\quad
+x_2'=-x_1-x_3,\quad
+x_3'=-x_2-x_3,
+\]
+obtener la expresión de $f$ en la base correspondiente.
+\end{enumerate}
+
+\section{Ejercicio 7}
+De una forma bilineal simétrica:
+\[
+f:\mathcal P_1(x)\times\mathcal P_1(x)\to\R
+\]
+se sabe:
+\[
+f(x+1,x+1)=8,\qquad
+f(x+2,x+2)=11,\qquad
+f(x,x)=3.
+\]
+Calcular su matriz respecto de $\{1,x\}$.
+
+\section{Ejercicio 8}
+Sea:
+\[
+f:\mathcal P_2(x)\times\mathcal P_2(x)\to\R,
+\qquad
+f(p,q)=p(0)q(0).
+\]
+Obtener $M_B(f)$ para:
+\[
+B=\{2+x-x^2,\;1+2x,\;3\}.
+\]
+
+\section{Ejercicio 9}
+Clasificar como simétricas, antisimétricas o ninguna:
+\[
+\text{a) }f(x,y)=2x_1y_1-5x_1y_2-5x_2y_1+4x_2y_2
+\]
+\[
+\text{b) }g(x,y)=3x_1y_2-3x_2y_1
+\]
+\[
+\text{c) }h(x,y)=x_1y_1-2x_1y_2+7x_2y_1+6x_2y_2.
+\]
+
+\section{Ejercicio 10}
+Descomponer:
+\[
+f(x,y)=2x_1y_1+7x_1y_2+6x_2y_1-x_2y_2
+\]
+como suma de una forma simétrica y otra antisimétrica.
+
+\section{Ejercicio 11}
+La matriz de una forma bilineal:
+\[
+f:E\times F\to\K
+\]
+en:
+\[
+B_E=\{u_1,u_2\},
+\qquad
+B_F=\{v_1,v_2,v_3\}
+\]
+es:
+\[
+A=
+\begin{pmatrix}
+2&-1&1\\
+3&4&1
+\end{pmatrix}.
+\]
+Si:
+\[
+B_E'=\{u_1-u_2,u_1+u_2\}
+\]
+y:
+\[
+B_F'=\{v_1,v_1+v_2,v_1+v_2+v_3\},
+\]
+hallar la matriz de $f$ en estas bases.
+
+\section{Ejercicio 12}
+La matriz de:
+\[
+f:\R^2\times\R^2\to\R
+\]
+en:
+\[
+B=\{(1,2),(3,-7)\}
+\]
+es:
+\[
+A=
+\begin{pmatrix}
+2&-1\\
+3&6
+\end{pmatrix}.
+\]
+Obtener la matriz en la base canónica.
+
+\section{Ejercicio 13}
+Sea $S_2$ el espacio de matrices simétricas $2\times2$, con base:
+\[
+B=
+\left\{
+\begin{pmatrix}1&0\\0&0\end{pmatrix},
+\begin{pmatrix}0&1\\1&0\end{pmatrix},
+\begin{pmatrix}0&0\\0&1\end{pmatrix}
+\right\}.
+\]
+Sea $f$ simétrica con:
+\[
+M_B(f)=
+\begin{pmatrix}
+1&1&0\\
+1&2&-1\\
+0&-1&1
+\end{pmatrix}.
+\]
+\begin{enumerate}[label=\alph*)]
+\item Calcular el rango y una base del núcleo.
+\item Calcular el subespacio conjugado de:
+\[
+\begin{pmatrix}1&2\\2&0\end{pmatrix}.
+\]
+\item Construir una base de vectores conjugados dos a dos.
+\item Clasificar la forma cuadrática asociada.
+\end{enumerate}
+
+\section{Ejercicio 14}
+Sea:
+\[
+q(x_1,x_2,x_3)
+=
+x_1^2+5x_2^2+8x_3^2
++4x_1x_2-6x_1x_3-8x_2x_3.
+\]
+Determinar una base de $\R^3$ respecto de la que la matriz de la forma cuadrática sea diagonal con $1,-1,0$.
+
+\section{Ejercicio 15}
+Clasificar según $a$:
+\[
+q(x_1,x_2,x_3)
+=
+x_1^2+x_2^2+5x_3^2
++2ax_1x_2-2x_1x_3+4x_2x_3.
+\]
+
+\section{Ejercicio 16}
+Clasificar según $a$ la forma cuadrática de matriz:
+\[
+A=
+\begin{pmatrix}
+1&2&1\\
+2&6&2\\
+1&2&a
+\end{pmatrix}.
+\]
+
+\section{Ejercicio 17}
+Sea:
+\[
+q(x_1,x_2,x_3,x_4)
+=
+x_1^2+3x_2^2-x_3^2
++4x_1x_2+2x_1x_3+2x_1x_4
++2x_2x_4-2x_3x_4.
+\]
+\begin{enumerate}[label=\alph*)]
+\item Diagonalizar y clasificar $q$.
+\item Obtener una base del núcleo de la forma polar asociada.
+\end{enumerate}
+
+\section{Ejercicio 18}
+Diagonalizar y clasificar:
+\[
+q(x,y,z)=x^2+y^2+3z^2+4xy+2xz+2yz.
+\]
+
+\section{Ejercicio 19}
+Diagonalizar y clasificar:
+\[
+q(x,y,z)=x^2-3z^2-2xy+2xz-6yz.
+\]
+
+\section{Ejercicio 20}
+Diagonalizar y clasificar:
+\[
+q(x,y,z,t)=xy+yz+xt+yt+zt.
+\]
+
+\section{Ejercicio 21}
+Diagonalizar y clasificar:
+\[
+q(x,y,z)=3y^2+2xz.
+\]
+
+\section{Ejercicio 22}
+Diagonalizar y clasificar según $a$:
+\[
+q(x,y,z)=x^2+ay^2+3z^2+2xy+2xz+2ayz.
+\]
+
+\section{Ejercicio 23}
+Diagonalizar y clasificar según $a$:
+\[
+q(x,y,z)=x^2-ay^2+2xz-4ayz.
+\]
+
+\section{Ejercicio 24}
+Sea:
+\[
+q(x,y,z)=x^2+y^2+(k+1)z^2+2xz+2kyz.
+\]
+\begin{enumerate}[label=\alph*)]
+\item Obtener su matriz.
+\item Clasificar según $k$.
+\item Para $k=2$, obtener el conjugado de:
+\[
+S=\{(x,y,z):x-y=0,\;y=0\}.
+\]
+\item Diagonalizar para $k=3$.
+\item Para $k=4$, diagonalizar obteniendo una base de vectores conjugados.
+\end{enumerate}
+
+\section{Ejercicio 25}
+En $\R^3$:
+\[
+q_a(x_1,x_2,x_3)
+=
+x_1^2+4x_2^2+2x_3^2+2x_1x_2+4ax_1x_3.
+\]
+\begin{enumerate}[label=\alph*)]
+\item Obtener la matriz asociada en la base canónica.
+\item Determinar si existen $\lambda,\mu\in\R$ para que:
+\[
+B=
+\{u_1=e_1,\;
+u_2=e_1+\lambda e_2,\;
+u_3=ae_1+ae_2+\mu e_3\},
+\qquad a\neq0,
+\]
+sea una base de vectores conjugados.
+\item Determinar para qué valores de $a$ es definida positiva o semidefinida positiva.
+\item Calcular:
+\[
+\dim\left[\Span\{u_3\}\right]^c
+\]
+para $a=1$.
+\item Para $a=2$, diagonalizar por dos métodos distintos, indicando $P$, $D$ y la signatura.
+\end{enumerate}
+
+\end{document}

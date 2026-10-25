@@ -1,0 +1,461 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools,amsthm}
+\usepackage{geometry,lmodern,microtype,array,booktabs,xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}\setlength{\parskip}{.5em}
+\newcommand{\N}{\mathbb{N}}\newcommand{\Z}{\mathbb{Z}}\newcommand{\Q}{\mathbb{Q}}\newcommand{\R}{\mathbb{R}}\newcommand{\C}{\mathbb{C}}
+\newcommand{\ord}{\operatorname{ord}}\newcommand{\gen}[1]{\langle #1\rangle}
+\newcommand{\Ker}{\operatorname{Ker}}\newcommand{\Imf}{\operatorname{Im}}\newcommand{\Aut}{\operatorname{Aut}}\newcommand{\mcd}{\operatorname{mcd}}\newcommand{\mcm}{\operatorname{mcm}}
+\newtcolorbox{definicion}[1][]{colback=gray!6,colframe=gray!55,boxrule=.6pt,arc=2mm,left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,breakable,#1}
+\newtcolorbox{resultado}[1][]{colback=gray!4,colframe=black!45,boxrule=.6pt,arc=2mm,left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,breakable,#1}
+\newtcolorbox{ejemplo}[1][]{colback=gray!2,colframe=gray!45,boxrule=.5pt,arc=2mm,breakable,#1}
+\newtcolorbox{demostracion}[1][]{colback=white,colframe=gray!35,boxrule=.5pt,arc=1mm,breakable,#1}
+
+\begin{document}
+\begin{center}{\LARGE\bfseries Estructuras algebraicas}\\[.4em]{\Large Teoremas y demostraciones}\\[.4em]{\large Resultados ordenados por bloques, temas 1--7}\end{center}
+\tableofcontents\newpage
+\section{Propiedades básicas y grupos cíclicos}
+
+\subsection{Cancelación}
+\begin{resultado}
+En un grupo, $ac=bc\Rightarrow a=b$ y $ca=cb\Rightarrow a=b$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+De $ac=bc$, multiplicando a la derecha por $c^{-1}$: $a(cc^{-1})=b(cc^{-1})$, luego $a=b$. A la izquierda es análogo.
+\end{demostracion}
+
+
+\subsection{Unicidad del neutro}
+\begin{resultado}
+El elemento neutro de un grupo es único y $e^{-1}=e$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Si $e,e\prime$ son neutros, $e=e e\prime=e\prime$. Como $ee=e$, el neutro es su propio inverso.
+\end{demostracion}
+
+
+\subsection{Unicidad del inverso}
+\begin{resultado}
+Todo elemento tiene inverso único y $(a^{-1})^{-1}=a$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Si $b,c$ son inversos de $a$, entonces $b=b(ac)=(ba)c=c$. Además $a$ es inverso de $a^{-1}$; por unicidad, $(a^{-1})^{-1}=a$.
+\end{demostracion}
+
+
+\subsection{Inverso de un producto}
+\begin{resultado}
+$(ab)^{-1}=b^{-1}a^{-1}$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+$(ab)(b^{-1}a^{-1})=a(bb^{-1})a^{-1}=e$ y $(b^{-1}a^{-1})(ab)=e$. Por unicidad del inverso, se cumple la fórmula.
+\end{demostracion}
+
+
+\subsection{Inversión y conmutatividad}
+\begin{resultado}
+$(ab)^{-1}=a^{-1}b^{-1}$ si y solo si $ab=ba$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Como $(ab)^{-1}=b^{-1}a^{-1}$, la igualdad equivale a $a^{-1}b^{-1}=b^{-1}a^{-1}$. Invertir ambos lados da $ba=ab$.
+\end{demostracion}
+
+
+\subsection{Sudoku de Cayley}
+\begin{resultado}
+En la tabla de un grupo finito, cada elemento aparece exactamente una vez en cada fila y columna.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Si en una fila $ax=ay$, la cancelación da $x=y$; por tanto sus entradas son distintas. Al haber $|G|$ posiciones y $|G|$ elementos, aparecen todos. Para columnas se razona igual.
+\end{demostracion}
+
+
+\subsection{Los cíclicos son abelianos}
+\begin{resultado}
+Si $G=\gen a$, entonces $G$ es abeliano.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Para $x=a^m$ e $y=a^n$, $xy=a^{m+n}=a^{n+m}=yx$.
+\end{demostracion}
+
+
+\subsection{Clasificación de grupos cíclicos}
+\begin{resultado}
+Dos grupos cíclicos con el mismo orden son isomorfos; todo grupo cíclico infinito es isomorfo a $\Z$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Si $G=\gen a$ y $H=\gen b$ tienen el mismo orden, la aplicación $a^k\mapsto b^k$ está bien definida, preserva productos y es biyectiva. En el caso infinito, $a^k\mapsto k$ da el isomorfismo con $\Z$.
+\end{demostracion}
+
+
+\subsection{Generadores de $\Z_n$}
+\begin{resultado}
+$\overline k$ genera $\Z_n$ exactamente cuando $\mcd(k,n)=1$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+El orden de $\overline k$ es el menor $t>0$ con $n\mid tk$, o sea $n/\mcd(n,k)$. Es $n$ precisamente cuando el máximo común divisor vale $1$.
+\end{demostracion}
+
+
+\subsection{Orden de una potencia}
+\begin{resultado}
+Si $\ord(a)=n<\infty$, entonces $\ord(a^m)=n/\mcd(n,m)$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+$(a^m)^t=e$ equivale a $n\mid mt$. Escribiendo $d=\mcd(n,m)$, la menor solución positiva es $t=n/d$.
+\end{demostracion}
+
+
+\subsection{Potencias y orden}
+\begin{resultado}
+Si $\ord(a)=n$, las potencias $e,a,\ldots,a^{n-1}$ son distintas y $a^m=e$ si y solo si $n\mid m$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Si $a^i=a^j$ con $0\le i<j<n$, al cancelar se obtiene $a^{j-i}=e$, contradicción con la minimalidad de $n$. La división euclídea de $m$ entre $n$ demuestra la equivalencia.
+\end{demostracion}
+
+
+\subsection{Producto de cíclicos}
+\begin{resultado}
+$\Z_n\times\Z_m\cong\Z_{nm}$ si y solo si $\mcd(n,m)=1$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+El orden de $(1,1)$ es $\mcm(n,m)$. El producto es cíclico si y solo si posee un elemento de orden $nm$, lo que exige $\mcm(n,m)=nm$; equivale a $\mcd(n,m)=1$.
+\end{demostracion}
+
+
+\section{Subgrupos, clases laterales y Lagrange}
+
+\subsection{Criterio de subgrupo}
+\begin{resultado}
+Un subconjunto $H\subseteq G$ es subgrupo si y solo si $H\ne\varnothing$ y $ab^{-1}\in H$ para todos $a,b\in H$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+La necesidad es inmediata. Para la suficiencia, tomando $a=b$ se obtiene $e\in H$. Tomando $a=e$, se obtiene $b^{-1}\in H$. Ahora $ab=a(b^{-1})^{-1}\in H$.
+\end{demostracion}
+
+
+\subsection{Subgrupo generado por un elemento}
+\begin{resultado}
+Para $a\in G$, $\gen a=\{a^k:k\in\Z\}$ es un subgrupo.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Contiene $e=a^0$; para $a^m,a^n$ se tiene $a^m(a^n)^{-1}=a^{m-n}\in\gen a$. Aplicamos el criterio de subgrupo.
+\end{demostracion}
+
+
+\subsection{Subgrupos de un cíclico finito}
+\begin{resultado}
+Si $G=\gen a$ tiene orden $n$, para cada divisor $d\mid n$ existe un único subgrupo de orden $d$, a saber $\gen{a^{n/d}}$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Un subgrupo $H$ contiene las potencias correspondientes a un subgrupo de $\Z_n$. Tomando el menor exponente positivo $k$ con $a^k\in H$, la división euclídea muestra $H=\gen{a^k}$ y que $k\mid n$; su orden es $n/k$.
+\end{demostracion}
+
+
+\subsection{Teorema de Lagrange}
+\begin{resultado}
+Si $H\le G$ y $G$ es finito, entonces $|G|=[G:H]\,|H|$. En particular, $|H|\mid|G|$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Las clases laterales de $H$ particionan $G$. La multiplicación $h\mapsto gh$ es biyección de $H$ en $gH$, así que todas las clases tienen $|H|$ elementos. Contando clases se obtiene la fórmula.
+\end{demostracion}
+
+
+\subsection{Subgrupos de los enteros}
+\begin{resultado}
+Todo subgrupo $H\le(\Z,+)$ es $n\Z$ para un único $n\ge0$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Si $H=\{0\}$, corresponde a $n=0$. En otro caso sea $n$ el menor entero positivo de $H$. Para $h\in H$, escribimos $h=qn+r$, $0\le r<n$. Como $r=h-qn\in H$, la minimalidad fuerza $r=0$. Por tanto $H=n\Z$.
+\end{demostracion}
+
+
+\section{Diédricos, simétricos y permutaciones}
+
+\subsection{Orden y generadores de $\Delta_n$}
+\begin{resultado}
+$|\Delta_n|=2n$ y $\Delta_n=\{e,r,\ldots,r^{n-1},s,sr,\ldots,sr^{n-1}\}$ con $r^n=s^2=e$ y $srs=r^{-1}$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Hay $n$ rotaciones distintas. Componer cada una con una reflexión da $n$ movimientos que invierten orientación, distintos entre sí y de las rotaciones. Todo movimiento de un polígono regular es uno de esos $2n$. La reflexión cambia el sentido del giro: $srs=r^{-1}$.
+\end{demostracion}
+
+
+\subsection{Orden de una permutación}
+\begin{resultado}
+El orden de una permutación es el mínimo común múltiplo de las longitudes de sus ciclos disjuntos.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Los ciclos disjuntos conmutan y cada ciclo de longitud $k$ retorna a la identidad exactamente en exponentes múltiplos de $k$. La permutación completa es identidad cuando todos los ciclos lo son.
+\end{demostracion}
+
+
+\subsection{Descomposición en ciclos}
+\begin{resultado}
+Toda permutación se escribe de manera única como producto de ciclos disjuntos, salvo el orden de los ciclos y la rotación cíclica de su escritura.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Partimos de un símbolo $i$ y seguimos sus imágenes $i,\sigma(i),\sigma^2(i),\ldots$ hasta regresar a $i$. Repetimos con símbolos aún no visitados. Las órbitas son disjuntas y quedan determinadas por la permutación.
+\end{demostracion}
+
+
+\subsection{Conjugación de ciclos}
+\begin{resultado}
+$\sigma(a_1\,\cdots\,a_k)\sigma^{-1}=(\sigma(a_1)\,\cdots\,\sigma(a_k))$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Al aplicar el miembro izquierdo a $\sigma(a_i)$, primero $\sigma^{-1}$ devuelve $a_i$, el ciclo envía $a_i$ a $a_{i+1}$ y $\sigma$ devuelve $\sigma(a_{i+1})$. Fuera del soporte, fija los elementos.
+\end{demostracion}
+
+
+\subsection{Todo ciclo es producto de trasposiciones}
+\begin{resultado}
+$(a_1\,\cdots\,a_k)=(a_1\,a_k)\cdots(a_1\,a_3)(a_1\,a_2)$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Se comprueba siguiendo la imagen de cada $a_i$ de derecha a izquierda; se obtiene $a_i\mapsto a_{i+1}$ y $a_k\mapsto a_1$. En consecuencia toda permutación es producto de trasposiciones.
+\end{demostracion}
+
+
+\subsection{El grupo alternado}
+\begin{resultado}
+$A_n\trianglelefteq S_n$ y $|A_n|=n!/2$ para $n\ge2$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+El signo $\operatorname{sgn}:S_n\to\{\pm1\}$ es un homomorfismo sobreyectivo. Su núcleo es $A_n$, luego es normal y tiene índice $2$. Por Lagrange, $|A_n|=n!/2$.
+\end{demostracion}
+
+
+\subsection{Teorema de Cayley}
+\begin{resultado}
+Todo grupo $G$ es isomorfo a un subgrupo de un grupo de permutaciones de $G$; si $|G|=n$, se incrusta en $S_n$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Para $a\in G$, definimos $L_a(x)=ax$. Es biyectiva con inversa $L_{a^{-1}}$. Además $L_a\circ L_b=L_{ab}$ y $L_a=L_b$ implica $a=L_a(e)=L_b(e)=b$. Así $a\mapsto L_a$ es homomorfismo inyectivo.
+\end{demostracion}
+
+
+\section{Normalidad, centro y cocientes}
+
+\subsection{Los subgrupos de un abeliano son normales}
+\begin{resultado}
+Si $G$ es abeliano y $H\le G$, entonces $H\trianglelefteq G$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Para $g\in G$ y $h\in H$, $ghg^{-1}=hgg^{-1}=h$. Por tanto $gHg^{-1}=H$.
+\end{demostracion}
+
+
+\subsection{Caracterizaciones de normalidad}
+\begin{resultado}
+Para $N\le G$ son equivalentes: $gNg^{-1}=N$ para todo $g\in G$ y $gN=Ng$ para todo $g\in G$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Si $gNg^{-1}=N$, multiplicar a la derecha por $g$ da $gN=Ng$. Recíprocamente, multiplicar $gN=Ng$ a la derecha por $g^{-1}$ da $gNg^{-1}=N$.
+\end{demostracion}
+
+
+\subsection{El centro es normal}
+\begin{resultado}
+$Z(G)\trianglelefteq G$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Si $z$ conmuta con todo elemento, entonces para $g,h\in G$: $(gzg^{-1})h=gz(g^{-1}hg)g^{-1}=g(g^{-1}hg)zg^{-1}=h(gzg^{-1})$. Así el conjugado pertenece al centro.
+\end{demostracion}
+
+
+\subsection{Cociente cíclico por el centro}
+\begin{resultado}
+Si $G/Z(G)$ es cíclico, entonces $G$ es abeliano.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Si $G/Z(G)=\gen{gZ(G)}$, cualesquiera $a,b\in G$ se escriben $a=g^mz_1$ y $b=g^nz_2$ con $z_1,z_2\in Z(G)$. Todos los factores conmutan, por tanto $ab=ba$.
+\end{demostracion}
+
+
+\subsection{El derivado y la abelianización}
+\begin{resultado}
+$G\prime\trianglelefteq G$, $G/G\prime$ es abeliano y, si $G/N$ es abeliano con $N\trianglelefteq G$, entonces $G\prime\subseteq N$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Un conjugado de un conmutador es otro conmutador, por lo que $G\prime$ es normal. En $G/G\prime$ se tiene $abG\prime=baG\prime$ porque $aba^{-1}b^{-1}\in G\prime$. Si $G/N$ es abeliano, cada conmutador pertenece a $N$, así que $G\prime\subseteq N$.
+\end{demostracion}
+
+
+\subsection{Existencia del grupo cociente}
+\begin{resultado}
+Si $N\trianglelefteq G$, las clases $G/N$ forman un grupo con $(gN)(hN)=ghN$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Si $g\prime=gn_1$ y $h\prime=hn_2$, entonces $g\prime h\prime=gh(h^{-1}n_1h)n_2\in ghN$, pues $N$ es normal. El producto está bien definido. El neutro es $N$, el inverso de $gN$ es $g^{-1}N$, y la asociatividad viene de $G$.
+\end{demostracion}
+
+
+\subsection{Los normales son uniones de clases de conjugación}
+\begin{resultado}
+$N\trianglelefteq G$ si y solo si $N$ es subgrupo y unión de clases de conjugación.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Si es normal, todos los conjugados de cualquier $n\in N$ permanecen en $N$. Recíprocamente, si contiene la clase de cada elemento suyo, entonces $gNg^{-1}\subseteq N$ para todo $g$. Aplicando lo mismo a $g^{-1}$ se obtiene la igualdad.
+\end{demostracion}
+
+
+\subsection{Simplicidad de $A_5$}
+\begin{resultado}
+$A_5$ es simple.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Las clases de conjugación de $A_5$ tienen tamaños $1,15,20,12,12$. Un subgrupo normal debe ser unión de clases e incluir la identidad; su orden debe dividir $60$. Ninguna suma de $1$ con una selección no vacía y no total de $15,20,12,12$ divide $60$. Luego sus únicos normales son $\{e\}$ y $A_5$.
+\end{demostracion}
+
+
+\section{Homomorfismos y teoremas de isomorfía}
+
+\subsection{Propiedades de un homomorfismo}
+\begin{resultado}
+Si $f:G\to H$ es homomorfismo, entonces $f(e_G)=e_H$, $f(a^{-1})=f(a)^{-1}$ y $f(a^n)=f(a)^n$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+$f(e_G)=f(e_G)^2$, de donde se cancela y resulta $f(e_G)=e_H$. Como $f(a)f(a^{-1})=f(e_G)=e_H$, resulta la fórmula de inversos. Las potencias se obtienen por inducción y la regla de inversos.
+\end{demostracion}
+
+
+\subsection{Núcleo e imagen son subgrupos}
+\begin{resultado}
+$\Ker f\le G$ e $\Imf f\le H$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Los dos conjuntos contienen el neutro. Si $x,y\in\Ker f$, entonces $f(xy^{-1})=f(x)f(y)^{-1}=e_H$, así que $xy^{-1}\in\Ker f$. Para la imagen, si $u=f(x)$ y $v=f(y)$, entonces $uv^{-1}=f(xy^{-1})\in\Imf f$.
+\end{demostracion}
+
+
+\subsection{Normalidad del núcleo}
+\begin{resultado}
+$\Ker f\trianglelefteq G$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Si $k\in\Ker f$, entonces $f(gkg^{-1})=f(g)e_H f(g)^{-1}=e_H$. La conjugación por $g$ preserva el núcleo y es reversible.
+\end{demostracion}
+
+
+\subsection{Criterio de inyectividad}
+\begin{resultado}
+Un homomorfismo $f:G\to H$ es inyectivo si y solo si $\Ker f=\{e_G\}$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Si es inyectivo, $f(x)=f(e_G)$ exige $x=e_G$. Recíprocamente, $f(a)=f(b)$ implica $f(ab^{-1})=e_H$, luego $ab^{-1}=e_G$ y $a=b$.
+\end{demostracion}
+
+
+\subsection{Primer teorema de isomorfía}
+\begin{resultado}
+Si $f:G\to H$ es homomorfismo, entonces $G/\Ker f\cong\Imf f$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Definimos $\overline f(g\Ker f)=f(g)$. Si $g\Ker f=h\Ker f$, entonces $h^{-1}g\in\Ker f$, así que $f(g)=f(h)$: está bien definida. Es homomorfismo, sobreyectiva sobre $\Imf f$, e inyectiva porque su núcleo es la clase neutra.
+\end{demostracion}
+
+
+\subsection{Teorema de correspondencia para cocientes}
+\begin{resultado}
+Si $H\trianglelefteq G$ y $H\subseteq K\trianglelefteq G$, entonces $(G/H)/(K/H)\cong G/K$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+La aplicación $G/H\to G/K$, $gH\mapsto gK$, está bien definida por $H\subseteq K$, es homomorfismo sobreyectivo y su núcleo es $K/H$. Aplicamos el primer teorema de isomorfía.
+\end{demostracion}
+
+
+\subsection{Teorema del diamante}
+\begin{resultado}
+Si $H\le G$ y $N\trianglelefteq G$, entonces $HN\le G$, $H\cap N\trianglelefteq H$ y $HN/N\cong H/(H\cap N)$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+La restricción $f:H\to HN/N$, $f(h)=hN$, es un homomorfismo sobreyectivo: toda clase de $HN/N$ tiene representante en $H$. Su núcleo es $H\cap N$. Aplicamos el primer teorema.
+\end{demostracion}
+
+
+\subsection{Los automorfismos forman un grupo}
+\begin{resultado}
+$\Aut(G)$ es un grupo con la composición.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+La composición de automorfismos conserva el producto y es biyectiva. La identidad es automorfismo; el inverso de una biyección homomorfa también preserva la operación. La asociatividad proviene de la composición de funciones.
+\end{demostracion}
+
+
+\subsection{Homomorfismos desde grupos cíclicos}
+\begin{resultado}
+Un homomorfismo $f:\gen a\to H$ queda determinado por $f(a)$. Si $|\gen a|=n$, necesariamente $f(a)^n=e_H$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Por la propiedad de homomorfismo, $f(a^k)=f(a)^k$. Si $a^n=e_G$, entonces $f(a)^n=f(e_G)=e_H$. Recíprocamente, escoger una imagen $h$ con $h^n=e_H$ hace bien definida la aplicación $a^k\mapsto h^k$.
+\end{demostracion}
+
+
+\subsection{Automorfismos de $\Z_n$}
+\begin{resultado}
+$\Aut(\Z_n)\cong\Z_n^*$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Un endomorfismo de $\Z_n$ está determinado por la imagen $\overline k$ de $\overline1$. Es automorfismo si y solo si $\overline k$ genera $\Z_n$, es decir, $\mcd(k,n)=1$. Componer tales aplicaciones equivale a multiplicar las unidades módulo $n$.
+\end{demostracion}
+
+
+\subsection{Teorema chino del resto (forma de grupos)}
+\begin{resultado}
+Si $\mcd(m,n)=1$, entonces $\Z_{mn}\cong\Z_m\times\Z_n$ mediante $\overline k\mapsto(\overline k,\overline k)$.
+\end{resultado}
+\textbf{Demostración.}
+\begin{demostracion}
+Es homomorfismo. Si ambas componentes son cero, $m\mid k$ y $n\mid k$; por coprimalidad, $mn\mid k$. Por tanto el núcleo es trivial. Ambos grupos tienen $mn$ elementos, así que la inyección es también sobreyección.
+\end{demostracion}
+
+\end{document}

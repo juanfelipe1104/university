@@ -1,0 +1,2307 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\sen}{\operatorname{sen}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Análisis Matemático II}\\[0.4em]
+{\Large Tema 4: Aplicaciones de la derivabilidad y diferenciabilidad en funciones de varias variables}\\[0.4em]
+{\large Soluciones}
+\end{center}
+
+\section{Ejercicio 1}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)=3x^2+y^2+2y.
+\]
+
+Los puntos críticos verifican:
+
+\[
+f_x=6x=0,
+\qquad
+f_y=2y+2=0.
+\]
+
+Por tanto:
+
+\[
+(x,y)=(0,-1).
+\]
+
+La matriz hessiana es:
+
+\[
+H_f=
+\begin{pmatrix}
+6&0\\
+0&2
+\end{pmatrix}.
+\]
+
+Como:
+
+\[
+|H_f|=12>0,
+\qquad
+f_{xx}=6>0,
+\]
+
+el punto es un mínimo relativo.
+
+Además:
+
+\[
+f(0,-1)=-1.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+(0,-1)\text{ es un mínimo relativo, con }f(0,-1)=-1
+}
+\]
+
+\section{Ejercicio 2}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)=\frac8y+\frac yx+x,
+\qquad
+x>0,\ y>0.
+\]
+
+Las derivadas parciales son:
+
+\[
+f_x=1-\frac{y}{x^2},
+\]
+
+\[
+f_y=-\frac8{y^2}+\frac1x.
+\]
+
+Igualando a cero:
+
+\[
+y=x^2,
+\]
+
+\[
+y^2=8x.
+\]
+
+Sustituyendo:
+
+\[
+x^4=8x
+\]
+
+y, como \(x>0\):
+
+\[
+x=2,
+\qquad
+y=4.
+\]
+
+La matriz hessiana es:
+
+\[
+H_f=
+\begin{pmatrix}
+\dfrac{2y}{x^3}&-\dfrac1{x^2}\\[2mm]
+-\dfrac1{x^2}&\dfrac{16}{y^3}
+\end{pmatrix}.
+\]
+
+En \((2,4)\):
+
+\[
+H_f(2,4)=
+\begin{pmatrix}
+1&-\frac14\\[1mm]
+-\frac14&\frac14
+\end{pmatrix}.
+\]
+
+Entonces:
+
+\[
+|H_f(2,4)|
+=
+\frac3{16}>0,
+\qquad
+f_{xx}(2,4)=1>0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+(2,4)\text{ es un mínimo relativo}
+}
+\]
+
+y:
+
+\[
+\boxed{
+f(2,4)=6
+}
+\]
+
+\section{Ejercicio 3}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+x^2(x^2-2)+y^2(y^2-2)+4xy.
+\]
+
+Las derivadas parciales son:
+
+\[
+f_x
+=
+4(x^3-x+y),
+\]
+
+\[
+f_y
+=
+4(y^3-y+x).
+\]
+
+Los puntos críticos satisfacen:
+
+\[
+x^3-x+y=0,
+\]
+
+\[
+y^3-y+x=0.
+\]
+
+Restando:
+
+\[
+(x-y)(x^2+xy+y^2-2)=0.
+\]
+
+Sumando:
+
+\[
+(x+y)(x^2-xy+y^2)=0.
+\]
+
+Se obtienen:
+
+\[
+\boxed{
+(0,0),
+\quad
+(\sqrt2,-\sqrt2),
+\quad
+(-\sqrt2,\sqrt2)
+}
+\]
+
+La matriz hessiana es:
+
+\[
+H_f=
+\begin{pmatrix}
+12x^2-4&4\\
+4&12y^2-4
+\end{pmatrix}.
+\]
+
+En:
+
+\[
+(\pm\sqrt2,\mp\sqrt2),
+\]
+
+\[
+H_f=
+\begin{pmatrix}
+20&4\\
+4&20
+\end{pmatrix}.
+\]
+
+Como:
+
+\[
+|H_f|=384>0,
+\qquad
+f_{xx}=20>0,
+\]
+
+ambos son mínimos relativos.
+
+Además:
+
+\[
+f(\sqrt2,-\sqrt2)
+=
+f(-\sqrt2,\sqrt2)
+=
+-8.
+\]
+
+En \((0,0)\):
+
+\[
+|H_f(0,0)|=0.
+\]
+
+Estudiamos dos direcciones:
+
+\[
+f(x,x)=2x^4\geq0,
+\]
+
+\[
+f(x,-x)=2x^4-8x^2<0
+\]
+
+para \(x\) suficientemente próximo a \(0\), \(x\neq0\).
+
+Por tanto:
+
+\[
+\boxed{
+(0,0)\text{ es un punto de silla}
+}
+\]
+
+\[
+\boxed{
+(\sqrt2,-\sqrt2)
+\text{ y }
+(-\sqrt2,\sqrt2)
+\text{ son mínimos relativos de valor }-8
+}
+\]
+
+\section{Ejercicio 4}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+x^4+y^4+\frac1{x^4y^4},
+\qquad
+x\neq0,\ y\neq0.
+\]
+
+Las derivadas parciales son:
+
+\[
+f_x
+=
+4x^3-\frac4{x^5y^4},
+\]
+
+\[
+f_y
+=
+4y^3-\frac4{x^4y^5}.
+\]
+
+Igualando a cero:
+
+\[
+x^8y^4=1,
+\]
+
+\[
+x^4y^8=1.
+\]
+
+Dividiendo ambas ecuaciones:
+
+\[
+x^4=y^4.
+\]
+
+Por tanto:
+
+\[
+|x|=|y|.
+\]
+
+Sustituyendo:
+
+\[
+x^{12}=1.
+\]
+
+Así, los puntos críticos son:
+
+\[
+\boxed{
+(1,1),\ (1,-1),\ (-1,1),\ (-1,-1)
+}
+\]
+
+Las derivadas de segundo orden son:
+
+\[
+f_{xx}
+=
+12x^2+\frac{20}{x^6y^4},
+\]
+
+\[
+f_{yy}
+=
+12y^2+\frac{20}{x^4y^6},
+\]
+
+\[
+f_{xy}
+=
+\frac{16}{x^5y^5}.
+\]
+
+En cualquiera de los puntos críticos:
+
+\[
+f_{xx}=f_{yy}=32,
+\]
+
+\[
+|H_f|
+=
+32^2-16^2
+=
+768>0.
+\]
+
+Por tanto, todos son mínimos relativos.
+
+Además:
+
+\[
+f(\pm1,\pm1)=3.
+\]
+
+Así:
+
+\[
+\boxed{
+(\pm1,\pm1)\text{ son mínimos relativos de valor }3
+}
+\]
+
+\section{Ejercicio 5}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+xe^y+ye^x.
+\]
+
+Las derivadas parciales son:
+
+\[
+f_x=e^y+ye^x,
+\]
+
+\[
+f_y=xe^y+e^x.
+\]
+
+En un punto crítico:
+
+\[
+e^y=-ye^x,
+\]
+
+\[
+e^x=-xe^y.
+\]
+
+Multiplicando:
+
+\[
+xy=1.
+\]
+
+Además \(x<0\) e \(y<0\), por lo que:
+
+\[
+y=\frac1x.
+\]
+
+La única solución es:
+
+\[
+\boxed{
+(x,y)=(-1,-1)
+}
+\]
+
+La matriz hessiana es:
+
+\[
+H_f=
+\begin{pmatrix}
+ye^x&e^x+e^y\\
+e^x+e^y&xe^y
+\end{pmatrix}.
+\]
+
+En \((-1,-1)\):
+
+\[
+H_f(-1,-1)
+=
+\frac1e
+\begin{pmatrix}
+-1&2\\
+2&-1
+\end{pmatrix}.
+\]
+
+Entonces:
+
+\[
+|H_f(-1,-1)|
+=
+-\frac3{e^2}<0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+(-1,-1)\text{ es un punto de silla}
+}
+\]
+
+y la función no tiene máximos ni mínimos relativos.
+
+\section{Ejercicio 6}
+\subsection{Solución}
+
+Queremos extremar:
+
+\[
+f(x,y)=3x+y
+\]
+
+sujeto a:
+
+\[
+x^2+y^2=1000.
+\]
+
+Definimos:
+
+\[
+L(x,y,\lambda)
+=
+3x+y-\lambda(x^2+y^2-1000).
+\]
+
+Las ecuaciones de Lagrange son:
+
+\[
+3=2\lambda x,
+\]
+
+\[
+1=2\lambda y,
+\]
+
+\[
+x^2+y^2=1000.
+\]
+
+Dividiendo:
+
+\[
+x=3y.
+\]
+
+Entonces:
+
+\[
+10y^2=1000
+\]
+
+y:
+
+\[
+y=\pm10.
+\]
+
+Por tanto:
+
+\[
+(x,y)=(30,10),
+\qquad
+(x,y)=(-30,-10).
+\]
+
+Los valores son:
+
+\[
+f(30,10)=100,
+\]
+
+\[
+f(-30,-10)=-100.
+\]
+
+Así:
+
+\[
+\boxed{
+f_{\max}=100
+\text{ en }(30,10)
+}
+\]
+
+\[
+\boxed{
+f_{\min}=-100
+\text{ en }(-30,-10)
+}
+\]
+
+\section{Ejercicio 7}
+\subsection{Solución}
+
+Queremos maximizar:
+
+\[
+f(x,y)=xy
+\]
+
+sujeto a:
+
+\[
+2x+2y=a.
+\]
+
+La restricción equivale a:
+
+\[
+x+y=\frac a2.
+\]
+
+Definimos:
+
+\[
+L(x,y,\lambda)
+=
+xy-\lambda\left(2x+2y-a\right).
+\]
+
+Entonces:
+
+\[
+y-2\lambda=0,
+\]
+
+\[
+x-2\lambda=0.
+\]
+
+Por tanto:
+
+\[
+x=y.
+\]
+
+Usando la restricción:
+
+\[
+4x=a.
+\]
+
+Así:
+
+\[
+x=y=\frac a4.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f_{\max}
+=
+\frac{a^2}{16}
+}
+\]
+
+alcanzado en:
+
+\[
+\boxed{
+\left(\frac a4,\frac a4\right)
+}
+\]
+
+\section{Ejercicio 8}
+\subsection{Solución}
+
+La distancia desde:
+
+\[
+P=(1,-2)
+\]
+
+hasta un punto \((x,y)\) de la recta:
+
+\[
+x+5y-10=0
+\]
+
+es:
+
+\[
+d^2
+=
+(x-1)^2+(y+2)^2.
+\]
+
+Aplicamos Lagrange a:
+
+\[
+f(x,y)
+=
+(x-1)^2+(y+2)^2
+\]
+
+con la restricción:
+
+\[
+g(x,y)=x+5y-10=0.
+\]
+
+Se obtiene:
+
+\[
+2(x-1)=\lambda,
+\]
+
+\[
+2(y+2)=5\lambda.
+\]
+
+Resolviendo junto con la restricción:
+
+\[
+\boxed{
+(x,y)
+=
+\left(
+\frac{45}{26},
+\frac{43}{26}
+\right)
+}
+\]
+
+La distancia mínima es:
+
+\[
+d_{\min}
+=
+\sqrt{
+\left(\frac{19}{26}\right)^2
++
+\left(\frac{95}{26}\right)^2
+}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+d_{\min}
+=
+\frac{19}{\sqrt{26}}
+}
+\]
+
+\section{Ejercicio 9}
+\subsection{Solución}
+
+Para un punto \((x,y)\) de la elipse:
+
+\[
+x^2+4y^2=4,
+\]
+
+la distancia a la recta:
+
+\[
+x+y=4
+\]
+
+es:
+
+\[
+d
+=
+\frac{|x+y-4|}{\sqrt2}.
+\]
+
+Como en la elipse:
+
+\[
+x+y<4,
+\]
+
+minimizar la distancia equivale a maximizar:
+
+\[
+x+y.
+\]
+
+Aplicamos Lagrange:
+
+\[
+1=2\lambda x,
+\]
+
+\[
+1=8\lambda y.
+\]
+
+Por tanto:
+
+\[
+x=4y.
+\]
+
+Usando la restricción:
+
+\[
+16y^2+4y^2=4.
+\]
+
+Para el máximo de \(x+y\):
+
+\[
+y=\frac1{\sqrt5},
+\qquad
+x=\frac4{\sqrt5}.
+\]
+
+Así:
+
+\[
+x+y=\sqrt5.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+d_{\min}
+=
+\frac{4-\sqrt5}{\sqrt2}
+}
+\]
+
+\section{Ejercicio 10}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y,z)=x-y+z
+\]
+
+sujeto a:
+
+\[
+x^2+y^2+z^2=2.
+\]
+
+Definimos:
+
+\[
+L
+=
+x-y+z
+-
+\lambda(x^2+y^2+z^2-2).
+\]
+
+Las ecuaciones son:
+
+\[
+1=2\lambda x,
+\]
+
+\[
+-1=2\lambda y,
+\]
+
+\[
+1=2\lambda z.
+\]
+
+Por tanto:
+
+\[
+x=z=-y.
+\]
+
+Usando la restricción:
+
+\[
+3x^2=2.
+\]
+
+Así:
+
+\[
+x=\pm\sqrt{\frac23}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f_{\max}=\sqrt6
+}
+\]
+
+en:
+
+\[
+\boxed{
+\sqrt{\frac23}(1,-1,1)
+}
+\]
+
+y:
+
+\[
+\boxed{
+f_{\min}=-\sqrt6
+}
+\]
+
+en:
+
+\[
+\boxed{
+-\sqrt{\frac23}(1,-1,1)
+}
+\]
+
+\section{Ejercicio 11}
+\subsection{Solución}
+
+Sea:
+
+\[
+P=(2,1,-2).
+\]
+
+Su distancia al origen es:
+
+\[
+\|P\|
+=
+\sqrt{4+1+4}
+=
+3.
+\]
+
+La esfera:
+
+\[
+x^2+y^2+z^2=1
+\]
+
+tiene radio \(1\).
+
+La distancia mínima desde \(P\) a la esfera es:
+
+\[
+3-1=2,
+\]
+
+y la máxima:
+
+\[
+3+1=4.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+d_{\min}=2
+}
+\]
+
+\[
+\boxed{
+d_{\max}=4
+}
+\]
+
+Los puntos correspondientes son:
+
+\[
+\boxed{
+\left(
+\frac23,\frac13,-\frac23
+\right)
+}
+\]
+
+y:
+
+\[
+\boxed{
+\left(
+-\frac23,-\frac13,\frac23
+\right)
+}
+\]
+
+respectivamente.
+
+\section{Ejercicio 12}
+\subsection{Solución}
+
+Sean \(x,y,z>0\) las aristas del paralelepípedo.
+
+Su volumen es:
+
+\[
+V=xyz.
+\]
+
+La superficie total es:
+
+\[
+2(xy+xz+yz)=S.
+\]
+
+Aplicamos Lagrange:
+
+\[
+L
+=
+xyz
+-
+\lambda\left(
+2xy+2xz+2yz-S
+\right).
+\]
+
+Las ecuaciones son:
+
+\[
+yz
+=
+2\lambda(y+z),
+\]
+
+\[
+xz
+=
+2\lambda(x+z),
+\]
+
+\[
+xy
+=
+2\lambda(x+y).
+\]
+
+Comparando se obtiene:
+
+\[
+x=y=z.
+\]
+
+Sea:
+
+\[
+x=y=z=a.
+\]
+
+Entonces:
+
+\[
+6a^2=S.
+\]
+
+Por tanto:
+
+\[
+a=\sqrt{\frac S6}.
+\]
+
+Así, el paralelepípedo de mayor volumen es un cubo y:
+
+\[
+\boxed{
+x=y=z=\sqrt{\frac S6}
+}
+\]
+
+\[
+\boxed{
+V_{\max}
+=
+\left(
+\frac S6
+\right)^{3/2}
+}
+\]
+
+\section{Ejercicio 13}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)=3xy
+\]
+
+en:
+
+\[
+x^2+y^2\leq3.
+\]
+
+En el interior:
+
+\[
+f_x=3y,
+\qquad
+f_y=3x.
+\]
+
+El único punto crítico es:
+
+\[
+(0,0),
+\]
+
+donde:
+
+\[
+f(0,0)=0.
+\]
+
+En la frontera:
+
+\[
+x^2+y^2=3.
+\]
+
+Aplicamos Lagrange:
+
+\[
+3y=2\lambda x,
+\]
+
+\[
+3x=2\lambda y.
+\]
+
+Para los extremos no nulos:
+
+\[
+x^2=y^2.
+\]
+
+El máximo se obtiene cuando:
+
+\[
+x=y.
+\]
+
+Entonces:
+
+\[
+2x^2=3.
+\]
+
+Por tanto:
+
+\[
+x=y=\pm\sqrt{\frac32}.
+\]
+
+Así:
+
+\[
+\boxed{
+f_{\max}
+=
+\frac92
+}
+\]
+
+alcanzado en:
+
+\[
+\boxed{
+\left(
+\sqrt{\frac32},
+\sqrt{\frac32}
+\right),
+\qquad
+\left(
+-\sqrt{\frac32},
+-\sqrt{\frac32}
+\right)
+}
+\]
+
+\section{Ejercicio 14}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y,z)
+=
+-x+y-3z
+\]
+
+en:
+
+\[
+x^2+2y^2+z^2\leq7.
+\]
+
+Como \(f\) es lineal, los extremos absolutos se alcanzan en la frontera:
+
+\[
+x^2+2y^2+z^2=7.
+\]
+
+Aplicamos Lagrange:
+
+\[
+-1=2\lambda x,
+\]
+
+\[
+1=4\lambda y,
+\]
+
+\[
+-3=2\lambda z.
+\]
+
+Así:
+
+\[
+x=-\frac1{2\lambda},
+\qquad
+y=\frac1{4\lambda},
+\qquad
+z=-\frac3{2\lambda}.
+\]
+
+Sustituyendo en la restricción:
+
+\[
+\frac{21}{8\lambda^2}=7.
+\]
+
+Por tanto:
+
+\[
+\lambda^2=\frac38.
+\]
+
+Los puntos extremos son:
+
+\[
+P_{\max}
+=
+\sqrt{\frac23}
+\left(
+-1,\frac12,-3
+\right),
+\]
+
+\[
+P_{\min}
+=
+-\sqrt{\frac23}
+\left(
+-1,\frac12,-3
+\right).
+\]
+
+Los valores son:
+
+\[
+\boxed{
+f_{\max}
+=
+\frac{7\sqrt6}{2}
+}
+\]
+
+\[
+\boxed{
+f_{\min}
+=
+-\frac{7\sqrt6}{2}
+}
+\]
+
+Estos extremos son absolutos y también relativos respecto del conjunto \(S\).
+
+\section{Ejercicio 15}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+8x^3-24xy+y^3
+\]
+
+en el triángulo:
+
+\[
+x\geq0,
+\qquad
+y\geq0,
+\qquad
+x+y\leq1.
+\]
+
+En el interior:
+
+\[
+f_x=24x^2-24y,
+\]
+
+\[
+f_y=-24x+3y^2.
+\]
+
+Las ecuaciones:
+
+\[
+y=x^2,
+\qquad
+y^2=8x
+\]
+
+no producen ningún punto crítico interior.
+
+Estudiamos la frontera.
+
+Para:
+
+\[
+x=0,
+\]
+
+\[
+f(0,y)=y^3,
+\qquad
+0\leq y\leq1.
+\]
+
+Para:
+
+\[
+y=0,
+\]
+
+\[
+f(x,0)=8x^3,
+\qquad
+0\leq x\leq1.
+\]
+
+Para:
+
+\[
+x+y=1,
+\qquad
+y=1-x,
+\]
+
+se tiene:
+
+\[
+f(x,1-x)
+=
+7x^3+27x^2-27x+1.
+\]
+
+Derivando:
+
+\[
+\frac{d}{dx}f(x,1-x)
+=
+3(x+3)(7x-3).
+\]
+
+El punto relevante es:
+
+\[
+x=\frac37,
+\qquad
+y=\frac47.
+\]
+
+Su valor es:
+
+\[
+f\left(
+\frac37,\frac47
+\right)
+=
+-\frac{248}{49}.
+\]
+
+En los vértices:
+
+\[
+f(0,0)=0,
+\]
+
+\[
+f(0,1)=1,
+\]
+
+\[
+f(1,0)=8.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f_{\max}=8
+\text{ en }(1,0)
+}
+\]
+
+\[
+\boxed{
+f_{\min}
+=
+-\frac{248}{49}
+\text{ en }
+\left(
+\frac37,\frac47
+\right)
+}
+\]
+
+\section{Ejercicio 16}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+e^{x^2-2x+y^2}.
+\]
+
+Escribimos:
+
+\[
+x^2-2x+y^2
+=
+(x-1)^2+y^2-1.
+\]
+
+El recinto es:
+
+\[
+(x-1)^2+2y^2\leq1.
+\]
+
+Como la función exponencial es creciente, basta extremar:
+
+\[
+q(x,y)
+=
+(x-1)^2+y^2.
+\]
+
+En el recinto:
+
+\[
+q\geq0,
+\]
+
+y el mínimo se alcanza en:
+
+\[
+(x,y)=(1,0).
+\]
+
+Por tanto:
+
+\[
+f_{\min}
+=
+e^{-1}.
+\]
+
+Para el máximo:
+
+\[
+(x-1)^2+y^2
+\leq
+(x-1)^2+2y^2
+\leq1.
+\]
+
+La igualdad se alcanza cuando:
+
+\[
+y=0,
+\qquad
+(x-1)^2=1.
+\]
+
+Es decir:
+
+\[
+(x,y)=(0,0),
+\qquad
+(x,y)=(2,0).
+\]
+
+Así:
+
+\[
+\boxed{
+f_{\min}
+=
+e^{-1}
+\text{ en }(1,0)
+}
+\]
+
+\[
+\boxed{
+f_{\max}
+=
+1
+\text{ en }(0,0)\text{ y }(2,0)
+}
+\]
+
+\section{Ejercicio 17}
+\subsection{Solución}
+
+Queremos extremar:
+
+\[
+f(x,y,z)=z
+\]
+
+sujeto a:
+
+\[
+x+y+z=12,
+\]
+
+\[
+z=x^2+y^2.
+\]
+
+De la primera condición:
+
+\[
+x+y=12-z.
+\]
+
+Además:
+
+\[
+x^2+y^2=z.
+\]
+
+Por Cauchy--Schwarz:
+
+\[
+(x+y)^2
+\leq
+2(x^2+y^2).
+\]
+
+Por tanto:
+
+\[
+(12-z)^2\leq2z.
+\]
+
+Así:
+
+\[
+z^2-26z+144\leq0.
+\]
+
+Factorizando:
+
+\[
+(z-8)(z-18)\leq0.
+\]
+
+Luego:
+
+\[
+8\leq z\leq18.
+\]
+
+Los extremos se alcanzan cuando:
+
+\[
+x=y.
+\]
+
+Para \(z=8\):
+
+\[
+x=y=2.
+\]
+
+Para \(z=18\):
+
+\[
+x=y=-3.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+z_{\min}=8
+\text{ en }(2,2,8)
+}
+\]
+
+\[
+\boxed{
+z_{\max}=18
+\text{ en }(-3,-3,18)
+}
+\]
+
+\section{Ejercicio 18}
+\subsection{Solución}
+
+Las restricciones son:
+
+\[
+x+y+z=40,
+\]
+
+\[
+z=x+y.
+\]
+
+Sustituyendo:
+
+\[
+2z=40.
+\]
+
+Por tanto:
+
+\[
+z=20,
+\qquad
+x+y=20.
+\]
+
+La función queda:
+
+\[
+f(x,y,z)
+=
+20xy.
+\]
+
+Para una suma fija:
+
+\[
+x+y=20,
+\]
+
+el producto \(xy\) es máximo cuando:
+
+\[
+x=y=10.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f_{\max}
+=
+10\cdot10\cdot20
+=
+2000
+}
+\]
+
+alcanzado en:
+
+\[
+\boxed{
+(10,10,20)
+}
+\]
+
+\section{Ejercicio 19}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)=e^{2x+y}.
+\]
+
+En \((0,0)\):
+
+\[
+f(0,0)=1.
+\]
+
+Las derivadas de primer orden son:
+
+\[
+f_x=2e^{2x+y},
+\qquad
+f_y=e^{2x+y}.
+\]
+
+Por tanto:
+
+\[
+f_x(0,0)=2,
+\qquad
+f_y(0,0)=1.
+\]
+
+El polinomio de Maclaurin de primer grado es:
+
+\[
+\boxed{
+P_1(x,y)
+=
+1+2x+y
+}
+\]
+
+Las derivadas de segundo orden son:
+
+\[
+f_{xx}=4e^{2x+y},
+\]
+
+\[
+f_{xy}=f_{yx}=2e^{2x+y},
+\]
+
+\[
+f_{yy}=e^{2x+y}.
+\]
+
+En el origen:
+
+\[
+f_{xx}=4,
+\qquad
+f_{xy}=f_{yx}=2,
+\qquad
+f_{yy}=1.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+P_2(x,y)
+=
+1+2x+y
++
+2x^2+2xy+\frac12y^2
+}
+\]
+
+\section{Ejercicio 20}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+x\cos y+y\sen x.
+\]
+
+En el origen:
+
+\[
+f(0,0)=0.
+\]
+
+Las derivadas de primer orden son:
+
+\[
+f_x
+=
+\cos y+y\cos x,
+\]
+
+\[
+f_y
+=
+-x\sen y+\sen x.
+\]
+
+Así:
+
+\[
+f_x(0,0)=1,
+\qquad
+f_y(0,0)=0.
+\]
+
+Las derivadas de segundo orden son:
+
+\[
+f_{xx}
+=
+-y\sen x,
+\]
+
+\[
+f_{xy}
+=
+-\sen y+\cos x,
+\]
+
+\[
+f_{yx}
+=
+-\sen y+\cos x,
+\]
+
+\[
+f_{yy}
+=
+-x\cos y.
+\]
+
+En \((0,0)\):
+
+\[
+f_{xx}=0,
+\qquad
+f_{xy}=f_{yx}=1,
+\qquad
+f_{yy}=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+P_2(x,y)
+=
+x+xy
+}
+\]
+
+\section{Ejercicio 21}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\ln\left(
+\frac{1+x}{1+y}
+\right).
+\]
+
+Escribimos:
+
+\[
+f(x,y)
+=
+\ln(1+x)-\ln(1+y).
+\]
+
+Utilizando:
+
+\[
+\ln(1+t)
+=
+t-\frac{t^2}{2}+O(t^3),
+\]
+
+se obtiene:
+
+\[
+f(x,y)
+=
+x-\frac{x^2}{2}
+-
+y+\frac{y^2}{2}
++
+O\left(\|(x,y)\|^3\right).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+P_2(x,y)
+=
+x-y-\frac{x^2}{2}+\frac{y^2}{2}
+}
+\]
+
+\section{Ejercicio 22}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+x^3+y^3-x^2y+xy-1.
+\]
+
+Queremos expresarla en potencias de:
+
+\[
+x+1
+\qquad\text{e}\qquad
+y-2.
+\]
+
+Tomamos:
+
+\[
+h=x+1,
+\qquad
+k=y-2.
+\]
+
+Entonces:
+
+\[
+x=h-1,
+\qquad
+y=k+2.
+\]
+
+Sustituyendo y desarrollando:
+
+\[
+f
+=
+h^3-h^2k-5h^2+3hk+9h
++k^3+6k^2+10k+2.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\begin{aligned}
+f(x,y)
+={}&
+(x+1)^3
+-(x+1)^2(y-2)
+-5(x+1)^2\\
+&+
+3(x+1)(y-2)
++
+9(x+1)
++
+(y-2)^3\\
+&+
+6(y-2)^2
++
+10(y-2)
++
+2.
+\end{aligned}
+}
+\]
+
+\section{Ejercicio 23}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)=x^y.
+\]
+
+Desarrollamos alrededor de:
+
+\[
+(1,0).
+\]
+
+En dicho punto:
+
+\[
+f(1,0)=1.
+\]
+
+Además:
+
+\[
+f_x
+=
+yx^{y-1},
+\]
+
+\[
+f_y
+=
+x^y\ln x.
+\]
+
+Por tanto:
+
+\[
+f_x(1,0)=0,
+\qquad
+f_y(1,0)=0.
+\]
+
+Las derivadas de segundo orden son:
+
+\[
+f_{xx}
+=
+y(y-1)x^{y-2},
+\]
+
+\[
+f_{xy}
+=
+x^{y-1}
++
+yx^{y-1}\ln x,
+\]
+
+\[
+f_{yy}
+=
+x^y(\ln x)^2.
+\]
+
+En \((1,0)\):
+
+\[
+f_{xx}=0,
+\qquad
+f_{xy}=f_{yx}=1,
+\qquad
+f_{yy}=0.
+\]
+
+Así:
+
+\[
+\boxed{
+P_2(x,y)
+=
+1+(x-1)y
+}
+\]
+
+Para:
+
+\[
+x=1.2,
+\qquad
+y=0.1,
+\]
+
+se obtiene:
+
+\[
+(1.2)^{0.1}
+\approx
+1+(0.2)(0.1).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+(1.2)^{0.1}
+\approx
+1.02
+}
+\]
+
+\section{Ejercicio 24}
+\subsection{Solución}
+
+Tomamos:
+
+\[
+f(x,y)
+=
+\sqrt{x^2+y^3}
+\]
+
+y desarrollamos alrededor de:
+
+\[
+(1,2).
+\]
+
+Se tiene:
+
+\[
+f(1,2)=3.
+\]
+
+Las derivadas en \((1,2)\) son:
+
+\[
+f_x(1,2)=\frac13,
+\]
+
+\[
+f_y(1,2)=2,
+\]
+
+\[
+f_{xx}(1,2)=\frac8{27},
+\]
+
+\[
+f_{xy}(1,2)=f_{yx}(1,2)=-\frac29,
+\]
+
+\[
+f_{yy}(1,2)=\frac23.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\begin{aligned}
+P_2(x,y)
+={}&
+3
++
+\frac13(x-1)
++
+2(y-2)\\
+&+
+\frac4{27}(x-1)^2
+-
+\frac29(x-1)(y-2)
++
+\frac13(y-2)^2.
+\end{aligned}
+}
+\]
+
+Para:
+
+\[
+x=1.02,
+\qquad
+y=1.97,
+\]
+
+\[
+x-1=0.02,
+\qquad
+y-2=-0.03.
+\]
+
+Así:
+
+\[
+P_2(1.02,1.97)
+\approx
+2.947159.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\sqrt{(1.02)^2+(1.97)^3}
+\approx
+2.94716
+}
+\]
+
+\section{Ejercicio 25}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y,z)
+=
+e^{a(x+y+z)}.
+\]
+
+En el origen:
+
+\[
+f(0,0,0)=1.
+\]
+
+Como:
+
+\[
+e^t
+=
+1+t+\frac{t^2}{2}+O(t^3),
+\]
+
+tomando:
+
+\[
+t=a(x+y+z),
+\]
+
+se obtiene:
+
+\[
+\boxed{
+P_2(x,y,z)
+=
+1
++
+a(x+y+z)
++
+\frac{a^2}{2}(x+y+z)^2
+}
+\]
+
+\section{Ejercicio 26}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\ln\left(\frac xy\right)
+=
+\ln x-\ln y.
+\]
+
+Desarrollamos alrededor de:
+
+\[
+(1,1).
+\]
+
+Tomamos:
+
+\[
+h=x-1,
+\qquad
+k=y-1.
+\]
+
+Entonces:
+
+\[
+f(x,y)
+=
+\ln(1+h)-\ln(1+k).
+\]
+
+Usando:
+
+\[
+\ln(1+t)
+=
+t-\frac{t^2}{2}+\frac{t^3}{3}+O(t^4),
+\]
+
+se obtiene:
+
+\[
+\boxed{
+\begin{aligned}
+P_3(x,y)
+={}&
+(x-1)-(y-1)\\
+&-
+\frac12
+\left[
+(x-1)^2-(y-1)^2
+\right]\\
+&+
+\frac13
+\left[
+(x-1)^3-(y-1)^3
+\right].
+\end{aligned}
+}
+\]
+
+\end{document}

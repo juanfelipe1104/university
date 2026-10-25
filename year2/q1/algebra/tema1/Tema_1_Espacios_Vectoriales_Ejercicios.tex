@@ -1,0 +1,455 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Pn}{\mathcal{P}}
+\newcommand{\Span}{\operatorname{L}}
+\newcommand{\rg}{\operatorname{rg}}
+\newcommand{\dimn}{\operatorname{dim}}
+
+\begin{document}
+
+\begin{center}
+	{\LARGE\bfseries Álgebra Lineal}\\[0.4em]
+	{\Large Tema 1: Espacios Vectoriales --- Ejercicios}
+\end{center}
+
+\section{Ejercicio 1}
+Razonar si el siguiente conjunto constituye un subespacio vectorial. En caso afirmativo, encontrar su expresión como subespacio engendrado por un sistema de vectores:
+
+\[
+S=
+\left\{
+(x,y,z)\in\R^3:
+2x-y+3z=0
+\right\}
+\]
+
+\section{Ejercicio 2}
+Razonar si el siguiente conjunto constituye un subespacio vectorial. En caso afirmativo, encontrar su expresión como subespacio engendrado por un sistema de vectores:
+
+\[
+S=
+\left\{
+(x,y)\in\R^2:
+xy=0
+\right\}
+\]
+
+\section{Ejercicio 3}
+Razonar si el siguiente conjunto constituye un subespacio vectorial:
+
+\[
+S=
+\left\{
+A=
+\begin{pmatrix}
+a&b\\
+c&d
+\end{pmatrix}
+\in M_{2\times2}(\R):
+\det A=0
+\right\}
+\]
+
+\section{Ejercicio 4}
+Determinar el valor de $x$ para que:
+
+\[
+(1,x,5)\in
+\Span\left\{
+(1,2,3),(1,1,1)
+\right\}
+\]
+
+\section{Ejercicio 5}
+Determinar si los conjuntos:
+
+\[
+A=
+\left\{
+p(x)\in\Pn_2(x):
+p(0)=0,\;
+p'(0)=0
+\right\}
+\]
+
+y:
+
+\[
+B=
+\left\{
+p(x)\in\Pn_2(x):
+p(0)=0,\;
+p'(0)=1
+\right\}
+\]
+
+son subespacios de $\Pn_2(x)$.
+
+\section{Ejercicio 6}
+Obtener las ecuaciones paramétricas del subespacio:
+
+\[
+M=
+\left\{
+(x_1,x_2,x_3,x_4)\in\R^4:
+\begin{array}{rcl}
+x_1+5x_2-2x_3-x_4&=&0\\
+2x_1+x_2+2x_3+x_4&=&0
+\end{array}
+\right\}
+\]
+
+\section{Ejercicio 7}
+Dados los subespacios:
+
+\[
+S=
+\left\{
+(x_1,x_2,x_3,x_4)\in\R^4:
+x_1-x_2=0
+\right\}
+\]
+
+\[
+T=
+\Span\left\{
+(1,1,2,1),
+(2,3,-1,1)
+\right\}
+\]
+
+obtener bases de $S$, $T$, $S\cap T$ y $S+T$.
+
+\section{Ejercicio 8}
+Analizar para qué valores de $a$ las siguientes matrices son linealmente independientes:
+
+\[
+A_1=
+\begin{pmatrix}
+0&a&0\\
+0&1&0
+\end{pmatrix},
+\qquad
+A_2=
+\begin{pmatrix}
+0&1&0\\
+0&a&0
+\end{pmatrix},
+\qquad
+A_3=
+\begin{pmatrix}
+0&1&0\\
+0&a&a
+\end{pmatrix}
+\]
+
+\section{Ejercicio 9}
+Analizar para qué valores de $a$ los siguientes polinomios son linealmente independientes:
+
+\[
+x^2+3x+1,
+\qquad
+2-x,
+\qquad
+1+ax+x^2
+\]
+
+\section{Ejercicio 10}
+Se considera la matriz:
+
+\[
+A=
+\begin{pmatrix}
+1&-1&1\\
+1&-1&1
+\end{pmatrix}
+\]
+
+Hallar la dimensión y una base del subespacio:
+
+\[
+U=
+\left\{
+X\in M_{2\times2}(\R):
+XA=0
+\right\}
+\]
+
+\section{Ejercicio 11}
+En el espacio vectorial $\R^4$, calcular:
+
+\begin{enumerate}[label=\alph*)]
+	\item una base que contenga al vector $(1,2,1,1)$;
+	\item una base que contenga a los vectores $(1,1,0,0)$, $(0,0,2,2)$ y $(0,3,3,0)$.
+\end{enumerate}
+
+\section{Ejercicio 12}
+Dadas:
+
+\[
+B=\{e_1,e_2,e_3\}
+\]
+
+\[
+B'=
+\left\{
+2e_1+3e_2,\;
+e_1+e_3,\;
+-e_2+e_3
+\right\}
+\]
+
+se pide:
+
+\begin{enumerate}[label=\alph*)]
+	\item Si $[u]_B=(1,2,3)$, hallar $[u]_{B'}$.
+	\item Si $[u]_{B'}=(-2,1,0)$, hallar $[u]_B$.
+\end{enumerate}
+
+\section{Ejercicio 13}
+Sea $\Pn_3(x)$ con bases:
+
+\[
+B=(1,x,x^2,x^3)
+\]
+
+\[
+B'=
+(1+x,\;x+x^2,\;x^2-x^3,\;1+2x^3)
+\]
+
+\[
+B''=
+(1,\;1+x,\;1+x+x^2,\;1+x+x^2+x^3)
+\]
+
+Se pide:
+
+\begin{enumerate}[label=\alph*)]
+	\item Hallar la matriz de cambio de base de $B$ a $B'$.
+	\item Hallar la matriz de cambio de base de $B$ a $B''$.
+	\item Hallar la matriz de cambio de base de $B'$ a $B''$.
+	\item Para $p(x)=x^3-2x$, hallar sus coordenadas respecto de $B$, $B'$ y $B''$.
+\end{enumerate}
+
+\section{Ejercicio 14}
+En $\Pn_2(x)$ se consideran las bases:
+
+\[
+B_1=
+\{1+x+x^2,\;x+2x^2,\;1+x\}
+\]
+
+\[
+B_2=
+\{1+2x+3x^2,\;
+\alpha+(\alpha-1)x-2x^2,\;
+2+2x\}
+\]
+
+Se pide:
+
+\begin{enumerate}[label=\alph*)]
+	\item Calcular $\alpha$ para que el polinomio de coordenadas $(1,1,0)$ en $B_2$ tenga coordenadas $(1,0,3)$ en $B_1$.
+	\item Para dicho valor de $\alpha$, determinar el conjunto $W$ de polinomios que tienen las mismas coordenadas en $B_1$ y $B_2$. Determinar si $W$ es subespacio vectorial de $\Pn_2(x)$.
+	\item En caso afirmativo, obtener unas ecuaciones implícitas en base $B_1$ de un subespacio suplementario de $W$ en $\Pn_2(x)$.
+\end{enumerate}
+
+\section{Ejercicio 15}
+En $\Pn_3(x)$ se consideran:
+
+\[
+S_1=
+\left\{
+p(x)\in\Pn_3(x):
+p(0)=0
+\text{ y las tangentes a }p(x)
+\text{ en }x=1\text{ y }x=-1
+\text{ son paralelas}
+\right\}
+\]
+
+\[
+S_2=
+\left\{
+p(x)\in\Pn_3(x):
+p(2)=0
+\right\}
+\]
+
+Se pide:
+
+\begin{enumerate}[label=\alph*)]
+	\item Calcular la dimensión y una base de $S_1$ y $S_2$.
+	\item Calcular $S_1\cap S_2$, una base del mismo y razonar si $S_1+S_2$ es suma directa.
+	\item Si $p(x)$ es un vector de $S_1\cap S_2$, calcular sus coordenadas en:
+	\[
+	B=
+	\{1+x,\;x+x^2,\;x^2+x^3,\;x^3\}
+	\]
+	\item Comprobar mediante la matriz de cambio de base apropiada que las coordenadas obtenidas corresponden al mismo vector en la base canónica.
+\end{enumerate}
+
+\section{Ejercicio 16}
+Sea $\Pn_2(x)$ y sea $p(x)$ un polinomio de grado exactamente $2$.
+
+\begin{enumerate}[label=\alph*)]
+	\item Demostrar que:
+	\[
+	B=\{p,p',p''\}
+	\]
+	y:
+	\[
+	B'=\{p,\;p+p',\;p'+p''\}
+	\]
+	son bases de $\Pn_2(x)$.
+	\item Analizar si:
+	\[
+	S=
+	\{x(x-a):a\in\R\}
+	\]
+	es un subespacio vectorial de $\Pn_2(x)$.
+	\item Si $p(x)\in S$ y tiene raíz $-1$, obtener las coordenadas de:
+	\[
+	q(x)=x^2+x+2
+	\]
+	en la base $B'$.
+	\item Comprobar mediante una matriz de cambio de base que el vector obtenido es precisamente $q(x)$.
+\end{enumerate}
+
+\section{Ejercicio 17}
+Se consideran los subespacios de $\R^4$:
+
+\[
+V=
+\Span\{(1,2,3,4),(-1,0,1,-1)\}
+\]
+
+\[
+W=
+\left\{
+(x,y,z,t)\in\R^4:
+2x+5y-z-t=0
+\right\}
+\]
+
+Se pide:
+
+\begin{enumerate}[label=\alph*)]
+	\item Obtener una base de $W$.
+	\item Obtener las ecuaciones paramétricas, implícitas y una base de $V\cap W$.
+	\item Razonar si $V+W$ es suma directa.
+	\item Hallar las coordenadas de $(-1,1,1,2)$ respecto de la base de $V$ dada en el enunciado.
+\end{enumerate}
+
+\section{Ejercicio 18}
+En $\Pn_3(x)$ se consideran:
+
+\[
+V=
+\left\{
+p(x)\in\Pn_3(x):
+p'(x)\in
+\Span\{1+x^2,x^3\}
+\right\}
+\]
+
+\[
+W=
+\left\{
+p(x)\in\Pn_3(x):
+p'(x)=p''(x)
+\right\}
+\]
+
+Se pide:
+
+\begin{enumerate}[label=\alph*)]
+	\item Calcular una base y las ecuaciones implícitas de $V$ y $W$ en la base canónica de $\Pn_3(x)$.
+	\item Calcular las ecuaciones paramétricas y una base de $V\cap W$.
+	\item Determinar si $p(x)=1$ pertenece a $V$ y a $V\cap W$. En caso afirmativo, calcular sus coordenadas en las bases obtenidas.
+\end{enumerate}
+
+\section{Ejercicio 19}
+Sea $\Pn_n(x)$ el espacio vectorial de polinomios de grado menor o igual que $n$.
+
+\begin{enumerate}[label=\alph*)]
+	\item Demostrar que $x^n$ y sus $n$ primeras derivadas conforman una base de $\Pn_n(x)$.
+	\item Estudiar si:
+	\[
+	1+3x+5x^2,\qquad
+	-1+2x^2,\qquad
+	3+3x+x^2
+	\]
+	son linealmente independientes.
+	\item Si:
+	\[
+	V=
+	\Span\{1+x^2,1-x^2\}
+	\]
+	determinar si $p(x)=1+5x^2$ y $r(x)=1+x$ pertenecen a $V$.
+	\item Si:
+	\[
+	W=
+	\Span\{1+3x+5x^2,\;-1+2x^2,\;3+3x+x^2\}
+	\]
+	calcular $V\cap W$ y $V+W$.
+\end{enumerate}
+
+\section{Ejercicio 20}
+Sean $E=F=\R^2$. Calcular una base del espacio vectorial producto $E\times F$ asociada a la base canónica de $\R^2$.
+
+\section{Ejercicio 21}
+Sea $E$ un espacio vectorial de dimensión $3$ y:
+
+\[
+B=\{e_1,e_2,e_3\}
+\]
+
+una base de $E$. Sea:
+
+\[
+V=
+\Span\{u_1,u_2\}
+\]
+
+con:
+
+\[
+u_1=e_1-e_2,
+\qquad
+u_2=e_1+e_2
+\]
+
+Calcular una base del espacio vectorial cociente $E/V$.
+
+\section{Ejercicio 22}
+Obtener una base del espacio vectorial cociente $\R^4/V$, siendo:
+
+\[
+V=
+\Span\left\{
+(1,0,1,1),
+(1,2,1,1),
+(2,2,2,2)
+\right\}
+\]
+
+\end{document}

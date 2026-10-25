@@ -1,0 +1,128 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,geometry,enumitem,tikz,booktabs}
+\usetikzlibrary{arrows.meta,positioning}
+\geometry{margin=2.35cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\F}{\mathbb F}
+\newcommand{\C}{\mathbb C}
+\newcommand{\ej}[1]{\subsection*{Ejercicio #1}}
+\begin{document}
+\begin{center}{\LARGE Soluciones: Hoja 1 de Estructuras Algebraicas}\\[4pt]
+{\large Tema 1. Grupos}\\[6pt]
+\emph{Desarrollo razonado de los 19 ejercicios}
+\end{center}
+\section{Operaciones, axiomas y órdenes}
+\ej{1}
+Para $G=(-1,1)$ y $x*y=(x+y)/(1+xy)$ comprobamos:
+\begin{itemize}
+\item \textbf{Cierre:} $1+xy>0$ y $(1+xy)^2-(x+y)^2=(1-x^2)(1-y^2)>0$. Por tanto $|x*y|<1$.
+\item \textbf{Asociatividad:} $(x*y)*z=(x+y+z+xyz)/(1+xy+xz+yz)=x*(y*z)$.
+\item \textbf{Neutro:} $0$, pues $x*0=x$.
+\item \textbf{Inverso:} $-x$, pues $x*(-x)=0$.
+\end{itemize}
+Además, $x*y=y*x$. \textbf{Conclusión:} $(G,*)$ es un grupo abeliano.
+\ej{2}
+Tomamos $G=\bigoplus_{n\geq1}\Z_2$: sucesiones de ceros y unos de soporte finito, con suma componente a componente módulo 2. El grupo es infinito, pero $x+x=0$ para todo $x$. Así, el neutro tiene orden 1 y todo elemento no neutro tiene orden 2.
+\ej{3}
+\textbf{(a)} Si $G$ es abeliano, $(ab)^2=abab=aabb=a^2b^2$. Recíprocamente, de $abab=aabb$, cancelando $a$ a la izquierda y $b$ a la derecha, se obtiene $ba=ab$.
+
+\textbf{(b)} La inversión $f(x)=x^{-1}$ es siempre biyectiva. Es homomorfismo precisamente cuando $(ab)^{-1}=a^{-1}b^{-1}$. Como $(ab)^{-1}=b^{-1}a^{-1}$, la condición equivale a que $a^{-1}$ y $b^{-1}$ conmuten para cualesquiera $a,b$, esto es, a que $G$ sea abeliano.
+\ej{4}
+Si todos los elementos distintos de $e$ satisficieran $x\neq x^{-1}$, podrían agruparse en parejas disjuntas $\{x,x^{-1}\}$. Por tanto, $|G|-1$ sería par y $|G|$ impar, contradicción. Existe $x\neq e$ con $x=x^{-1}$, es decir, $x^2=e$.
+\ej{5}
+Sea $H=\langle x\rangle$.
+
+\textbf{(a)} $H=\{x^k:k\in\Z\}$ es subgrupo: contiene $e=x^0$, cumple $x^mx^n=x^{m+n}$ y $(x^m)^{-1}=x^{-m}$.
+
+\textbf{(b)} $h\mapsto ha$ es una biyección $H\to Ha$, luego $|Ha|=|H|$. Si $h_1a=h_2b$, entonces $a=h_1^{-1}h_2b\in Hb$, y $Ha=Hb$. Así, las clases laterales derechas son iguales o disjuntas.
+
+\textbf{(c)} $Ha$ es subgrupo si y sólo si contiene $e$, lo que equivale a $a\in H$; en tal caso $Ha=H$. Las clases laterales particionan $G$, todas tienen $|H|$ elementos, así que $|G|=k|H|$ y $|\langle x\rangle|\mid |G|$.
+\ej{6}
+Las únicas simetrías de un rectángulo no cuadrado son la identidad, el giro de $180^\circ$ y las reflexiones respecto a los dos ejes centrales. Las tres transformaciones no triviales tienen orden 2 y conmutan. Por tanto, el grupo es $\Z_2\times\Z_2$, el grupo de Klein.
+\section{Diagramas de multiplicación y grafos de Cayley}
+\ej{7}
+\textbf{(a)} Los diagramas se especifican mediante sus flechas:
+\begin{align*}
+\Z_7,\ a=3:&\quad (0),\quad(1\to3\to2\to6\to4\to5\to1).\\
+\Z_6,\ a=4:&\quad 0\to0,\ 1\to4,\ 2\to2,\ 3\to0,\ 4\to4,\ 5\to2.\\
+\Z_6,\ a=5:&\quad (0),\ (1\to5\to1),\ (2\to4\to2),\ (3).
+\end{align*}
+En estas expresiones los paréntesis denotan ciclos.
+
+\textbf{(b)} Llega una sola flecha a cada vértice si y sólo si $x\mapsto ax$ es biyectiva, equivalente a $\gcd(a,n)=1$. Esto vale para todo $a\neq0$ exactamente cuando $n$ es primo.
+
+\textbf{(c)} Supuesta la biyectividad, la longitud del ciclo de $x$ es el menor $k>0$ con $(a^k-1)x\equiv0\pmod n$. Si $d=\gcd(x,n)$, resulta
+\[L(x)=\operatorname{ord}_{n/d}(a),\]
+con la convención $L(0)=1$. Como el ciclo de 0 tiene longitud 1, todos los ciclos del diagrama completo tienen la misma longitud si y sólo si $a=1$. Quitando el 0, para $n$ primo la longitud de todos los ciclos es $\operatorname{ord}_n(a)$. Si $n$ es compuesto, se puede encontrar una unidad $a$ cuyo orden módulo $n$ es mayor que el que tiene módulo algún divisor propio de $n$: los vértices $1$ y dicho divisor originan entonces ciclos de distintas longitudes. Por tanto, la condición solicitada equivale a que $n$ sea primo.
+
+\textbf{(d)} Como $0$ siempre es un ciclo, tener sólo ese ciclo equivale a que $a^k\equiv0\pmod n$ para algún $k$, es decir, que exista un nilpotente no nulo en $\Z_n$. Ocurre exactamente cuando $n$ no es libre de cuadrados: existe $p$ primo con $p^2\mid n$.
+
+\textbf{(e)} Si todos los vértices no nulos forman un ciclo, deben ser unidades, de donde $n$ es primo. Si $n=p$ es primo, el grupo $\Z_p^*$ es cíclico, y un generador $a$ recorre en un solo ciclo sus $p-1$ elementos.
+\ej{8}
+Para dibujar los grafos, se sitúa un vértice por elemento y, por cada generador $s$, una flecha de $g$ a $gs$.
+
+\textbf{(a)} Para $S_3=\langle t,u\mid t^2=e,u^3=e,tut=u^{-1}\rangle$, con $t=(12)$ y $u=(123)$, los vértices son $e,u,u^2,t,tu,tu^2$. Las flechas $u$ son los dos triángulos
+\[e\to u\to u^2\to e,\qquad t\to tu\to tu^2\to t.\]
+Las flechas $t$ son las parejas dobles $e\leftrightarrow t$, $u\leftrightarrow tu^2$ y $u^2\leftrightarrow tu$. Para $S=\{(12),(23)\}$ ambos generadores son involuciones y el grafo no dirigido subyacente es un hexágono con etiquetas alternadas.
+
+\textbf{(b)} En $D_4$, las flechas $r$ forman los dos ciclos
+\[e\to r\to r^2\to r^3\to e,\qquad s\to sr\to sr^2\to sr^3\to s,\]
+y las flechas $s$ emparejan $e\leftrightarrow s$, $r\leftrightarrow sr^3$, $r^2\leftrightarrow sr^2$, $r^3\leftrightarrow sr$.
+
+\textbf{(c)} La longitud del ciclo de un generador da su orden y los caminos cerrados codifican relaciones. Escoger otra reflexión $r^ks$ no altera el grafo etiquetado salvo isomorfismo, por el automorfismo $r\mapsto r$, $s\mapsto r^ks$.
+\ej{9}
+\textbf{(a)} Todo homomorfismo $f:\Z_{20}\to\Z_{20}$ es $f_a(x)=ax$ para un único $a\in\Z_{20}$, así que hay $20$. Es inyectivo si $\gcd(a,20)=1$: hay $\varphi(20)=8$ monomorfismos.
+
+\textbf{(b)} La correspondencia $a\mapsto f_a$ identifica la composición con el producto y da $\operatorname{Aut}(\Z_{20})\cong\Z_{20}^*$. Sus elementos son $\{1,3,7,9,11,13,17,19\}$. Como $3$ tiene orden 4, $11$ tiene orden 2 y $11\notin\langle3\rangle$, concluimos
+\[\Z_{20}^*\cong\Z_4\times\Z_2,\quad\text{con generadores }3,11.\]
+No es cíclico.
+
+\textbf{(c)} En general, los automorfismos de $\Z_n$ son exactamente $x\mapsto ax$, con $\gcd(a,n)=1$, por lo que $\operatorname{Aut}(\Z_n)\cong\Z_n^*$. Los generadores del grupo aditivo $\Z_n$ son sus $\varphi(n)$ clases coprimas con $n$.
+\ej{10}
+Toda imagen de $r$ bajo un automorfismo de $D_4$ tiene orden 4, de modo que $r\mapsto r^a$ con $a\in\{1,3\}$. La imagen de $s$ debe ser una reflexión $r^bs$, $b\in\{0,1,2,3\}$. Las ocho elecciones respetan las relaciones y generan $D_4$. Escribiendo los automorfismos como pares $(a,b)$, su composición es $(a,b)(c,d)=(ac,b+ad)$ módulo 4. Así,
+\[|\operatorname{Aut}(D_4)|=8,\qquad\operatorname{Aut}(D_4)\cong\Z_4\rtimes\Z_2\cong D_4.\]
+Por otra parte, $Z(D_4)=\{e,r^2\}$ y
+\[\operatorname{Inn}(D_4)\cong D_4/Z(D_4)\cong\Z_2\times\Z_2,\qquad|\operatorname{Inn}(D_4)|=4.\]
+\ej{11}
+Las matrices invertibles de $\operatorname{GL}_2(\F_2)$ permutan los tres vectores no nulos $(1,0),(0,1),(1,1)$. La acción define $\varphi:\operatorname{GL}_2(\F_2)\to S_3$. Si una matriz fija esos tres vectores, fija una base y es la identidad: $\varphi$ es inyectivo. Como la primera columna de una matriz invertible tiene 3 posibilidades y la segunda 2,
+\[|\operatorname{GL}_2(\F_2)|=3\cdot2=6=|S_3|.\]
+La aplicación es isomorfismo.
+\ej{12}
+El subgrupo buscado es el de las raíces octavas de la unidad,
+\[\mu_8=\{e^{2\pi ik/8}:k=0,\ldots,7\}\cong\Z_8.\]
+Es único: todo elemento de cualquier subgrupo de orden 8 cumple $z^8=1$. Los generadores son las raíces primitivas con $\gcd(k,8)=1$, es decir, $k=1,3,5,7$.
+\ej{13}
+$\Z_9^*=\{1,2,4,5,7,8\}$ tiene seis elementos. Las potencias de 2 son $2,4,8,7,5,1$ módulo 9, de modo que 2 tiene orden 6 y
+\[\Z_9^*\cong\Z_6.\]
+\section{Permutaciones y aplicaciones}
+\ej{14}
+Contando las 15 fichas y el hueco, cada movimiento legal intercambia dos posiciones, luego invierte el signo de la permutación. Simultáneamente, el hueco cambia de color en el tablero ajedrezado. El producto entre el signo y el signo asociado al color del hueco permanece invariante. Intercambiar sólo las fichas 14 y 15 alteraría el signo de la permutación, manteniendo fijo el hueco: contradice el invariante. Es imposible.
+\ej{15}
+Una codificación reversible es una permutación $\sigma\in S_{27}$.
+
+\textbf{(a)} Sí: una transposición tiene orden 2.
+
+\textbf{(b)} Sí: un ciclo de longitud $k=3,4,5$ tiene orden $k$.
+
+\textbf{(c)} El orden de una permutación es el mínimo común múltiplo de las longitudes de sus ciclos. Como todas las longitudes son a lo sumo 27, un exponente universal es
+\[N=\operatorname{mcm}(1,2,\ldots,27)=2^4\cdot3^3\cdot5^2\cdot7\cdot11\cdot13\cdot17\cdot19\cdot23=80\,313\,433\,200.\]
+Es el menor posible: para cada $1\leq k\leq27$ hay una permutación que contiene un ciclo de longitud $k$, y cualquier exponente universal debe ser múltiplo de $k$.
+\ej{16}
+No. Si las potencias de una combinación $g$ recorrieran todas las configuraciones, el grupo de movimientos sería cíclico y por tanto abeliano. Los giros de caras adyacentes, como $R$ y $U$, no conmutan ($RU\neq UR$). Por ello el grupo no es cíclico.
+\ej{17}
+Sí. La sucesión de posiciones $e,g,g^2,\ldots$ vive en un grupo finito. Existen $i<j$ con $g^i=g^j$. Multiplicando por $g^{-i}$ resulta $g^{j-i}=e$. Tras un número finito de repeticiones volvemos a la posición inicial.
+\ej{18}
+Un subgrupo normal de $S_4$ es unión de clases de conjugación y contiene $e$. Los tamaños de las clases, según el tipo de ciclo, son: identidad $1$, transposiciones $6$, dobles transposiciones $3$, 3-ciclos $8$ y 4-ciclos $6$. Como el orden de un subgrupo divide $24$ y debe ser cerrado bajo producto, las únicas posibilidades son
+\[\boxed{\{e\},\quad V_4=\{e,(12)(34),(13)(24),(14)(23)\},\quad A_4,\quad S_4.}\]
+En efecto, $V_4$ es estable por conjugación; $A_4$ es el núcleo del signo; los extremos son normales. No hay otra unión de clases cerrada bajo el producto y de cardinal divisor de 24.
+\ej{19}
+Sea $r=(1234)$ y $G=\langle r\rangle$. Una permutación $\sigma$ normaliza $G$ si y sólo si $\sigma r\sigma^{-1}$ es un generador de $G$, es decir, $r$ o $r^{-1}$. Tomemos $s=(13)$: cumple $s^2=e$ y $srs^{-1}=r^{-1}$. Luego
+\[H=\langle r,s\rangle=\{e,r,r^2,r^3,s,rs,r^2s,r^3s\}\subseteq N_{S_4}(G),\qquad H\cong D_4.\]
+Para probar que no hay más elementos, la conjugación define $N_{S_4}(G)\to\operatorname{Aut}(G)$, cuyo núcleo es $C_{S_4}(G)=G$ de orden 4. Como $\operatorname{Aut}(G)\cong\Z_2$, el normalizador tiene a lo sumo 8 elementos. Ya hemos exhibido ocho, así que
+\[\boxed{N_{S_4}(G)=\langle(1234),(13)\rangle\cong D_4,\qquad |N_{S_4}(G)|=8.}\]
+\end{document}

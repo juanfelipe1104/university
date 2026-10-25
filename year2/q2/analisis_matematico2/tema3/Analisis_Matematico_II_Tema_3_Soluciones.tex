@@ -1,0 +1,2579 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\sen}{\operatorname{sen}}
+\newcommand{\grad}{\operatorname{grad}}
+\newcommand{\diver}{\operatorname{div}}
+\newcommand{\rot}{\operatorname{rot}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Análisis Matemático II}\\[0.4em]
+{\Large Tema 3: Derivabilidad y diferenciabilidad en funciones de varias variables}\\[0.4em]
+{\large Soluciones}
+\end{center}
+
+\section{Ejercicio 1}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)=3x-x^2y^2+2x^3y.
+\]
+
+Derivando respecto de \(x\):
+
+\[
+f_x(x,y)
+=
+3-2xy^2+6x^2y.
+\]
+
+Derivando respecto de \(y\):
+
+\[
+f_y(x,y)
+=
+-2x^2y+2x^3.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f_x(x,y)=3-2xy^2+6x^2y
+}
+\]
+
+\[
+\boxed{
+f_y(x,y)=-2x^2y+2x^3
+}
+\]
+
+\section{Ejercicio 2}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\cos\left(e^{xy^2}\right)
++
+\sen\left(\ln(xy)\right).
+\]
+
+Para \(xy>0\):
+
+\[
+f_x(x,y)
+=
+-y^2e^{xy^2}
+\sen\left(e^{xy^2}\right)
++
+\frac{\cos(\ln(xy))}{x}.
+\]
+
+Además:
+
+\[
+f_y(x,y)
+=
+-2xye^{xy^2}
+\sen\left(e^{xy^2}\right)
++
+\frac{\cos(\ln(xy))}{y}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f_x(x,y)
+=
+-y^2e^{xy^2}
+\sen\left(e^{xy^2}\right)
++
+\frac{\cos(\ln(xy))}{x}
+}
+\]
+
+\[
+\boxed{
+f_y(x,y)
+=
+-2xye^{xy^2}
+\sen\left(e^{xy^2}\right)
++
+\frac{\cos(\ln(xy))}{y}
+}
+\]
+
+\section{Ejercicio 3}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y,z)
+=
+\frac{3xz}{x+y}.
+\]
+
+Derivando:
+
+\[
+f_x(x,y,z)
+=
+\frac{3yz}{(x+y)^2},
+\]
+
+\[
+f_y(x,y,z)
+=
+-\frac{3xz}{(x+y)^2},
+\]
+
+\[
+f_z(x,y,z)
+=
+\frac{3x}{x+y}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f_x=\frac{3yz}{(x+y)^2},
+\qquad
+f_y=-\frac{3xz}{(x+y)^2},
+\qquad
+f_z=\frac{3x}{x+y}
+}
+\]
+
+Estas derivadas solamente están definidas cuando:
+
+\[
+x+y\neq0.
+\]
+
+Así:
+
+\[
+\boxed{
+\text{No existen para todo }(x,y,z)\in\R^3.
+}
+\]
+
+\section{Ejercicio 4}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+1-(x-1)^2-(2-y)^2.
+\]
+
+Las pendientes en las direcciones \(X\) e \(Y\) son:
+
+\[
+f_x(x,y)
+=
+-2(x-1),
+\]
+
+\[
+f_y(x,y)
+=
+-2(y-2).
+\]
+
+En \((1,2)\):
+
+\[
+f_x(1,2)=0,
+\qquad
+f_y(1,2)=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f_x(1,2)=0,
+\qquad
+f_y(1,2)=0
+}
+\]
+
+\section{Ejercicio 5}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+4-x^2-\frac14y^2.
+\]
+
+Su gradiente es:
+
+\[
+\nabla f(x,y)
+=
+\left(-2x,-\frac y2\right).
+\]
+
+En \((1,2)\):
+
+\[
+\nabla f(1,2)=(-2,-1).
+\]
+
+La dirección dada es:
+
+\[
+u=
+\left(
+\cos\frac{\pi}{3},
+\sen\frac{\pi}{3}
+\right)
+=
+\left(
+\frac12,
+\frac{\sqrt3}{2}
+\right).
+\]
+
+Entonces:
+
+\[
+D_u f(1,2)
+=
+\nabla f(1,2)\cdot u
+\]
+
+\[
+=
+(-2,-1)
+\cdot
+\left(
+\frac12,
+\frac{\sqrt3}{2}
+\right).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+D_u f(1,2)
+=
+-1-\frac{\sqrt3}{2}
+}
+\]
+
+\section{Ejercicio 6}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y,z)
+=
+xy^2-4x^2y+z^2.
+\]
+
+Su gradiente es:
+
+\[
+\nabla f(x,y,z)
+=
+\left(
+y^2-8xy,\,
+2xy-4x^2,\,
+2z
+\right).
+\]
+
+En el punto \((1,-1,2)\):
+
+\[
+\nabla f(1,-1,2)
+=
+(9,-6,4).
+\]
+
+El vector:
+
+\[
+v=(6,2,3)
+\]
+
+tiene norma:
+
+\[
+\|v\|=7.
+\]
+
+Así, el vector unitario correspondiente es:
+
+\[
+u=
+\frac17(6,2,3).
+\]
+
+Entonces:
+
+\[
+D_u f(1,-1,2)
+=
+(9,-6,4)
+\cdot
+\frac17(6,2,3).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+D_u f(1,-1,2)
+=
+\frac{54}{7}
+}
+\]
+
+\section{Ejercicio 7}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+3xy^2-2y+5x^2y^2.
+\]
+
+Las derivadas de primer orden son:
+
+\[
+f_x
+=
+3y^2+10xy^2,
+\]
+
+\[
+f_y
+=
+6xy-2+10x^2y.
+\]
+
+Por tanto:
+
+\[
+f_{xx}
+=
+10y^2,
+\]
+
+\[
+f_{xy}
+=
+6y+20xy,
+\]
+
+\[
+f_{yx}
+=
+6y+20xy,
+\]
+
+\[
+f_{yy}
+=
+6x+10x^2.
+\]
+
+Así:
+
+\[
+\boxed{
+f_{xx}=10y^2,
+\quad
+f_{xy}=f_{yx}=6y+20xy,
+\quad
+f_{yy}=6x+10x^2
+}
+\]
+
+En \((-1,2)\):
+
+\[
+f_{xy}(-1,2)
+=
+12-40
+=
+-28,
+\]
+
+\[
+f_{yx}(-1,2)
+=
+-28.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f_{xy}(-1,2)=f_{yx}(-1,2)=-28
+}
+\]
+
+\section{Ejercicio 8}
+\subsection{Solución}
+
+Sea:
+
+\[
+z=a^{x^2-y^2},
+\qquad
+x=e^{2t},
+\qquad
+y=e^{-t}.
+\]
+
+Por la regla de la cadena:
+
+\[
+\frac{dz}{dt}
+=
+\frac{\partial z}{\partial x}
+\frac{dx}{dt}
++
+\frac{\partial z}{\partial y}
+\frac{dy}{dt}.
+\]
+
+Se tiene:
+
+\[
+\frac{\partial z}{\partial x}
+=
+2x\ln(a)\,a^{x^2-y^2},
+\]
+
+\[
+\frac{\partial z}{\partial y}
+=
+-2y\ln(a)\,a^{x^2-y^2}.
+\]
+
+Además:
+
+\[
+\frac{dx}{dt}=2e^{2t}=2x,
+\qquad
+\frac{dy}{dt}=-e^{-t}=-y.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\frac{dz}{dt}
+=
+\left(
+4e^{4t}
++
+2e^{-2t}
+\right)
+\ln(a)\,
+a^{e^{4t}-e^{-2t}}
+}
+\]
+
+\section{Ejercicio 9}
+\subsection{Solución}
+
+Sea:
+
+\[
+z=x^2-3xy+2y^2,
+\]
+
+\[
+x=3\sen(2t),
+\qquad
+y=4\cos(2t).
+\]
+
+Por la regla de la cadena:
+
+\[
+\frac{dz}{dt}
+=
+(2x-3y)\frac{dx}{dt}
++
+(-3x+4y)\frac{dy}{dt}.
+\]
+
+Como:
+
+\[
+\frac{dx}{dt}=6\cos(2t),
+\]
+
+\[
+\frac{dy}{dt}=-8\sen(2t),
+\]
+
+sustituyendo y simplificando:
+
+\[
+\boxed{
+\frac{dz}{dt}
+=
+-46\sen(4t)-72\cos(4t)
+}
+\]
+
+\section{Ejercicio 10}
+\subsection{Solución}
+
+Sea:
+
+\[
+z=3x^2-2xy+y^2,
+\]
+
+\[
+x=3u+2v,
+\qquad
+y=4u-v.
+\]
+
+Sustituyendo:
+
+\[
+z
+=
+3(3u+2v)^2
+-
+2(3u+2v)(4u-v)
++
+(4u-v)^2.
+\]
+
+Simplificando:
+
+\[
+z
+=
+19u^2+18uv+17v^2.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\frac{\partial z}{\partial u}
+=
+38u+18v
+}
+\]
+
+\[
+\boxed{
+\frac{\partial z}{\partial v}
+=
+18u+34v
+}
+\]
+
+\section{Ejercicio 11}
+\subsection{Solución}
+
+Sea:
+
+\[
+z=
+\frac{2x-y}{x+3y},
+\]
+
+\[
+x=e^{2u}\cos(3v),
+\qquad
+y=e^{2u}\sen(3v).
+\]
+
+Sustituyendo:
+
+\[
+z
+=
+\frac{
+2\cos(3v)-\sen(3v)
+}{
+\cos(3v)+3\sen(3v)
+}.
+\]
+
+La variable \(u\) desaparece, luego:
+
+\[
+\boxed{
+\frac{\partial z}{\partial u}=0
+}
+\]
+
+Derivando respecto de \(v\):
+
+\[
+\boxed{
+\frac{\partial z}{\partial v}
+=
+-\frac{21}
+{\left(
+\cos(3v)+3\sen(3v)
+\right)^2}
+}
+\]
+
+\section{Ejercicio 12}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y,z)
+=
+g(u,v),
+\]
+
+con:
+
+\[
+u=x^2+2yz,
+\qquad
+v=y^2+2xz.
+\]
+
+Por la regla de la cadena:
+
+\[
+f_x
+=
+2xg_u+2zg_v,
+\]
+
+\[
+f_y
+=
+2zg_u+2yg_v,
+\]
+
+\[
+f_z
+=
+2yg_u+2xg_v.
+\]
+
+Consideramos:
+
+\[
+E
+=
+(y^2-xz)f_x
++
+(x^2-yz)f_y
++
+(z^2-xy)f_z.
+\]
+
+Sustituyendo:
+
+\[
+\begin{aligned}
+E
+={}&
+2g_u
+\left[
+x(y^2-xz)
++
+z(x^2-yz)
++
+y(z^2-xy)
+\right]\\
+&+
+2g_v
+\left[
+z(y^2-xz)
++
+y(x^2-yz)
++
+x(z^2-xy)
+\right].
+\end{aligned}
+\]
+
+Ambos corchetes se anulan:
+
+\[
+x y^2-x^2z+x^2z-yz^2+yz^2-xy^2=0,
+\]
+
+\[
+zy^2-xz^2+x^2y-y^2z+xz^2-x^2y=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+(y^2-xz)f_x
++
+(x^2-yz)f_y
++
+(z^2-xy)f_z
+=
+0
+}
+\]
+
+\section{Ejercicio 13}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\begin{cases}
+\dfrac{xy^2}{x^2+y^4},
+&
+(x,y)\neq(0,0),\\[2mm]
+0,
+&
+(x,y)=(0,0).
+\end{cases}
+\]
+
+Según:
+
+\[
+x=0,
+\]
+
+se obtiene:
+
+\[
+f(0,y)=0.
+\]
+
+Según:
+
+\[
+x=y^2,
+\]
+
+se obtiene:
+
+\[
+f(y^2,y)
+=
+\frac{y^4}{2y^4}
+=
+\frac12.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ no es continua en }(0,0)
+}
+\]
+
+Las derivadas parciales en el origen son:
+
+\[
+f_x(0,0)
+=
+\lim_{h\to0}
+\frac{f(h,0)-f(0,0)}{h}
+=
+0,
+\]
+
+\[
+f_y(0,0)
+=
+\lim_{k\to0}
+\frac{f(0,k)-f(0,0)}{k}
+=
+0.
+\]
+
+Así:
+
+\[
+\boxed{
+f_x(0,0)=f_y(0,0)=0
+}
+\]
+
+Por tanto, la función es derivable en el sentido de existencia de sus derivadas parciales.
+
+Como toda función diferenciable es continua:
+
+\[
+\boxed{
+f\text{ no es diferenciable en }(0,0)
+}
+\]
+
+\section{Ejercicio 14}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\begin{cases}
+x\sen\left(
+\dfrac1{x^2+y^2}
+\right),
+&
+(x,y)\neq(0,0),\\[2mm]
+0,
+&
+(x,y)=(0,0).
+\end{cases}
+\]
+
+Se cumple:
+
+\[
+|f(x,y)|
+\leq
+|x|.
+\]
+
+Como:
+
+\[
+|x|\to0
+\]
+
+cuando:
+
+\[
+(x,y)\to(0,0),
+\]
+
+se obtiene:
+
+\[
+\boxed{
+f\text{ es continua en }(0,0)
+}
+\]
+
+Para la derivada parcial respecto de \(x\):
+
+\[
+f_x(0,0)
+=
+\lim_{h\to0}
+\frac{h\sen(1/h^2)}{h}
+=
+\lim_{h\to0}
+\sen\left(\frac1{h^2}\right).
+\]
+
+Este límite no existe.
+
+Por tanto:
+
+\[
+\boxed{
+f_x(0,0)\text{ no existe}
+}
+\]
+
+mientras que:
+
+\[
+f_y(0,0)=0.
+\]
+
+Así:
+
+\[
+\boxed{
+f\text{ no es derivable en }(0,0)
+}
+\]
+
+y, en consecuencia:
+
+\[
+\boxed{
+f\text{ no es diferenciable en }(0,0)
+}
+\]
+
+\section{Ejercicio 15}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\begin{cases}
+\dfrac{xy}{\sqrt{x^2+y^2}},
+&
+(x,y)\neq(0,0),\\[2mm]
+0,
+&
+(x,y)=(0,0).
+\end{cases}
+\]
+
+Utilizando:
+
+\[
+2|xy|
+\leq
+x^2+y^2,
+\]
+
+se obtiene:
+
+\[
+|f(x,y)|
+\leq
+\frac12\sqrt{x^2+y^2}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ es continua en }(0,0)
+}
+\]
+
+Las derivadas parciales son:
+
+\[
+f_x(0,0)=0,
+\qquad
+f_y(0,0)=0.
+\]
+
+Así:
+
+\[
+\boxed{
+f\text{ es derivable en }(0,0)
+}
+\]
+
+Para estudiar la diferenciabilidad:
+
+\[
+\frac{
+f(x,y)-f(0,0)-f_x(0,0)x-f_y(0,0)y
+}{
+\sqrt{x^2+y^2}
+}
+=
+\frac{xy}{x^2+y^2}.
+\]
+
+Según:
+
+\[
+y=x,
+\]
+
+se obtiene:
+
+\[
+\frac{x^2}{2x^2}
+=
+\frac12.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ no es diferenciable en }(0,0)
+}
+\]
+
+\section{Ejercicio 16}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\begin{cases}
+(x^2+y^2)
+\sen\left(
+\dfrac1{\sqrt{x^2+y^2}}
+\right),
+&
+(x,y)\neq(0,0),\\[2mm]
+0,
+&
+(x,y)=(0,0).
+\end{cases}
+\]
+
+Se tiene:
+
+\[
+|f(x,y)|
+\leq
+x^2+y^2.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ es continua en }(0,0)
+}
+\]
+
+Además:
+
+\[
+f_x(0,0)=0,
+\qquad
+f_y(0,0)=0.
+\]
+
+Para la diferenciabilidad:
+
+\[
+\left|
+\frac{f(x,y)}
+{\sqrt{x^2+y^2}}
+\right|
+\leq
+\sqrt{x^2+y^2}.
+\]
+
+El miembro derecho tiende a \(0\), luego:
+
+\[
+\boxed{
+f\text{ es diferenciable en }(0,0)
+}
+\]
+
+\section{Ejercicio 17}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)=e^{3x+2y}.
+\]
+
+Es composición de funciones continuas y derivables, por lo que es continua y diferenciable en todo \(\R^2\).
+
+Sus derivadas parciales son:
+
+\[
+f_x(x,y)
+=
+3e^{3x+2y},
+\]
+
+\[
+f_y(x,y)
+=
+2e^{3x+2y}.
+\]
+
+En el origen:
+
+\[
+f(0,0)=1,
+\]
+
+\[
+f_x(0,0)=3,
+\qquad
+f_y(0,0)=2.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ es continua, derivable y diferenciable en }(0,0)
+}
+\]
+
+\section{Ejercicio 18}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\begin{cases}
+\dfrac{xy(x^2-y^2)}{x^2+y^2},
+&
+(x,y)\neq(0,0),\\[2mm]
+0,
+&
+(x,y)=(0,0).
+\end{cases}
+\]
+
+Se tiene:
+
+\[
+|x^2-y^2|
+\leq
+x^2+y^2,
+\]
+
+por lo que:
+
+\[
+|f(x,y)|
+\leq
+|xy|
+\leq
+\frac{x^2+y^2}{2}.
+\]
+
+Así:
+
+\[
+\boxed{
+f\text{ es continua en }(0,0)
+}
+\]
+
+Además:
+
+\[
+f_x(0,0)=0,
+\qquad
+f_y(0,0)=0.
+\]
+
+Para la diferenciabilidad:
+
+\[
+\left|
+\frac{f(x,y)}
+{\sqrt{x^2+y^2}}
+\right|
+\leq
+\frac12\sqrt{x^2+y^2}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+f\text{ es diferenciable en }(0,0)
+}
+\]
+
+Para \((x,y)\neq(0,0)\):
+
+\[
+f_{xy}(x,y)
+=
+f_{yx}(x,y)
+=
+\frac{
+(x^2-y^2)
+\left(
+x^4+10x^2y^2+y^4
+\right)
+}{
+(x^2+y^2)^3
+}.
+\]
+
+En el origen calculamos por definición.
+
+Como:
+
+\[
+f_x(0,y)=-y,
+\]
+
+se tiene:
+
+\[
+f_{xy}(0,0)
+=
+\lim_{y\to0}
+\frac{-y}{y}
+=
+-1.
+\]
+
+Por otra parte:
+
+\[
+f_y(x,0)=x,
+\]
+
+por lo que:
+
+\[
+f_{yx}(0,0)
+=
+\lim_{x\to0}
+\frac{x}{x}
+=
+1.
+\]
+
+Así:
+
+\[
+\boxed{
+f_{xy}(0,0)=-1,
+\qquad
+f_{yx}(0,0)=1
+}
+\]
+
+\section{Ejercicio 19}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\begin{cases}
+\cos x\,\sen y+\dfrac{x^2}{y},
+&
+y\neq0,\\[2mm]
+0,
+&
+y=0.
+\end{cases}
+\]
+
+En el origen:
+
+\[
+f(0,0)=0.
+\]
+
+Además:
+
+\[
+f_x(0,0)
+=
+\lim_{h\to0}
+\frac{f(h,0)}{h}
+=
+0,
+\]
+
+\[
+f_y(0,0)
+=
+\lim_{k\to0}
+\frac{f(0,k)}{k}
+=
+\lim_{k\to0}
+\frac{\sen k}{k}
+=
+1.
+\]
+
+Por tanto, la aproximación lineal sería:
+
+\[
+\boxed{
+L(x,y)=y
+}
+\]
+
+Sin embargo, según:
+
+\[
+y=x^2,
+\]
+
+se tiene:
+
+\[
+f(x,x^2)
+=
+\cos x\,\sen(x^2)+1
+\longrightarrow
+1.
+\]
+
+Por tanto, la función no es siquiera continua en el origen.
+
+Así:
+
+\[
+\boxed{
+L(x,y)=y\text{ no es una buena aproximación lineal de }f
+\text{ cerca de }(0,0)
+}
+\]
+
+\section{Ejercicio 20}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+y\ln x+xy^2.
+\]
+
+Su gradiente es:
+
+\[
+\nabla f(x,y)
+=
+\left(
+\frac yx+y^2,\,
+\ln x+2xy
+\right).
+\]
+
+En \((1,2)\):
+
+\[
+\nabla f(1,2)
+=
+(6,4).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\nabla f(x,y)
+=
+\left(
+\frac yx+y^2,\,
+\ln x+2xy
+\right)
+}
+\]
+
+\[
+\boxed{
+\nabla f(1,2)=(6,4)
+}
+\]
+
+\section{Ejercicio 21}
+\subsection{Solución}
+
+La temperatura es:
+
+\[
+f(x,y)
+=
+20-4x^2-y^2.
+\]
+
+Su gradiente es:
+
+\[
+\nabla f(x,y)
+=
+(-8x,-2y).
+\]
+
+En \((2,-3)\):
+
+\[
+\nabla f(2,-3)
+=
+(-16,6).
+\]
+
+La dirección de máximo incremento es la del gradiente.
+
+Normalizando:
+
+\[
+\frac{(-16,6)}
+{\sqrt{(-16)^2+6^2}}
+=
+\frac{(-8,3)}{\sqrt{73}}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+u_{\max}
+=
+\frac1{\sqrt{73}}(-8,3)
+}
+\]
+
+\section{Ejercicio 22}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+xy\ln(x-1)+y^2.
+\]
+
+Su gradiente es:
+
+\[
+\nabla f(x,y)
+=
+\left(
+y\ln(x-1)+\frac{xy}{x-1},
+\,
+x\ln(x-1)+2y
+\right).
+\]
+
+En \((2,1)\):
+
+\[
+\nabla f(2,1)
+=
+(2,2).
+\]
+
+La dirección de máximo incremento es:
+
+\[
+\boxed{
+u_{\max}
+=
+\frac1{\sqrt2}(1,1)
+}
+\]
+
+La dirección de mínimo incremento es:
+
+\[
+\boxed{
+u_{\min}
+=
+-\frac1{\sqrt2}(1,1)
+}
+\]
+
+Las direcciones de incremento nulo son las unitarias ortogonales al gradiente:
+
+\[
+\boxed{
+u_0
+=
+\pm
+\frac1{\sqrt2}(1,-1)
+}
+\]
+
+\section{Ejercicio 23}
+\subsection{Solución}
+
+La superficie es:
+
+\[
+z=x^2+y^3.
+\]
+
+En \((3,1)\):
+
+\[
+f_x(3,1)=6,
+\qquad
+f_y(3,1)=3.
+\]
+
+El plano tangente es:
+
+\[
+z-10
+=
+6(x-3)
++
+3(y-1).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+z
+=
+6x+3y-11
+}
+\]
+
+\section{Ejercicio 24}
+\subsection{Solución}
+
+Sea:
+
+\[
+F(x,y,z)
+=
+(x-1)^2+(y-2)^2+2z^2-1.
+\]
+
+La superficie viene dada por:
+
+\[
+F(x,y,z)=0.
+\]
+
+Su gradiente es:
+
+\[
+\nabla F
+=
+\left(
+2(x-1),
+2(y-2),
+4z
+\right).
+\]
+
+En:
+
+\[
+P=
+\left(
+\frac32,
+2,
+\frac{\sqrt6}{4}
+\right),
+\]
+
+se obtiene:
+
+\[
+\nabla F(P)
+=
+(1,0,\sqrt6).
+\]
+
+Por tanto, el plano tangente es:
+
+\[
+(x-\tfrac32)
++
+\sqrt6
+\left(
+z-\frac{\sqrt6}{4}
+\right)
+=
+0.
+\]
+
+Simplificando:
+
+\[
+\boxed{
+x+\sqrt6\,z-3=0
+}
+\]
+
+\section{Ejercicio 25}
+\subsection{Solución}
+
+Sea:
+
+\[
+F(x,y,z)
+=
+3x^2e^{2(y+1)}
++
+4\sen(x+2z)
++
+z^2
+-
+13.
+\]
+
+La superficie es:
+
+\[
+F(x,y,z)=0.
+\]
+
+Calculamos:
+
+\[
+F_x
+=
+6xe^{2(y+1)}
++
+4\cos(x+2z),
+\]
+
+\[
+F_y
+=
+6x^2e^{2(y+1)},
+\]
+
+\[
+F_z
+=
+8\cos(x+2z)+2z.
+\]
+
+En:
+
+\[
+P=(2,-1,-1),
+\]
+
+se obtiene:
+
+\[
+\nabla F(P)
+=
+(16,24,6).
+\]
+
+El plano tangente es:
+
+\[
+16(x-2)
++
+24(y+1)
++
+6(z+1)
+=
+0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+8x+12y+3z-1=0
+}
+\]
+
+La recta normal tiene como vector director:
+
+\[
+(16,24,6),
+\]
+
+que podemos simplificar a:
+
+\[
+(8,12,3).
+\]
+
+Así:
+
+\[
+\boxed{
+\begin{cases}
+x=2+8t,\\
+y=-1+12t,\\
+z=-1+3t.
+\end{cases}
+}
+\]
+
+\section{Ejercicio 26}
+\subsection{Solución}
+
+La superficie indicada en el enunciado es:
+
+\[
+F(x,y,z)
+=
+x^3y^3
++
+xyz\cos z
+-
+xz
++
+y
++
+x
+=
+0.
+\]
+
+Sin embargo, en el punto indicado:
+
+\[
+P=(1,-1,0),
+\]
+
+se obtiene:
+
+\[
+F(1,-1,0)
+=
+-1.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+(1,-1,0)\text{ no pertenece a la superficie dada}
+}
+\]
+
+y, con el enunciado tal como aparece en el documento:
+
+\[
+\boxed{
+\text{no están definidos el plano tangente ni la recta normal a esa superficie en }(1,-1,0).
+}
+\]
+
+\section{Ejercicio 27}
+\subsection{Solución}
+
+Sea:
+
+\[
+F(x,y,z)
+=
+\left(
+x^2y^3-z^4,\,
+4x^5y^2z,\,
+-y^4z^6
+\right).
+\]
+
+La divergencia es:
+
+\[
+\diver F
+=
+\frac{\partial F_1}{\partial x}
++
+\frac{\partial F_2}{\partial y}
++
+\frac{\partial F_3}{\partial z}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\diver F
+=
+2xy^3
++
+8x^5yz
+-
+6y^4z^5
+}
+\]
+
+El rotacional es:
+
+\[
+\rot F
+=
+\left(
+\frac{\partial F_3}{\partial y}
+-
+\frac{\partial F_2}{\partial z},
+\,
+\frac{\partial F_1}{\partial z}
+-
+\frac{\partial F_3}{\partial x},
+\,
+\frac{\partial F_2}{\partial x}
+-
+\frac{\partial F_1}{\partial y}
+\right).
+\]
+
+Así:
+
+\[
+\boxed{
+\rot F
+=
+\left(
+-4y^3z^6-4x^5y^2,\,
+-4z^3,\,
+20x^4y^2z-3x^2y^2
+\right)
+}
+\]
+
+\section{Ejercicio 28}
+\subsection{Solución}
+
+Sea:
+
+\[
+\nabla f
+=
+(f_x,f_y,f_z).
+\]
+
+Entonces:
+
+\[
+\rot(\grad f)
+=
+\left(
+f_{zy}-f_{yz},
+f_{xz}-f_{zx},
+f_{yx}-f_{xy}
+\right).
+\]
+
+Como las derivadas segundas son continuas, por el teorema de Schwarz:
+
+\[
+f_{zy}=f_{yz},
+\qquad
+f_{xz}=f_{zx},
+\qquad
+f_{yx}=f_{xy}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\rot(\grad f)=0
+}
+\]
+
+Sea ahora:
+
+\[
+F=(F_1,F_2,F_3).
+\]
+
+Se tiene:
+
+\[
+\rot F
+=
+\left(
+F_{3y}-F_{2z},
+F_{1z}-F_{3x},
+F_{2x}-F_{1y}
+\right).
+\]
+
+Entonces:
+
+\[
+\begin{aligned}
+\diver(\rot F)
+={}&
+F_{3yx}-F_{2zx}
++
+F_{1zy}-F_{3xy}\\
+&+
+F_{2xz}-F_{1yz}.
+\end{aligned}
+\]
+
+Aplicando Schwarz:
+
+\[
+F_{3yx}=F_{3xy},
+\]
+
+\[
+F_{2zx}=F_{2xz},
+\]
+
+\[
+F_{1zy}=F_{1yz}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\diver(\rot F)=0
+}
+\]
+
+\section{Ejercicio 29}
+\subsection{Solución}
+
+Para:
+
+\[
+f(x,y,z)
+=
+(xy,y+z^2),
+\]
+
+la matriz jacobiana es:
+
+\[
+\boxed{
+J_f(x,y,z)
+=
+\begin{pmatrix}
+y&x&0\\
+0&1&2z
+\end{pmatrix}
+}
+\]
+
+Para:
+
+\[
+g(x,y,z)
+=
+\left(
+x^2\cos y,
+e^{x+z^2}
+\right),
+\]
+
+se obtiene:
+
+\[
+\boxed{
+J_g(x,y,z)
+=
+\begin{pmatrix}
+2x\cos y&-x^2\sen y&0\\
+e^{x+z^2}&0&2ze^{x+z^2}
+\end{pmatrix}
+}
+\]
+
+\section{Ejercicio 30}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+\left(
+x^3y^2-5x^2y^2,\,
+y^6-3xy^3+7
+\right).
+\]
+
+Su matriz jacobiana es:
+
+\[
+J_f(x,y)
+=
+\begin{pmatrix}
+3x^2y^2-10xy^2&
+2x^3y-10x^2y\\
+-3y^3&
+6y^5-9xy^2
+\end{pmatrix}.
+\]
+
+En \((2,-1)\):
+
+\[
+\boxed{
+J_f(2,-1)
+=
+\begin{pmatrix}
+-8&24\\
+3&-24
+\end{pmatrix}
+}
+\]
+
+\section{Ejercicio 31}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y,z)
+=
+\left(
+z\tan(x^2-y^2),
+xy\ln\left(\frac z2\right)
+\right).
+\]
+
+La matriz jacobiana es:
+
+\[
+J_f(x,y,z)
+=
+\begin{pmatrix}
+2xz\sec^2(x^2-y^2)&
+-2yz\sec^2(x^2-y^2)&
+\tan(x^2-y^2)\\[1mm]
+y\ln(z/2)&
+x\ln(z/2)&
+\dfrac{xy}{z}
+\end{pmatrix}.
+\]
+
+En:
+
+\[
+(2,-2,2),
+\]
+
+se tiene:
+
+\[
+x^2-y^2=0,
+\qquad
+\ln(z/2)=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+J_f(2,-2,2)
+=
+\begin{pmatrix}
+8&8&0\\
+0&0&-2
+\end{pmatrix}
+}
+\]
+
+\section{Ejercicio 32}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+(x^2-y^2,2xy).
+\]
+
+Su matriz jacobiana es:
+
+\[
+J_f(x,y)
+=
+\begin{pmatrix}
+2x&-2y\\
+2y&2x
+\end{pmatrix}.
+\]
+
+El jacobiano es:
+
+\[
+|J_f(x,y)|
+=
+4x^2+4y^2.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+|J_f(x,y)|
+=
+4(x^2+y^2)
+}
+\]
+
+\section{Ejercicio 33}
+\subsection{Solución}
+
+Para:
+
+\[
+f(x,y)=x^2-xy+y^3,
+\]
+
+se tiene:
+
+\[
+f_{xx}=2,
+\qquad
+f_{xy}=f_{yx}=-1,
+\qquad
+f_{yy}=6y.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+H_f(x,y)
+=
+\begin{pmatrix}
+2&-1\\
+-1&6y
+\end{pmatrix}
+}
+\]
+
+Para:
+
+\[
+g(x,y,z)
+=
+x^2-xy^2+z^2,
+\]
+
+las derivadas segundas son:
+
+\[
+g_{xx}=2,
+\qquad
+g_{xy}=g_{yx}=-2y,
+\qquad
+g_{xz}=g_{zx}=0,
+\]
+
+\[
+g_{yy}=-2x,
+\qquad
+g_{yz}=g_{zy}=0,
+\qquad
+g_{zz}=2.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+H_g(x,y,z)
+=
+\begin{pmatrix}
+2&-2y&0\\
+-2y&-2x&0\\
+0&0&2
+\end{pmatrix}
+}
+\]
+
+\section{Ejercicio 34}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+y^4+x^3+3x^2+4y^2-4xy-5y+8.
+\]
+
+Se tiene:
+
+\[
+f_{xx}=6x+6,
+\]
+
+\[
+f_{xy}=f_{yx}=-4,
+\]
+
+\[
+f_{yy}=12y^2+8.
+\]
+
+En \((1,0)\):
+
+\[
+\boxed{
+H_f(1,0)
+=
+\begin{pmatrix}
+12&-4\\
+-4&8
+\end{pmatrix}
+}
+\]
+
+\section{Ejercicio 35}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+e^{y\ln x}
+=
+x^y.
+\]
+
+Sus derivadas segundas son:
+
+\[
+f_{xx}
+=
+y(y-1)x^{y-2},
+\]
+
+\[
+f_{xy}
+=
+x^{y-1}
++
+yx^{y-1}\ln x,
+\]
+
+\[
+f_{yx}=f_{xy},
+\]
+
+\[
+f_{yy}
+=
+x^y(\ln x)^2.
+\]
+
+En \((1,1)\):
+
+\[
+f_{xx}(1,1)=0,
+\]
+
+\[
+f_{xy}(1,1)=f_{yx}(1,1)=1,
+\]
+
+\[
+f_{yy}(1,1)=0.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+H_f(1,1)
+=
+\begin{pmatrix}
+0&1\\
+1&0
+\end{pmatrix}
+}
+\]
+
+\section{Ejercicio 36}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+x^2-y^2+2xy.
+\]
+
+Su matriz hessiana es:
+
+\[
+H_f(x,y)
+=
+\begin{pmatrix}
+2&2\\
+2&-2
+\end{pmatrix}.
+\]
+
+El hessiano es:
+
+\[
+|H_f|
+=
+2(-2)-2\cdot2
+=
+-8.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+|H_f(2,1)|=-8
+}
+\]
+
+\section{Ejercicio 37}
+\subsection{Solución}
+
+Sean:
+
+\[
+f(x,y)
+=
+\left(
+xy,
+\sqrt{x^2+y^2}
+\right)
+\]
+
+y:
+
+\[
+g(u,v)
+=
+\begin{cases}
+\dfrac{u^2}{v},&v\neq0,\\[2mm]
+0,&v=0.
+\end{cases}
+\]
+
+Para \(f\):
+
+\[
+J_f(x,y)
+=
+\begin{pmatrix}
+y&x\\[1mm]
+\dfrac{x}{\sqrt{x^2+y^2}}&
+\dfrac{y}{\sqrt{x^2+y^2}}
+\end{pmatrix}.
+\]
+
+En \((1,1)\):
+
+\[
+\boxed{
+J_f(1,1)
+=
+\begin{pmatrix}
+1&1\\
+\dfrac1{\sqrt2}&\dfrac1{\sqrt2}
+\end{pmatrix}
+}
+\]
+
+Como:
+
+\[
+f(1,1)
+=
+(1,\sqrt2),
+\]
+
+y \(\sqrt2\neq0\), utilizamos:
+
+\[
+g(u,v)=\frac{u^2}{v}.
+\]
+
+Entonces:
+
+\[
+J_g(u,v)
+=
+\begin{pmatrix}
+\dfrac{2u}{v}&-\dfrac{u^2}{v^2}
+\end{pmatrix}.
+\]
+
+Así:
+
+\[
+\boxed{
+J_g(1,\sqrt2)
+=
+\begin{pmatrix}
+\sqrt2&-\dfrac12
+\end{pmatrix}
+}
+\]
+
+La composición es:
+
+\[
+h(x,y)
+=
+g(f(x,y))
+=
+\frac{x^2y^2}{\sqrt{x^2+y^2}}.
+\]
+
+En \((1,1)\):
+
+\[
+\boxed{
+J_h(1,1)
+=
+\begin{pmatrix}
+\dfrac{3}{2\sqrt2}&
+\dfrac{3}{2\sqrt2}
+\end{pmatrix}
+}
+\]
+
+Además:
+
+\[
+J_g(f(1,1))J_f(1,1)
+=
+\begin{pmatrix}
+\sqrt2&-\dfrac12
+\end{pmatrix}
+\begin{pmatrix}
+1&1\\
+\dfrac1{\sqrt2}&\dfrac1{\sqrt2}
+\end{pmatrix}
+\]
+
+\[
+=
+\begin{pmatrix}
+\dfrac{3}{2\sqrt2}&
+\dfrac{3}{2\sqrt2}
+\end{pmatrix}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+J_h(1,1)
+=
+J_g(f(1,1))J_f(1,1)
+}
+\]
+
+\section{Ejercicio 38}
+\subsection{Solución}
+
+Sea:
+
+\[
+f(x,y)
+=
+(f_1(x,y),f_2(x,y))
+=
+\left(
+xy,
+\sqrt{x^2+y^2}
+\right).
+\]
+
+Para:
+
+\[
+f_1(x,y)=xy,
+\]
+
+la diferencial total es:
+
+\[
+\boxed{
+df_1
+=
+y\,dx+x\,dy
+}
+\]
+
+Para:
+
+\[
+f_2(x,y)
+=
+\sqrt{x^2+y^2},
+\]
+
+se tiene:
+
+\[
+\boxed{
+df_2
+=
+\frac{x}{\sqrt{x^2+y^2}}\,dx
++
+\frac{y}{\sqrt{x^2+y^2}}\,dy
+}
+\]
+
+En \((1,1)\):
+
+\[
+\boxed{
+df_1(1,1)
+=
+dx+dy
+}
+\]
+
+\[
+\boxed{
+df_2(1,1)
+=
+\frac1{\sqrt2}dx
++
+\frac1{\sqrt2}dy
+}
+\]
+
+La diferencial de la función vectorial coincide con su matriz jacobiana:
+
+\[
+\boxed{
+Df(1,1)
+=
+\begin{pmatrix}
+1&1\\
+\dfrac1{\sqrt2}&\dfrac1{\sqrt2}
+\end{pmatrix}
+}
+\]
+
+\end{document}

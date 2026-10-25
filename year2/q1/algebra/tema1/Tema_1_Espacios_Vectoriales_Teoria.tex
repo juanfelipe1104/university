@@ -1,0 +1,715 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Pn}{\mathcal{P}}
+\newcommand{\Span}{\operatorname{L}}
+\newcommand{\rg}{\operatorname{rg}}
+\newcommand{\dimn}{\operatorname{dim}}
+
+\begin{document}
+
+\begin{center}
+	{\LARGE\bfseries Álgebra Lineal}\\[0.4em]
+	{\Large Tema 1: Espacios Vectoriales}
+\end{center}
+
+\tableofcontents
+\newpage
+
+\section{Espacio vectorial}
+
+\subsection{Definición}
+
+Un espacio vectorial sobre un cuerpo $\K$ es un conjunto no vacío $E$ cuyos elementos se denominan vectores, dotado de una suma y de un producto por escalares.
+
+El conjunto $(E,+)$ debe ser un grupo conmutativo. Para todo $x,y,z\in E$:
+
+\[
+x+y\in E
+\]
+
+\[
+(x+y)+z=x+(y+z)
+\]
+
+\[
+x+0=x
+\]
+
+\[
+\forall x\in E,\qquad \exists -x\in E
+\quad\text{tal que}\quad
+x+(-x)=0
+\]
+
+\[
+x+y=y+x
+\]
+
+Además, para todo $x,y\in E$ y $\gamma,\mu\in\K$:
+
+\[
+(\gamma+\mu)x=\gamma x+\mu x
+\]
+
+\[
+\gamma(x+y)=\gamma x+\gamma y
+\]
+
+\[
+\gamma(\mu x)=(\gamma\mu)x
+\]
+
+\[
+1x=x
+\]
+
+\subsection{Propiedades}
+
+En todo espacio vectorial se verifica:
+
+\[
+0x=0
+\]
+
+\[
+\gamma 0=0
+\]
+
+\[
+\gamma x=0
+\quad\Longrightarrow\quad
+\gamma=0
+\quad\text{o}\quad
+x=0
+\]
+
+\[
+(-\gamma)x=-(\gamma x)=\gamma(-x)
+\]
+
+Si $u\neq0$:
+
+\[
+\gamma u=\mu u
+\quad\Longrightarrow\quad
+\gamma=\mu
+\]
+
+Si $\gamma\neq0$:
+
+\[
+\gamma u=\gamma v
+\quad\Longrightarrow\quad
+u=v
+\]
+
+\subsection{Ejemplos}
+
+Son espacios vectoriales:
+
+\begin{itemize}
+	\item $\R^n$.
+	\item El conjunto $\Pn_n(x)$ de polinomios de grado menor o igual que $n$.
+	\item El conjunto $M_{m\times n}(\R)$ de matrices $m\times n$ con coeficientes reales.
+	\item El conjunto de soluciones de un sistema homogéneo de ecuaciones lineales.
+\end{itemize}
+
+\section{Subespacios vectoriales}
+
+Un subconjunto no vacío $S\subseteq E$ es un subespacio vectorial de $E$ si, con las operaciones heredadas de $E$, tiene estructura de espacio vectorial.
+
+Para comprobarlo basta verificar:
+
+\[
+S\neq\emptyset
+\]
+
+\[
+\forall x,y\in S,
+\qquad
+x+y\in S
+\]
+
+\[
+\forall\alpha\in\R,\ \forall x\in S,
+\qquad
+\alpha x\in S
+\]
+
+De forma equivalente:
+
+\[
+\boxed{
+S\leq E
+\iff
+S\neq\emptyset
+\ \text{y}\
+\alpha x+\beta y\in S
+\quad
+\forall x,y\in S,\ \forall\alpha,\beta\in\R
+}
+\]
+
+\subsection{Ejemplos}
+
+El conjunto
+
+\[
+S=
+\left\{
+(x,y,z,t)\in\R^4:
+x+2y-z+3t=0
+\right\}
+\]
+
+es un subespacio vectorial de $\R^4$.
+
+También lo es:
+
+\[
+T=
+\left\{
+(x,y,z)\in\R^3:
+\begin{array}{rcl}
+x-3y+z&=&0\\
+2x-z&=&0
+\end{array}
+\right\}
+\]
+
+En cambio:
+
+\[
+M=
+\left\{
+(x,y,z)\in\R^3:
+xy=0
+\right\}
+\]
+
+no es un subespacio vectorial.
+
+Tampoco lo es:
+
+\[
+S=
+\left\{
+(x,y,z,t)\in\R^4:
+x+2y-z+3t=1
+\right\}
+\]
+
+porque no contiene al vector nulo.
+
+\section{Combinación lineal y subespacio engendrado}
+
+\subsection{Combinación lineal}
+
+Un vector $x\in E$ es combinación lineal de los vectores
+
+\[
+S=\{v_1,v_2,\ldots,v_n\}
+\]
+
+si existen escalares $\alpha_1,\ldots,\alpha_n\in\K$ tales que:
+
+\[
+x=
+\alpha_1v_1+\alpha_2v_2+\cdots+\alpha_nv_n
+\]
+
+Por ejemplo:
+
+\[
+(1,-1,3)
+=
+(1,0,0)-(0,1,0)+3(0,0,1)
+\]
+
+\subsection{Subespacio engendrado}
+
+El subespacio engendrado por $S=\{v_1,\ldots,v_n\}$ es:
+
+\[
+\Span(S)
+=
+\left\{
+\alpha_1v_1+\cdots+\alpha_nv_n:
+\alpha_1,\ldots,\alpha_n\in\K
+\right\}
+\]
+
+$\Span(S)$ es el menor subespacio vectorial que contiene a $S$.
+
+Por ejemplo:
+
+\[
+S=
+\left\{
+(\alpha,\beta,2\alpha+\beta,-\alpha+3\beta):
+\alpha,\beta\in\R
+\right\}
+\]
+
+puede escribirse como:
+
+\[
+S=
+\Span\left\{
+(1,0,2,-1),
+(0,1,1,3)
+\right\}
+\]
+
+y su expresión implícita es:
+
+\[
+S=
+\left\{
+(x,y,z,t)\in\R^4:
+z=2x+y,\quad
+t=-x+3y
+\right\}
+\]
+
+\subsection{Sistema generador}
+
+$S=\{v_1,\ldots,v_n\}$ es un sistema generador de un espacio vectorial $V$ si todo vector $v\in V$ puede expresarse como combinación lineal de los vectores de $S$:
+
+\[
+\forall v\in V,
+\qquad
+v=
+\alpha_1v_1+\cdots+\alpha_nv_n
+\]
+
+para ciertos $\alpha_1,\ldots,\alpha_n\in\K$.
+
+\section{Independencia lineal}
+
+Los vectores $v_1,\ldots,v_n\in E$ son linealmente independientes si:
+
+\[
+\alpha_1v_1+\cdots+\alpha_nv_n=0
+\]
+
+implica necesariamente:
+
+\[
+\alpha_1=\alpha_2=\cdots=\alpha_n=0
+\]
+
+Un conjunto de vectores linealmente independientes se denomina sistema libre.
+
+Si existe una combinación lineal nula con algún coeficiente no nulo, el sistema es linealmente dependiente o ligado.
+
+\subsection{Propiedades}
+
+\begin{itemize}
+	\item Si $v\neq0$, entonces $\{v\}$ es un sistema libre.
+	\item Todo subconjunto de un sistema libre es libre.
+	\item Todo conjunto que contiene a un sistema ligado es ligado.
+	\item Todo sistema que contiene al vector $0$ es ligado.
+	\item Un sistema es ligado si alguno de sus vectores es combinación lineal de los restantes.
+	\item Un sistema es libre si ninguno de sus vectores puede expresarse como combinación lineal de los restantes.
+\end{itemize}
+
+Para un conjunto de $n$ vectores de $\R^n$, la independencia lineal puede comprobarse mediante:
+
+\[
+\rg(A)=n
+\]
+
+o, si $A$ es cuadrada:
+
+\[
+\det(A)\neq0
+\]
+
+\subsection{Teorema fundamental de la independencia lineal}
+
+Si
+
+\[
+S=\{v_1,\ldots,v_n\}
+\]
+
+es un sistema generador de $V$ y
+
+\[
+T=\{w_1,\ldots,w_p\}
+\]
+
+es un sistema linealmente independiente de vectores de $V$, entonces:
+
+\[
+\boxed{p\leq n}
+\]
+
+\section{Base y dimensión}
+
+\subsection{Base}
+
+Sea $V$ un espacio vectorial de dimensión finita. Un conjunto
+
+\[
+B=\{e_1,\ldots,e_n\}
+\]
+
+es una base de $V$ si sus vectores son linealmente independientes y forman un sistema generador.
+
+Equivalentemente, todo vector $v\in V$ se expresa de forma única como combinación lineal de los vectores de $B$.
+
+Bases canónicas habituales:
+
+\[
+B_c(\R^n)
+=
+\{e_1,\ldots,e_n\}
+\]
+
+\[
+B_c(\Pn_n(x))
+=
+\{1,x,x^2,\ldots,x^n\}
+\]
+
+y en $M_{2\times2}(\R)$:
+
+\[
+\left\{
+\begin{pmatrix}1&0\\0&0\end{pmatrix},
+\begin{pmatrix}0&1\\0&0\end{pmatrix},
+\begin{pmatrix}0&0\\1&0\end{pmatrix},
+\begin{pmatrix}0&0\\0&1\end{pmatrix}
+\right\}
+\]
+
+\subsection{Teorema de ampliación de la base}
+
+Si $S$ es un subespacio vectorial de $E$ y $B_S$ es una base de $S$, existen vectores
+
+\[
+v_1,\ldots,v_r\in E
+\]
+
+tales que:
+
+\[
+B_S\cup\{v_1,\ldots,v_r\}
+\]
+
+es una base de $E$.
+
+El subespacio generado por los vectores añadidos se denomina subespacio suplementario de $S$.
+
+\subsection{Dimensión}
+
+La dimensión de un espacio vectorial de dimensión finita es el número de elementos de cualquiera de sus bases.
+
+\[
+\boxed{
+\dimn V
+=
+\text{número de vectores de una base de }V
+}
+\]
+
+Además:
+
+\begin{itemize}
+	\item $\dimn V$ es el máximo número de vectores linealmente independientes de $V$.
+	\item $\dimn V$ es el mínimo número de vectores necesarios para generar $V$.
+	\item Si $\dimn V=n$, todo conjunto de $n$ vectores linealmente independientes es una base.
+	\item Si $S\subseteq T$, entonces $\dimn S\leq\dimn T$.
+	\item Si $S\subseteq T$ y $\dimn S=\dimn T$, entonces $S=T$.
+\end{itemize}
+
+En $\R^n$, la dimensión de un subespacio coincide con el número de parámetros libres de su expresión paramétrica.
+
+\subsection{Rango de un sistema de vectores}
+
+El rango de un sistema de vectores $S$ es la dimensión del subespacio engendrado:
+
+\[
+\boxed{
+\rg(S)=\dimn\Span(S)
+}
+\]
+
+Es decir, es el máximo número de vectores linealmente independientes del sistema.
+
+\section{Coordenadas y cambio de base}
+
+\subsection{Coordenadas de un vector}
+
+Sea:
+
+\[
+B=\{e_1,\ldots,e_n\}
+\]
+
+una base de $V$. Si:
+
+\[
+x=
+\alpha_1e_1+\cdots+\alpha_ne_n
+\]
+
+entonces:
+
+\[
+[x]_B=
+\begin{pmatrix}
+\alpha_1\\
+\vdots\\
+\alpha_n
+\end{pmatrix}
+\]
+
+son las coordenadas de $x$ en la base $B$.
+
+Las coordenadas de un vector en una base son únicas.
+
+\subsection{Matriz de cambio de base}
+
+Sean $B$ y $B'$ dos bases de un espacio vectorial $V$.
+
+La matriz de cambio de base de $B$ a $B'$ se construye colocando como columnas las coordenadas de los vectores de $B$ expresados en la base $B'$:
+
+\[
+\boxed{
+M_{BB'}
+=
+\left(
+[b_1]_{B'}
+\ \cdots\
+[b_n]_{B'}
+\right)
+}
+\]
+
+y transforma coordenadas según:
+
+\[
+\boxed{
+[x]_{B'}
+=
+M_{BB'}[x]_B
+}
+\]
+
+La matriz inversa realiza el cambio contrario:
+
+\[
+M_{B'B}
+=
+M_{BB'}^{-1}
+\]
+
+Toda matriz de cambio de base es cuadrada y regular.
+
+Si $A$, $B$ y $C$ son tres bases:
+
+\[
+\boxed{
+M_{AB}
+=
+M_{CB}M_{AC}
+}
+\]
+
+\section{Suma e intersección de subespacios}
+
+\subsection{Intersección}
+
+Dados dos subespacios $S_1,S_2\leq E$:
+
+\[
+S_1\cap S_2
+=
+\{x\in E:
+x\in S_1
+\text{ y }
+x\in S_2
+\}
+\]
+
+La intersección de subespacios es siempre un subespacio vectorial.
+
+\subsection{Suma}
+
+La suma de dos subespacios se define como:
+
+\[
+S_1+S_2
+=
+\left\{
+u_1+u_2:
+u_1\in S_1,\;
+u_2\in S_2
+\right\}
+\]
+
+También es un subespacio vectorial.
+
+\subsection{Fórmula de Grassmann}
+
+\[
+\boxed{
+\dimn(S_1\cap S_2)
++
+\dimn(S_1+S_2)
+=
+\dimn S_1
++
+\dimn S_2
+}
+\]
+
+\subsection{Suma directa}
+
+La suma de dos subespacios $S$ y $T$ es directa si:
+
+\[
+S\cap T=\{0\}
+\]
+
+y se escribe:
+
+\[
+S\oplus T
+\]
+
+En ese caso:
+
+\[
+\dimn(S\oplus T)
+=
+\dimn S+\dimn T
+\]
+
+y todo vector de $S+T$ se expresa de forma única como suma de un vector de $S$ y otro de $T$.
+
+Si además:
+
+\[
+S\oplus T=E
+\]
+
+entonces $S$ y $T$ son subespacios suplementarios.
+
+\section{Espacio vectorial producto}
+
+Sean $E$ y $F$ espacios vectoriales sobre el mismo cuerpo $\K$.
+
+El producto cartesiano:
+
+\[
+E\times F
+\]
+
+con las operaciones:
+
+\[
+(u_1,u_2)+(v_1,v_2)
+=
+(u_1+v_1,u_2+v_2)
+\]
+
+\[
+\gamma(u,v)
+=
+(\gamma u,\gamma v)
+\]
+
+es un espacio vectorial.
+
+Si:
+
+\[
+\dimn E=n,
+\qquad
+\dimn F=m
+\]
+
+entonces:
+
+\[
+\boxed{
+\dimn(E\times F)=n+m
+}
+\]
+
+Si $\{e_1,\ldots,e_n\}$ es una base de $E$ y $\{f_1,\ldots,f_m\}$ una base de $F$, entonces una base de $E\times F$ es:
+
+\[
+\left\{
+(e_1,0),\ldots,(e_n,0),
+(0,f_1),\ldots,(0,f_m)
+\right\}
+\]
+
+\section{Espacio vectorial cociente}
+
+Sea $V$ un subespacio de $E$. Se define la relación:
+
+\[
+x\sim y
+\iff
+x-y\in V
+\]
+
+Las clases de equivalencia forman el espacio cociente:
+
+\[
+E/V
+=
+\{[x]:
+x\in E\}
+\]
+
+con:
+
+\[
+[x]+[y]=[x+y]
+\]
+
+\[
+\gamma[x]=[\gamma x]
+\]
+
+Si:
+
+\[
+\dimn E=n,
+\qquad
+\dimn V=m
+\]
+
+entonces:
+
+\[
+\boxed{
+\dimn(E/V)=n-m
+}
+\]
+
+\end{document}

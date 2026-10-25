@@ -1,0 +1,744 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{lmodern}
+\usepackage{microtype}
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Álgebra Lineal}\\[0.4em]
+{\Large Tema 7: Cónicas y Cuádricas}
+\end{center}
+
+\tableofcontents
+\newpage
+
+\section{Cónicas}
+
+Una cónica es el lugar geométrico de los puntos del plano que verifican una ecuación de segundo grado en dos variables.
+
+\subsection{Elipse}
+
+Una elipse es el lugar geométrico de los puntos cuya suma de distancias a dos focos es constante:
+
+\[
+d(P,F_1)+d(P,F_2)=2a.
+\]
+
+Tomando los focos:
+
+\[
+F_1=(c,0),
+\qquad
+F_2=(-c,0),
+\]
+
+y definiendo:
+
+\[
+b^2=a^2-c^2,
+\]
+
+se obtiene la ecuación reducida:
+
+\[
+\boxed{
+\frac{x^2}{a^2}
++
+\frac{y^2}{b^2}
+=
+1.
+}
+\]
+
+\subsection{Hipérbola}
+
+Una hipérbola es el lugar geométrico de los puntos cuya diferencia, en valor absoluto, de distancias a dos focos es constante:
+
+\[
+|d(P,F_1)-d(P,F_2)|=2a.
+\]
+
+Tomando:
+
+\[
+F_1=(c,0),
+\qquad
+F_2=(-c,0),
+\]
+
+y:
+
+\[
+b^2=c^2-a^2,
+\]
+
+se obtiene:
+
+\[
+\boxed{
+\frac{x^2}{a^2}
+-
+\frac{y^2}{b^2}
+=
+1.
+}
+\]
+
+\subsection{Parábola}
+
+Una parábola es el lugar geométrico de los puntos que equidistan de un foco y una recta directriz.
+
+Si:
+
+\[
+F=\left(\frac p2,0\right)
+\]
+
+y la directriz es:
+
+\[
+x=-\frac p2,
+\]
+
+entonces:
+
+\[
+d(P,F)=d(P,r).
+\]
+
+La ecuación reducida es:
+
+\[
+\boxed{
+y^2=2px.
+}
+\]
+
+\subsection{Secciones cónicas}
+
+La elipse, la hipérbola y la parábola aparecen al cortar un cono mediante distintos planos.
+
+También aparecen cónicas degeneradas:
+
+\begin{itemize}
+\item un punto;
+\item dos rectas secantes;
+\item una recta doble;
+\item dos rectas paralelas;
+\item dos rectas paralelas imaginarias.
+\end{itemize}
+
+\section{Ecuación general de una cónica}
+
+La ecuación general es:
+
+\[
+\boxed{
+a_{11}x^2+a_{22}y^2+2a_{12}xy+2a_1x+2a_2y+a_0=0.
+}
+\]
+
+Definimos:
+
+\[
+X=
+\begin{pmatrix}
+x\\y
+\end{pmatrix},
+\qquad
+A=
+\begin{pmatrix}
+a_{11}&a_{12}\\
+a_{12}&a_{22}
+\end{pmatrix},
+\qquad
+B=
+\begin{pmatrix}
+2a_1&2a_2
+\end{pmatrix}.
+\]
+
+Entonces:
+
+\[
+\boxed{
+X^tAX+BX+a_0=0.
+}
+\]
+
+En coordenadas homogéneas:
+
+\[
+\widetilde X=
+\begin{pmatrix}
+1\\x\\y
+\end{pmatrix},
+\qquad
+\widetilde A=
+\begin{pmatrix}
+a_0&a_1&a_2\\
+a_1&a_{11}&a_{12}\\
+a_2&a_{12}&a_{22}
+\end{pmatrix},
+\]
+
+y:
+
+\[
+\boxed{
+\widetilde X^t\widetilde A\widetilde X=0.
+}
+\]
+
+\section{Ecuación reducida de una cónica}
+
+La ecuación:
+
+\[
+X^tAX+BX+a_0=0
+\]
+
+está reducida cuando:
+
+\begin{itemize}
+\item $A$ es diagonal;
+\item si $0$ no es autovalor de $A$, los términos lineales han desaparecido;
+\item si $0$ es autovalor de $A$, queda como máximo un término lineal.
+\end{itemize}
+
+La reducción se realiza mediante un movimiento rígido: una rotación seguida de una traslación.
+
+\subsection{Paso 1: rotación}
+
+Como $A$ es real y simétrica, existe una matriz ortogonal $P$ tal que:
+
+\[
+\boxed{
+D=P^tAP.
+}
+\]
+
+Con el cambio:
+
+\[
+X=PX',
+\]
+
+se obtiene:
+
+\[
+\boxed{
+X'^tDX'+BPX'+a_0=0.
+}
+\]
+
+La matriz $D$ contiene los autovalores de $A$.
+
+\subsection{Paso 2: traslación}
+
+Los términos lineales se eliminan completando cuadrados.
+
+Por ejemplo:
+
+\[
+x'^2+2bx'
+=
+(x'+b)^2-b^2.
+\]
+
+Se introduce una traslación:
+
+\[
+X''=C+X'.
+\]
+
+La composición de rotación y traslación proporciona el cambio de referencia que lleva la ecuación general a la reducida.
+
+\section{Clasificación de cónicas por la ecuación reducida}
+
+Si:
+
+\[
+\lambda_1x^2+\lambda_2y^2-c=0,
+\]
+
+entonces:
+
+\subsection{Tipo elíptico}
+
+Si:
+
+\[
+\lambda_1\lambda_2>0,
+\]
+
+se tiene:
+
+\[
+\boxed{
+\begin{cases}
+c=0 & \text{punto},\\
+\lambda_1c>0 & \text{elipse real},\\
+\lambda_1c<0 & \text{elipse imaginaria}.
+\end{cases}
+}
+\]
+
+\subsection{Tipo hiperbólico}
+
+Si:
+
+\[
+\lambda_1\lambda_2<0,
+\]
+
+entonces:
+
+\[
+\boxed{
+\begin{cases}
+c\neq0 & \text{hipérbola},\\
+c=0 & \text{dos rectas secantes}.
+\end{cases}
+}
+\]
+
+\subsection{Tipo parabólico}
+
+Si:
+
+\[
+\lambda_1\lambda_2=0,
+\]
+
+y, por ejemplo, $\lambda_1=0$, tras diagonalizar se obtiene:
+
+\[
+\lambda_2y'^2+2b_1x'+2b_2y'+a_0=0.
+\]
+
+Si:
+
+\[
+b_1\neq0,
+\]
+
+es una parábola.
+
+Si:
+
+\[
+b_1=0,
+\]
+
+se llega a:
+
+\[
+\lambda_2y''^2=c,
+\]
+
+que puede representar:
+
+\begin{itemize}
+\item dos rectas coincidentes;
+\item dos rectas paralelas reales;
+\item dos rectas paralelas imaginarias.
+\end{itemize}
+
+\section{Invariantes métricos de una cónica}
+
+Se definen:
+
+\[
+\boxed{
+I_3=\det\widetilde A
+}
+\]
+
+\[
+\boxed{
+I_2=\det A
+}
+\]
+
+\[
+\boxed{
+I_1=\tr A.
+}
+\]
+
+Estos valores no cambian bajo movimientos rígidos.
+
+La clasificación indicada en la presentación es:
+
+\[
+\boxed{
+I_3\neq0,\ I_2>0
+\Rightarrow
+\text{elipse}
+}
+\]
+
+y dentro de este caso:
+
+\[
+I_1I_3<0
+\Rightarrow
+\text{elipse real},
+\]
+
+\[
+I_1I_3>0
+\Rightarrow
+\text{elipse imaginaria}.
+\]
+
+Además:
+
+\[
+\boxed{
+I_3\neq0,\ I_2<0
+\Rightarrow
+\text{hipérbola}
+}
+\]
+
+\[
+\boxed{
+I_3\neq0,\ I_2=0
+\Rightarrow
+\text{parábola}.
+}
+\]
+
+Si:
+
+\[
+I_3=0,
+\]
+
+la cónica es degenerada:
+
+\[
+\boxed{
+\begin{cases}
+I_2>0 & \text{punto},\\
+I_2<0 & \text{dos rectas secantes},\\
+I_2=0 & \text{dos rectas paralelas}.
+\end{cases}
+}
+\]
+
+\section{Cuádricas}
+
+Una cuádrica es el lugar geométrico de los puntos de $\R^3$ que verifican una ecuación de segundo grado en tres variables:
+
+\[
+\boxed{
+\begin{aligned}
+&a_{11}x^2+a_{22}y^2+a_{33}z^2
++2a_{12}xy+2a_{13}xz+2a_{23}yz\\
+&\qquad
++2a_1x+2a_2y+2a_3z+a_0=0.
+\end{aligned}
+}
+\]
+
+Con:
+
+\[
+X=
+\begin{pmatrix}
+x\\y\\z
+\end{pmatrix},
+\]
+
+\[
+A=
+\begin{pmatrix}
+a_{11}&a_{12}&a_{13}\\
+a_{12}&a_{22}&a_{23}\\
+a_{13}&a_{23}&a_{33}
+\end{pmatrix},
+\]
+
+\[
+B=
+\begin{pmatrix}
+2a_1&2a_2&2a_3
+\end{pmatrix},
+\]
+
+se escribe:
+
+\[
+\boxed{
+X^tAX+BX+a_0=0.
+}
+\]
+
+En coordenadas homogéneas:
+
+\[
+\widetilde A=
+\begin{pmatrix}
+a_0&a_1&a_2&a_3\\
+a_1&a_{11}&a_{12}&a_{13}\\
+a_2&a_{12}&a_{22}&a_{23}\\
+a_3&a_{13}&a_{23}&a_{33}
+\end{pmatrix}.
+\]
+
+\section{Ecuación reducida de una cuádrica}
+
+El procedimiento es análogo al de las cónicas.
+
+\subsection{Rotación}
+
+Se diagonaliza ortogonalmente $A$:
+
+\[
+\boxed{
+D=P^tAP
+=
+\diag(\lambda_1,\lambda_2,\lambda_3).
+}
+\]
+
+Con:
+
+\[
+X=PX',
+\]
+
+la ecuación pasa a:
+
+\[
+\lambda_1x'^2+\lambda_2y'^2+\lambda_3z'^2
++2b_1x'+2b_2y'+2b_3z'+a_0=0.
+\]
+
+\subsection{Traslación}
+
+Completando cuadrados se eliminan los términos lineales asociados a autovalores no nulos.
+
+Así se obtiene la ecuación reducida.
+
+\section{Clasificación de cuádricas}
+
+\subsection{Tres autovalores no nulos}
+
+Si la ecuación reducida es:
+
+\[
+\lambda_1x^2+\lambda_2y^2+\lambda_3z^2+c=0,
+\]
+
+pueden aparecer:
+
+\begin{itemize}
+\item elipsoide real;
+\item elipsoide imaginario;
+\item hiperboloide de una hoja;
+\item hiperboloide de dos hojas;
+\item cono real;
+\item cono imaginario.
+\end{itemize}
+
+Formas reducidas representativas:
+
+\[
+\boxed{
+\frac{x^2}{a^2}
++
+\frac{y^2}{b^2}
++
+\frac{z^2}{c^2}
+=
+1
+}
+\]
+
+elipsoide real,
+
+\[
+\boxed{
+\frac{x^2}{a^2}
++
+\frac{y^2}{b^2}
+-
+\frac{z^2}{c^2}
+=
+1
+}
+\]
+
+hiperboloide de una hoja,
+
+\[
+\boxed{
+\frac{x^2}{a^2}
++
+\frac{y^2}{b^2}
+-
+\frac{z^2}{c^2}
+=
+-1
+}
+\]
+
+hiperboloide de dos hojas,
+
+\[
+\boxed{
+\frac{x^2}{a^2}
++
+\frac{y^2}{b^2}
+-
+\frac{z^2}{c^2}
+=
+0
+}
+\]
+
+cono real.
+
+\subsection{Un autovalor nulo}
+
+Si:
+
+\[
+\lambda_1=0,
+\]
+
+la ecuación tiene la forma:
+
+\[
+\lambda_2y'^2+\lambda_3z'^2+2b_1x'+b=0.
+\]
+
+Si:
+
+\[
+b_1\neq0,
+\]
+
+se obtiene:
+
+\[
+\boxed{
+\begin{cases}
+\lambda_2\lambda_3>0
+& \text{paraboloide elíptico},\\
+\lambda_2\lambda_3<0
+& \text{paraboloide hiperbólico}.
+\end{cases}
+}
+\]
+
+Si:
+
+\[
+b_1=0,
+\]
+
+se obtienen cilindros o pares de planos.
+
+\subsection{Dos autovalores nulos}
+
+La ecuación queda:
+
+\[
+\lambda_3z'^2+2b_1x'+2b_2y'+b=0.
+\]
+
+Según los coeficientes, puede representar:
+
+\begin{itemize}
+\item un cilindro parabólico;
+\item dos planos paralelos;
+\item dos planos paralelos imaginarios;
+\item un plano doble.
+\end{itemize}
+
+\section{Invariantes métricos de una cuádrica}
+
+Se definen:
+
+\[
+\boxed{
+I_4=\det\widetilde A
+}
+\]
+
+\[
+\boxed{
+I_3=\det A
+}
+\]
+
+\[
+\boxed{
+I_2=
+\begin{vmatrix}
+a_{11}&a_{12}\\
+a_{12}&a_{22}
+\end{vmatrix}
++
+\begin{vmatrix}
+a_{11}&a_{13}\\
+a_{13}&a_{33}
+\end{vmatrix}
++
+\begin{vmatrix}
+a_{22}&a_{23}\\
+a_{23}&a_{33}
+\end{vmatrix}
+}
+\]
+
+\[
+\boxed{
+I_1=\tr A.
+}
+\]
+
+La clasificación por invariantes de la presentación distingue:
+
+\begin{itemize}
+\item elipsoides reales e imaginarios;
+\item hiperboloides de una y dos hojas;
+\item paraboloides elípticos e hiperbólicos;
+\item conos;
+\item cilindros;
+\item pares de planos.
+\end{itemize}
+
+En particular:
+
+\[
+I_4\neq0,\quad I_3=0
+\]
+
+corresponde a un paraboloide, y el signo de $I_4$ junto con los demás invariantes permite distinguir el tipo.
+
+Si:
+
+\[
+I_4=0,
+\]
+
+la cuádrica es degenerada.
+
+\end{document}

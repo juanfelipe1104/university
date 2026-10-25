@@ -1,0 +1,244 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{lmodern}
+\usepackage{microtype}
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Span}{\operatorname{L}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\sen}{\operatorname{sen}}
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Álgebra Lineal}\\[0.4em]
+{\Large Tema 4: El Espacio Afín --- Ejercicios}
+\end{center}
+
+\section{Ejercicio 1}
+Dados $R=\{O,u_1,u_2\}$ y $R'=\{O',v_1,v_2\}$, encontrar las fórmulas del cambio de sistema de referencia sabiendo que:
+\[
+[\overrightarrow{OO'}]_B=(2,3),
+\qquad
+[v_1]_B=(1,-1),
+\qquad
+[v_2]_B=(5,4).
+\]
+
+\section{Ejercicio 2}
+Demostrar que el conjunto de soluciones de un sistema lineal compatible:
+\[
+AX=C
+\]
+es un espacio afín de $\R^n$.
+
+\section{Ejercicio 3}
+En $\R^4$:
+\[
+F_1=
+\left\{
+\begin{array}{l}
+x_1=a+3\lambda+2\mu\\
+x_2=1-\lambda-\mu\\
+x_3=4+\lambda\\
+x_4=6+5\lambda+2\mu
+\end{array}
+:
+\lambda,\mu\in\R
+\right\},
+\]
+\[
+F_2=
+\left\{
+\begin{array}{l}
+x_1=2+\alpha+2\beta\\
+x_2=1\\
+x_3=1+\alpha+\beta\\
+x_4=3\alpha
+\end{array}
+:
+\alpha,\beta\in\R
+\right\}.
+\]
+\begin{enumerate}[label=\alph*)]
+\item Calcular $a$ para que $F_1\cap F_2\neq\emptyset$.
+\item Para dicho valor, obtener $F_1\cap F_2$ y $F_1+F_2$.
+\end{enumerate}
+
+\section{Ejercicio 4}
+Respecto de $R=\{O,e_1,e_2,e_3\}$:
+\[
+A=(3,1,-2),\quad
+B=(2,2,0),\quad
+C=(1,0,-1),\quad
+D=(4,3,-2).
+\]
+Las coordenadas de $P$ en:
+\[
+R'=\{A;\overrightarrow{AB},\overrightarrow{AC},\overrightarrow{AD}\}
+\]
+son $(x',y',z')$. Obtener las coordenadas de $P$ en $R$.
+
+\section{Ejercicio 5}
+Dadas:
+\[
+x_1=1+y_2,\qquad
+x_2=\frac13y_1-\frac23y_3,\qquad
+x_3=2+\frac23y_1+\frac13y_3,
+\]
+donde $x_i$ son coordenadas en $R$ e $y_i$ en $R'$:
+\begin{enumerate}[label=\alph*)]
+\item Obtener la expresión matricial del cambio.
+\item Obtener la ecuación de $x_1+x_2+x_3=3$ en $R'$.
+\item Dar las ecuaciones paramétricas e implícitas, punto y espacio de dirección en $R$ y $R'$.
+\end{enumerate}
+
+\section{Ejercicio 6}
+En $\R^4$:
+\[
+F_1=\{(x_1,x_2,x_3,x_4):x_1+x_2=4,\;x_3+x_4=a\},
+\]
+\[
+F_2=\{(3+\alpha,2-2\alpha,2\alpha,-1+\alpha):\alpha\in\R\}.
+\]
+Encontrar $a$ para que la variedad afín generada por $F_1$ y $F_2$ tenga dimensión mínima y calcularla.
+
+\section{Ejercicio 7}
+Sea:
+\[
+V=\{p(x)\in\mathcal P_2(x):p(1)=1,\;p(2)=2\}.
+\]
+\begin{enumerate}[label=\alph*)]
+\item Demostrar que $V$ es una variedad afín.
+\item Obtener un sistema de referencia afín de $V$ y las coordenadas de $2x^2-5x+4$.
+\item Respecto de $R=\{0;1,x,x^2\}$, obtener el hiperplano que pasa por $x$ y es perpendicular a $V$.
+\end{enumerate}
+
+\section{Ejercicio 8}
+Determinar la aplicación afín $f:\mathcal A\to\mathcal A'$ tal que:
+\[
+f(1,2)=(1,2,3),
+\]
+\[
+\widetilde f(e_1)=e_1+4e_2,
+\qquad
+\widetilde f(e_2)=e_1-e_2+e_3.
+\]
+\begin{enumerate}[label=\alph*)]
+\item Escribir matricialmente las ecuaciones de $f$.
+\item Obtener las ecuaciones paramétricas de $\Ima f$ y su espacio de dirección.
+\end{enumerate}
+
+\section{Ejercicio 9}
+Dada:
+\[
+C\equiv(x_1-1)^2+(x_2-1)^2=9,
+\]
+obtener su ecuación en:
+\[
+R'=\{A,u_1,u_2\},
+\quad
+A=(3,3),
+\]
+\[
+u_1=\left(\frac1{\sqrt2},\frac1{\sqrt2}\right),
+\qquad
+u_2=\left(\frac2{\sqrt2},-\frac2{\sqrt2}\right).
+\]
+¿Qué tipo de curva es $C$ en $R'$?
+
+\section{Ejercicio 10}
+En $\R^3$:
+\[
+\pi:x_1+x_2+x_3=2.
+\]
+Sea:
+\[
+R'=\{P,u_1,u_2,u_3\},
+\quad
+P=(1,1,0),
+\]
+\[
+u_1=-e_1+e_3,\qquad
+u_2=-e_2+e_3,\qquad
+u_3=e_1+e_2+e_3.
+\]
+Calcular la ecuación de $\pi$ respecto de $R'$.
+
+\section{Ejercicio 11}
+En $\R^3$:
+\[
+A_1=(1,0,0)+\Span\{e_1+e_2+e_3\},
+\]
+\[
+A_2=(0,0,0)+\Span\{2e_1+e_2+2e_3\}.
+\]
+Calcular $\dim(A_1+A_2)$ y relacionarla con $\dim A_1$ y $\dim A_2$.
+
+Si:
+\[
+A_3=\{(x,y,z):2x-y-z=0\},
+\]
+calcular $\dim(A_1+A_3)$ y relacionarla con $\dim A_1$ y $\dim A_3$.
+
+\section{Ejercicio 12}
+Determinar cuáles son aplicaciones afines:
+\[
+\text{a) }f(x,y)=(x+1,y-1)
+\]
+\[
+\text{b) }f(x,y)=(2x,2y)
+\]
+\[
+\text{c) }f(x,y)=(2x-1,3y+2)
+\]
+\[
+\text{d) }f(x,y)=(3x+1,0)
+\]
+\[
+\text{e) }f(x,y)=(x^2+1,y)
+\]
+
+\section{Ejercicio 13}
+Encontrar la expresión analítica del giro de centro $(1,1)$ y ángulo $\pi/2$.
+
+\section{Ejercicio 14}
+Encontrar la expresión analítica de la proyección ortogonal sobre:
+\[
+x+y=1.
+\]
+
+\section{Ejercicio 15}
+Encontrar la expresión analítica de la simetría ortogonal respecto de:
+\[
+x+y=1.
+\]
+
+\section{Ejercicio 16}
+En $\R^3$:
+\[
+F=\{(x_1,x_2,x_3):x_1+x_2-x_3=1\}.
+\]
+\begin{enumerate}[label=\alph*)]
+\item Analizar que $F$ es una variedad afín e indicar sus elementos.
+\item Si:
+\[
+R'=\{P,u_1,u_2,u_3\},
+\quad
+P=(-2,1,3),
+\]
+\[
+u_1=e_1-e_3,\qquad
+u_2=e_2-e_3,\qquad
+u_3=e_1+e_2+e_3,
+\]
+determinar la ecuación de $F$ respecto de $R'$.
+\end{enumerate}
+
+\end{document}
