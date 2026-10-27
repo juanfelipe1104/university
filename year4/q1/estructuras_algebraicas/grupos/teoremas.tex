@@ -145,11 +145,21 @@ El orden de $(1,1)$ es $\mcm(n,m)$. El producto es cíclico si y solo si posee u
 
 \subsection{Criterio de subgrupo}
 \begin{resultado}
-Un subconjunto $H\subseteq G$ es subgrupo si y solo si $H\ne\varnothing$ y $ab^{-1}\in H$ para todos $a,b\in H$.
+Un subconjunto $H\subseteq G$ es subgrupo si y solo si $H\ne\varnothing$ y $ab^{-1}\in H$ para cualesquiera $a,b\in H$.
 \end{resultado}
 \textbf{Demostración.}
 \begin{demostracion}
-La necesidad es inmediata. Para la suficiencia, tomando $a=b$ se obtiene $e\in H$. Tomando $a=e$, se obtiene $b^{-1}\in H$. Ahora $ab=a(b^{-1})^{-1}\in H$.
+\textbf{Implicación $\Rightarrow$.} Si $H\le G$, contiene el neutro, por lo que no es vacío. Para $a,b\in H$, también $b^{-1}\in H$ y, por cierre, $ab^{-1}\in H$.
+
+\textbf{Implicación $\Leftarrow$.} Supongamos $H\ne\varnothing$ y $ab^{-1}\in H$ para todo $a,b\in H$.
+
+\emph{Neutro:} elegimos $a\in H$. Entonces $aa^{-1}=e\in H$.
+
+\emph{Inversos:} para $b\in H$, como $e\in H$, tenemos $eb^{-1}=b^{-1}\in H$.
+
+\emph{Cierre:} si $a,b\in H$, ya sabemos que $b^{-1}\in H$, luego $a(b^{-1})^{-1}=ab\in H$.
+
+La asociatividad se hereda de $G$, así que $H\le G$.
 \end{demostracion}
 
 
@@ -175,11 +185,25 @@ Un subgrupo $H$ contiene las potencias correspondientes a un subgrupo de $\Z_n$.
 
 \subsection{Teorema de Lagrange}
 \begin{resultado}
-Si $H\le G$ y $G$ es finito, entonces $|G|=[G:H]\,|H|$. En particular, $|H|\mid|G|$.
+Si $H\le G$ y $G$ es finito, entonces $|G|=[G:H]\,|H|$. En particular, $|H|\mid |G|$.
 \end{resultado}
-\textbf{Demostración.}
+\textbf{Lema 1. Dos clases laterales izquierdas son iguales o disjuntas.}
 \begin{demostracion}
-Las clases laterales de $H$ particionan $G$. La multiplicación $h\mapsto gh$ es biyección de $H$ en $gH$, así que todas las clases tienen $|H|$ elementos. Contando clases se obtiene la fórmula.
+Si $aH\cap bH\ne\varnothing$, existen $h_1,h_2\in H$ con $ah_1=bh_2$, así que $a=bh_2h_1^{-1}$. Para cualquier $h\in H$, $ah=b(h_2h_1^{-1}h)\in bH$ y por tanto $aH\subseteq bH$. Intercambiando $a$ y $b$ se obtiene $bH\subseteq aH$; luego $aH=bH$.
+\end{demostracion}
+\textbf{Lema 2. Todas las clases laterales tienen $|H|$ elementos.}
+\begin{demostracion}
+La función $f:H\to aH$, $f(h)=ah$, es sobreyectiva por definición de $aH$. Es inyectiva porque $ah_1=ah_2$ implica $h_1=h_2$ por cancelación. Es biyectiva y $|aH|=|H|$.
+\end{demostracion}
+\textbf{Lema 3. Las clases laterales distintas forman una partición de $G$.}
+\begin{demostracion}
+Cada $a\in G$ está en $aH$, pues $a=ae$. Así, su unión es $G$. Por el lema 1, dos clases distintas son disjuntas. Por tanto, las clases distintas particionan $G$.
+\end{demostracion}
+\textbf{Demostración de Lagrange.}
+\begin{demostracion}
+Sean $a_1H,\dots,a_kH$ las clases distintas, donde $k=[G:H]$. Por el lema 3 forman una partición de $G$, y por el lema 2 tienen todas $|H|$ elementos. Entonces
+\[|G|=\sum_{i=1}^{k}|a_iH|=k|H|=[G:H]|H|.\]
+En particular, $|H|$ divide a $|G|$.
 \end{demostracion}
 
 
@@ -217,21 +241,30 @@ Los ciclos disjuntos conmutan y cada ciclo de longitud $k$ retorna a la identida
 
 \subsection{Descomposición en ciclos}
 \begin{resultado}
-Toda permutación se escribe de manera única como producto de ciclos disjuntos, salvo el orden de los ciclos y la rotación cíclica de su escritura.
+Toda permutación se expresa de manera única como producto de ciclos disjuntos, salvo reordenación de los ciclos y elección del punto de inicio dentro de cada ciclo.
 \end{resultado}
 \textbf{Demostración.}
 \begin{demostracion}
-Partimos de un símbolo $i$ y seguimos sus imágenes $i,\sigma(i),\sigma^2(i),\ldots$ hasta regresar a $i$. Repetimos con símbolos aún no visitados. Las órbitas son disjuntas y quedan determinadas por la permutación.
+Sea $\sigma\in S_n$. Empezamos con un elemento $i$: calculamos $i,\sigma(i),\sigma^2(i),\ldots$. Como el conjunto es finito, algún elemento se repite. Además, $\sigma$ es inyectiva, por lo que el primer elemento que se repite debe ser $i$; obtenemos un ciclo $(i\ \sigma(i)\ \ldots\ \sigma^{k-1}(i))$.
+
+Elegimos ahora un elemento $j$ que no aparezca en el ciclo anterior y repetimos el proceso. Sus imágenes no pueden entrar en un ciclo anterior: de lo contrario, aplicando la inversa de $\sigma$ llegaríamos a que $j$ ya estaba en ese ciclo. Así obtenemos ciclos disjuntos.
+
+Al acabar, todos los elementos pertenecen a uno de esos ciclos, y el producto reproduce la acción de $\sigma$ en todos ellos. Cada ciclo está determinado por seguir las imágenes de cualquiera de sus elementos, por lo que la descomposición es única salvo el orden de los ciclos y la rotación al escribir cada uno.
 \end{demostracion}
 
 
 \subsection{Conjugación de ciclos}
 \begin{resultado}
-$\sigma(a_1\,\cdots\,a_k)\sigma^{-1}=(\sigma(a_1)\,\cdots\,\sigma(a_k))$.
+Para $\sigma\in S_n$ y un ciclo $c=(a_1\,a_2\,\ldots\,a_k)$,
+\[\sigma c\sigma^{-1}=(\sigma(a_1)\,\sigma(a_2)\,\ldots\,\sigma(a_k)).\]
 \end{resultado}
 \textbf{Demostración.}
 \begin{demostracion}
-Al aplicar el miembro izquierdo a $\sigma(a_i)$, primero $\sigma^{-1}$ devuelve $a_i$, el ciclo envía $a_i$ a $a_{i+1}$ y $\sigma$ devuelve $\sigma(a_{i+1})$. Fuera del soporte, fija los elementos.
+Recordamos que la composición se lee de derecha a izquierda. Veamos la imagen de $\sigma(a_i)$ por $\sigma c\sigma^{-1}$:
+\[\sigma(a_i)\xrightarrow{\sigma^{-1}}a_i\xrightarrow{c}a_{i+1}\xrightarrow{\sigma}\sigma(a_{i+1}),\]
+con índices módulo $k$ (en particular, $a_k$ pasa a $a_1$). Por tanto, el conjugado recorre los elementos $\sigma(a_1),\dots,\sigma(a_k)$ en el mismo orden.
+
+Si $x$ no es uno de estos elementos, entonces $\sigma^{-1}(x)$ no pertenece a $\{a_1,\dots,a_k\}$, por lo que $c$ lo deja fijo y $\sigma c\sigma^{-1}(x)=x$. No hay más movimientos: el conjugado es exactamente el ciclo indicado.
 \end{demostracion}
 
 
@@ -309,11 +342,19 @@ Si $G/Z(G)=\gen{gZ(G)}$, cualesquiera $a,b\in G$ se escriben $a=g^mz_1$ y $b=g^n
 
 \subsection{El derivado y la abelianización}
 \begin{resultado}
-$G\prime\trianglelefteq G$, $G/G\prime$ es abeliano y, si $G/N$ es abeliano con $N\trianglelefteq G$, entonces $G\prime\subseteq N$.
+Sea $G'=\langle [a,b]:a,b\in G\rangle$, donde $[a,b]=aba^{-1}b^{-1}$. Entonces: (i) $G'\trianglelefteq G$; (ii) $G/G'$ es abeliano; (iii) si $N\trianglelefteq G$ y $G/N$ es abeliano, entonces $G'\subseteq N$.
 \end{resultado}
 \textbf{Demostración.}
 \begin{demostracion}
-Un conjugado de un conmutador es otro conmutador, por lo que $G\prime$ es normal. En $G/G\prime$ se tiene $abG\prime=baG\prime$ porque $aba^{-1}b^{-1}\in G\prime$. Si $G/N$ es abeliano, cada conmutador pertenece a $N$, así que $G\prime\subseteq N$.
+\textbf{(i) $G'$ es normal.} Para cualquier $g,a,b\in G$,
+\[g[a,b]g^{-1}=[gag^{-1},\,gbg^{-1}].\]
+Es decir, conjugar un conmutador produce otro conmutador. Si un elemento de $G'$ es producto de conmutadores y sus inversos, su conjugado también pertenece a $G'$. De ahí $gG'g^{-1}\subseteq G'$; reemplazar $g$ por $g^{-1}$ da la igualdad.
+
+\textbf{(ii) $G/G'$ es abeliano.} Como $[a,b]=aba^{-1}b^{-1}\in G'$, tenemos
+\[abG'=baG'.\]
+En efecto, $ab(ba)^{-1}=aba^{-1}b^{-1}\in G'$, lo que caracteriza que ambas clases coincidan. Así $(aG')(bG')=(bG')(aG')$.
+
+\textbf{(iii) Todo cociente abeliano elimina los conmutadores.} Si $G/N$ es abeliano, para cualesquiera $a,b\in G$ se cumple $abN=baN$; por el mismo criterio, $aba^{-1}b^{-1}\in N$. Por tanto, $N$ contiene todos los conmutadores y, al ser subgrupo, contiene al subgrupo que generan: $G'\subseteq N$.
 \end{demostracion}
 
 
